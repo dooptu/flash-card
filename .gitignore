@@ -1,0 +1,10 @@
+# API Key & local config — NEVER commit these
+config.js
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/settings.json
+*.swp

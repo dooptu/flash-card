@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FlashMaster | Premium Learning</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <meta name="description" content="Master any subject with flashcards and quizzes." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,7 +23,7 @@
       <button class="close-btn" id="closeSidebar" aria-label="Close Menu">✕</button>
     </div>
     <nav class="topic-list" id="topicList" role="navigation" aria-label="Topics"></nav>
-    <div class="sidebar-footer">v1.0 &nbsp;•&nbsp; Offline Ready</div>
+    <div class="sidebar-footer">v1.1 &nbsp;•&nbsp; AI-Powered</div>
   </aside>
   <div class="overlay" id="overlay"></div>
 
@@ -48,6 +49,9 @@
         </div>
         <!-- Toolbar buttons -->
         <div class="toolbar">
+          <button class="tool-btn" id="settingsBtn" title="AI Settings" aria-label="AI Settings">
+            <span class="tool-icon">⚙</span>
+          </button>
           <button class="tool-btn" id="starredOnlyBtn" title="Starred Only" aria-label="Starred Only">
             <span class="tool-icon">★</span>
           </button>
@@ -64,7 +68,13 @@
       <!-- COUNTER + STAR (always visible, outside 3D stack) -->
       <div class="card-hud">
         <span class="hud-counter" id="cardCounter">—</span>
-        <button class="star-btn" id="starBtn" aria-label="Star this card" title="Star this card">★</button>
+        <div class="hud-actions">
+          <button class="ai-explain-btn" id="aiExplainBtn" aria-label="AI Explain" title="Giải thích bằng AI" hidden>
+            <span class="ai-btn-icon">✨</span>
+            <span class="ai-btn-text">AI Explain</span>
+          </button>
+          <button class="star-btn" id="starBtn" aria-label="Star this card" title="Star this card">★</button>
+        </div>
       </div>
 
       <!-- FLASHCARD VIEWER -->
@@ -101,6 +111,92 @@
     </main>
   </div>
 
+  <!-- ────────────── AI EXPLAIN MODAL ────────────── -->
+  <div class="modal-backdrop" id="aiModalBackdrop" hidden>
+    <div class="modal ai-modal" id="aiModal" role="dialog" aria-modal="true" aria-labelledby="aiModalTitle">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-gem-icon">✨</span>
+          <h2 class="modal-title" id="aiModalTitle">AI Explanation</h2>
+        </div>
+        <button class="modal-close-btn" id="aiModalClose" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-question-context" id="aiModalContext"></div>
+      <div class="modal-body" id="aiModalBody">
+        <div class="ai-loading" id="aiLoading">
+          <div class="ai-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <p>Đang tạo giải thích…</p>
+        </div>
+        <div class="ai-content" id="aiContent" hidden></div>
+        <div class="ai-error" id="aiError" hidden>
+          <span class="ai-error-icon">⚠️</span>
+          <p id="aiErrorMsg">Đã xảy ra lỗi</p>
+          <button class="ai-retry-btn" id="aiRetryBtn">Thử lại</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <span class="modal-powered">Powered by <strong>Gemini</strong></span>
+        <button class="modal-copy-btn" id="aiCopyBtn" title="Sao chép">📋 Sao chép</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ────────────── SETTINGS MODAL ────────────── -->
+  <div class="modal-backdrop" id="settingsModalBackdrop" hidden>
+    <div class="modal settings-modal" id="settingsModal" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-gem-icon">⚙</span>
+          <h2 class="modal-title" id="settingsTitle">AI Settings</h2>
+        </div>
+        <button class="modal-close-btn" id="settingsModalClose" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body settings-body">
+        <div class="settings-group">
+          <label class="settings-label" for="apiKeyInput">🔑 Gemini API Key</label>
+          <div class="api-key-row">
+            <input
+              type="password"
+              class="api-key-input"
+              id="apiKeyInput"
+              placeholder="AIza..."
+              autocomplete="off"
+              spellcheck="false"
+            />
+            <button class="api-key-toggle" id="apiKeyToggle" title="Hiện / Ẩn">👁</button>
+          </div>
+          <p class="settings-hint">
+            Lấy API key miễn phí tại
+            <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener">Google AI Studio</a>.
+            Key được lưu cục bộ trên trình duyệt của bạn.
+          </p>
+        </div>
+        <div class="settings-group">
+          <label class="settings-label" for="geminiModelSelect">🤖 Model</label>
+          <select class="settings-select" id="geminiModelSelect">
+            <option value="gemini-2.0-flash">Gemini 2.0 Flash (Nhanh)</option>
+            <option value="gemini-2.0-flash-thinking-exp">Gemini 2.0 Flash Thinking (Suy luận)</option>
+            <option value="gemini-1.5-pro">Gemini 1.5 Pro (Mạnh)</option>
+          </select>
+        </div>
+        <div class="settings-group">
+          <label class="settings-label" for="languageSelect">🌐 Ngôn ngữ giải thích</label>
+          <select class="settings-select" id="languageSelect">
+            <option value="vi">Tiếng Việt</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="settings-save-btn" id="settingsSaveBtn">💾 Lưu cài đặt</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Config (local API key — gitignored, NOT committed) -->
+  <script src="config.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
