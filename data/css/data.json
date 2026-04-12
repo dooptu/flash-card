@@ -1,0 +1,35 @@
+{
+  "topic": "Mastering CSS",
+  "cards": [
+    {
+      "id": "css1",
+      "type": "flashcard",
+      "question": "What is Flexbox?",
+      "answer": "Flexbox is a one-dimensional layout method for arranging items in rows or columns.",
+      "starred": false
+    },
+    {
+      "id": "css2",
+      "type": "multiple-choice",
+      "question": "Which property is used to change the background color?",
+      "options": ["color", "bgcolor", "background-color", "fill"],
+      "answer": "background-color",
+      "starred": false
+    },
+    {
+      "id": "css3",
+      "type": "flashcard",
+      "question": "What does Z-index do?",
+      "answer": "The z-index property specifies the stack order of an element (which element should be placed in front of, or behind, the others).",
+      "starred": false
+    },
+    {
+      "id": "css4",
+      "type": "multiple-choice",
+      "question": "Which CSS unit is relative to the font-size of the element?",
+      "options": ["px", "rem", "em", "vh"],
+      "answer": "em",
+      "starred": false
+    }
+  ]
+}

@@ -1,0 +1,1305 @@
+{
+  "topic": "JavaScript & TypeScript Interview - Junior & Middle Level (100 MCQs)",
+  "cards": [
+    {
+      "id": "js1",
+      "type": "multiple-choice",
+      "question": "Sự khác biệt cốt lõi giữa var, let và const trong JavaScript là gì?",
+      "options": [
+        "Không có sự khác biệt.",
+        "var có function scope và bị hoisting (khởi tạo undefined). let và const có block scope, bị hoisting nhưng nằm trong Temporal Dead Zone (TDZ). const không thể gán lại giá trị.",
+        "let và const có thể khai báo lại nhiều lần trong cùng một scope.",
+        "var chỉ dùng được trong vòng lặp."
+      ],
+      "answer": "var có function scope và bị hoisting (khởi tạo undefined). let và const có block scope, bị hoisting nhưng nằm trong Temporal Dead Zone (TDZ). const không thể gán lại giá trị.",
+      "starred": false
+    },
+    {
+      "id": "js2",
+      "type": "multiple-choice",
+      "question": "Closure trong JavaScript là gì và ứng dụng thực tế của nó?",
+      "options": [
+        "Là một thẻ đóng trong HTML.",
+        "Là hiện tượng một function 'nhớ' và có thể truy cập các biến ở outer scope của nó ngay cả khi outer function đã chạy xong. Ứng dụng: Data encapsulation (ẩn dữ liệu), currying.",
+        "Là cách giải phóng bộ nhớ (Garbage Collection).",
+        "Là một phương thức của Promise."
+      ],
+      "answer": "Là hiện tượng một function 'nhớ' và có thể truy cập các biến ở outer scope của nó ngay cả khi outer function đã chạy xong. Ứng dụng: Data encapsulation (ẩn dữ liệu), currying.",
+      "starred": false
+    },
+    {
+      "id": "js3",
+      "type": "multiple-choice",
+      "question": "Event Loop trong JavaScript ưu tiên xử lý hàng đợi nào trước sau khi Call Stack trống?",
+      "options": [
+        "Macrotask queue (setTimeout, setInterval).",
+        "Microtask queue (Promise.then, MutationObserver) luôn được ưu tiên chạy hết trước khi chuyển sang Macrotask.",
+        "Render queue.",
+        "Xử lý ngẫu nhiên."
+      ],
+      "answer": "Microtask queue (Promise.then, MutationObserver) luôn được ưu tiên chạy hết trước khi chuyển sang Macrotask.",
+      "starred": false
+    },
+    {
+      "id": "js4",
+      "type": "multiple-choice",
+      "question": "Từ khóa 'this' trong Arrow Function khác với Regular Function như thế nào?",
+      "options": [
+        "Giống hệt nhau.",
+        "Arrow function không có 'this' của riêng nó, nó kế thừa 'this' từ lexical scope (ngữ cảnh bao ngoài) tại thời điểm nó được định nghĩa.",
+        "Arrow function trỏ 'this' vào object window/global mặc định.",
+        "Arrow function có thể dùng call, apply, bind để đổi 'this'."
+      ],
+      "answer": "Arrow function không có 'this' của riêng nó, nó kế thừa 'this' từ lexical scope (ngữ cảnh bao ngoài) tại thời điểm nó được định nghĩa.",
+      "starred": false
+    },
+    {
+      "id": "js5",
+      "type": "multiple-choice",
+      "question": "Sự khác biệt giữa tham trị (Value Type) và tham chiếu (Reference Type) trong JS?",
+      "options": [
+        "Primitive types (string, number) lưu giá trị trực tiếp trên Stack. Reference types (object, array) lưu địa chỉ bộ nhớ trên Stack, dữ liệu thật nằm ở Heap.",
+        "Tham chiếu chạy chậm hơn tham trị.",
+        "Tham trị chỉ dùng cho biến const.",
+        "Tất cả biến trong JS đều là tham chiếu."
+      ],
+      "answer": "Primitive types (string, number) lưu giá trị trực tiếp trên Stack. Reference types (object, array) lưu địa chỉ bộ nhớ trên Stack, dữ liệu thật nằm ở Heap.",
+      "starred": false
+    },
+    {
+      "id": "js6",
+      "type": "multiple-choice",
+      "question": "Kỹ thuật Event Delegation (Ủy quyền sự kiện) hoạt động dựa trên cơ chế nào của DOM?",
+      "options": [
+        "Event Capturing.",
+        "Event Bubbling (Sự kiện nổi bọt). Thay vì gắn listener cho từng child, ta gắn 1 listener duy nhất ở parent để bắt event nổi bọt lên.",
+        "DOM Manipulation.",
+        "Shadow DOM."
+      ],
+      "answer": "Event Bubbling (Sự kiện nổi bọt). Thay vì gắn listener cho từng child, ta gắn 1 listener duy nhất ở parent để bắt event nổi bọt lên.",
+      "starred": false
+    },
+    {
+      "id": "js7",
+      "type": "multiple-choice",
+      "question": "Làm thế nào để Deep Clone (sao chép sâu) một Object trong JavaScript (cách mới nhất không dùng thư viện ngoài)?",
+      "options": [
+        "Object.assign()",
+        "Toán tử Spread (...)",
+        "Sử dụng hàm native structuredClone(obj) hoặc JSON.parse(JSON.stringify(obj)).",
+        "Gán objA = objB"
+      ],
+      "answer": "Sử dụng hàm native structuredClone(obj) hoặc JSON.parse(JSON.stringify(obj)).",
+      "starred": false
+    },
+    {
+      "id": "js8",
+      "type": "multiple-choice",
+      "question": "Hoisting trong JavaScript là gì?",
+      "options": [
+        "Là cơ chế mặc định của JS di chuyển các khai báo biến (var) và function declarations lên đầu scope của chúng trước khi code thực thi.",
+        "Là cách gọi API bất đồng bộ.",
+        "Là quá trình nén code (minify).",
+        "Là một lỗi cú pháp."
+      ],
+      "answer": "Là cơ chế mặc định của JS di chuyển các khai báo biến (var) và function declarations lên đầu scope của chúng trước khi code thực thi.",
+      "starred": false
+    },
+    {
+      "id": "js9",
+      "type": "multiple-choice",
+      "question": "Sự khác biệt giữa == và === trong JS?",
+      "options": [
+        "== so sánh giá trị sau khi tự động ép kiểu (Type Coercion). === so sánh cả giá trị và kiểu dữ liệu một cách nghiêm ngặt.",
+        "=== chạy chậm hơn ==",
+        "== dùng cho number, === dùng cho string.",
+        "Không có sự khác biệt."
+      ],
+      "answer": "== so sánh giá trị sau khi tự động ép kiểu (Type Coercion). === so sánh cả giá trị và kiểu dữ liệu một cách nghiêm ngặt.",
+      "starred": false
+    },
+    {
+      "id": "js10",
+      "type": "multiple-choice",
+      "question": "Promise.all() hoạt động như thế nào khi gặp một Promise bị reject?",
+      "options": [
+        "Nó bỏ qua Promise lỗi và tiếp tục chờ các Promise khác.",
+        "Nó lập tức Reject toàn bộ Promise.all() và trả về lỗi của Promise bị reject đầu tiên đó (Fail-fast).",
+        "Nó retry Promise bị lỗi.",
+        "Nó chờ tất cả xong rồi mới báo lỗi."
+      ],
+      "answer": "Nó lập tức Reject toàn bộ Promise.all() và trả về lỗi của Promise bị reject đầu tiên đó (Fail-fast).",
+      "starred": false
+    },
+    {
+      "id": "js11",
+      "type": "multiple-choice",
+      "question": "Để chờ nhiều Promise hoàn thành, bất kể thành công hay thất bại (không bị ngắt giữa chừng), ta dùng phương thức nào?",
+      "options": [
+        "Promise.all()",
+        "Promise.race()",
+        "Promise.allSettled() - trả về mảng kết quả chứa status (fulfilled/rejected) của từng promise.",
+        "Promise.any()"
+      ],
+      "answer": "Promise.allSettled() - trả về mảng kết quả chứa status (fulfilled/rejected) của từng promise.",
+      "starred": false
+    },
+    {
+      "id": "js12",
+      "type": "multiple-choice",
+      "question": "Debounce và Throttle khác nhau thế nào trong việc tối ưu performance (ví dụ: sự kiện scroll/resize)?",
+      "options": [
+        "Debounce chỉ thực thi hàm MỘT LẦN sau khi user đã DỪNG hành động trong X giây. Throttle đảm bảo hàm thực thi ĐỀU ĐẶN mỗi X giây kể cả khi user liên tục hành động.",
+        "Debounce chạy liên tục, Throttle chỉ chạy 1 lần.",
+        "Giống hệt nhau.",
+        "Cả hai đều dùng để hủy gọi API."
+      ],
+      "answer": "Debounce chỉ thực thi hàm MỘT LẦN sau khi user đã DỪNG hành động trong X giây. Throttle đảm bảo hàm thực thi ĐỀU ĐẶN mỗi X giây kể cả khi user liên tục hành động.",
+      "starred": false
+    },
+    {
+      "id": "js13",
+      "type": "multiple-choice",
+      "question": "Toán tử Optional Chaining (?.) có tác dụng gì?",
+      "options": [
+        "Kiểm tra xem biến có phải optional không.",
+        "Truy cập an toàn vào các thuộc tính lồng sâu của Object. Nếu một cấp bị null/undefined, nó trả về undefined thay vì ném ra lỗi TypeError gây sập app.",
+        "Thực thi hàm bất đồng bộ.",
+        "Nối chuỗi an toàn."
+      ],
+      "answer": "Truy cập an toàn vào các thuộc tính lồng sâu của Object. Nếu một cấp bị null/undefined, nó trả về undefined thay vì ném ra lỗi TypeError gây sập app.",
+      "starred": false
+    },
+    {
+      "id": "js14",
+      "type": "multiple-choice",
+      "question": "Nullish Coalescing Operator (??) khác gì với Logical OR (||)?",
+      "options": [
+        "?? chỉ trả về vế phải nếu vế trái là null hoặc undefined. || trả về vế phải nếu vế trái là falsy (bao gồm cả 0, '', false).",
+        "Không có sự khác biệt.",
+        "?? dùng cho object, || dùng cho boolean.",
+        "?? chạy nhanh hơn ||"
+      ],
+      "answer": "?? chỉ trả về vế phải nếu vế trái là null hoặc undefined. || trả về vế phải nếu vế trái là falsy (bao gồm cả 0, '', false).",
+      "starred": false
+    },
+    {
+      "id": "js15",
+      "type": "multiple-choice",
+      "question": "Garbage Collection trong JavaScript (V8 Engine) chủ yếu dựa trên thuật toán nào?",
+      "options": [
+        "Reference Counting (Đếm tham chiếu).",
+        "Mark-and-Sweep (Đánh dấu và quét): Bắt đầu từ Root (window/global), đánh dấu mọi object có thể 'chạm' tới. Các object không chạm tới sẽ bị xóa.",
+        "Last In First Out.",
+        "First In First Out."
+      ],
+      "answer": "Mark-and-Sweep (Đánh dấu và quét): Bắt đầu từ Root (window/global), đánh dấu mọi object có thể 'chạm' tới. Các object không chạm tới sẽ bị xóa.",
+      "starred": false
+    },
+    {
+      "id": "js16",
+      "type": "multiple-choice",
+      "question": "Memory Leak phổ biến nhất trong các ứng dụng SPA (Single Page Application) thường do đâu?",
+      "options": [
+        "Khai báo quá nhiều hằng số.",
+        "Quên gỡ bỏ (removeEventListener) các sự kiện DOM, quên dọn dẹp setInterval, hoặc giữ lại tham chiếu DOM trong biến global dù element đã bị xóa khỏi UI.",
+        "Dùng quá nhiều CSS.",
+        "Sử dụng Arrow Function quá mức."
+      ],
+      "answer": "Quên gỡ bỏ (removeEventListener) các sự kiện DOM, quên dọn dẹp setInterval, hoặc giữ lại tham chiếu DOM trong biến global dù element đã bị xóa khỏi UI.",
+      "starred": false
+    },
+    {
+      "id": "js17",
+      "type": "multiple-choice",
+      "question": "Phương thức Array.prototype.map() và Array.prototype.forEach() khác nhau chỗ nào?",
+      "options": [
+        "map() tạo ra và trả về một MẢNG MỚI với kết quả của hàm callback. forEach() trả về undefined và chỉ dùng để duyệt mảng thực thi side-effects.",
+        "map() chạy nhanh hơn forEach().",
+        "forEach() có thể dùng chain (nối chuỗi hàm), map() thì không.",
+        "map() chỉ dùng cho object."
+      ],
+      "answer": "map() tạo ra và trả về một MẢNG MỚI với kết quả của hàm callback. forEach() trả về undefined và chỉ dùng để duyệt mảng thực thi side-effects.",
+      "starred": false
+    },
+    {
+      "id": "js18",
+      "type": "multiple-choice",
+      "question": "Lệnh `bind()` trong JavaScript dùng để làm gì?",
+      "options": [
+        "Thực thi hàm ngay lập tức.",
+        "Tạo ra một function MỚI, có ngữ cảnh 'this' bị gắn chặt (bind) vào object được chỉ định, thường dùng khi truyền callback event handler.",
+        "Nối 2 mảng với nhau.",
+        "Ràng buộc dữ liệu 2 chiều."
+      ],
+      "answer": "Tạo ra một function MỚI, có ngữ cảnh 'this' bị gắn chặt (bind) vào object được chỉ định, thường dùng khi truyền callback event handler.",
+      "starred": false
+    },
+    {
+      "id": "js19",
+      "type": "multiple-choice",
+      "question": "Thuộc tính `defer` trên thẻ `<script>` có tác dụng gì đối với Web Performance?",
+      "options": [
+        "Tải script dưới nền (async) nhưng đảm bảo THỰC THI script theo đúng thứ tự khai báo và chỉ thực thi SAU KHI HTML đã parse xong (không chặn render).",
+        "Trì hoãn tải script sau 5 giây.",
+        "Chặn render HTML cho đến khi script tải xong.",
+        "Chỉ tải script trên mobile."
+      ],
+      "answer": "Tải script dưới nền (async) nhưng đảm bảo THỰC THI script theo đúng thứ tự khai báo và chỉ thực thi SAU KHI HTML đã parse xong (không chặn render).",
+      "starred": false
+    },
+    {
+      "id": "js20",
+      "type": "multiple-choice",
+      "question": "Tính năng Destructuring Assignment trong ES6 cho phép làm gì?",
+      "options": [
+        "Hủy biến khỏi bộ nhớ.",
+        "Trích xuất trực tiếp các thuộc tính từ Object hoặc phần tử từ Array thành các biến riêng biệt với cú pháp ngắn gọn (VD: const { id, name } = user).",
+        "Nén object thành chuỗi JSON.",
+        "Tách chuỗi thành mảng."
+      ],
+      "answer": "Trích xuất trực tiếp các thuộc tính từ Object hoặc phần tử từ Array thành các biến riêng biệt với cú pháp ngắn gọn (VD: const { id, name } = user).",
+      "starred": false
+    },
+    {
+      "id": "js21",
+      "type": "multiple-choice",
+      "question": "Prototype Chain trong JavaScript là gì?",
+      "options": [
+        "Là một thư viện JavaScript cũ.",
+        "Là cơ chế kế thừa của JS: khi truy cập một thuộc tính, nếu object không có, nó sẽ tìm dọc theo chuỗi __proto__ lên các lớp cha cho đến khi gặp null.",
+        "Là cách tạo chuỗi Promise.",
+        "Là kiến trúc của Node.js."
+      ],
+      "answer": "Là cơ chế kế thừa của JS: khi truy cập một thuộc tính, nếu object không có, nó sẽ tìm dọc theo chuỗi __proto__ lên các lớp cha cho đến khi gặp null.",
+      "starred": false
+    },
+    {
+      "id": "js22",
+      "type": "multiple-choice",
+      "question": "Khi sử dụng toán tử typeof, typeof null trả về giá trị gì?",
+      "options": [
+        "'null'",
+        "'undefined'",
+        "'object' (Đây là một bug lịch sử đã tồn tại từ những phiên bản JS đầu tiên và không thể sửa vì tương thích ngược).",
+        "'boolean'"
+      ],
+      "answer": "'object' (Đây là một bug lịch sử đã tồn tại từ những phiên bản JS đầu tiên và không thể sửa vì tương thích ngược).",
+      "starred": false
+    },
+    {
+      "id": "js23",
+      "type": "multiple-choice",
+      "question": "Phân biệt `apply()` và `call()` trong thay đổi ngữ cảnh 'this'?",
+      "options": [
+        "Không khác gì nhau.",
+        "Cả hai đều thực thi hàm ngay lập tức. call() nhận các tham số truyền vào dưới dạng dấu phẩy rời rạc (arg1, arg2), còn apply() nhận tham số dưới dạng một MẢNG [arg1, arg2].",
+        "apply() trả về một hàm mới, call() thì không.",
+        "call() dùng cho class, apply() dùng cho object."
+      ],
+      "answer": "Cả hai đều thực thi hàm ngay lập tức. call() nhận các tham số truyền vào dưới dạng dấu phẩy rời rạc (arg1, arg2), còn apply() nhận tham số dưới dạng một MẢNG [arg1, arg2].",
+      "starred": false
+    },
+    {
+      "id": "js24",
+      "type": "multiple-choice",
+      "question": "Từ khóa `yield` được sử dụng trong loại hàm nào của JavaScript?",
+      "options": [
+        "Arrow functions.",
+        "Generator functions (function*). Cho phép tạm dừng thực thi hàm và trả về một giá trị, sau đó có thể tiếp tục chạy từ điểm dừng đó.",
+        "Async functions.",
+        "Callback functions."
+      ],
+      "answer": "Generator functions (function*). Cho phép tạm dừng thực thi hàm và trả về một giá trị, sau đó có thể tiếp tục chạy từ điểm dừng đó.",
+      "starred": false
+    },
+    {
+      "id": "js25",
+      "type": "multiple-choice",
+      "question": "Map và WeakMap khác nhau ở điểm cốt lõi nào trong JavaScript?",
+      "options": [
+        "WeakMap có kích thước nhỏ hơn Map.",
+        "Keys của WeakMap BẮT BUỘC phải là Object (không dùng primitive) và là tham chiếu yếu (weak reference), giúp Object tự động bị thu gom rác nếu không còn tham chiếu nào khác.",
+        "Map cho phép key là string, WeakMap thì không.",
+        "WeakMap chỉ lưu được 10 phần tử."
+      ],
+      "answer": "Keys của WeakMap BẮT BUỘC phải là Object (không dùng primitive) và là tham chiếu yếu (weak reference), giúp Object tự động bị thu gom rác nếu không còn tham chiếu nào khác.",
+      "starred": false
+    },
+    {
+      "id": "js26",
+      "type": "multiple-choice",
+      "question": "Hàm Array.prototype.reduce() hoạt động như thế nào?",
+      "options": [
+        "Nó giảm dung lượng của mảng.",
+        "Nó duyệt qua các phần tử của mảng và tích lũy kết quả vào một giá trị duy nhất (accumulator) dựa trên hàm callback truyền vào.",
+        "Nó loại bỏ các phần tử trùng lặp.",
+        "Nó đảo ngược thứ tự mảng."
+      ],
+      "answer": "Nó duyệt qua các phần tử của mảng và tích lũy kết quả vào một giá trị duy nhất (accumulator) dựa trên hàm callback truyền vào.",
+      "starred": false
+    },
+    {
+      "id": "js27",
+      "type": "multiple-choice",
+      "question": "Cơ chế Strict Mode ('use strict') trong JS giúp ích gì?",
+      "options": [
+        "Bảo mật code bằng cách mã hóa.",
+        "Giúp code chạy trên trình duyệt cũ.",
+        "Chặn những cú pháp tồi, bắt lỗi ngầm (như gán giá trị cho biến chưa khai báo), và ngăn 'this' tự động trỏ vào window trong các function thường.",
+        "Biến JS thành TypeScript."
+      ],
+      "answer": "Chặn những cú pháp tồi, bắt lỗi ngầm (như gán giá trị cho biến chưa khai báo), và ngăn 'this' tự động trỏ vào window trong các function thường.",
+      "starred": false
+    },
+    {
+      "id": "js28",
+      "type": "multiple-choice",
+      "question": "MutationObserver trong trình duyệt có nhiệm vụ gì?",
+      "options": [
+        "Theo dõi sự thay đổi của Router.",
+        "Theo dõi và phản ứng (chạy callback bất đồng bộ qua Microtask) khi có bất kỳ sự thay đổi nào trên cây DOM (như thêm/xóa thẻ, đổi attributes).",
+        "Bắt lỗi console.",
+        "Lắng nghe sự kiện scroll."
+      ],
+      "answer": "Theo dõi và phản ứng (chạy callback bất đồng bộ qua Microtask) khi có bất kỳ sự thay đổi nào trên cây DOM (như thêm/xóa thẻ, đổi attributes).",
+      "starred": false
+    },
+    {
+      "id": "js29",
+      "type": "multiple-choice",
+      "question": "Sự kiện `DOMContentLoaded` và `load` (window.onload) khác nhau ra sao?",
+      "options": [
+        "DOMContentLoaded kích hoạt ngay khi HTML parse xong (chưa chờ CSS, ảnh). `load` kích hoạt khi TOÀN BỘ tài nguyên (ảnh, iframe, CSS) đã tải xong hoàn toàn.",
+        "`load` chạy trước `DOMContentLoaded`.",
+        "Không có sự khác biệt.",
+        "DOMContentLoaded chỉ dùng cho mobile."
+      ],
+      "answer": "DOMContentLoaded kích hoạt ngay khi HTML parse xong (chưa chờ CSS, ảnh). `load` kích hoạt khi TOÀN BỘ tài nguyên (ảnh, iframe, CSS) đã tải xong hoàn toàn.",
+      "starred": false
+    },
+    {
+      "id": "js30",
+      "type": "multiple-choice",
+      "question": "Intersection Observer API thường được dùng cho tính năng Web nào?",
+      "options": [
+        "Kiểm tra form nhập liệu.",
+        "Lazy Loading hình ảnh, Infinite Scroll, hoặc kích hoạt Animation khi người dùng cuộn (scroll) và element xuất hiện trong Viewport.",
+        "Mã hóa mật khẩu.",
+        "Vẽ biểu đồ Canvas."
+      ],
+      "answer": "Lazy Loading hình ảnh, Infinite Scroll, hoặc kích hoạt Animation khi người dùng cuộn (scroll) và element xuất hiện trong Viewport.",
+      "starred": false
+    },
+    {
+      "id": "js31",
+      "type": "multiple-choice",
+      "question": "Câu lệnh `Object.freeze()` làm nhiệm vụ gì?",
+      "options": [
+        "Đóng băng trình duyệt.",
+        "Đóng băng một object: Không thể thêm, sửa, hay xóa các thuộc tính ở cấp độ 1 (shallow freeze). Object trở thành Immutable.",
+        "Xóa trắng object.",
+        "Lưu object vào LocalStorage."
+      ],
+      "answer": "Đóng băng một object: Không thể thêm, sửa, hay xóa các thuộc tính ở cấp độ 1 (shallow freeze). Object trở thành Immutable.",
+      "starred": false
+    },
+    {
+      "id": "js32",
+      "type": "multiple-choice",
+      "question": "Cơ chế CORS (Cross-Origin Resource Sharing) là gì?",
+      "options": [
+        "Một thư viện frontend.",
+        "Là cơ chế bảo mật của trình duyệt chặn các request HTTP từ một domain này gọi sang một domain khác, trừ khi server đích gửi header Access-Control-Allow-Origin cho phép.",
+        "Một loại database.",
+        "Thuật toán nén dữ liệu."
+      ],
+      "answer": "Là cơ chế bảo mật của trình duyệt chặn các request HTTP từ một domain này gọi sang một domain khác, trừ khi server đích gửi header Access-Control-Allow-Origin cho phép.",
+      "starred": false
+    },
+    {
+      "id": "js33",
+      "type": "multiple-choice",
+      "question": "Cookies, LocalStorage và SessionStorage khác nhau lớn nhất ở điểm nào?",
+      "options": [
+        "Không khác nhau.",
+        "LocalStorage lưu vĩnh viễn (max 5-10MB). SessionStorage bị xóa khi đóng tab. Cookies (4KB) tự động gửi kèm mọi HTTP request lên server.",
+        "Cookies lưu trữ dung lượng lớn nhất.",
+        "SessionStorage tự động gửi lên server."
+      ],
+      "answer": "LocalStorage lưu vĩnh viễn (max 5-10MB). SessionStorage bị xóa khi đóng tab. Cookies (4KB) tự động gửi kèm mọi HTTP request lên server.",
+      "starred": false
+    },
+    {
+      "id": "js34",
+      "type": "multiple-choice",
+      "question": "Thuộc tính `HttpOnly` trên Cookie có tác dụng bảo mật gì?",
+      "options": [
+        "Chỉ cho phép HTTP, chặn HTTPS.",
+        "Ngăn chặn mã JavaScript ở phía Client (document.cookie) truy cập vào Cookie đó, giúp phòng chống tuyệt đối tấn công XSS lấy cắp Token.",
+        "Mã hóa Cookie.",
+        "Xóa cookie khi đóng trình duyệt."
+      ],
+      "answer": "Ngăn chặn mã JavaScript ở phía Client (document.cookie) truy cập vào Cookie đó, giúp phòng chống tuyệt đối tấn công XSS lấy cắp Token.",
+      "starred": false
+    },
+    {
+      "id": "js35",
+      "type": "multiple-choice",
+      "question": "Toán tử Rest Parameter (...) trong tham số hàm hoạt động như thế nào?",
+      "options": [
+        "Nghỉ ngơi hàm một lúc.",
+        "Gom TẤT CẢ các đối số truyền vào chưa được định nghĩa thành một MẢNG duy nhất. Nó phải luôn nằm ở vị trí tham số cuối cùng.",
+        "Phá vỡ mảng thành các phần tử rời rạc.",
+        "Dùng để clone array."
+      ],
+      "answer": "Gom TẤT CẢ các đối số truyền vào chưa được định nghĩa thành một MẢNG duy nhất. Nó phải luôn nằm ở vị trí tham số cuối cùng.",
+      "starred": false
+    },
+    {
+      "id": "js36",
+      "type": "multiple-choice",
+      "question": "Kỹ thuật 'Currying' trong JavaScript là gì?",
+      "options": [
+        "Một loại gia vị.",
+        "Chuyển đổi một function nhận nhiều tham số `f(a, b, c)` thành một chuỗi các functions lồng nhau nhận từng tham số một `f(a)(b)(c)`.",
+        "Xử lý lỗi bất đồng bộ.",
+        "Gộp nhiều object lại với nhau."
+      ],
+      "answer": "Chuyển đổi một function nhận nhiều tham số `f(a, b, c)` thành một chuỗi các functions lồng nhau nhận từng tham số một `f(a)(b)(c)`.",
+      "starred": false
+    },
+    {
+      "id": "js37",
+      "type": "multiple-choice",
+      "question": "Sự kiện `stopPropagation()` trong DOM có tác dụng gì?",
+      "options": [
+        "Dừng vòng lặp for.",
+        "Ngăn chặn sự kiện hiện tại tiếp tục nổi bọt (Bubbling) lên các thẻ cha bên trên, nhưng không chặn hành vi mặc định của trình duyệt.",
+        "Chặn hành vi mặc định của trình duyệt (VD: click link).",
+        "Xóa sự kiện khỏi bộ nhớ."
+      ],
+      "answer": "Ngăn chặn sự kiện hiện tại tiếp tục nổi bọt (Bubbling) lên các thẻ cha bên trên, nhưng không chặn hành vi mặc định của trình duyệt.",
+      "starred": false
+    },
+    {
+      "id": "js38",
+      "type": "multiple-choice",
+      "question": "Hàm `requestAnimationFrame()` được dùng cho mục đích chính nào?",
+      "options": [
+        "Gửi API request.",
+        "Tạo Animations mượt mà. Nó báo cho trình duyệt biết bạn muốn thực hiện animation và trình duyệt sẽ gọi callback trước kỳ repaint tiếp theo (thường 60fps), tối ưu CPU/Pin.",
+        "Vẽ iframe.",
+        "Tải file video."
+      ],
+      "answer": "Tạo Animations mượt mà. Nó báo cho trình duyệt biết bạn muốn thực hiện animation và trình duyệt sẽ gọi callback trước kỳ repaint tiếp theo (thường 60fps), tối ưu CPU/Pin.",
+      "starred": false
+    },
+    {
+      "id": "js39",
+      "type": "multiple-choice",
+      "question": "Làm thế nào để kiểm tra một biến có chính xác là một Mảng (Array) hay không?",
+      "options": [
+        "typeof variable === 'array'",
+        "Array.isArray(variable)",
+        "variable instanceof Object",
+        "variable.length > 0"
+      ],
+      "answer": "Array.isArray(variable)",
+      "starred": false
+    },
+    {
+      "id": "js40",
+      "type": "multiple-choice",
+      "question": "ES Modules (import/export) khác với CommonJS (require/module.exports) ở điểm nào?",
+      "options": [
+        "ES Modules hỗ trợ trình duyệt native, phân tích code ở compile-time (giúp Tree-shaking). CommonJS load đồng bộ ở runtime, chủ yếu dùng cho Node.js.",
+        "CommonJS chạy trên trình duyệt mặc định.",
+        "Không có sự khác biệt.",
+        "ES Modules không thể dùng trong Node.js."
+      ],
+      "answer": "ES Modules hỗ trợ trình duyệt native, phân tích code ở compile-time (giúp Tree-shaking). CommonJS load đồng bộ ở runtime, chủ yếu dùng cho Node.js.",
+      "starred": false
+    },
+    {
+      "id": "js41",
+      "type": "multiple-choice",
+      "question": "Sự khác biệt giữa thuộc tính `innerText` và `textContent` của một DOM Element?",
+      "options": [
+        "Giống hệt nhau.",
+        "`innerText` chỉ lấy text có thể nhìn thấy (bị ảnh hưởng bởi CSS display:none). `textContent` lấy MỌI text trong node kể cả text bị ẩn bởi CSS, tốc độ xử lý nhanh hơn.",
+        "`textContent` lấy cả mã HTML.",
+        "`innerText` không lấy được text trong thẻ span."
+      ],
+      "answer": "`innerText` chỉ lấy text có thể nhìn thấy (bị ảnh hưởng bởi CSS display:none). `textContent` lấy MỌI text trong node kể cả text bị ẩn bởi CSS, tốc độ xử lý nhanh hơn.",
+      "starred": false
+    },
+    {
+      "id": "js42",
+      "type": "multiple-choice",
+      "question": "Trong kịch bản Frontend tối ưu, `Promise.race()` thường được ứng dụng để làm gì?",
+      "options": [
+        "Chờ tất cả API hoàn thành.",
+        "Làm tính năng API Timeout: Race giữa một Promise call API và một Promise setTimeout(reject). Nếu API chậm quá X giây, setTimeout sẽ reject trước và báo lỗi.",
+        "Gửi data đi nhanh hơn.",
+        "Phân tích dữ liệu lớn."
+      ],
+      "answer": "Làm tính năng API Timeout: Race giữa một Promise call API và một Promise setTimeout(reject). Nếu API chậm quá X giây, setTimeout sẽ reject trước và báo lỗi.",
+      "starred": false
+    },
+    {
+      "id": "js43",
+      "type": "multiple-choice",
+      "question": "Đâu là cách tạo một Object mà hoàn toàn không có Prototype (hoàn toàn trống rỗng)?",
+      "options": [
+        "{}",
+        "new Object()",
+        "Object.create(null)",
+        "Object.empty()"
+      ],
+      "answer": "Object.create(null)",
+      "starred": false
+    },
+    {
+      "id": "js44",
+      "type": "multiple-choice",
+      "question": "BigInt trong JavaScript giải quyết giới hạn gì?",
+      "options": [
+        "Tăng kích thước mảng.",
+        "Cho phép biểu diễn và tính toán với số nguyên lớn vượt qua giới hạn an toàn của Number (Number.MAX_SAFE_INTEGER = 2^53 - 1).",
+        "Định nghĩa kiểu chữ cực lớn trên UI.",
+        "Xử lý số thập phân chính xác tuyệt đối."
+      ],
+      "answer": "Cho phép biểu diễn và tính toán với số nguyên lớn vượt qua giới hạn an toàn của Number (Number.MAX_SAFE_INTEGER = 2^53 - 1).",
+      "starred": false
+    },
+    {
+      "id": "js45",
+      "type": "multiple-choice",
+      "question": "Service Workers được sử dụng chủ yếu để xây dựng tính năng gì trong PWA (Progressive Web Apps)?",
+      "options": [
+        "Tính toán toán học.",
+        "Đứng như một Proxy chặn các network request, cho phép Caching tài nguyên để chạy ứng dụng Offline (không có mạng) và nhận Push Notifications.",
+        "Vẽ đồ họa 3D.",
+        "Quản lý database SQL trên trình duyệt."
+      ],
+      "answer": "Đứng như một Proxy chặn các network request, cho phép Caching tài nguyên để chạy ứng dụng Offline (không có mạng) và nhận Push Notifications.",
+      "starred": false
+    },
+    {
+      "id": "js46",
+      "type": "multiple-choice",
+      "question": "WebSockets cung cấp ưu điểm gì so với HTTP Polling truyền thống?",
+      "options": [
+        "Dễ cài đặt hơn.",
+        "Tạo kết nối hai chiều liên tục (full-duplex) giữa Client và Server. Server có thể chủ động đẩy data về Client real-time mà không cần Client phải liên tục hỏi (polling).",
+        "Chạy nhanh hơn trên mobile.",
+        "Hỗ trợ SEO tốt hơn."
+      ],
+      "answer": "Tạo kết nối hai chiều liên tục (full-duplex) giữa Client và Server. Server có thể chủ động đẩy data về Client real-time mà không cần Client phải liên tục hỏi (polling).",
+      "starred": false
+    },
+    {
+      "id": "js47",
+      "type": "multiple-choice",
+      "question": "Lỗi `Uncaught RangeError: Maximum call stack size exceeded` xảy ra khi nào?",
+      "options": [
+        "Bộ nhớ RAM bị đầy.",
+        "Khi có một hàm Đệ quy (Recursive Function) chạy vô hạn mà không có điều kiện dừng (base case), làm tràn bộ nhớ của Call Stack.",
+        "Load quá nhiều file CSS.",
+        "Dùng vòng lặp for vô hạn."
+      ],
+      "answer": "Khi có một hàm Đệ quy (Recursive Function) chạy vô hạn mà không có điều kiện dừng (base case), làm tràn bộ nhớ của Call Stack.",
+      "starred": false
+    },
+    {
+      "id": "js48",
+      "type": "multiple-choice",
+      "question": "BOM (Browser Object Model) cho phép bạn tương tác với thứ gì?",
+      "options": [
+        "Các thẻ HTML.",
+        "Tương tác với chính trình duyệt, bao gồm các API ngoài tài liệu HTML như window.navigator (thông tin thiết bị), window.location (URL), window.history.",
+        "Cơ sở dữ liệu.",
+        "Node.js server."
+      ],
+      "answer": "Tương tác với chính trình duyệt, bao gồm các API ngoài tài liệu HTML như window.navigator (thông tin thiết bị), window.location (URL), window.history.",
+      "starred": false
+    },
+    {
+      "id": "js49",
+      "type": "multiple-choice",
+      "question": "Trong chuỗi Promise `.then().catch().then()`, nếu catch() xử lý lỗi thành công và không throw lỗi mới, điều gì xảy ra tiếp theo?",
+      "options": [
+        "Chuỗi promise kết thúc.",
+        "Luồng xử lý sẽ tiếp tục chạy vào khối `.then()` tiếp theo ngay phía sau `catch()`. Catch đã 'hấp thụ' lỗi và trả về một resolved promise.",
+        "Nó sẽ chạy lại `.then()` đầu tiên.",
+        "Nó ném lỗi ra global."
+      ],
+      "answer": "Luồng xử lý sẽ tiếp tục chạy vào khối `.then()` tiếp theo ngay phía sau `catch()`. Catch đã 'hấp thụ' lỗi và trả về một resolved promise.",
+      "starred": false
+    },
+    {
+      "id": "js50",
+      "type": "multiple-choice",
+      "question": "Phương thức `Object.entries(obj)` trả về cấu trúc dữ liệu nào?",
+      "options": [
+        "Mảng các keys.",
+        "Một mảng 2 chiều, trong đó mỗi phần tử là một mảng con chứa cặp [key, value]. Rất tiện để duyệt Object bằng `for...of` hoặc chuyển đổi sang `Map`.",
+        "Chuỗi JSON.",
+        "Mảng các values."
+      ],
+      "answer": "Một mảng 2 chiều, trong đó mỗi phần tử là một mảng con chứa cặp [key, value]. Rất tiện để duyệt Object bằng `for...of` hoặc chuyển đổi sang `Map`.",
+      "starred": false
+    },
+    {
+      "id": "ts51",
+      "type": "multiple-choice",
+      "question": "Trong TypeScript, kiểu dữ liệu `any` khác với `unknown` như thế nào?",
+      "options": [
+        "Giống nhau hoàn toàn.",
+        "`any` bỏ qua hoàn toàn kiểm tra type (tắt an toàn). `unknown` là phiên bản an toàn của any: bạn bắt buộc phải ép kiểu hoặc thu hẹp kiểu (type check) trước khi sử dụng biến đó.",
+        "`unknown` chỉ dùng cho hàm.",
+        "`any` tốn bộ nhớ hơn."
+      ],
+      "answer": "`any` bỏ qua hoàn toàn kiểm tra type (tắt an toàn). `unknown` là phiên bản an toàn của any: bạn bắt buộc phải ép kiểu hoặc thu hẹp kiểu (type check) trước khi sử dụng biến đó.",
+      "starred": false
+    },
+    {
+      "id": "ts52",
+      "type": "multiple-choice",
+      "question": "Sự khác biệt quan trọng nhất giữa `interface` và `type` alias trong TypeScript?",
+      "options": [
+        "Không có khác biệt.",
+        "`interface` hỗ trợ Declaration Merging (khai báo cùng tên sẽ tự động gộp thuộc tính), cực tốt cho viết thư viện. `type` alias không thể merge và hỗ trợ Union/Intersection Type tốt hơn.",
+        "`interface` dùng cho string, `type` dùng cho object.",
+        "`type` chạy nhanh hơn lúc biên dịch."
+      ],
+      "answer": "`interface` hỗ trợ Declaration Merging (khai báo cùng tên sẽ tự động gộp thuộc tính), cực tốt cho viết thư viện. `type` alias không thể merge và hỗ trợ Union/Intersection Type tốt hơn.",
+      "starred": false
+    },
+    {
+      "id": "ts53",
+      "type": "multiple-choice",
+      "question": "Utility type `Omit<Type, Keys>` có chức năng gì?",
+      "options": [
+        "Chọn ra các thuộc tính cụ thể.",
+        "Tạo ra một Type mới bằng cách lấy tất cả thuộc tính từ Type gốc và LOẠI BỎ (omit) đi một số Keys được chỉ định. Rất hay dùng để loại id khi tạo DTO create form.",
+        "Chuyển thuộc tính thành optional.",
+        "Khóa (Readonly) mọi thuộc tính."
+      ],
+      "answer": "Tạo ra một Type mới bằng cách lấy tất cả thuộc tính từ Type gốc và LOẠI BỎ (omit) đi một số Keys được chỉ định. Rất hay dùng để loại id khi tạo DTO create form.",
+      "starred": false
+    },
+    {
+      "id": "ts54",
+      "type": "multiple-choice",
+      "question": "Trong TS, Generics (<T>) mang lại sức mạnh gì cho Developer?",
+      "options": [
+        "Giúp code chạy nhanh hơn ở runtime.",
+        "Tạo ra các component, function hoặc class có khả năng tái sử dụng cao, hoạt động với NHIỀU kiểu dữ liệu khác nhau mà vẫn giữ được sự kiểm tra kiểu chặt chẽ (Type Safety).",
+        "Tự động format code.",
+        "Quản lý state."
+      ],
+      "answer": "Tạo ra các component, function hoặc class có khả năng tái sử dụng cao, hoạt động với NHIỀU kiểu dữ liệu khác nhau mà vẫn giữ được sự kiểm tra kiểu chặt chẽ (Type Safety).",
+      "starred": false
+    },
+    {
+      "id": "ts55",
+      "type": "multiple-choice",
+      "question": "Sự khác biệt giữa Regular `enum` và `const enum` sau khi biên dịch sang JavaScript?",
+      "options": [
+        "Không có.",
+        "Regular `enum` biên dịch thành một Object thật (tốn dung lượng, không tối ưu Tree-shaking). `const enum` bị xóa hoàn toàn khỏi code, biến thành các giá trị hardcode inline, siêu nhẹ.",
+        "`const enum` không dùng được số.",
+        "`enum` chỉ dùng trong class."
+      ],
+      "answer": "Regular `enum` biên dịch thành một Object thật (tốn dung lượng, không tối ưu Tree-shaking). `const enum` bị xóa hoàn toàn khỏi code, biến thành các giá trị hardcode inline, siêu nhẹ.",
+      "starred": false
+    },
+    {
+      "id": "ts56",
+      "type": "multiple-choice",
+      "question": "Union Types (`|`) và Intersection Types (`&`) khác nhau thế nào?",
+      "options": [
+        "Không dùng được chung với nhau.",
+        "Union (`|`) cho phép biến có thể là MỘT TRONG CÁC type. Intersection (`&`) gộp nhiều type lại làm một, biến bắt buộc phải chứa ĐẦY ĐỦ thuộc tính của tất cả các type đó.",
+        "Union dùng cho object, Intersection dùng cho mảng.",
+        "Cú pháp cũ và mới."
+      ],
+      "answer": "Union (`|`) cho phép biến có thể là MỘT TRONG CÁC type. Intersection (`&`) gộp nhiều type lại làm một, biến bắt buộc phải chứa ĐẦY ĐỦ thuộc tính của tất cả các type đó.",
+      "starred": false
+    },
+    {
+      "id": "ts57",
+      "type": "multiple-choice",
+      "question": "Tính năng Type Assertion (Ép kiểu dùng từ khóa `as`) hoạt động ở giai đoạn nào?",
+      "options": [
+        "Ở Runtime để chặn lỗi.",
+        "Chỉ báo cho TypeScript Compiler biết ở Compile-time (vượt quyền kiểm tra lỗi). Hoàn toàn không có tác dụng ép/đổi kiểu thực sự khi mã chạy JS.",
+        "Chỉ chạy trên trình duyệt.",
+        "Ép string thành number thực sự."
+      ],
+      "answer": "Chỉ báo cho TypeScript Compiler biết ở Compile-time (vượt quyền kiểm tra lỗi). Hoàn toàn không có tác dụng ép/đổi kiểu thực sự khi mã chạy JS.",
+      "starred": false
+    },
+    {
+      "id": "ts58",
+      "type": "multiple-choice",
+      "question": "Cấu hình `\"strict\": true` trong file `tsconfig.json` có ý nghĩa gì?",
+      "options": [
+        "Chặn code chạy.",
+        "Bật toàn bộ các cờ kiểm tra kiểu nghiêm ngặt nhất của TS (bao gồm noImplicitAny, strictNullChecks...), giúp phát hiện lỗi tối đa trong dự án enterprise.",
+        "Bắt buộc dùng class.",
+        "Chỉ cho phép ES6."
+      ],
+      "answer": "Bật toàn bộ các cờ kiểm tra kiểu nghiêm ngặt nhất của TS (bao gồm noImplicitAny, strictNullChecks...), giúp phát hiện lỗi tối đa trong dự án enterprise.",
+      "starred": false
+    },
+    {
+      "id": "ts59",
+      "type": "multiple-choice",
+      "question": "Utility type `Record<Keys, Type>` dùng để định nghĩa gì?",
+      "options": [
+        "Ghi âm hành vi user.",
+        "Tạo ra một Type dạng Dictionary/Object, trong đó TẤT CẢ các keys chỉ định đều có chung một kiểu dữ liệu Type (VD: Record<string, number> là object key chuỗi, value số).",
+        "Lưu trữ mảng tĩnh.",
+        "Ghi đè interface."
+      ],
+      "answer": "Tạo ra một Type dạng Dictionary/Object, trong đó TẤT CẢ các keys chỉ định đều có chung một kiểu dữ liệu Type (VD: Record<string, number> là object key chuỗi, value số).",
+      "starred": false
+    },
+    {
+      "id": "ts60",
+      "type": "multiple-choice",
+      "question": "Type Guard trong TypeScript là gì?",
+      "options": [
+        "Một thư viện bảo mật.",
+        "Là một logic expression (như dùng typeof, instanceof, hoặc custom function trả về `pet is Dog`) giúp TS thu hẹp (narrow down) một type chung chung thành một type cụ thể an toàn.",
+        "Cơ chế tự động fix bug.",
+        "Hàm chặn router."
+      ],
+      "answer": "Là một logic expression (như dùng typeof, instanceof, hoặc custom function trả về `pet is Dog`) giúp TS thu hẹp (narrow down) một type chung chung thành một type cụ thể an toàn.",
+      "starred": false
+    },
+    {
+      "id": "ts61",
+      "type": "multiple-choice",
+      "question": "Toán tử Non-null Assertion (`!`) ở cuối tên biến (VD: user.name!) có tác dụng gì?",
+      "options": [
+        "Toán tử NOT logic.",
+        "Báo với TS Compiler: 'Tôi chắc chắn biến này sẽ không bao giờ là null hay undefined, hãy ngừng cảnh báo'. Rất nguy hiểm nếu lạm dụng vì có thể gây lỗi Runtime.",
+        "Chuyển biến thành null.",
+        "Ép biến thành boolean."
+      ],
+      "answer": "Báo với TS Compiler: 'Tôi chắc chắn biến này sẽ không bao giờ là null hay undefined, hãy ngừng cảnh báo'. Rất nguy hiểm nếu lạm dụng vì có thể gây lỗi Runtime.",
+      "starred": false
+    },
+    {
+      "id": "ts62",
+      "type": "multiple-choice",
+      "question": "Tuples trong TypeScript cung cấp khả năng gì hơn Array thông thường?",
+      "options": [
+        "Tạo mảng đa chiều.",
+        "Định nghĩa một Mảng có SỐ LƯỢNG phần tử CỐ ĐỊNH, và KIỂU DỮ LIỆU CỤ THỂ đã biết trước ở từng vị trí (VD: [string, number]).",
+        "Xử lý mảng nhanh hơn.",
+        "Không thể push() phần tử."
+      ],
+      "answer": "Định nghĩa một Mảng có SỐ LƯỢNG phần tử CỐ ĐỊNH, và KIỂU DỮ LIỆU CỤ THỂ đã biết trước ở từng vị trí (VD: [string, number]).",
+      "starred": false
+    },
+    {
+      "id": "ts63",
+      "type": "multiple-choice",
+      "question": "Utility type `Partial<Type>` có công dụng hữu ích nhất khi nào?",
+      "options": [
+        "Làm function gọi API.",
+        "Khi viết logic Update Form (PATCH request). Nó sẽ copy một Type gốc và biến toàn bộ các thuộc tính của Type đó thành Optional (có thể có hoặc không).",
+        "Bắt buộc nhập form.",
+        "Ẩn thuộc tính id."
+      ],
+      "answer": "Khi viết logic Update Form (PATCH request). Nó sẽ copy một Type gốc và biến toàn bộ các thuộc tính của Type đó thành Optional (có thể có hoặc không).",
+      "starred": false
+    },
+    {
+      "id": "ts64",
+      "type": "multiple-choice",
+      "question": "Khái niệm `never` type trong TS đại diện cho điều gì?",
+      "options": [
+        "Một biến không bao giờ dùng.",
+        "Đại diện cho một giá trị KHÔNG BAO GIỜ có thể xảy ra. Thường dùng làm return type cho các function luôn throw Error hoặc chứa vòng lặp vô hạn.",
+        "Giống hệt `void`.",
+        "Biến bị cấm khai báo."
+      ],
+      "answer": "Đại diện cho một giá trị KHÔNG BAO GIỜ có thể xảy ra. Thường dùng làm return type cho các function luôn throw Error hoặc chứa vòng lặp vô hạn.",
+      "starred": false
+    },
+    {
+      "id": "ts65",
+      "type": "multiple-choice",
+      "question": "Decorator trong TypeScript là gì và hoạt động bằng cách nào?",
+      "options": [
+        "Là một loại class.",
+        "Là các function đặc biệt (thêm `@` phía trước, VD: `@Component`) dùng để bổ sung, thay đổi metadata hoặc hành vi của Class, Method, Property tại thời điểm khởi tạo.",
+        "Dùng để render CSS.",
+        "Chỉ có trên Angular."
+      ],
+      "answer": "Là các function đặc biệt (thêm `@` phía trước, VD: `@Component`) dùng để bổ sung, thay đổi metadata hoặc hành vi của Class, Method, Property tại thời điểm khởi tạo.",
+      "starred": false
+    },
+    {
+      "id": "ts66",
+      "type": "multiple-choice",
+      "question": "Tính năng Optional Parameters (tham số tùy chọn) trong hàm TS được biểu diễn bằng ký tự nào?",
+      "options": [
+        "Dấu chấm than (!) cuối tham số.",
+        "Dấu chấm hỏi (?) đặt NGAY TRƯỚC dấu hai chấm (VD: function foo(name?: string)). Tham số tùy chọn luôn phải đặt ở cuối danh sách.",
+        "Dấu bằng (=).",
+        "Dấu ngã (~)."
+      ],
+      "answer": "Dấu chấm hỏi (?) đặt NGAY TRƯỚC dấu hai chấm (VD: function foo(name?: string)). Tham số tùy chọn luôn phải đặt ở cuối danh sách.",
+      "starred": false
+    },
+    {
+      "id": "ts67",
+      "type": "multiple-choice",
+      "question": "Utility type `ReturnType<Type>` làm nhiệm vụ gì?",
+      "options": [
+        "Quy định kiểu trả về của server.",
+        "Trích xuất (Extract) và lấy ra chính xác kiểu dữ liệu TRẢ VỀ của một function type được cung cấp. Rất hữu ích khi làm việc với hàm thư viện.",
+        "Trả về mảng.",
+        "Bắt buộc hàm phải return."
+      ],
+      "answer": "Trích xuất (Extract) và lấy ra chính xác kiểu dữ liệu TRẢ VỀ của một function type được cung cấp. Rất hữu ích khi làm việc với hàm thư viện.",
+      "starred": false
+    },
+    {
+      "id": "ts68",
+      "type": "multiple-choice",
+      "question": "Trong cấu hình TS, target `ES6` hoặc `ESNext` nghĩa là gì?",
+      "options": [
+        "Quy định framework sử dụng.",
+        "Chỉ định phiên bản JavaScript mục tiêu mà mã TypeScript sẽ được biên dịch (compile) thành. Quyết định code có tương thích với các trình duyệt cũ hay không.",
+        "Cấu hình test.",
+        "Thay đổi cú pháp HTML."
+      ],
+      "answer": "Chỉ định phiên bản JavaScript mục tiêu mà mã TypeScript sẽ được biên dịch (compile) thành. Quyết định code có tương thích với các trình duyệt cũ hay không.",
+      "starred": false
+    },
+    {
+      "id": "ts69",
+      "type": "multiple-choice",
+      "question": "Trong TS, Access Modifiers `private` (dùng từ khóa) và trường `#` (Private fields ES2022) khác nhau thế nào?",
+      "options": [
+        "Không có khác biệt.",
+        "`private` của TS chỉ bảo vệ ở lúc code (compile-time), khi ra JS thật vẫn có thể hack truy cập được. `#` là chuẩn JS native, bảo vệ thật sự (hard privacy) ở cả runtime.",
+        "`#` dùng cho hàm, `private` dùng cho biến.",
+        "`private` bảo mật tốt hơn `#`."
+      ],
+      "answer": "`private` của TS chỉ bảo vệ ở lúc code (compile-time), khi ra JS thật vẫn có thể hack truy cập được. `#` là chuẩn JS native, bảo vệ thật sự (hard privacy) ở cả runtime.",
+      "starred": false
+    },
+    {
+      "id": "ts70",
+      "type": "multiple-choice",
+      "question": "Mapped Types trong TypeScript (sử dụng toán tử `in`) có quyền năng gì?",
+      "options": [
+        "Vẽ biểu đồ Map.",
+        "Cho phép tạo ra các Type mới bằng cách LẶP qua các keys của một Type có sẵn và biến đổi chúng (VD: biến tất cả keys thành readonly hoặc optional hàng loạt).",
+        "Thay thế vòng lặp for.",
+        "Gắn biến vào DOM."
+      ],
+      "answer": "Cho phép tạo ra các Type mới bằng cách LẶP qua các keys của một Type có sẵn và biến đổi chúng (VD: biến tất cả keys thành readonly hoặc optional hàng loạt).",
+      "starred": false
+    },
+    {
+      "id": "ts71",
+      "type": "multiple-choice",
+      "question": "Từ khóa `readonly` trước một property trong Interface khác gì với `const`?",
+      "options": [
+        "Giống hệt nhau.",
+        "`const` dùng cho biến thông thường. `readonly` dùng để khóa các thuộc tính bên trong một Object/Interface, ngăn chặn việc gán lại giá trị cho thuộc tính đó sau khi khởi tạo.",
+        "`readonly` chạy chậm hơn.",
+        "`readonly` mã hóa dữ liệu."
+      ],
+      "answer": "`const` dùng cho biến thông thường. `readonly` dùng để khóa các thuộc tính bên trong một Object/Interface, ngăn chặn việc gán lại giá trị cho thuộc tính đó sau khi khởi tạo.",
+      "starred": false
+    },
+    {
+      "id": "ts72",
+      "type": "multiple-choice",
+      "question": "Toán tử `keyof` trong TypeScript dùng để làm gì?",
+      "options": [
+        "Lấy giá trị của object.",
+        "Trích xuất tất cả các thuộc tính (keys) của một Interface/Type và tạo ra một Union Type dạng chuỗi (String Literal Union) chứa tên các key đó.",
+        "Mã hóa key.",
+        "Xóa một key khỏi object."
+      ],
+      "answer": "Trích xuất tất cả các thuộc tính (keys) của một Interface/Type và tạo ra một Union Type dạng chuỗi (String Literal Union) chứa tên các key đó.",
+      "starred": false
+    },
+    {
+      "id": "ts73",
+      "type": "multiple-choice",
+      "question": "Toán tử `typeof` trong không gian type (Type Space) của TS làm gì?",
+      "options": [
+        "Trả về chuỗi type ở runtime.",
+        "Lấy cấu trúc kiểu dữ liệu (shape) của một biến/object đang có sẵn ở logic JS để tái sử dụng làm định nghĩa Type, tiết kiệm công khai báo Interface lại từ đầu.",
+        "Ép kiểu dữ liệu.",
+        "Tạo biến mới."
+      ],
+      "answer": "Lấy cấu trúc kiểu dữ liệu (shape) của một biến/object đang có sẵn ở logic JS để tái sử dụng làm định nghĩa Type, tiết kiệm công khai báo Interface lại từ đầu.",
+      "starred": false
+    },
+    {
+      "id": "ts74",
+      "type": "multiple-choice",
+      "question": "Khi khai báo Class Generics: `class Box<T> { value: T }`, T là gì?",
+      "options": [
+        "T là một biến hệ thống.",
+        "T là Type Parameter (Tham số kiểu). Nó hoạt động như một biến giữ chỗ, người dùng sẽ cung cấp kiểu dữ liệu thật (như string, number) khi tạo instance (new Box<string>()).",
+        "T là Type Guard.",
+        "T bắt buộc phải là mảng."
+      ],
+      "answer": "T là Type Parameter (Tham số kiểu). Nó hoạt động như một biến giữ chỗ, người dùng sẽ cung cấp kiểu dữ liệu thật (như string, number) khi tạo instance (new Box<string>()).",
+      "starred": false
+    },
+    {
+      "id": "ts75",
+      "type": "multiple-choice",
+      "question": "Tính năng Type Inference (Suy luận kiểu) của TS mang lại lợi ích gì?",
+      "options": [
+        "Biên dịch mã nhanh hơn.",
+        "Giúp code ngắn gọn. TS đủ thông minh để TỰ ĐỘNG nhận diện (suy luận) kiểu dữ liệu ngay khi bạn gán giá trị khởi tạo mà không cần khai báo tường minh (VD: let x = 3; tự hiểu là number).",
+        "Khắc phục lỗi logic.",
+        "Đồng bộ hóa dữ liệu."
+      ],
+      "answer": "Giúp code ngắn gọn. TS đủ thông minh để TỰ ĐỘNG nhận diện (suy luận) kiểu dữ liệu ngay khi bạn gán giá trị khởi tạo mà không cần khai báo tường minh (VD: let x = 3; tự hiểu là number).",
+      "starred": false
+    },
+    {
+      "id": "ts76",
+      "type": "multiple-choice",
+      "question": "Sự khác biệt giữa `Pick` và `Omit` utility types?",
+      "options": [
+        "Không dùng chung với interface.",
+        "`Pick` tạo type mới bằng cách CHỈ GIỮ LẠI các keys chỉ định. `Omit` tạo type mới bằng cách LOẠI BỎ đi các keys chỉ định. Cả hai là bản đồ ngược của nhau.",
+        "`Omit` dùng cho mảng, `Pick` dùng cho object.",
+        "`Pick` xóa data, `Omit` thêm data."
+      ],
+      "answer": "`Pick` tạo type mới bằng cách CHỈ GIỮ LẠI các keys chỉ định. `Omit` tạo type mới bằng cách LOẠI BỎ đi các keys chỉ định. Cả hai là bản đồ ngược của nhau.",
+      "starred": false
+    },
+    {
+      "id": "ts77",
+      "type": "multiple-choice",
+      "question": "Phương thức Index Signatures `[key: string]: any` trong Interface mang ý nghĩa gì?",
+      "options": [
+        "Tạo mảng chuỗi.",
+        "Cho phép Object đó linh hoạt (dynamic), có thể chứa BẤT KỲ thuộc tính nào có key là dạng string mà không bị TS báo lỗi thiếu định nghĩa.",
+        "Chỉ định dạng string cho hàm.",
+        "Giới hạn số key trong object."
+      ],
+      "answer": "Cho phép Object đó linh hoạt (dynamic), có thể chứa BẤT KỲ thuộc tính nào có key là dạng string mà không bị TS báo lỗi thiếu định nghĩa.",
+      "starred": false
+    },
+    {
+      "id": "ts78",
+      "type": "multiple-choice",
+      "question": "Ký hiệu `<Type>variable` (cú pháp ngoặc nhọn) và `variable as Type` khác nhau thế nào?",
+      "options": [
+        "Ngoặc nhọn an toàn hơn.",
+        "Cả 2 đều là Type Assertion (ép kiểu). Tuy nhiên cú pháp ngoặc nhọn `<Type>` gây xung đột với cú pháp JSX trong React, nên chuẩn hiện đại luôn ưu tiên dùng từ khóa `as`.",
+        "Ngoặc nhọn dùng cho Generic.",
+        "Từ khóa `as` chậm hơn."
+      ],
+      "answer": "Cả 2 đều là Type Assertion (ép kiểu). Tuy nhiên cú pháp ngoặc nhọn `<Type>` gây xung đột với cú pháp JSX trong React, nên chuẩn hiện đại luôn ưu tiên dùng từ khóa `as`.",
+      "starred": false
+    },
+    {
+      "id": "ts79",
+      "type": "multiple-choice",
+      "question": "Kiểu `void` trong hàm khác `never` như thế nào?",
+      "options": [
+        "Không có khác biệt.",
+        "`void` biểu thị hàm chạy đến cuối bình thường và không trả về giá trị (thực chất return undefined). `never` biểu thị hàm bị ngắt, lỗi hoặc vòng lặp vô hạn, KHÔNG BAO GIỜ kết thúc bình thường.",
+        "`never` trả về null.",
+        "`void` chỉ dùng trong class."
+      ],
+      "answer": "`void` biểu thị hàm chạy đến cuối bình thường và không trả về giá trị (thực chất return undefined). `never` biểu thị hàm bị ngắt, lỗi hoặc vòng lặp vô hạn, KHÔNG BAO GIỜ kết thúc bình thường.",
+      "starred": false
+    },
+    {
+      "id": "ts80",
+      "type": "multiple-choice",
+      "question": "Conditional Types trong TypeScript sử dụng cú pháp gì?",
+      "options": [
+        "if...else statement",
+        "Cú pháp toán tử 3 ngôi (T extends U ? X : Y). Nó tự động xác định type dựa trên một điều kiện lúc biên dịch, rất mạnh khi làm việc với Generics.",
+        "switch...case",
+        "try...catch"
+      ],
+      "answer": "Cú pháp toán tử 3 ngôi (T extends U ? X : Y). Nó tự động xác định type dựa trên một điều kiện lúc biên dịch, rất mạnh khi làm việc với Generics.",
+      "starred": false
+    },
+    {
+      "id": "ts81",
+      "type": "multiple-choice",
+      "question": "Abstract Class trong TS khác Class thường ở điểm nào?",
+      "options": [
+        "Code chạy nhanh hơn.",
+        "Không thể dùng từ khóa `new` để khởi tạo instance trực tiếp từ Abstract Class. Nó chỉ đóng vai trò làm class CHA (Base class) chứa các khung chuẩn bắt buộc các child class phải implement.",
+        "Không có constructor.",
+        "Tự động xóa data."
+      ],
+      "answer": "Không thể dùng từ khóa `new` để khởi tạo instance trực tiếp từ Abstract Class. Nó chỉ đóng vai trò làm class CHA (Base class) chứa các khung chuẩn bắt buộc các child class phải implement.",
+      "starred": false
+    },
+    {
+      "id": "ts82",
+      "type": "multiple-choice",
+      "question": "Khái niệm 'Duck Typing' (hoặc Structural Typing) trong TS nghĩa là gì?",
+      "options": [
+        "Dùng biểu tượng vịt làm logo.",
+        "Hệ thống kiểm tra kiểu linh hoạt: Chỉ cần Object có cấu trúc (số lượng và tên keys, types) ĐẦY ĐỦ giống như định nghĩa Interface yêu cầu, thì TS chấp nhận nó khớp kiểu (Nếu trông giống vịt, nó là vịt).",
+        "Ràng buộc kiểu cứng nhắc bằng ID.",
+        "Không cho phép ép kiểu."
+      ],
+      "answer": "Hệ thống kiểm tra kiểu linh hoạt: Chỉ cần Object có cấu trúc (số lượng và tên keys, types) ĐẦY ĐỦ giống như định nghĩa Interface yêu cầu, thì TS chấp nhận nó khớp kiểu (Nếu trông giống vịt, nó là vịt).",
+      "starred": false
+    },
+    {
+      "id": "ts83",
+      "type": "multiple-choice",
+      "question": "Tính năng Parameter Properties trong Class Constructor (VD: constructor(public name: string)) giúp gì?",
+      "options": [
+        "Bảo mật tên biến.",
+        "Cú pháp viết tắt (Shorthand). Thay vì khai báo thuộc tính ở ngoài, truyền parameter ở constructor rồi gán `this.name = name`, ta viết gộp 1 lần kèm modifier (public/private).",
+        "Tạo hằng số.",
+        "Tránh xung đột name."
+      ],
+      "answer": "Cú pháp viết tắt (Shorthand). Thay vì khai báo thuộc tính ở ngoài, truyền parameter ở constructor rồi gán `this.name = name`, ta viết gộp 1 lần kèm modifier (public/private).",
+      "starred": false
+    },
+    {
+      "id": "ts84",
+      "type": "multiple-choice",
+      "question": "Toán tử Literal Types (VD: `let state: 'active' | 'inactive'`) mang lại giá trị gì?",
+      "options": [
+        "Khai báo chuỗi ngẫu nhiên.",
+        "Kiểm soát giá trị tuyệt đối. Biến đó không chỉ phải là kiểu `string`, mà chỉ được phép nhận chính xác những chuỗi giá trị (literal value) đã định nghĩa.",
+        "Định nghĩa file HTML.",
+        "Ràng buộc số lượng ký tự."
+      ],
+      "answer": "Kiểm soát giá trị tuyệt đối. Biến đó không chỉ phải là kiểu `string`, mà chỉ được phép nhận chính xác những chuỗi giá trị (literal value) đã định nghĩa.",
+      "starred": false
+    },
+    {
+      "id": "ts85",
+      "type": "multiple-choice",
+      "question": "Utility type `Required<Type>` làm chức năng gì?",
+      "options": [
+        "Yêu cầu user đăng nhập.",
+        "Ngược lại với `Partial`. Nó quét một Type và ép TẤT CẢ các thuộc tính đang là optional (có dấu ?) trở thành thuộc tính BẮT BUỘC (required).",
+        "Kiểm tra form valid.",
+        "Thêm validate cho object."
+      ],
+      "answer": "Ngược lại với `Partial`. Nó quét một Type và ép TẤT CẢ các thuộc tính đang là optional (có dấu ?) trở thành thuộc tính BẮT BUỘC (required).",
+      "starred": false
+    },
+    {
+      "id": "ts86",
+      "type": "multiple-choice",
+      "question": "Thuộc tính `paths` trong file tsconfig.json thường dùng để tối ưu vấn đề gì?",
+      "options": [
+        "Tải file nhanh hơn.",
+        "Giúp code sạch hơn bằng cách tạo Path Aliases (VD: import from '@components/Button' thay vì import from '../../../../components/Button' gây đau đầu).",
+        "Tạo routing cho web.",
+        "Đổi tên miền ứng dụng."
+      ],
+      "answer": "Giúp code sạch hơn bằng cách tạo Path Aliases (VD: import from '@components/Button' thay vì import from '../../../../components/Button' gây đau đầu).",
+      "starred": false
+    },
+    {
+      "id": "ts87",
+      "type": "multiple-choice",
+      "question": "Khi muốn ép kiểu (Assertion) cho một biến có kiểu khác hoàn toàn, ta phải dùng trick ép kiểu kép (Double Assertion) nào?",
+      "options": [
+        "biến as any as string",
+        "biến as unknown as TargetType. Đây là cách 'vượt rào' an toàn nhất khi TS báo lỗi 2 kiểu dữ liệu không có điểm chung nào để ép kiểu trực tiếp.",
+        "!!biến",
+        "String(biến)"
+      ],
+      "answer": "biến as unknown as TargetType. Đây là cách 'vượt rào' an toàn nhất khi TS báo lỗi 2 kiểu dữ liệu không có điểm chung nào để ép kiểu trực tiếp.",
+      "starred": false
+    },
+    {
+      "id": "ts88",
+      "type": "multiple-choice",
+      "question": "Mảng Readonly (ReadonlyArray<T> hoặc readonly T[]) khác Array thường ở đâu?",
+      "options": [
+        "Không có khác biệt.",
+        "Sau khi khai báo, mảng này không cho phép thực hiện bất kỳ thao tác nào làm THAY ĐỔI cấu trúc mảng (như push, pop, splice, gán đè index). Giúp bảo vệ tính bất biến (immutability).",
+        "Không thể duyệt mảng bằng forEach.",
+        "Lưu trữ dung lượng lớn hơn."
+      ],
+      "answer": "Sau khi khai báo, mảng này không cho phép thực hiện bất kỳ thao tác nào làm THAY ĐỔI cấu trúc mảng (như push, pop, splice, gán đè index). Giúp bảo vệ tính bất biến (immutability).",
+      "starred": false
+    },
+    {
+      "id": "ts89",
+      "type": "multiple-choice",
+      "question": "Giao diện (Interface) trong TS có thể mở rộng (extend) từ Class được không?",
+      "options": [
+        "Không, interface chỉ mở rộng từ interface.",
+        "CÓ THỂ. Interface sẽ kế thừa cấu trúc (shapes) của toàn bộ các thuộc tính và phương thức từ Class đó, nhưng bỏ qua phần logic thực thi (implementations).",
+        "Được, nhưng class phải rỗng.",
+        "Bị báo lỗi vòng lặp."
+      ],
+      "answer": "CÓ THỂ. Interface sẽ kế thừa cấu trúc (shapes) của toàn bộ các thuộc tính và phương thức từ Class đó, nhưng bỏ qua phần logic thực thi (implementations).",
+      "starred": false
+    },
+    {
+      "id": "ts90",
+      "type": "multiple-choice",
+      "question": "Keyword `infer` được sử dụng trong Conditional Types để làm gì?",
+      "options": [
+        "Inferences error.",
+        "Cho phép TỰ ĐỘNG trích xuất (declare a local type variable) một phần của kiểu dữ liệu từ trong một cấu trúc phức tạp (VD: Lấy ra kiểu data trả về từ một Promise<Type>).",
+        "Tự động ép kiểu.",
+        "Chỉ định return type."
+      ],
+      "answer": "Cho phép TỰ ĐỘNG trích xuất (declare a local type variable) một phần của kiểu dữ liệu từ trong một cấu trúc phức tạp (VD: Lấy ra kiểu data trả về từ một Promise<Type>).",
+      "starred": false
+    },
+    {
+      "id": "ts91",
+      "type": "multiple-choice",
+      "question": "Thuộc tính `outDir` trong tsconfig.json dùng để làm gì?",
+      "options": [
+        "Thư mục chứa mã nguồn.",
+        "Chỉ định thư mục đích (thường là ./dist hoặc ./build), nơi TypeScript Compiler (tsc) sẽ xuất ra các file .js sau khi đã biên dịch xong từ file .ts.",
+        "Xóa thư mục rác.",
+        "Tạo file nén zip."
+      ],
+      "answer": "Chỉ định thư mục đích (thường là ./dist hoặc ./build), nơi TypeScript Compiler (tsc) sẽ xuất ra các file .js sau khi đã biên dịch xong từ file .ts.",
+      "starred": false
+    },
+    {
+      "id": "ts92",
+      "type": "multiple-choice",
+      "question": "Khai báo file `.d.ts` (Declaration files) có mục đích chính là gì?",
+      "options": [
+        "Tạo database.",
+        "Cung cấp thông tin Type (định nghĩa kiểu) cho các thư viện hoặc module viết bằng thuần JavaScript cũ, giúp IDE nhận diện và hỗ trợ gợi ý code (Intellisense) mà không cần viết lại thư viện bằng TS.",
+        "File chứa CSS.",
+        "Mã hóa code."
+      ],
+      "answer": "Cung cấp thông tin Type (định nghĩa kiểu) cho các thư viện hoặc module viết bằng thuần JavaScript cũ, giúp IDE nhận diện và hỗ trợ gợi ý code (Intellisense) mà không cần viết lại thư viện bằng TS.",
+      "starred": false
+    },
+    {
+      "id": "ts93",
+      "type": "multiple-choice",
+      "question": "Tính năng Definite Assignment Assertion (`!:` khi khai báo thuộc tính class) dùng khi nào?",
+      "options": [
+        "Gán giá trị rỗng.",
+        "Báo cho TS Compiler biết rằng thuộc tính này chắc chắn sẽ được gán giá trị ở đâu đó (VD: thông qua DI, lifecycle hook ngOnInit của Angular) để TS không văng lỗi 'chưa khởi tạo ở constructor'.",
+        "Ép buộc biến thành hằng số.",
+        "Chặn thay đổi type."
+      ],
+      "answer": "Báo cho TS Compiler biết rằng thuộc tính này chắc chắn sẽ được gán giá trị ở đâu đó (VD: thông qua DI, lifecycle hook ngOnInit của Angular) để TS không văng lỗi 'chưa khởi tạo ở constructor'.",
+      "starred": false
+    },
+    {
+      "id": "ts94",
+      "type": "multiple-choice",
+      "question": "Utility type `NonNullable<Type>` có công dụng gì?",
+      "options": [
+        "Chống hack database.",
+        "Quét một type (thường là Union) và KIẾN TRÚC lại Type đó bằng cách loại bỏ hoàn toàn các giá trị `null` và `undefined` ra khỏi danh sách kiểu hợp lệ.",
+        "Tự gán giá trị rỗng.",
+        "Format chuỗi text."
+      ],
+      "answer": "Quét một type (thường là Union) và KIẾN TRÚC lại Type đó bằng cách loại bỏ hoàn toàn các giá trị `null` và `undefined` ra khỏi danh sách kiểu hợp lệ.",
+      "starred": false
+    },
+    {
+      "id": "ts95",
+      "type": "multiple-choice",
+      "question": "Toán tử As Const (`as const`) ở cuối Object hoặc Array có tác dụng bảo mật kiểu gì cực mạnh?",
+      "options": [
+        "Báo lỗi cú pháp.",
+        "Đóng băng TYPE ở mức sâu nhất (Deep Immutability). Mọi thuộc tính biến thành readonly, mọi string biến thành Literal Type hẹp nhất, mảng biến thành readonly Tuple.",
+        "Chuyển thành chuỗi mã hóa.",
+        "Tránh xung đột tên biến."
+      ],
+      "answer": "Đóng băng TYPE ở mức sâu nhất (Deep Immutability). Mọi thuộc tính biến thành readonly, mọi string biến thành Literal Type hẹp nhất, mảng biến thành readonly Tuple.",
+      "starred": false
+    },
+    {
+      "id": "ts96",
+      "type": "multiple-choice",
+      "question": "Từ khóa `implements` khác với `extends` trong Class TS thế nào?",
+      "options": [
+        "Giống nhau hoàn toàn.",
+        "`extends` dùng kế thừa một Class cha (kế thừa cả thuộc tính, logic). `implements` dùng để áp dụng một Interface (bắt buộc class này phải thỏa mãn các cấu trúc mà Interface đã yêu cầu nhưng tự viết logic).",
+        "`extends` dùng cho interface.",
+        "`implements` cho phép đa kế thừa class."
+      ],
+      "answer": "`extends` dùng kế thừa một Class cha (kế thừa cả thuộc tính, logic). `implements` dùng để áp dụng một Interface (bắt buộc class này phải thỏa mãn các cấu trúc mà Interface đã yêu cầu nhưng tự viết logic).",
+      "starred": false
+    },
+    {
+      "id": "ts97",
+      "type": "multiple-choice",
+      "question": "Trong cú pháp Generic `<T extends HTMLElement>`, `extends` ở đây có nghĩa là gì?",
+      "options": [
+        "Kế thừa class.",
+        "Tạo Type Constraint (Ràng buộc Generic). Bắt buộc kiểu tham số T được truyền vào PHẢI LÀ một thẻ HTML hoặc lớp con của HTMLElement, không được truyền kiểu lung tung như number/string.",
+        "Giao tiếp API.",
+        "Thêm thuộc tính cho thẻ HTML."
+      ],
+      "answer": "Tạo Type Constraint (Ràng buộc Generic). Bắt buộc kiểu tham số T được truyền vào PHẢI LÀ một thẻ HTML hoặc lớp con của HTMLElement, không được truyền kiểu lung tung như number/string.",
+      "starred": false
+    },
+    {
+      "id": "ts98",
+      "type": "multiple-choice",
+      "question": "Lệnh `satisfies` (TS 4.9+) có lợi thế gì nổi trội so với việc định nghĩa type thông thường `const obj: Type = {}`?",
+      "options": [
+        "Đẹp hơn.",
+        "Nó kiểm tra xem Object có hợp lệ với Type hay không (Validation), nhưng VẪN giữ nguyên kiểu gốc hẹp nhất (Literal Type) của Object thay vì mở rộng nó thành kiểu chung của Type. Rất lợi khi gọi API object.",
+        "Chạy nhanh hơn 10%.",
+        "Ép kiểu an toàn."
+      ],
+      "answer": "Nó kiểm tra xem Object có hợp lệ với Type hay không (Validation), nhưng VẪN giữ nguyên kiểu gốc hẹp nhất (Literal Type) của Object thay vì mở rộng nó thành kiểu chung của Type. Rất lợi khi gọi API object.",
+      "starred": false
+    },
+    {
+      "id": "ts99",
+      "type": "multiple-choice",
+      "question": "Tại sao không nên lạm dụng tính năng TypeScript Enums (không phải const enum) trong dự án lớn?",
+      "options": [
+        "Vì nó xấu.",
+        "Vì Enum sinh ra IIFE (Hàm thực thi ngay) và Object Map phức tạp trong mã JS, gây khó khăn cho các bundler hiện đại (như Webpack, Vite) khi thực hiện Tree-shaking (xóa code thừa), làm phình to file bundle.",
+        "Vì nó lỗi thời.",
+        "Vì nó không bảo mật."
+      ],
+      "answer": "Vì Enum sinh ra IIFE (Hàm thực thi ngay) và Object Map phức tạp trong mã JS, gây khó khăn cho các bundler hiện đại (như Webpack, Vite) khi thực hiện Tree-shaking (xóa code thừa), làm phình to file bundle.",
+      "starred": false
+    },
+    {
+      "id": "ts100",
+      "type": "multiple-choice",
+      "question": "Cách định nghĩa Generic an toàn nhất cho hàm gọi HTTP request (VD: fetch hoặc axios.get) là gì?",
+      "options": [
+        "Trả về any.",
+        "Truyền Type Response mong muốn vào hàm: `<T>(): Promise<T>`, giúp IDE tự động nhận diện chính xác kiểu cấu trúc dữ liệu trả về của API thay vì trả về `any` hoặc `unknown`.",
+        "Dùng Type Assertion.",
+        "Tạo class cho mọi API."
+      ],
+      "answer": "Truyền Type Response mong muốn vào hàm: `<T>(): Promise<T>`, giúp IDE tự động nhận diện chính xác kiểu cấu trúc dữ liệu trả về của API thay vì trả về `any` hoặc `unknown`.",
+      "starred": false
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "topics": [
+    { "id": "angular", "name": "Angular Core", "path": "data/angular/data.json" },
+    { "id": "react", "name": "React Essentials", "path": "data/react/data.json" },
+    { "id": "javascript", "name": "JavaScript Pro", "path": "data/javascript/data.json" },
+    { "id": "css", "name": "Mastering CSS", "path": "data/css/data.json" }
+  ]
+}

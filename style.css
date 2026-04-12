@@ -1,0 +1,571 @@
+/* =======================================================
+   FlashMaster — Mobile-First UI/UX
+   ======================================================= */
+
+[hidden] { display: none !important; }
+
+/* ── Design tokens ───────────────────────────────────── */
+:root {
+  --bg:        #0b1120;
+  --surface:   #162032;
+  --surface2:  #1e2d45;
+  --surface3:  #253550;
+  --accent:    #38bdf8;
+  --accent-bg: rgba(56,189,248,0.10);
+  --ok:        #34d399;
+  --ok-bg:     rgba(52,211,153,0.12);
+  --err:       #f87171;
+  --err-bg:    rgba(248,113,113,0.12);
+  --text:      #e2eaf6;
+  --muted:     #5a7296;
+  --border:    rgba(255,255,255,0.07);
+  --star:      #fbbf24;
+  --r-sm:      10px;
+  --r-md:      16px;
+  --r-lg:      20px;
+  --r-pill:    99px;
+  --sb-w:      260px;
+  --font: 'Outfit', system-ui, sans-serif;
+  --ease: cubic-bezier(.4,0,.2,1);
+  --dur: 240ms;
+}
+
+/* ── Reset ───────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-tap-highlight-color: transparent; scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100dvh;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+button {
+  cursor: pointer; border: none; background: none;
+  font-family: inherit; color: inherit; line-height: 1;
+}
+
+/* ── Scrollbars ──────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--surface3); border-radius: 2px; }
+
+/* ═══════════════════════════════════════════════════════
+   SIDEBAR
+═══════════════════════════════════════════════════════ */
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: var(--sb-w);
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  z-index: 300;
+  /* Desktop: always open */
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 1rem;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.logo { display: flex; align-items: center; gap: .55rem; }
+.logo-icon { font-size: 1.4rem; }
+.logo-text { font-size: 1.05rem; font-weight: 700; color: var(--accent); letter-spacing: -.01em; }
+
+.close-btn {
+  display: none;
+  width: 34px; height: 34px;
+  border-radius: var(--r-sm);
+  color: var(--muted);
+  font-size: 1rem;
+  align-items: center; justify-content: center;
+}
+.close-btn:hover { background: var(--surface2); color: var(--text); }
+
+.topic-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: .6rem;
+}
+
+.topic-item {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .75rem .9rem;
+  border-radius: var(--r-sm);
+  margin-bottom: 2px;
+  color: var(--muted);
+  font-size: .9rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all var(--dur) var(--ease);
+}
+.topic-item:hover  { background: var(--surface2); color: var(--text); }
+.topic-item.active { background: var(--accent-bg); border-color: rgba(56,189,248,.3); color: var(--accent); }
+.topic-item::before      { content: '📂'; font-size: .85rem; opacity: .7; }
+.topic-item.active::before { content: '📁'; opacity: 1; }
+
+.sidebar-footer {
+  padding: .9rem 1rem;
+  font-size: .72rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+/* ── Overlay (mobile) ───────────────────────────────── */
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  z-index: 299;
+  backdrop-filter: blur(2px);
+}
+.overlay.visible { display: block; }
+
+/* ═══════════════════════════════════════════════════════
+   APP SHELL
+═══════════════════════════════════════════════════════ */
+.app-shell {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  margin-left: var(--sb-w);
+}
+
+/* ═══════════════════════════════════════════════════════
+   TOPBAR
+═══════════════════════════════════════════════════════ */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: 0 1.25rem;
+  height: 58px;
+  background: rgba(11,17,32,.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.menu-toggle {
+  display: none;
+  width: 38px; height: 38px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--border);
+  font-size: 1.1rem;
+  align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.menu-toggle:hover { background: var(--surface2); }
+
+.topic-meta { flex: 1; min-width: 0; }
+.topic-title {
+  font-size: .88rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 5px;
+  color: var(--text);
+}
+.progress-track {
+  height: 3px;
+  background: var(--surface3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width .4s var(--ease);
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  flex-shrink: 0;
+}
+
+/* Mode pills */
+.mode-pills {
+  display: flex;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-pill);
+  padding: 3px;
+  gap: 2px;
+}
+.mode-pill {
+  padding: .38rem .85rem;
+  border-radius: var(--r-pill);
+  color: var(--muted);
+  font-size: .8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all var(--dur) var(--ease);
+}
+.mode-pill.active { background: var(--accent); color: #0b1120; }
+.mode-pill:hover:not(.active) { color: var(--text); }
+
+/* Toolbar */
+.toolbar { display: flex; gap: .35rem; }
+.tool-btn {
+  width: 36px; height: 36px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 1.1rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: all var(--dur) var(--ease);
+}
+.tool-btn:hover  { background: var(--surface2); color: var(--text); }
+.tool-btn.active { background: var(--accent-bg); color: var(--accent); border-color: rgba(56,189,248,.4); }
+
+/* ═══════════════════════════════════════════════════════
+   STUDY AREA — main content
+═══════════════════════════════════════════════════════ */
+.study-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Pad bottom for nav buttons */
+  padding: 1rem 1.25rem 6rem;
+  gap: .85rem;
+  max-width: 780px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* HUD row: counter + star */
+.card-hud {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+.hud-counter {
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: .04em;
+  font-variant-numeric: tabular-nums;
+}
+.star-btn {
+  font-size: 1.7rem;
+  color: var(--muted);
+  padding: 6px;
+  border-radius: var(--r-sm);
+  transition: color var(--dur) var(--ease), transform var(--dur) var(--ease);
+  /* large tap target */
+  min-width: 44px; min-height: 44px;
+  display: flex; align-items: center; justify-content: center;
+}
+.star-btn:hover  { color: var(--star); transform: scale(1.1); }
+.star-btn.starred { color: var(--star); }
+
+/* ════════════════════════════════════════
+   FLASHCARD SCENE
+════════════════════════════════════════ */
+.card-scene {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .6rem;
+  flex: 1; /* expand to fill available space */
+}
+
+.card-wrap {
+  position: relative;
+  width: 100%;
+  flex: 1;              /* fills the scene height */
+  min-height: 200px;
+  max-height: 420px;
+  cursor: pointer;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--r-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.75rem;
+  text-align: center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+  transition: transform .48s var(--ease);
+}
+.card-front {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+.card-back {
+  background: var(--surface2);
+  border: 1px solid rgba(56,189,248,.2);
+  transform: rotateY(180deg);
+}
+.card-wrap.flipped .card-front { transform: rotateY(-180deg); }
+.card-wrap.flipped .card-back  { transform: rotateY(0deg); }
+
+.face-label {
+  font-size: .65rem;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+.face-text {
+  font-size: clamp(1.1rem, 3.5vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text);
+  overflow-y: auto;
+  max-height: 100%;
+  /* no scrollbar unless needed */
+  scrollbar-width: none;
+}
+.face-text::-webkit-scrollbar { display: none; }
+
+.tap-hint {
+  font-size: .72rem;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+/* ════════════════════════════════════════
+   QUIZ SCENE
+════════════════════════════════════════ */
+.quiz-scene {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .85rem;
+  flex: 1;
+}
+
+.quiz-question-card {
+  width: 100%;
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  /* Takes ~40% of available height */
+  flex: 2 1 0;
+  min-height: 130px;
+  max-height: 280px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.quiz-question-card::-webkit-scrollbar { display: none; }
+.quiz-question-card .face-text {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+}
+
+.quiz-options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .7rem;
+  width: 100%;
+  /* Options take remaining space */
+  flex: 3 1 0;
+  align-content: stretch;
+}
+
+.quiz-opt-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-md);
+  padding: .7rem .9rem;
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--text);
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.4;
+  font-family: var(--font);
+  transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease), color var(--dur) var(--ease);
+  /* Fill grid cell height evenly */
+  height: 100%;
+  min-height: 48px;
+}
+.quiz-opt-card:hover:not(.answered) {
+  background: var(--surface2);
+  border-color: var(--accent);
+}
+.quiz-opt-card.correct  { background: var(--ok-bg);  border-color: var(--ok);  color: var(--ok);  }
+.quiz-opt-card.wrong    { background: var(--err-bg); border-color: var(--err); color: var(--err); }
+.quiz-opt-card.answered { cursor: default; }
+
+/* ════════════════════════════════════════
+   NAV CONTROLS — fixed at bottom on
+   both mobile and desktop
+════════════════════════════════════════ */
+.nav-controls {
+  position: fixed;
+  bottom: 0;
+  left: var(--sb-w);
+  right: 0;
+  display: flex;
+  gap: .75rem;
+  padding: .85rem 1.25rem;
+  background: rgba(11,17,32,.95);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border);
+  z-index: 100;
+  justify-content: center;
+}
+.nav-btn {
+  padding: .75rem 0;
+  border-radius: var(--r-md);
+  font-size: .9rem;
+  font-weight: 600;
+  border: 1.5px solid var(--border);
+  color: var(--muted);
+  background: var(--surface);
+  flex: 1;
+  max-width: 200px;
+  transition: all var(--dur) var(--ease);
+  min-height: 48px;  /* accessible tap target */
+}
+.nav-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-bg);
+}
+.nav-btn:disabled { opacity: .25; cursor: not-allowed; }
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE — Tablet breakpoint (≤ 900px)
+   Hide sidebar; show hamburger
+═══════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform var(--dur) var(--ease);
+    box-shadow: none;
+  }
+  .sidebar.open {
+    transform: translateX(0);
+    box-shadow: 4px 0 32px rgba(0,0,0,.5);
+  }
+  .close-btn  { display: flex; }
+  .app-shell  { margin-left: 0; }
+  .menu-toggle { display: flex; }
+  .nav-controls { left: 0; }
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE — Mobile (≤ 600px)
+═══════════════════════════════════════════════════════ */
+@media (max-width: 600px) {
+  /* Topbar */
+  .topbar { padding: 0 .85rem; gap: .5rem; height: 52px; }
+  .topic-title { font-size: .8rem; }
+
+  /* Hide text labels on mode pills, keep icon only */
+  .mode-pill { font-size: 0; padding: .42rem .7rem; }
+  #modeFlashcard::before { content: '📖'; font-size: 1rem; }
+  #modeQuiz::before      { content: '📝'; font-size: 1rem; }
+
+  /* Hide shuffle on very small, keep star in toolbar */
+  .tool-btn { width: 34px; height: 34px; font-size: 1rem; }
+
+  /* Study area */
+  .study-area {
+    padding: .85rem .85rem 5.5rem;
+    gap: .65rem;
+  }
+
+  /* Card */
+  .card-wrap { max-height: none; }  /* let flex handle it */
+  .card-face { padding: 1.5rem 1.25rem; border-radius: var(--r-md); }
+  .face-label { margin-bottom: .75rem; }
+
+  /* Quiz */
+  .quiz-question-card {
+    padding: 1.25rem;
+    min-height: 90px;
+    border-radius: var(--r-md);
+  }
+  /* Stack options 1 per row on very small screens */
+  .quiz-options-grid { grid-template-columns: 1fr; gap: .55rem; }
+  .quiz-opt-card { min-height: 52px; font-size: .9rem; padding: .8rem; border-radius: var(--r-sm); }
+
+  /* Nav */
+  .nav-controls { padding: .65rem .85rem; gap: .55rem; }
+  .nav-btn { font-size: .85rem; min-height: 44px; max-width: none; }
+
+  /* Star */
+  .star-btn { font-size: 1.5rem; }
+
+  /* Hud counter */
+  .hud-counter { font-size: .75rem; }
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE — Very small (≤ 380px)
+═══════════════════════════════════════════════════════ */
+@media (max-width: 380px) {
+  .topbar-right { gap: .4rem; }
+  .mode-pills   { padding: 2px; }
+  .toolbar .tool-btn.shuffle-hide { display: none; } /* optionally hide shuffle */
+}
+
+/* ═══════════════════════════════════════════════════════
+   DESKTOP ENHANCEMENTS (≥ 900px)
+═══════════════════════════════════════════════════════ */
+@media (min-width: 900px) {
+  .study-area { padding-bottom: 6rem; }
+
+  /* Bigger cards on desktop */
+  .card-wrap { max-height: 380px; }
+  .face-text { font-size: 1.45rem; }
+
+  /* Quiz options 2-col on desktop (already default) */
+  .quiz-opt-card {
+    min-height: 72px;
+    font-size: 1rem;
+    padding: 1.1rem;
+  }
+
+  /* Nav wider */
+  .nav-btn { max-width: 220px; font-size: .95rem; }
+}

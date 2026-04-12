@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlashMaster | Premium Learning</title>
+  <meta name="description" content="Master any subject with flashcards and quizzes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ────────────── SIDEBAR ────────────── -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">FlashMaster</span>
+      </div>
+      <button class="close-btn" id="closeSidebar" aria-label="Close Menu">✕</button>
+    </div>
+    <nav class="topic-list" id="topicList" role="navigation" aria-label="Topics"></nav>
+    <div class="sidebar-footer">v1.0 &nbsp;•&nbsp; Offline Ready</div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- ────────────── MAIN ────────────── -->
+  <div class="app-shell">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open Menu">☰</button>
+
+      <div class="topic-meta">
+        <h1 class="topic-title" id="currentTopicName">Select a topic</h1>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressBar"></div>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <!-- Mode Switcher -->
+        <div class="mode-pills" role="group" aria-label="Study Mode">
+          <button class="mode-pill active" data-mode="flashcard" id="modeFlashcard">📖 Cards</button>
+          <button class="mode-pill" data-mode="multiple-choice" id="modeQuiz">📝 Quiz</button>
+        </div>
+        <!-- Toolbar buttons -->
+        <div class="toolbar">
+          <button class="tool-btn" id="starredOnlyBtn" title="Starred Only" aria-label="Starred Only">
+            <span class="tool-icon">★</span>
+          </button>
+          <button class="tool-btn" id="shuffleBtn" title="Shuffle" aria-label="Shuffle">
+            <span class="tool-icon">⇌</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- STUDY AREA -->
+    <main class="study-area" id="studyArea">
+
+      <!-- COUNTER + STAR (always visible, outside 3D stack) -->
+      <div class="card-hud">
+        <span class="hud-counter" id="cardCounter">—</span>
+        <button class="star-btn" id="starBtn" aria-label="Star this card" title="Star this card">★</button>
+      </div>
+
+      <!-- FLASHCARD VIEWER -->
+      <div class="card-scene" id="cardScene">
+        <div class="card-wrap" id="cardWrap">
+          <div class="card-face card-front" id="cardFront">
+            <span class="face-label">Question</span>
+            <p class="face-text" id="frontText"></p>
+          </div>
+          <div class="card-face card-back" id="cardBack">
+            <span class="face-label">Answer</span>
+            <p class="face-text" id="backText"></p>
+          </div>
+        </div>
+        <!-- Tap hint -->
+        <p class="tap-hint" id="tapHint">Tap to flip &nbsp;• Swipe to navigate</p>
+      </div>
+
+      <!-- QUIZ VIEWER (hidden when in Cards mode) -->
+      <div class="quiz-scene" id="quizScene" hidden>
+        <div class="quiz-question-card" id="quizQuestionCard">
+          <span class="face-label">Question</span>
+          <p class="face-text" id="quizQuestionText"></p>
+        </div>
+        <div class="quiz-options-grid" id="quizOptionsGrid"></div>
+      </div>
+
+      <!-- NAVIGATION -->
+      <nav class="nav-controls" aria-label="Card navigation">
+        <button class="nav-btn prev" id="prevBtn" aria-label="Previous card">‹ Prev</button>
+        <button class="nav-btn next" id="nextBtn" aria-label="Next card">Next ›</button>
+      </nav>
+
+    </main>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

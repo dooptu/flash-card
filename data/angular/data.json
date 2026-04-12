@@ -1,0 +1,1305 @@
+{
+  "topic": "Angular Interview - Junior & Middle Level (100 MCQs)",
+  "cards": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "question": "Sự khác biệt cốt lõi giữa Component và Directive trong Angular là gì?",
+      "options": [
+        "Component là một Directive có đi kèm template (HTML) để tạo UI.",
+        "Directive có template, còn Component thì không.",
+        "Component chỉ dùng để xử lý logic, Directive dùng để render UI.",
+        "Không có sự khác biệt, chúng là một."
+      ],
+      "answer": "Component là một Directive có đi kèm template (HTML) để tạo UI.",
+      "starred": false
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "question": "Lifecycle hook nào chạy ĐẦU TIÊN khi một Component được khởi tạo?",
+      "options": [
+        "ngOnInit",
+        "ngOnChanges (nếu component có @Input)",
+        "ngAfterViewInit",
+        "constructor"
+      ],
+      "answer": "ngOnChanges (nếu component có @Input)",
+      "starred": false
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "question": "Dự án thực tế doanh nghiệp ưu tiên sử dụng loại Compilation nào khi deploy Production?",
+      "options": [
+        "JIT (Just-in-Time) vì nó compile nhanh hơn.",
+        "AOT (Ahead-of-Time) vì compile sẵn trên server giúp bundle nhỏ và render nhanh.",
+        "Cả hai đều được sử dụng luân phiên.",
+        "Không dùng loại nào, Angular tự chạy mã gốc."
+      ],
+      "answer": "AOT (Ahead-of-Time) vì compile sẵn trên server giúp bundle nhỏ và render nhanh.",
+      "starred": false
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "question": "Cách chuẩn nhất để Child Component gửi dữ liệu (event) lên Parent Component là gì?",
+      "options": [
+        "Sử dụng Service Inject",
+        "Sử dụng @Input()",
+        "Sử dụng @Output() kết hợp với EventEmitter",
+        "Sử dụng localStorage"
+      ],
+      "answer": "Sử dụng @Output() kết hợp với EventEmitter",
+      "starred": false
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "question": "Lợi ích lớn nhất của Dependency Injection (DI) trong Angular là gì?",
+      "options": [
+        "Giúp ứng dụng đẹp hơn về mặt UI.",
+        "Tăng tốc độ load trang web.",
+        "Tách biệt logic, dễ bảo trì và dễ viết Unit Test bằng cách mock dependencies.",
+        "Bảo mật dữ liệu người dùng tốt hơn."
+      ],
+      "answer": "Tách biệt logic, dễ bảo trì và dễ viết Unit Test bằng cách mock dependencies.",
+      "starred": false
+    },
+    {
+      "id": "q6",
+      "type": "multiple-choice",
+      "question": "Khai báo Service với `{ providedIn: 'root' }` mang lại lợi ích gì?",
+      "options": [
+        "Chỉ cho phép Service dùng ở App Component.",
+        "Cho phép Tree-shaking (loại bỏ service khỏi bundle nếu không được dùng đến).",
+        "Tạo ra nhiều instance của service.",
+        "Bắt buộc service tải đồng bộ."
+      ],
+      "answer": "Cho phép Tree-shaking (loại bỏ service khỏi bundle nếu không được dùng đến).",
+      "starred": false
+    },
+    {
+      "id": "q7",
+      "type": "multiple-choice",
+      "question": "Sự khác biệt quan trọng nhất giữa Subject và BehaviorSubject trong RxJS là gì?",
+      "options": [
+        "Subject luôn có giá trị khởi tạo, BehaviorSubject thì không.",
+        "BehaviorSubject lưu giá trị mới nhất và trả về ngay cho subscriber mới, cần giá trị khởi tạo.",
+        "Không có sự khác biệt.",
+        "Subject dùng cho API, BehaviorSubject dùng cho UI."
+      ],
+      "answer": "BehaviorSubject lưu giá trị mới nhất và trả về ngay cho subscriber mới, cần giá trị khởi tạo.",
+      "starred": false
+    },
+    {
+      "id": "q8",
+      "type": "multiple-choice",
+      "question": "Toán tử RxJS nào lý tưởng nhất để làm tính năng Search Autocomplete (hủy call API cũ khi user gõ ký tự mới)?",
+      "options": [
+        "mergeMap",
+        "concatMap",
+        "switchMap",
+        "exhaustMap"
+      ],
+      "answer": "switchMap",
+      "starred": false
+    },
+    {
+      "id": "q9",
+      "type": "multiple-choice",
+      "question": "Change Detection Strategy 'OnPush' kích hoạt render lại UI trong trường hợp nào?",
+      "options": [
+        "Mỗi khi có bất kỳ sự kiện nào xảy ra trong toàn ứng dụng.",
+        "Chỉ khi reference của @Input thay đổi, có event từ component, hoặc async pipe nhận data.",
+        "Mỗi 5 giây một lần.",
+        "Chỉ khi user click vào component."
+      ],
+      "answer": "Chỉ khi reference của @Input thay đổi, có event từ component, hoặc async pipe nhận data.",
+      "starred": false
+    },
+    {
+      "id": "q10",
+      "type": "multiple-choice",
+      "question": "Để tối ưu performance cho *ngFor khi render mảng dữ liệu lớn, ta nên dùng kỹ thuật nào?",
+      "options": [
+        "ng-template",
+        "ngTemplateOutlet",
+        "Hàm trackBy để định danh DOM cần update thay vì vẽ lại toàn bộ.",
+        "Chuyển mảng thành dạng string."
+      ],
+      "answer": "Hàm trackBy để định danh DOM cần update thay vì vẽ lại toàn bộ.",
+      "starred": false
+    },
+    {
+      "id": "q11",
+      "type": "multiple-choice",
+      "question": "Tại sao dự án doanh nghiệp lớn thường ưu tiên Reactive Forms hơn Template-driven Forms?",
+      "options": [
+        "Vì nó dễ viết HTML hơn.",
+        "Vì nó quản lý logic qua TypeScript, dễ test, dễ mở rộng form động (FormArray) và hỗ trợ RxJS.",
+        "Vì nó bắt buộc phải dùng cho ứng dụng Angular.",
+        "Vì nó tự động validate mà không cần viết code."
+      ],
+      "answer": "Vì nó quản lý logic qua TypeScript, dễ test, dễ mở rộng form động (FormArray) và hỗ trợ RxJS.",
+      "starred": false
+    },
+    {
+      "id": "q12",
+      "type": "multiple-choice",
+      "question": "Trong Angular Routing, Guard nào thường được dùng để chặn user rời khỏi trang khi form đang nhập dở?",
+      "options": [
+        "CanActivate",
+        "CanLoad",
+        "Resolve",
+        "CanDeactivate"
+      ],
+      "answer": "CanDeactivate",
+      "starred": false
+    },
+    {
+      "id": "q13",
+      "type": "multiple-choice",
+      "question": "HTTP Interceptor thường được ứng dụng để làm gì trong thực tế?",
+      "options": [
+        "Định tuyến các trang web.",
+        "Tự động đính kèm Token, xử lý Refresh Token, bắt lỗi chung và hiển thị Global Loading.",
+        "Thay đổi giao diện của ứng dụng.",
+        "Tạo database nội bộ."
+      ],
+      "answer": "Tự động đính kèm Token, xử lý Refresh Token, bắt lỗi chung và hiển thị Global Loading.",
+      "starred": false
+    },
+    {
+      "id": "q14",
+      "type": "multiple-choice",
+      "question": "Nguyên nhân phổ biến gây Memory Leak trong Angular là gì?",
+      "options": [
+        "Dùng quá nhiều Component.",
+        "Quên unsubscribe các Observable (như sự kiện DOM, Router) khi component bị destroy.",
+        "Khai báo quá nhiều biến trong class.",
+        "Dùng AOT compilation."
+      ],
+      "answer": "Quên unsubscribe các Observable (như sự kiện DOM, Router) khi component bị destroy.",
+      "starred": false
+    },
+    {
+      "id": "q15",
+      "type": "multiple-choice",
+      "question": "Lazy Loading trong Routing có tác dụng chính là gì?",
+      "options": [
+        "Chỉ tải mã nguồn của module khi user truy cập vào route đó, giúp giảm initial load time.",
+        "Trì hoãn việc render UI để tạo hiệu ứng mượt mà.",
+        "Tải toàn bộ ứng dụng dưới nền (background).",
+        "Chặn người dùng truy cập route khi chưa đăng nhập."
+      ],
+      "answer": "Chỉ tải mã nguồn của module khi user truy cập vào route đó, giúp giảm initial load time.",
+      "starred": false
+    },
+    {
+      "id": "q16",
+      "type": "multiple-choice",
+      "question": "Làm thế nào để hiển thị mã HTML an toàn lấy từ backend mà không bị Angular báo lỗi bảo mật?",
+      "options": [
+        "Dùng [innerHTML] trực tiếp.",
+        "Tạo một Custom Pipe sử dụng DomSanitizer.bypassSecurityTrustHtml().",
+        "Dùng {{ htmlString }}.",
+        "Dùng ng-bind-html."
+      ],
+      "answer": "Tạo một Custom Pipe sử dụng DomSanitizer.bypassSecurityTrustHtml().",
+      "starred": false
+    },
+    {
+      "id": "q17",
+      "type": "multiple-choice",
+      "question": "Lợi ích lớn nhất của Standalone Component (từ Angular 14+) là gì?",
+      "options": [
+        "Tăng bảo mật cho ứng dụng.",
+        "Loại bỏ NgModule, giúp kiến trúc gọn nhẹ, component tự import dependencies của riêng nó.",
+        "Giúp component kết nối database trực tiếp.",
+        "Bắt buộc dùng TypeScript phiên bản mới nhất."
+      ],
+      "answer": "Loại bỏ NgModule, giúp kiến trúc gọn nhẹ, component tự import dependencies của riêng nó.",
+      "starred": false
+    },
+    {
+      "id": "q18",
+      "type": "multiple-choice",
+      "question": "Cách lấy giá trị query parameters (VD: ?page=2) một cách reactive (tự cập nhật khi URL đổi)?",
+      "options": [
+        "this.route.snapshot.queryParams",
+        "this.route.queryParams.subscribe()",
+        "window.location.search",
+        "this.router.url"
+      ],
+      "answer": "this.route.queryParams.subscribe()",
+      "starred": false
+    },
+    {
+      "id": "q19",
+      "type": "multiple-choice",
+      "question": "Phân biệt <ng-container> và <ng-template>?",
+      "options": [
+        "<ng-container> bọc element không sinh ra DOM thừa, <ng-template> chứa HTML chờ được render qua directive.",
+        "Không có sự khác biệt.",
+        "<ng-container> dùng để loop, <ng-template> dùng để check if.",
+        "<ng-template> sinh ra thẻ div, <ng-container> sinh ra thẻ span."
+      ],
+      "answer": "<ng-container> bọc element không sinh ra DOM thừa, <ng-template> chứa HTML chờ được render qua directive.",
+      "starred": false
+    },
+    {
+      "id": "q20",
+      "type": "multiple-choice",
+      "question": "Decorator nào dùng để lấy tham chiếu đến một DOM element trong template của chính Component đó?",
+      "options": [
+        "@ContentChild",
+        "@ViewChild",
+        "@HostListener",
+        "@Inject"
+      ],
+      "answer": "@ViewChild",
+      "starred": false
+    },
+    {
+      "id": "q21",
+      "type": "multiple-choice",
+      "question": "Content Projection (sử dụng <ng-content>) dùng để làm gì?",
+      "options": [
+        "Tải nội dung từ server.",
+        "Cho phép truyền đoạn mã HTML/Component từ Parent nhúng vào bên trong Child Component.",
+        "Dịch ứng dụng sang đa ngôn ngữ.",
+        "Xuất file HTML ra PDF."
+      ],
+      "answer": "Cho phép truyền đoạn mã HTML/Component từ Parent nhúng vào bên trong Child Component.",
+      "starred": false
+    },
+    {
+      "id": "q22",
+      "type": "multiple-choice",
+      "question": "Để trì hoãn việc gọi API cho đến khi user ngừng gõ phím khoảng 500ms, ta dùng toán tử RxJS nào?",
+      "options": [
+        "delay(500)",
+        "throttleTime(500)",
+        "debounceTime(500)",
+        "timeout(500)"
+      ],
+      "answer": "debounceTime(500)",
+      "starred": false
+    },
+    {
+      "id": "q23",
+      "type": "multiple-choice",
+      "question": "Khi nào nên sử dụng NgRx (State Management) trong dự án Angular?",
+      "options": [
+        "Mọi dự án đều nên dùng.",
+        "Dự án lớn, cần share state phức tạp giữa nhiều component không có quan hệ họ hàng.",
+        "Dự án chỉ có form đăng nhập và đăng ký.",
+        "Khi muốn thay thế hoàn toàn REST API."
+      ],
+      "answer": "Dự án lớn, cần share state phức tạp giữa nhiều component không có quan hệ họ hàng.",
+      "starred": false
+    },
+    {
+      "id": "q24",
+      "type": "multiple-choice",
+      "question": "Thành phần nào trong NgRx chuyên chịu trách nhiệm xử lý các Side Effects (như gọi API)?",
+      "options": [
+        "Reducer",
+        "Action",
+        "Selector",
+        "Effect"
+      ],
+      "answer": "Effect",
+      "starred": false
+    },
+    {
+      "id": "q25",
+      "type": "multiple-choice",
+      "question": "Cách unsubscribe Observable an toàn và tự động nhất khi Component bị hủy (Destroy)?",
+      "options": [
+        "Gán Observable bằng null.",
+        "Dùng toán tử takeUntil(this.destroy$) ở cuối pipe, và emit destroy$ trong ngOnDestroy.",
+        "Không cần làm gì, Angular tự lo.",
+        "Chuyển Observable thành Promise."
+      ],
+      "answer": "Dùng toán tử takeUntil(this.destroy$) ở cuối pipe, và emit destroy$ trong ngOnDestroy.",
+      "starred": false
+    },
+    {
+      "id": "q26",
+      "type": "multiple-choice",
+      "question": "Trong Reactive Forms, FormArray giải quyết bài toán gì?",
+      "options": [
+        "Gửi mảng dữ liệu lên server.",
+        "Quản lý danh sách các Form Controls/Groups có thể thêm hoặc xóa linh hoạt (Dynamic Forms).",
+        "Format mảng dữ liệu trên giao diện.",
+        "Reset toàn bộ form cùng lúc."
+      ],
+      "answer": "Quản lý danh sách các Form Controls/Groups có thể thêm hoặc xóa linh hoạt (Dynamic Forms).",
+      "starred": false
+    },
+    {
+      "id": "q27",
+      "type": "multiple-choice",
+      "question": "Sự khác biệt giữa Pure Pipe và Impure Pipe là gì?",
+      "options": [
+        "Pure Pipe luôn trả về string, Impure Pipe trả về object.",
+        "Pure Pipe chỉ chạy lại khi reference của input đổi. Impure Pipe chạy lại ở mọi chu kỳ Change Detection.",
+        "Impure Pipe chạy nhanh hơn Pure Pipe.",
+        "Không thể tự viết Impure Pipe."
+      ],
+      "answer": "Pure Pipe chỉ chạy lại khi reference của input đổi. Impure Pipe chạy lại ở mọi chu kỳ Change Detection.",
+      "starred": false
+    },
+    {
+      "id": "q28",
+      "type": "multiple-choice",
+      "question": "Async Validator trong Reactive Forms khác Sync Validator ở điểm nào?",
+      "options": [
+        "Nó chạy ở một luồng (thread) khác.",
+        "Nó trả về Promise hoặc Observable (thường dùng để call API check data), và chỉ chạy khi Sync pass.",
+        "Nó dùng để validate HTML.",
+        "Nó chỉ chạy một lần duy nhất lúc khởi tạo form."
+      ],
+      "answer": "Nó trả về Promise hoặc Observable (thường dùng để call API check data), và chỉ chạy khi Sync pass.",
+      "starred": false
+    },
+    {
+      "id": "q29",
+      "type": "multiple-choice",
+      "question": "APP_INITIALIZER injection token được dùng để làm gì?",
+      "options": [
+        "Khởi tạo màu sắc cho ứng dụng.",
+        "Đăng ký các hàm trả về Promise/Observable bắt buộc phải chạy XONG trước khi app Angular khởi động.",
+        "Khởi tạo database.",
+        "Kích hoạt môi trường Production."
+      ],
+      "answer": "Đăng ký các hàm trả về Promise/Observable bắt buộc phải chạy XONG trước khi app Angular khởi động.",
+      "starred": false
+    },
+    {
+      "id": "q30",
+      "type": "multiple-choice",
+      "question": "Toán tử RxJS forkJoin thường được sử dụng trong kịch bản nào?",
+      "options": [
+        "Để gọi từng API một cách tuần tự.",
+        "Để gộp các Observable lại và nhận data mỗi khi có bất kỳ Observable nào emit.",
+        "Gửi song song nhiều API độc lập, chờ đến khi TẤT CẢ hoàn thành mới trả về mảng kết quả.",
+        "Hủy API khi user click ra ngoài."
+      ],
+      "answer": "Gửi song song nhiều API độc lập, chờ đến khi TẤT CẢ hoàn thành mới trả về mảng kết quả.",
+      "starred": false
+    },
+    {
+      "id": "q31",
+      "type": "multiple-choice",
+      "question": "Chức năng của toán tử combineLatest trong RxJS là gì?",
+      "options": [
+        "Kết hợp data mới nhất của nhiều Observables, emit mảng kết quả mỗi khi MỘT trong số chúng có data mới.",
+        "Chỉ emit giá trị cuối cùng trước khi complete.",
+        "Chạy tuần tự các luồng dữ liệu.",
+        "Hủy đăng ký tất cả các luồng."
+      ],
+      "answer": "Kết hợp data mới nhất của nhiều Observables, emit mảng kết quả mỗi khi MỘT trong số chúng có data mới.",
+      "starred": false
+    },
+    {
+      "id": "q32",
+      "type": "multiple-choice",
+      "question": "Decorator @HostListener dùng để làm gì trong Custom Directive?",
+      "options": [
+        "Khai báo các biến nội bộ.",
+        "Lắng nghe các sự kiện DOM (như click, mouseenter) phát ra từ chính element gắn directive đó.",
+        "Giao tiếp với backend.",
+        "Lắng nghe sự thay đổi của url."
+      ],
+      "answer": "Lắng nghe các sự kiện DOM (như click, mouseenter) phát ra từ chính element gắn directive đó.",
+      "starred": false
+    },
+    {
+      "id": "q33",
+      "type": "multiple-choice",
+      "question": "Thuộc tính ViewEncapsulation.None trong component có tác dụng gì?",
+      "options": [
+        "Loại bỏ toàn bộ CSS của component.",
+        "CSS viết trong component này sẽ rò rỉ và áp dụng Global (toàn cục) cho toàn bộ ứng dụng.",
+        "Đóng gói CSS cực kỳ chặt chẽ (Shadow DOM).",
+        "Không cho phép component dùng CSS file ngoài."
+      ],
+      "answer": "CSS viết trong component này sẽ rò rỉ và áp dụng Global (toàn cục) cho toàn bộ ứng dụng.",
+      "starred": false
+    },
+    {
+      "id": "q34",
+      "type": "multiple-choice",
+      "question": "Angular Signals (từ Angular 16) mang lại giải pháp gì nổi bật?",
+      "options": [
+        "Thay thế hoàn toàn TypeScript.",
+        "Theo dõi state đồng bộ và thông báo chính xác vị trí cần cập nhật DOM (fine-grained reactivity) mà không phụ thuộc Zone.js.",
+        "Quản lý database ở Client.",
+        "Mã hóa dữ liệu gửi qua HTTP."
+      ],
+      "answer": "Theo dõi state đồng bộ và thông báo chính xác vị trí cần cập nhật DOM (fine-grained reactivity) mà không phụ thuộc Zone.js.",
+      "starred": false
+    },
+    {
+      "id": "q35",
+      "type": "multiple-choice",
+      "question": "Resolve Guard trong Angular Router dùng để làm gì?",
+      "options": [
+        "Chặn người dùng vào trang.",
+        "Pre-fetch (tải trước) dữ liệu API cần thiết TRƯỚC KHI thực sự navigate vào Component.",
+        "Xử lý lỗi 404 Not Found.",
+        "Lưu lịch sử duyệt web."
+      ],
+      "answer": "Pre-fetch (tải trước) dữ liệu API cần thiết TRƯỚC KHI thực sự navigate vào Component.",
+      "starred": false
+    },
+    {
+      "id": "q36",
+      "type": "multiple-choice",
+      "question": "Sự khác biệt quan trọng giữa constructor và ngOnInit() là gì?",
+      "options": [
+        "Constructor chạy sau ngOnInit.",
+        "Constructor thuộc Class để inject DI. ngOnInit thuộc Angular Lifecycle chạy khi @Input đã sẵn sàng, thích hợp gọi API.",
+        "ngOnInit dùng để khai báo biến tĩnh.",
+        "Không có sự khác biệt, có thể dùng thay thế nhau."
+      ],
+      "answer": "Constructor thuộc Class để inject DI. ngOnInit thuộc Angular Lifecycle chạy khi @Input đã sẵn sàng, thích hợp gọi API.",
+      "starred": false
+    },
+    {
+      "id": "q37",
+      "type": "multiple-choice",
+      "question": "Zone.js thực hiện vai trò gì dưới nền tảng Angular?",
+      "options": [
+        "Tạo ra các múi giờ cho ứng dụng.",
+        "Vá (monkey-patch) các API async của trình duyệt (XHR, setTimeout) để báo Angular tự động chạy Change Detection.",
+        "Quản lý Routing.",
+        "Compile mã TypeScript sang JavaScript."
+      ],
+      "answer": "Vá (monkey-patch) các API async của trình duyệt (XHR, setTimeout) để báo Angular tự động chạy Change Detection.",
+      "starred": false
+    },
+    {
+      "id": "q38",
+      "type": "multiple-choice",
+      "question": "Cách phân giải ViewChild nào an toàn nhất cho mọi element kể cả nằm trong *ngIf?",
+      "options": [
+        "{ static: true }",
+        "{ static: false } (mặc định) và truy cập ở ngAfterViewInit",
+        "{ read: ElementRef }",
+        "{ descendants: true }"
+      ],
+      "answer": "{ static: false } (mặc định) và truy cập ở ngAfterViewInit",
+      "starred": false
+    },
+    {
+      "id": "q39",
+      "type": "multiple-choice",
+      "question": "Toán tử distinctUntilChanged trong RxJS làm nhiệm vụ gì?",
+      "options": [
+        "Lọc các giá trị bị lỗi.",
+        "Bỏ qua các giá trị phát ra liên tiếp giống hệt nhau (tránh gọi logic thừa).",
+        "Đảo ngược thứ tự luồng dữ liệu.",
+        "Chuyển đổi kiểu dữ liệu."
+      ],
+      "answer": "Bỏ qua các giá trị phát ra liên tiếp giống hệt nhau (tránh gọi logic thừa).",
+      "starred": false
+    },
+    {
+      "id": "q40",
+      "type": "multiple-choice",
+      "question": "ReplaySubject khác với BehaviorSubject ở khía cạnh nào?",
+      "options": [
+        "ReplaySubject lưu trữ và phát lại nhiều giá trị cũ trong buffer thay vì chỉ 1 giá trị mới nhất, và không cần giá trị khởi tạo.",
+        "ReplaySubject chạy nhanh hơn.",
+        "BehaviorSubject không lưu trữ giá trị nào.",
+        "ReplaySubject chỉ dùng được cho Service."
+      ],
+      "answer": "ReplaySubject lưu trữ và phát lại nhiều giá trị cũ trong buffer thay vì chỉ 1 giá trị mới nhất, và không cần giá trị khởi tạo.",
+      "starred": false
+    },
+    {
+      "id": "q41",
+      "type": "multiple-choice",
+      "question": "Khi muốn cung cấp một configuration object (không phải Class) qua DI, ta cần dùng gì?",
+      "options": [
+        "@Injectable",
+        "InjectionToken để tạo một token định danh duy nhất cho Angular hiểu.",
+        "NgModule",
+        "Constructor parameter mặc định."
+      ],
+      "answer": "InjectionToken để tạo một token định danh duy nhất cho Angular hiểu.",
+      "starred": false
+    },
+    {
+      "id": "q42",
+      "type": "multiple-choice",
+      "question": "Trong Reactive Forms, hàm patchValue() khác setValue() như thế nào?",
+      "options": [
+        "patchValue() update lên server, setValue() lưu ở client.",
+        "patchValue() cho phép update một phần form. setValue() bắt buộc phải cung cấp data cho TOÀN BỘ control trong form.",
+        "setValue() chạy bất đồng bộ.",
+        "Cả 2 hoàn toàn giống nhau."
+      ],
+      "answer": "patchValue() cho phép update một phần form. setValue() bắt buộc phải cung cấp data cho TOÀN BỘ control trong form.",
+      "starred": false
+    },
+    {
+      "id": "q43",
+      "type": "multiple-choice",
+      "question": "Để giả lập (mock) kết quả gọi API trong quá trình viết Unit Test, ta dùng thư viện/công cụ nào?",
+      "options": [
+        "RouterTestingModule",
+        "HttpTestingController (từ HttpClientTestingModule)",
+        "Jasmine Spy",
+        "NgRx Store"
+      ],
+      "answer": "HttpTestingController (từ HttpClientTestingModule)",
+      "starred": false
+    },
+    {
+      "id": "q44",
+      "type": "multiple-choice",
+      "question": "Phương thức ChangeDetectorRef.detectChanges() dùng để làm gì?",
+      "options": [
+        "Tắt hoàn toàn Change Detection.",
+        "Ép Angular thực thi Change Detection NGAY LẬP TỨC trên component hiện tại và con của nó.",
+        "Lắng nghe sự thay đổi của Router.",
+        "Refresh lại trình duyệt."
+      ],
+      "answer": "Ép Angular thực thi Change Detection NGAY LẬP TỨC trên component hiện tại và con của nó.",
+      "starred": false
+    },
+    {
+      "id": "q45",
+      "type": "multiple-choice",
+      "question": "Giao diện ControlValueAccessor đóng vai trò gì?",
+      "options": [
+        "Bảo mật các form input.",
+        "Là cầu nối để custom UI component (như Custom Dropdown) có thể dùng chung API với Angular Forms (ngModel, formControlName).",
+        "Validate dữ liệu từ backend.",
+        "Tự động điền dữ liệu (Autofill)."
+      ],
+      "answer": "Là cầu nối để custom UI component (như Custom Dropdown) có thể dùng chung API với Angular Forms (ngModel, formControlName).",
+      "starred": false
+    },
+    {
+      "id": "q46",
+      "type": "multiple-choice",
+      "question": "Sự khác biệt giữa Guard CanLoad và CanActivate?",
+      "options": [
+        "Không có khác biệt.",
+        "CanActivate chặn vào route nhưng module lazy vẫn bị tải về. CanLoad chặn luôn việc tải file script của module đó về trình duyệt.",
+        "CanLoad dùng cho Component, CanActivate dùng cho Module.",
+        "CanLoad chạy ở server, CanActivate chạy ở client."
+      ],
+      "answer": "CanActivate chặn vào route nhưng module lazy vẫn bị tải về. CanLoad chặn luôn việc tải file script của module đó về trình duyệt.",
+      "starred": false
+    },
+    {
+      "id": "q47",
+      "type": "multiple-choice",
+      "question": "Toán tử exhaustMap trong RxJS rất hữu ích trong trường hợp nào?",
+      "options": [
+        "Gửi nhiều API song song.",
+        "Tính năng nút Submit: Bỏ qua các click mới (không call API) nếu request API cũ vẫn chưa chạy xong (chống spam click).",
+        "Hủy request hiện tại để ưu tiên request mới.",
+        "Delay API trong khoảng thời gian nhất định."
+      ],
+      "answer": "Tính năng nút Submit: Bỏ qua các click mới (không call API) nếu request API cũ vẫn chưa chạy xong (chống spam click).",
+      "starred": false
+    },
+    {
+      "id": "q48",
+      "type": "multiple-choice",
+      "question": "Dấu #myVar trên thẻ HTML `<input #myVar>` gọi là gì và để làm gì?",
+      "options": [
+        "Directive attribute.",
+        "Template Reference Variable: dùng để lấy tham chiếu trực tiếp đến element đó trên giao diện HTML hoặc truyền xuống code TS.",
+        "Id binding của CSS.",
+        "Class selector của Angular."
+      ],
+      "answer": "Template Reference Variable: dùng để lấy tham chiếu trực tiếp đến element đó trên giao diện HTML hoặc truyền xuống code TS.",
+      "starred": false
+    },
+    {
+      "id": "q49",
+      "type": "multiple-choice",
+      "question": "Khái niệm Memoization trong NgRx Selectors nghĩa là gì?",
+      "options": [
+        "Lưu trữ state vào localStorage.",
+        "Cache kết quả tính toán: Selector chỉ chạy lại logic tính toán khi phần state mà nó phụ thuộc bị thay đổi, giúp tối ưu hiệu năng.",
+        "Mã hóa state trước khi lưu.",
+        "Reset state về ban đầu."
+      ],
+      "answer": "Cache kết quả tính toán: Selector chỉ chạy lại logic tính toán khi phần state mà nó phụ thuộc bị thay đổi, giúp tối ưu hiệu năng.",
+      "starred": false
+    },
+    {
+      "id": "q50",
+      "type": "multiple-choice",
+      "question": "Làm thế nào để khởi tạo động một component (Dynamic Component) tại runtime qua code TypeScript?",
+      "options": [
+        "Dùng Document.createElement().",
+        "Dùng ViewContainerRef.createComponent() (từ Angular 13+) để inject component vào template một cách linh hoạt.",
+        "Dùng hàm setTimeout().",
+        "Truyền trực tiếp chuỗi HTML chứa component."
+      ],
+      "answer": "Dùng ViewContainerRef.createComponent() (từ Angular 13+) để inject component vào template một cách linh hoạt.",
+      "starred": false
+    },
+    {
+      "id": "q51",
+      "type": "multiple-choice",
+      "question": "Decorator @Self() trong Dependency Injection quy định điều kiện tìm kiếm Service như thế nào?",
+      "options": [
+        "Chỉ tìm service khai báo trong mảng providers của CHÍNH Component/Directive hiện tại, không tìm ngược lên cha.",
+        "Tìm từ cha lên root.",
+        "Luôn tạo instance mới.",
+        "Tìm service ở Module gần nhất."
+      ],
+      "answer": "Chỉ tìm service khai báo trong mảng providers của CHÍNH Component/Directive hiện tại, không tìm ngược lên cha.",
+      "starred": false
+    },
+    {
+      "id": "q52",
+      "type": "multiple-choice",
+      "question": "Thuộc tính nào của FormGroup kiểm tra việc người dùng ĐÃ TƯƠNG TÁC (nhập chữ hoặc click/blur) với form?",
+      "options": [
+        "form.valid",
+        "form.errors",
+        "form.dirty (đã thay đổi giá trị) và form.touched (đã focus rồi blur ra).",
+        "form.pristine"
+      ],
+      "answer": "form.dirty (đã thay đổi giá trị) và form.touched (đã focus rồi blur ra).",
+      "starred": false
+    },
+    {
+      "id": "q53",
+      "type": "multiple-choice",
+      "question": "Hàm spyOn() trong Unit Test (Jasmine) dùng để làm nhiệm vụ gì?",
+      "options": [
+        "Bảo mật code khi chạy test.",
+        "Tạo một hàm gián điệp (mock) thay thế logic thật để theo dõi xem hàm có được gọi đúng tham số hay không và chặn API thật.",
+        "Chạy test tự động.",
+        "Hiển thị độ bao phủ code (Coverage)."
+      ],
+      "answer": "Tạo một hàm gián điệp (mock) thay thế logic thật để theo dõi xem hàm có được gọi đúng tham số hay không và chặn API thật.",
+      "starred": false
+    },
+    {
+      "id": "q54",
+      "type": "multiple-choice",
+      "question": "Thuộc tính routerLinkActive trên thẻ a/button đóng vai trò gì?",
+      "options": [
+        "Chuyển trang khi được click.",
+        "Tự động đính kèm class CSS được chỉ định vào element khi route gắn với nó đang là active (rất hợp làm trạng thái Menu Selected).",
+        "Chặn route nếu chưa đăng nhập.",
+        "Xóa active class khi rời trang."
+      ],
+      "answer": "Tự động đính kèm class CSS được chỉ định vào element khi route gắn với nó đang là active (rất hợp làm trạng thái Menu Selected).",
+      "starred": false
+    },
+    {
+      "id": "q55",
+      "type": "multiple-choice",
+      "question": "Sự khác biệt chính giữa Hot Observable và Cold Observable là?",
+      "options": [
+        "Cold sinh data mới cho MỖI subscriber (vd HTTP), Hot chia sẻ (multicast) chung 1 luồng data bên ngoài cho MỌI subscriber (vd DOM click).",
+        "Hot xử lý nhanh hơn Cold.",
+        "Cold dùng cho Frontend, Hot dùng cho Backend.",
+        "Không có sự khác biệt."
+      ],
+      "answer": "Cold sinh data mới cho MỖI subscriber (vd HTTP), Hot chia sẻ (multicast) chung 1 luồng data bên ngoài cho MỌI subscriber (vd DOM click).",
+      "starred": false
+    },
+    {
+      "id": "q56",
+      "type": "multiple-choice",
+      "question": "Khi khai báo HTTP_INTERCEPTORS, cờ `multi: true` có ý nghĩa bắt buộc gì?",
+      "options": [
+        "Gọi API nhiều lần nếu thất bại.",
+        "Báo cho Angular biết DI Token này là một MẢNG nhiều service, cho phép đăng ký đồng thời nhiều Interceptors không bị ghi đè.",
+        "Chạy đa luồng.",
+        "Interceptor này xử lý nhiều loại lỗi."
+      ],
+      "answer": "Báo cho Angular biết DI Token này là một MẢNG nhiều service, cho phép đăng ký đồng thời nhiều Interceptors không bị ghi đè.",
+      "starred": false
+    },
+    {
+      "id": "q57",
+      "type": "multiple-choice",
+      "question": "Toán tử map và tap trong RxJS khác biệt như thế nào về chức năng?",
+      "options": [
+        "Giống hệt nhau.",
+        "map dùng để BIẾN ĐỔI data stream, tap dùng để thực thi Side-effect (console.log, gán biến) MÀ KHÔNG ảnh hưởng data của stream gốc.",
+        "map chạy đồng bộ, tap chạy bất đồng bộ.",
+        "tap làm thay đổi data, map chỉ đọc data."
+      ],
+      "answer": "map dùng để BIẾN ĐỔI data stream, tap dùng để thực thi Side-effect (console.log, gán biến) MÀ KHÔNG ảnh hưởng data của stream gốc.",
+      "starred": false
+    },
+    {
+      "id": "q58",
+      "type": "multiple-choice",
+      "question": "Lợi ích đặc biệt của Async Pipe (`| async`) khi dùng trên giao diện là gì?",
+      "options": [
+        "Tăng tốc call API.",
+        "Tự subscribe Observable để render, và quan trọng nhất là TỰ ĐỘNG unsubscribe khi component destroy (chống memory leak).",
+        "Format dữ liệu ngày tháng.",
+        "Ẩn hiện element an toàn."
+      ],
+      "answer": "Tự subscribe Observable để render, và quan trọng nhất là TỰ ĐỘNG unsubscribe khi component destroy (chống memory leak).",
+      "starred": false
+    },
+    {
+      "id": "q59",
+      "type": "multiple-choice",
+      "question": "Nguyên tắc giao tiếp giữa Smart Component (Container) và Dumb Component (Presentational)?",
+      "options": [
+        "Dumb tự gọi API, Smart chỉ đóng vai trò layout.",
+        "Smart lấy data qua Service/Store truyền xuống Dumb qua @Input. Dumb chỉ render UI và báo event lên qua @Output.",
+        "Cả hai đều kết nối Store.",
+        "Truyền dữ liệu bằng LocalStorage."
+      ],
+      "answer": "Smart lấy data qua Service/Store truyền xuống Dumb qua @Input. Dumb chỉ render UI và báo event lên qua @Output.",
+      "starred": false
+    },
+    {
+      "id": "q60",
+      "type": "multiple-choice",
+      "question": "Deferrable Views (`@defer`) trong Angular 17+ cung cấp sức mạnh gì?",
+      "options": [
+        "Thay thế lệnh *ngIf.",
+        "Lazy Load ở cấp độ Component trên template siêu mạnh (VD: Trì hoãn tải file js của component nặng cho đến khi cuộn tới vị trí đó).",
+        "Ẩn mã nguồn của template.",
+        "Render template trên Server (SSR)."
+      ],
+      "answer": "Lazy Load ở cấp độ Component trên template siêu mạnh (VD: Trì hoãn tải file js của component nặng cho đến khi cuộn tới vị trí đó).",
+      "starred": false
+    },
+    {
+      "id": "q61",
+      "type": "multiple-choice",
+      "question": "Trường hợp nào CẦN THIẾT phải gọi ChangeDetectorRef.markForCheck()?",
+      "options": [
+        "Dùng trong mọi Component cho an toàn.",
+        "Khi Component dùng OnPush và có dữ liệu thay đổi bất đồng bộ bên ngoài Angular Zone (như setTimeout nội bộ, event từ lib ngoài).",
+        "Khi Component bị destroy.",
+        "Khi load trang web lần đầu."
+      ],
+      "answer": "Khi Component dùng OnPush và có dữ liệu thay đổi bất đồng bộ bên ngoài Angular Zone (như setTimeout nội bộ, event từ lib ngoài).",
+      "starred": false
+    },
+    {
+      "id": "q62",
+      "type": "multiple-choice",
+      "question": "Toán tử mergeMap khác switchMap chủ yếu ở điểm thiết kế nào?",
+      "options": [
+        "mergeMap chạy tuần tự.",
+        "mergeMap thực thi TẤT CẢ các request song song và không hủy request cũ nào (có thể gây race condition). switchMap luôn hủy luồng cũ.",
+        "mergeMap chỉ dùng cho mảng, switchMap dùng cho object.",
+        "mergeMap tự động xử lý lỗi."
+      ],
+      "answer": "mergeMap thực thi TẤT CẢ các request song song và không hủy request cũ nào (có thể gây race condition). switchMap luôn hủy luồng cũ.",
+      "starred": false
+    },
+    {
+      "id": "q63",
+      "type": "multiple-choice",
+      "question": "Trong Angular Signals, hàm untracked() được thiết kế để làm gì?",
+      "options": [
+        "Xóa bỏ Signal.",
+        "Lấy giá trị của một Signal mà KHÔNG tạo ra sự phụ thuộc (dependency tracking), nghĩa là khi Signal đó đổi giá trị, effect/computed không bị chạy lại.",
+        "Theo dõi toàn bộ biến trong file.",
+        "Chuyển Signal thành Observable."
+      ],
+      "answer": "Lấy giá trị của một Signal mà KHÔNG tạo ra sự phụ thuộc (dependency tracking), nghĩa là khi Signal đó đổi giá trị, effect/computed không bị chạy lại.",
+      "starred": false
+    },
+    {
+      "id": "q64",
+      "type": "multiple-choice",
+      "question": "Angular Universal mang lại lợi ích doanh nghiệp gì lớn nhất?",
+      "options": [
+        "Tạo database nội bộ cho app.",
+        "Server-Side Rendering (SSR) giúp HTML được render từ server, cải thiện tốc độ load lần đầu (LCP) và cực kỳ tốt cho SEO.",
+        "Thay thế hoàn toàn NodeJS.",
+        "Giúp code bảo mật tuyệt đối 100%."
+      ],
+      "answer": "Server-Side Rendering (SSR) giúp HTML được render từ server, cải thiện tốc độ load lần đầu (LCP) và cực kỳ tốt cho SEO.",
+      "starred": false
+    },
+    {
+      "id": "q65",
+      "type": "multiple-choice",
+      "question": "Khi sử dụng toán tử catchError trong RxJS, làm thế nào để luồng Observable không bị 'chết' (terminate) khi gặp lỗi?",
+      "options": [
+        "Trả về null.",
+        "Bên trong catchError, bắt buộc phải trả về một Observable mới hợp lệ (VD: of(giaTriMacDinh)) hoặc throwError nếu muốn ném tiếp.",
+        "Không thể ngăn luồng chết.",
+        "Dùng console.error()"
+      ],
+      "answer": "Bên trong catchError, bắt buộc phải trả về một Observable mới hợp lệ (VD: of(giaTriMacDinh)) hoặc throwError nếu muốn ném tiếp.",
+      "starred": false
+    },
+    {
+      "id": "q66",
+      "type": "multiple-choice",
+      "question": "Thẻ <router-outlet> làm nhiệm vụ gì trong kiến trúc ứng dụng?",
+      "options": [
+        "Định nghĩa các link điều hướng.",
+        "Là một placeholder (chỗ trống), nơi Angular Router sẽ chèn tự động Component tương ứng với URL (Route) đang được kích hoạt.",
+        "Bảo vệ Route khỏi người dùng lạ.",
+        "Xuất file cấu hình Route."
+      ],
+      "answer": "Là một placeholder (chỗ trống), nơi Angular Router sẽ chèn tự động Component tương ứng với URL (Route) đang được kích hoạt.",
+      "starred": false
+    },
+    {
+      "id": "q67",
+      "type": "multiple-choice",
+      "question": "Thuộc tính deps trong providers (ví dụ: `useFactory: myFactory, deps: [MyService]`) dùng để làm gì?",
+      "options": [
+        "Xóa service khi không dùng.",
+        "Chỉ định danh sách các dependencies (service khác) cần được Inject vào tham số của hàm myFactory trước khi hàm này chạy.",
+        "Khai báo thư viện external.",
+        "Tăng mức độ ưu tiên của Provider."
+      ],
+      "answer": "Chỉ định danh sách các dependencies (service khác) cần được Inject vào tham số của hàm myFactory trước khi hàm này chạy.",
+      "starred": false
+    },
+    {
+      "id": "q68",
+      "type": "multiple-choice",
+      "question": "Trong Unit Test Angular, lớp TestBed đóng vai trò cốt lõi nào?",
+      "options": [
+        "Chạy báo cáo Coverage.",
+        "Là công cụ chính dùng để thiết lập, cấu hình và tạo ra một Module mô phỏng (Test Environment) để test riêng biệt từng Component/Service.",
+        "Mock dữ liệu JSON.",
+        "Tự động viết code Test."
+      ],
+      "answer": "Là công cụ chính dùng để thiết lập, cấu hình và tạo ra một Module mô phỏng (Test Environment) để test riêng biệt từng Component/Service.",
+      "starred": false
+    },
+    {
+      "id": "q69",
+      "type": "multiple-choice",
+      "question": "Toán tử retry(3) trong HTTP Client chain có tác dụng gì?",
+      "options": [
+        "Thực thi request 3 lần song song để giảm lag.",
+        "Nếu request thất bại do lỗi mạng/server, nó tự động thử gọi lại request đó tối đa 3 lần trước khi thực sự văng lỗi vào catchError.",
+        "Chờ 3 giây trước khi gọi.",
+        "Bỏ qua 3 lỗi đầu tiên."
+      ],
+      "answer": "Nếu request thất bại do lỗi mạng/server, nó tự động thử gọi lại request đó tối đa 3 lần trước khi thực sự văng lỗi vào catchError.",
+      "starred": false
+    },
+    {
+      "id": "q70",
+      "type": "multiple-choice",
+      "question": "FormRecord (từ Angular 14) được thiết kế cho mục đích gì đặc biệt so với FormGroup?",
+      "options": [
+        "Giống hệt FormGroup, chỉ khác tên.",
+        "Là FormGroup dạng dictionary (từ điển) cho các Form cực kỳ ĐỘNG, nơi mà tên thuộc tính (keys) không được biết trước, nhưng kiểu giá trị phải giống nhau.",
+        "Chỉ dùng để lưu file record (audio).",
+        "Bắt buộc form gửi bằng FormData."
+      ],
+      "answer": "Là FormGroup dạng dictionary (từ điển) cho các Form cực kỳ ĐỘNG, nơi mà tên thuộc tính (keys) không được biết trước, nhưng kiểu giá trị phải giống nhau.",
+      "starred": false
+    },
+    {
+      "id": "q71",
+      "type": "multiple-choice",
+      "question": "Làm thế nào để lắng nghe sự kiện user bấm phím Enter ngay trên template Angular thay vì lắng nghe mọi phím?",
+      "options": [
+        "(keydown)=\"onEnter($event)\" và tự check mã phím.",
+        "Dùng pseudo-event: (keyup.enter)=\"onEnter()\" hoặc (keydown.enter)=\"onEnter()\".",
+        "(keypress.enter)=\"onEnter()\"",
+        "Không hỗ trợ, bắt buộc viết Custom Directive."
+      ],
+      "answer": "Dùng pseudo-event: (keyup.enter)=\"onEnter()\" hoặc (keydown.enter)=\"onEnter()\".",
+      "starred": false
+    },
+    {
+      "id": "q72",
+      "type": "multiple-choice",
+      "question": "Cú pháp { data: { role: 'admin' } } trong cấu hình Routes dùng để làm gì?",
+      "options": [
+        "Đăng nhập người dùng.",
+        "Truyền dữ liệu TĨNH (static data) trực tiếp vào route, Component hoặc Guard có thể truy cập qua route.data.",
+        "Giới hạn số lượng truy cập.",
+        "Truyền tham số động trên URL."
+      ],
+      "answer": "Truyền dữ liệu TĨNH (static data) trực tiếp vào route, Component hoặc Guard có thể truy cập qua route.data.",
+      "starred": false
+    },
+    {
+      "id": "q73",
+      "type": "multiple-choice",
+      "question": "Dấu chấm than (!) phía sau tên thuộc tính (VD: title!: string) trong Angular class mang ý nghĩa gì?",
+      "options": [
+        "Thuộc tính là hằng số.",
+        "Definite Assignment Assertion: Báo cho TypeScript biết biến này sẽ được gán giá trị sau (VD: ở ngOnInit), bỏ qua lỗi cảnh báo null/undefined.",
+        "Ép kiểu sang boolean.",
+        "Toán tử NOT."
+      ],
+      "answer": "Definite Assignment Assertion: Báo cho TypeScript biết biến này sẽ được gán giá trị sau (VD: ở ngOnInit), bỏ qua lỗi cảnh báo null/undefined.",
+      "starred": false
+    },
+    {
+      "id": "q74",
+      "type": "multiple-choice",
+      "question": "Kỹ thuật Module Federation (Webpack 5) ứng dụng với Angular để giải quyết bài toán kiến trúc nào?",
+      "options": [
+        "Cải thiện UI/UX.",
+        "Kiến trúc Micro-frontends: cho phép tải động và chia sẻ mã nguồn giữa nhiều ứng dụng Angular nhỏ chạy chung trên một Shell chính.",
+        "Tối ưu hình ảnh.",
+        "Thay thế cho Docker."
+      ],
+      "answer": "Kiến trúc Micro-frontends: cho phép tải động và chia sẻ mã nguồn giữa nhiều ứng dụng Angular nhỏ chạy chung trên một Shell chính.",
+      "starred": false
+    },
+    {
+      "id": "q75",
+      "type": "multiple-choice",
+      "question": "Chức năng của `ng build --configuration production` so với build thường?",
+      "options": [
+        "Chỉ đổi biến môi trường.",
+        "Thực hiện tối ưu hóa sâu: AOT compilation, Minification, Uglification, và Tree-shaking để thu nhỏ tối đa dung lượng bundle.",
+        "Tạo bản build chạy trên mobile.",
+        "Upload code lên server."
+      ],
+      "answer": "Thực hiện tối ưu hóa sâu: AOT compilation, Minification, Uglification, và Tree-shaking để thu nhỏ tối đa dung lượng bundle.",
+      "starred": false
+    },
+    {
+      "id": "q76",
+      "type": "multiple-choice",
+      "question": "Khai báo `imports: [CommonModule]` trong Standalone Component có tác dụng gì?",
+      "options": [
+        "Tăng tốc ứng dụng.",
+        "Cung cấp các Directives/Pipes cốt lõi của Angular như *ngIf, *ngFor, AsyncPipe, DatePipe cho component đó sử dụng.",
+        "Để component giao tiếp với Backend.",
+        "Để dùng Routing."
+      ],
+      "answer": "Cung cấp các Directives/Pipes cốt lõi của Angular như *ngIf, *ngFor, AsyncPipe, DatePipe cho component đó sử dụng.",
+      "starred": false
+    },
+    {
+      "id": "q77",
+      "type": "multiple-choice",
+      "question": "Decorator @Optional() trong Constructor DI giúp ích việc gì?",
+      "options": [
+        "Giúp service khởi tạo nhanh hơn.",
+        "Báo cho DI system: Nếu không tìm thấy Service (không ai provide), hãy trả về 'null' thay vì ném ra lỗi (throw Error) làm sập app.",
+        "Service này có thể bị tree-shaken.",
+        "Cho phép Service nhận tham số động."
+      ],
+      "answer": "Báo cho DI system: Nếu không tìm thấy Service (không ai provide), hãy trả về 'null' thay vì ném ra lỗi (throw Error) làm sập app.",
+      "starred": false
+    },
+    {
+      "id": "q78",
+      "type": "multiple-choice",
+      "question": "Sự kiện (ngSubmit) trên thẻ <form> tối ưu hơn (click) trên nút Submit ở điểm nào?",
+      "options": [
+        "Tự động validate form.",
+        "Bắt được cả sự kiện click nút bấm VÀ sự kiện người dùng nhấn phím Enter khi đang gõ text input, đảm bảo luồng UX chuẩn.",
+        "Gửi data đi nhanh hơn.",
+        "Mã hóa data tự động."
+      ],
+      "answer": "Bắt được cả sự kiện click nút bấm VÀ sự kiện người dùng nhấn phím Enter khi đang gõ text input, đảm bảo luồng UX chuẩn.",
+      "starred": false
+    },
+    {
+      "id": "q79",
+      "type": "multiple-choice",
+      "question": "RxJS Subject hoạt động theo nguyên lý Đa luồng (Multicast), điều này có nghĩa là gì?",
+      "options": [
+        "Nó có thể xử lý nhiều request API một lúc.",
+        "Khi Subject phát ra một giá trị (emit), TẤT CẢ các subscribers hiện tại đều nhận được cùng MỘT giá trị đó đồng thời.",
+        "Nó sinh ra nhiều giá trị random.",
+        "Nó tự động phân luồng dữ liệu theo thời gian."
+      ],
+      "answer": "Khi Subject phát ra một giá trị (emit), TẤT CẢ các subscribers hiện tại đều nhận được cùng MỘT giá trị đó đồng thời.",
+      "starred": false
+    },
+    {
+      "id": "q80",
+      "type": "multiple-choice",
+      "question": "Pipe nào sau đây là MỘT IMPURE PIPE mặc định trong Angular?",
+      "options": [
+        "DatePipe",
+        "UpperCasePipe",
+        "AsyncPipe (nó phải cập nhật DOM liên tục mỗi khi luồng data thay đổi)",
+        "CurrencyPipe"
+      ],
+      "answer": "AsyncPipe (nó phải cập nhật DOM liên tục mỗi khi luồng data thay đổi)",
+      "starred": false
+    },
+    {
+      "id": "q81",
+      "type": "multiple-choice",
+      "question": "Làm thế nào để truyền một Header bảo mật riêng lẻ vào một lệnh HttpClient.get()?",
+      "options": [
+        "Set thuộc tính trực tiếp: http.get(url).header = ...",
+        "Tạo const headers = new HttpHeaders({'Key': 'Val'}); truyền vào tham số thứ hai (options) của hàm get.",
+        "Không thể làm được, phải dùng Interceptor.",
+        "Khai báo trong file environments.ts"
+      ],
+      "answer": "Tạo const headers = new HttpHeaders({'Key': 'Val'}); truyền vào tham số thứ hai (options) của hàm get.",
+      "starred": false
+    },
+    {
+      "id": "q82",
+      "type": "multiple-choice",
+      "question": "Khi muốn component A và B (không liên quan họ hàng) giao tiếp tức thời, dùng cách nào phổ biến nhất?",
+      "options": [
+        "Input và Output chain qua 10 lớp.",
+        "Sử dụng Shared Service có chứa một BehaviorSubject (hoặc RxJS Store/NgRx) để lưu state dùng chung.",
+        "Lưu vào Window object.",
+        "Dùng Document.getElementById()"
+      ],
+      "answer": "Sử dụng Shared Service có chứa một BehaviorSubject (hoặc RxJS Store/NgRx) để lưu state dùng chung.",
+      "starred": false
+    },
+    {
+      "id": "q83",
+      "type": "multiple-choice",
+      "question": "Trong package.json, ký hiệu ^ (ví dụ: ^16.0.0) mang ý nghĩa update phiên bản nào?",
+      "options": [
+        "Khóa chặt phiên bản.",
+        "Cho phép cập nhật phiên bản Minor và Patch (tính năng mới không làm break code và vá lỗi nhỏ), giới hạn trong Major version hiện hành.",
+        "Cập nhật lên Major mới nhất.",
+        "Chỉ cập nhật Patch."
+      ],
+      "answer": "Cho phép cập nhật phiên bản Minor và Patch (tính năng mới không làm break code và vá lỗi nhỏ), giới hạn trong Major version hiện hành.",
+      "starred": false
+    },
+    {
+      "id": "q84",
+      "type": "multiple-choice",
+      "question": "Cú pháp đúng để tạo một Block Else cho cấu trúc *ngIf là?",
+      "options": [
+        "*ngIf=\"condition\" *ngElse=\"templateName\"",
+        "*ngIf=\"condition; else templateName\" (templateName là thẻ <ng-template #templateName>)",
+        "ng-if=\"condition\" ng-else=\"templateName\"",
+        "Không thể làm else trong Angular."
+      ],
+      "answer": "*ngIf=\"condition; else templateName\" (templateName là thẻ <ng-template #templateName>)",
+      "starred": false
+    },
+    {
+      "id": "q85",
+      "type": "multiple-choice",
+      "question": "Toán tử filter trong RxJS có nhiệm vụ gì?",
+      "options": [
+        "Lọc bớt request API bị lỗi.",
+        "Đánh giá từng giá trị phát ra qua một hàm điều kiện (predicate), chỉ cho phép giá trị thỏa mãn (true) đi tiếp trên stream.",
+        "Hủy các giá trị bị lặp.",
+        "Format data thành dạng mảng."
+      ],
+      "answer": "Đánh giá từng giá trị phát ra qua một hàm điều kiện (predicate), chỉ cho phép giá trị thỏa mãn (true) đi tiếp trên stream.",
+      "starred": false
+    },
+    {
+      "id": "q86",
+      "type": "multiple-choice",
+      "question": "Custom Pipe yêu cầu phải implement interface nào để hoạt động?",
+      "options": [
+        "PipeResolver",
+        "PipeTransform (bắt buộc phải có hàm transform())",
+        "CustomPipe",
+        "DataFormat"
+      ],
+      "answer": "PipeTransform (bắt buộc phải có hàm transform())",
+      "starred": false
+    },
+    {
+      "id": "q87",
+      "type": "multiple-choice",
+      "question": "Lifecycle hook nào được gọi mỗi khi giá trị của Data-bound Input property (@Input) thay đổi?",
+      "options": [
+        "ngOnInit",
+        "ngOnChanges",
+        "ngDoCheck",
+        "ngAfterContentChecked"
+      ],
+      "answer": "ngOnChanges",
+      "starred": false
+    },
+    {
+      "id": "q88",
+      "type": "multiple-choice",
+      "question": "Trong quy trình Review Code Angular, thói quen nào của Junior thường bị comment nhiều nhất?",
+      "options": [
+        "Sử dụng type 'any' quá nhiều thay vì định nghĩa Interface cụ thể.",
+        "Tạo Component quá to (God component).",
+        "Gọi API trực tiếp trong Component thay vì tách ra Service.",
+        "Tất cả các lỗi trên."
+      ],
+      "answer": "Tất cả các lỗi trên.",
+      "starred": false
+    },
+    {
+      "id": "q89",
+      "type": "multiple-choice",
+      "question": "Để lấy dữ liệu động từ URL parameter (ví dụ lấy ID từ /user/:id), cách tiêu chuẩn là gì?",
+      "options": [
+        "Dùng window.location.pathname",
+        "Dùng ActivatedRoute: this.route.paramMap.subscribe(params => params.get('id'))",
+        "Dùng Router: this.router.getParams()",
+        "Dùng HTTP interceptor"
+      ],
+      "answer": "Dùng ActivatedRoute: this.route.paramMap.subscribe(params => params.get('id'))",
+      "starred": false
+    },
+    {
+      "id": "q90",
+      "type": "multiple-choice",
+      "question": "Tính năng ViewEncapsulation.ShadowDom làm điều gì đặc biệt?",
+      "options": [
+        "Tạo bóng đổ cho Component.",
+        "Tạo một Shadow DOM chuẩn Web Component, giúp cách ly 100% style của component này, style ngoài không lọt vào, style trong không rò ra.",
+        "Làm mờ ứng dụng khi loading.",
+        "Ẩn component khỏi DOM inspector."
+      ],
+      "answer": "Tạo một Shadow DOM chuẩn Web Component, giúp cách ly 100% style của component này, style ngoài không lọt vào, style trong không rò ra.",
+      "starred": false
+    },
+    {
+      "id": "q91",
+      "type": "multiple-choice",
+      "question": "Trong Angular Router, thuộc tính `pathMatch: 'full'` thường được sử dụng bắt buộc đi kèm với path nào?",
+      "options": [
+        "Wildcard path ('**')",
+        "Empty path ('') khi dùng để Redirect (redirect to Home hoặc Login)",
+        "Dynamic params (':id')",
+        "Lazy load path"
+      ],
+      "answer": "Empty path ('') khi dùng để Redirect (redirect to Home hoặc Login)",
+      "starred": false
+    },
+    {
+      "id": "q92",
+      "type": "multiple-choice",
+      "question": "Toán tử takeUntil trong RxJS được dùng với mục đích gì phổ biến nhất?",
+      "options": [
+        "Lặp lại request vô hạn.",
+        "Tự động Unsubscribe một Observable khi một luồng khác (vd luồng component bị Destroy) phát tín hiệu, giúp dọn dẹp bộ nhớ.",
+        "Giới hạn số lượng request API.",
+        "Bắt lỗi Stream."
+      ],
+      "answer": "Tự động Unsubscribe một Observable khi một luồng khác (vd luồng component bị Destroy) phát tín hiệu, giúp dọn dẹp bộ nhớ.",
+      "starred": false
+    },
+    {
+      "id": "q93",
+      "type": "multiple-choice",
+      "question": "Làm thế nào để sử dụng 2 pipe cùng lúc trên template HTML?",
+      "options": [
+        "{{ value | pipe1(pipe2) }}",
+        "{{ value | pipe1 | pipe2 }} (gọi là chaining pipe)",
+        "{{ pipe1, pipe2 : value }}",
+        "Không thể dùng 2 pipe cùng lúc."
+      ],
+      "answer": "{{ value | pipe1 | pipe2 }} (gọi là chaining pipe)",
+      "starred": false
+    },
+    {
+      "id": "q94",
+      "type": "multiple-choice",
+      "question": "ControlValueAccessor yêu cầu implement hàm bắt buộc nào để form model cập nhật được dữ liệu xuống UI?",
+      "options": [
+        "updateUI()",
+        "writeValue()",
+        "setNgModel()",
+        "render()"
+      ],
+      "answer": "writeValue()",
+      "starred": false
+    },
+    {
+      "id": "q95",
+      "type": "multiple-choice",
+      "question": "Với Standalone Component, file `environment.ts` thường được sử dụng và import ở đâu để cung cấp cấu hình Global?",
+      "options": [
+        "Trong app.module.ts",
+        "Trong file main.ts khi cấu hình bootstrapApplication() (hoặc app.config.ts).",
+        "Trong angular.json",
+        "Khai báo trong từng component."
+      ],
+      "answer": "Trong file main.ts khi cấu hình bootstrapApplication() (hoặc app.config.ts).",
+      "starred": false
+    },
+    {
+      "id": "q96",
+      "type": "multiple-choice",
+      "question": "Decorator @HostBinding() có chức năng gì trong Angular Directive?",
+      "options": [
+        "Ràng buộc data với backend.",
+        "Cho phép gán (bind) một thuộc tính/class/style trực tiếp lên element chủ (host) mà Directive đó đang đính kèm.",
+        "Lắng nghe sự kiện click.",
+        "Truyền dữ liệu xuống child."
+      ],
+      "answer": "Cho phép gán (bind) một thuộc tính/class/style trực tiếp lên element chủ (host) mà Directive đó đang đính kèm.",
+      "starred": false
+    },
+    {
+      "id": "q97",
+      "type": "multiple-choice",
+      "question": "Kỹ thuật Tree-shaking trong Angular mang lại tác dụng gì?",
+      "options": [
+        "Sắp xếp thư mục dự án gọn gàng.",
+        "Tự động rà soát và loại bỏ các đoạn code, thư viện, dịch vụ không hề được ứng dụng sử dụng đến khi build ra bản Production.",
+        "Đồng bộ hóa dữ liệu State.",
+        "Nén hình ảnh tự động."
+      ],
+      "answer": "Tự động rà soát và loại bỏ các đoạn code, thư viện, dịch vụ không hề được ứng dụng sử dụng đến khi build ra bản Production.",
+      "starred": false
+    },
+    {
+      "id": "q98",
+      "type": "multiple-choice",
+      "question": "Hàm computed() trong Angular Signals khác gì với một hàm getter () bình thường trong template?",
+      "options": [
+        "Không khác biệt.",
+        "computed() tự động cache giá trị và CHỈ chạy lại khi Signal mà nó phụ thuộc bị đổi giá trị, tối ưu hơn getter (chạy mọi chu kỳ detect).",
+        "computed() dùng cho RxJS.",
+        "getter() bảo mật hơn."
+      ],
+      "answer": "computed() tự động cache giá trị và CHỈ chạy lại khi Signal mà nó phụ thuộc bị đổi giá trị, tối ưu hơn getter (chạy mọi chu kỳ detect).",
+      "starred": false
+    },
+    {
+      "id": "q99",
+      "type": "multiple-choice",
+      "question": "Trong cấu hình Component, cờ `changeDetection: ChangeDetectionStrategy.OnPush` thuộc đối tượng nào?",
+      "options": [
+        "Class constructor",
+        "Trong decorator @Component({}) metadata object.",
+        "Trong file package.json",
+        "Trong ngOnInit"
+      ],
+      "answer": "Trong decorator @Component({}) metadata object.",
+      "starred": false
+    },
+    {
+      "id": "q100",
+      "type": "multiple-choice",
+      "question": "Lý do phổ biến nhất khiến View không tự cập nhật sau khi gọi API hoàn tất (nhất là khi dùng thư viện ngoài) là gì?",
+      "options": [
+        "Lỗi mạng 404.",
+        "Xử lý callback bất đồng bộ vượt ra khỏi tầm kiểm soát của Angular Zone (Zone.js không nhận thức được để kích hoạt Change Detection).",
+        "Thiếu thuộc tính id.",
+        "Phiên bản TypeScript bị cũ."
+      ],
+      "answer": "Xử lý callback bất đồng bộ vượt ra khỏi tầm kiểm soát của Angular Zone (Zone.js không nhận thức được để kích hoạt Change Detection).",
+      "starred": false
+    }
+  ]
+}

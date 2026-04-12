@@ -1,0 +1,1305 @@
+{
+  "topic": "React & Next.js Interview - Junior & Middle Level (100 MCQs)",
+  "cards": [
+    {
+      "id": "r1",
+      "type": "multiple-choice",
+      "question": "Cơ chế Virtual DOM trong React hoạt động dựa trên nguyên lý nào để tối ưu hiệu năng?",
+      "options": [
+        "Ghi đè toàn bộ DOM thật mỗi khi state thay đổi.",
+        "Tạo một bản sao của DOM trên RAM. Khi state đổi, React tạo Virtual DOM mới, so sánh (Diffing) với bản cũ, và chỉ cập nhật những node thực sự thay đổi lên DOM thật (Reconciliation).",
+        "Sử dụng Web Workers để tính toán UI chạy nền.",
+        "Ràng buộc dữ liệu 2 chiều (Two-way data binding) trực tiếp vào HTML."
+      ],
+      "answer": "Tạo một bản sao của DOM trên RAM. Khi state đổi, React tạo Virtual DOM mới, so sánh (Diffing) với bản cũ, và chỉ cập nhật những node thực sự thay đổi lên DOM thật (Reconciliation).",
+      "starred": false
+    },
+    {
+      "id": "r2",
+      "type": "multiple-choice",
+      "question": "Hàm setState (hoặc set function của useState) trong React hoạt động đồng bộ hay bất đồng bộ?",
+      "options": [
+        "Hoàn toàn đồng bộ, state mới có sẵn ngay ở dòng code tiếp theo.",
+        "Hoạt động bất đồng bộ (Asynchronous) và được gom nhóm (Batching). React chờ đoạn code event handler chạy xong mới tiến hành re-render một lần duy nhất để tối ưu.",
+        "Phụ thuộc vào trình duyệt.",
+        "Chỉ bất đồng bộ khi gọi API."
+      ],
+      "answer": "Hoạt động bất đồng bộ (Asynchronous) và được gom nhóm (Batching). React chờ đoạn code event handler chạy xong mới tiến hành re-render một lần duy nhất để tối ưu.",
+      "starred": false
+    },
+    {
+      "id": "r3",
+      "type": "multiple-choice",
+      "question": "Điều kiện nào khiến một React Component re-render?",
+      "options": [
+        "Khi State thay đổi.",
+        "Khi Props truyền từ component cha thay đổi.",
+        "Khi Component cha của nó re-render.",
+        "Tất cả các ý trên đều đúng."
+      ],
+      "answer": "Tất cả các ý trên đều đúng.",
+      "starred": false
+    },
+    {
+      "id": "r4",
+      "type": "multiple-choice",
+      "question": "Sự khác biệt cốt lõi giữa useMemo và useCallback là gì?",
+      "options": [
+        "Không có khác biệt, dùng thay thế được cho nhau.",
+        "useMemo cache (ghi nhớ) KẾT QUẢ của một hàm tính toán nặng. useCallback cache chính BẢN THÂN HÀM ĐÓ (function reference) để truyền xuống component con không bị tạo lại.",
+        "useMemo dùng cho API, useCallback dùng cho UI.",
+        "useCallback trả về một mảng, useMemo trả về object."
+      ],
+      "answer": "useMemo cache (ghi nhớ) KẾT QUẢ của một hàm tính toán nặng. useCallback cache chính BẢN THÂN HÀM ĐÓ (function reference) để truyền xuống component con không bị tạo lại.",
+      "starred": false
+    },
+    {
+      "id": "r5",
+      "type": "multiple-choice",
+      "question": "Tham số thứ 2 (Dependency Array) trong useEffect hoạt động thế nào nếu ta để nó là một mảng rỗng []?",
+      "options": [
+        "useEffect không bao giờ chạy.",
+        "useEffect chạy ở MỌI lần component re-render.",
+        "useEffect chỉ chạy MỘT LẦN DUY NHẤT sau khi component mount (render lần đầu tiên) lên màn hình.",
+        "Lỗi cú pháp."
+      ],
+      "answer": "useEffect chỉ chạy MỘT LẦN DUY NHẤT sau khi component mount (render lần đầu tiên) lên màn hình.",
+      "starred": false
+    },
+    {
+      "id": "r6",
+      "type": "multiple-choice",
+      "question": "Trong React, 'Prop Drilling' là vấn đề gì và cách giải quyết phổ biến nhất?",
+      "options": [
+        "Là lỗi bảo mật khi truyền prop. Giải quyết bằng thư viện mã hóa.",
+        "Là việc phải truyền prop qua quá nhiều component trung gian không cần thiết để đến được child cần dùng. Giải quyết bằng Context API hoặc State Management (Redux/Zustand).",
+        "Là việc thiếu prop type. Giải quyết bằng TypeScript.",
+        "Là lỗi lặp vô tận (infinite loop). Giải quyết bằng useCallback."
+      ],
+      "answer": "Là việc phải truyền prop qua quá nhiều component trung gian không cần thiết để đến được child cần dùng. Giải quyết bằng Context API hoặc State Management (Redux/Zustand).",
+      "starred": false
+    },
+    {
+      "id": "r7",
+      "type": "multiple-choice",
+      "question": "Hook useRef thường được sử dụng cho 2 mục đích chính nào?",
+      "options": [
+        "Lưu trữ state global và fetch API.",
+        "1) Truy cập trực tiếp vào phần tử DOM thật. 2) Lưu trữ các giá trị mutable mà khi thay đổi KHÔNG làm trigger re-render component (VD: lưu timer ID).",
+        "Tạo animation và tạo routing.",
+        "Quản lý form state và validate."
+      ],
+      "answer": "1) Truy cập trực tiếp vào phần tử DOM thật. 2) Lưu trữ các giá trị mutable mà khi thay đổi KHÔNG làm trigger re-render component (VD: lưu timer ID).",
+      "starred": false
+    },
+    {
+      "id": "r8",
+      "type": "multiple-choice",
+      "question": "Tại sao BẮT BUỘC phải dùng thuộc tính 'key' khi render một list (mảng) các component trong React?",
+      "options": [
+        "Để style CSS cho dễ.",
+        "Giúp thuật toán Diffing của React định danh duy nhất mỗi item. Nếu không có key, khi list thay đổi (thêm, xóa, sort), React có thể render sai UI hoặc tái sử dụng nhầm state của item cũ.",
+        "Để có thể click vào item.",
+        "Vì TypeScript yêu cầu."
+      ],
+      "answer": "Giúp thuật toán Diffing của React định danh duy nhất mỗi item. Nếu không có key, khi list thay đổi (thêm, xóa, sort), React có thể render sai UI hoặc tái sử dụng nhầm state của item cũ.",
+      "starred": false
+    },
+    {
+      "id": "r9",
+      "type": "multiple-choice",
+      "question": "React.memo() là một Higher Order Component (HOC) dùng để làm gì?",
+      "options": [
+        "Bọc Component lại để CHẶN việc re-render nếu các Props truyền vào Component đó không bị thay đổi (shallow compare). Rất hữu ích tối ưu Dumb Component.",
+        "Dùng để tạo biến state mới.",
+        "Dùng để ghi nhớ kết quả gọi API.",
+        "Dùng để bắt lỗi (Error Boundary)."
+      ],
+      "answer": "Bọc Component lại để CHẶN việc re-render nếu các Props truyền vào Component đó không bị thay đổi (shallow compare). Rất hữu ích tối ưu Dumb Component.",
+      "starred": false
+    },
+    {
+      "id": "r10",
+      "type": "multiple-choice",
+      "question": "Sự khác biệt giữa Component Controlled và Uncontrolled trong việc quản lý Form?",
+      "options": [
+        "Controlled được code bằng TypeScript, Uncontrolled code bằng JS.",
+        "Controlled form được React quản lý hoàn toàn data qua State (thường gắn vào thuộc tính value). Uncontrolled form để DOM tự quản lý data, React dùng useRef để lấy value khi cần (như lúc submit).",
+        "Uncontrolled an toàn hơn.",
+        "Controlled form không thể dùng onClick."
+      ],
+      "answer": "Controlled form được React quản lý hoàn toàn data qua State (thường gắn vào thuộc tính value). Uncontrolled form để DOM tự quản lý data, React dùng useRef để lấy value khi cần (như lúc submit).",
+      "starred": false
+    },
+    {
+      "id": "r11",
+      "type": "multiple-choice",
+      "question": "Chức năng Cleanup Function (hàm return) bên trong useEffect chạy khi nào?",
+      "options": [
+        "Chỉ chạy khi component được gọi.",
+        "Chạy TRƯỚC khi component bị unmount (xóa khỏi DOM), VÀ chạy TRƯỚC mỗi lần useEffect chuẩn bị thực thi lại do dependency thay đổi (để dọn dẹp effect cũ).",
+        "Chạy khi phát hiện lỗi.",
+        "Chạy sau khi component mount."
+      ],
+      "answer": "Chạy TRƯỚC khi component bị unmount (xóa khỏi DOM), VÀ chạy TRƯỚC mỗi lần useEffect chuẩn bị thực thi lại do dependency thay đổi (để dọn dẹp effect cũ).",
+      "starred": false
+    },
+    {
+      "id": "r12",
+      "type": "multiple-choice",
+      "question": "React Portals (`createPortal`) thường được dùng để giải quyết UI component nào nhất?",
+      "options": [
+        "Table chứa dữ liệu lớn.",
+        "Render các component như Modal, Tooltip, Dropdown ra bên ngoài DOM hierarchy của component cha (thường nhúng thẳng vào thẻ <body>) để tránh bị lỗi CSS z-index hoặc overflow: hidden.",
+        "Tạo hiệu ứng chuyển trang.",
+        "Tạo Custom Hook."
+      ],
+      "answer": "Render các component như Modal, Tooltip, Dropdown ra bên ngoài DOM hierarchy của component cha (thường nhúng thẳng vào thẻ <body>) để tránh bị lỗi CSS z-index hoặc overflow: hidden.",
+      "starred": false
+    },
+    {
+      "id": "r13",
+      "type": "multiple-choice",
+      "question": "Tại sao Hook không được gọi bên trong vòng lặp (loop), câu điều kiện (if) hoặc nested function?",
+      "options": [
+        "Do cú pháp JS cấm.",
+        "Vì React dựa vào THỨ TỰ GỌI các hook để ánh xạ state đúng cho từng hook ở mỗi lần render. Nếu gọi trong if/loop, thứ tự này bị sai lệch dẫn đến app bị crash hoặc nhận nhầm state.",
+        "Để code đẹp hơn.",
+        "Làm chậm quá trình build."
+      ],
+      "answer": "Vì React dựa vào THỨ TỰ GỌI các hook để ánh xạ state đúng cho từng hook ở mỗi lần render. Nếu gọi trong if/loop, thứ tự này bị sai lệch dẫn đến app bị crash hoặc nhận nhầm state.",
+      "starred": false
+    },
+    {
+      "id": "r14",
+      "type": "multiple-choice",
+      "question": "React.lazy và Suspense phối hợp với nhau để làm gì?",
+      "options": [
+        "Trì hoãn việc xóa state.",
+        "Lazy Loading (Code splitting): React.lazy giúp chỉ tải mã nguồn JS của component khi nó thực sự cần render. Suspense hiển thị UI fallback (Loading spinner) trong lúc chờ tải mã nguồn đó.",
+        "Bắt lỗi API.",
+        "Tạo hiệu ứng animation lười biếng."
+      ],
+      "answer": "Lazy Loading (Code splitting): React.lazy giúp chỉ tải mã nguồn JS của component khi nó thực sự cần render. Suspense hiển thị UI fallback (Loading spinner) trong lúc chờ tải mã nguồn đó.",
+      "starred": false
+    },
+    {
+      "id": "r15",
+      "type": "multiple-choice",
+      "question": "Khái niệm Hydration trong React (SSR) là gì?",
+      "options": [
+        "Uống nước cho app.",
+        "Là quá trình React gắn (attach) các Event Listeners và State vào cục HTML tĩnh (được render từ server gửi về), giúp HTML đó 'sống' dậy và trở thành ứng dụng React tương tác được ở client.",
+        "Quá trình gọi API fetch data.",
+        "Quá trình nén file build."
+      ],
+      "answer": "Là quá trình React gắn (attach) các Event Listeners và State vào cục HTML tĩnh (được render từ server gửi về), giúp HTML đó 'sống' dậy và trở thành ứng dụng React tương tác được ở client.",
+      "starred": false
+    },
+    {
+      "id": "r16",
+      "type": "multiple-choice",
+      "question": "Hàm forwardRef() giải quyết bài toán gì?",
+      "options": [
+        "Truyền dữ liệu xuống nhiều cấp.",
+        "Cho phép một Component tự định nghĩa (Custom Component) có thể nhận tham số 'ref' từ Component cha và chuyển tiếp (forward) cái ref đó thẳng vào một DOM element bên trong nó.",
+        "Định tuyến trang web.",
+        "Memoize một hàm."
+      ],
+      "answer": "Cho phép một Component tự định nghĩa (Custom Component) có thể nhận tham số 'ref' từ Component cha và chuyển tiếp (forward) cái ref đó thẳng vào một DOM element bên trong nó.",
+      "starred": false
+    },
+    {
+      "id": "r17",
+      "type": "multiple-choice",
+      "question": "Hook useLayoutEffect khác gì với useEffect?",
+      "options": [
+        "Chỉ dùng cho component chứa layout.",
+        "useEffect chạy BẤT ĐỒNG BỘ sau khi UI đã sơn (paint) ra màn hình. useLayoutEffect chạy ĐỒNG BỘ ngay sau khi DOM cập nhật nhưng TRƯỚC KHI trình duyệt kịp paint, dùng để fix lỗi chớp nháy UI (flicker) khi đo đạc DOM.",
+        "useLayoutEffect chạy nhanh hơn luôn luôn.",
+        "Không có sự khác biệt."
+      ],
+      "answer": "useEffect chạy BẤT ĐỒNG BỘ sau khi UI đã sơn (paint) ra màn hình. useLayoutEffect chạy ĐỒNG BỘ ngay sau khi DOM cập nhật nhưng TRƯỚC KHI trình duyệt kịp paint, dùng để fix lỗi chớp nháy UI (flicker) khi đo đạc DOM.",
+      "starred": false
+    },
+    {
+      "id": "r18",
+      "type": "multiple-choice",
+      "question": "Tính năng Automatic Batching của React 18 có gì mới so với các bản cũ?",
+      "options": [
+        "Gom nhiều API lại làm một.",
+        "Các bản cũ chỉ gom nhóm state updates trong React event handlers. React 18 tự động gom nhóm (batch) state updates ở MỌI NƠI kể cả trong Promise, setTimeout hay native event, giúp giảm render thừa tối đa.",
+        "Bắt buộc dùng TypeScript.",
+        "Tự động format code khi lưu."
+      ],
+      "answer": "Các bản cũ chỉ gom nhóm state updates trong React event handlers. React 18 tự động gom nhóm (batch) state updates ở MỌI NƠI kể cả trong Promise, setTimeout hay native event, giúp giảm render thừa tối đa.",
+      "starred": false
+    },
+    {
+      "id": "r19",
+      "type": "multiple-choice",
+      "question": "Hook useTransition trong React 18 được dùng để làm gì?",
+      "options": [
+        "Làm animation CSS mượt mà.",
+        "Đánh dấu một state update là 'không khẩn cấp' (non-urgent transition). Giúp UI không bị block (đóng băng) khi render các thao tác nặng (vd: filter list 10k item), giữ cho input gõ vẫn mượt.",
+        "Chuyển trang giống React Router.",
+        "Thay thế cho useEffect."
+      ],
+      "answer": "Đánh dấu một state update là 'không khẩn cấp' (non-urgent transition). Giúp UI không bị block (đóng băng) khi render các thao tác nặng (vd: filter list 10k item), giữ cho input gõ vẫn mượt.",
+      "starred": false
+    },
+    {
+      "id": "r20",
+      "type": "multiple-choice",
+      "question": "Khái niệm Synthetic Event trong React là gì?",
+      "options": [
+        "Sự kiện giả lập để test.",
+        "Là một Wrapper (lớp bọc) cross-browser bao quanh Native Event của trình duyệt. Nó giúp chuẩn hóa các sự kiện (như onClick, onChange) hoạt động giống hệt nhau trên mọi trình duyệt.",
+        "Sự kiện do user tự chế.",
+        "Là event loop."
+      ],
+      "answer": "Là một Wrapper (lớp bọc) cross-browser bao quanh Native Event của trình duyệt. Nó giúp chuẩn hóa các sự kiện (như onClick, onChange) hoạt động giống hệt nhau trên mọi trình duyệt.",
+      "starred": false
+    },
+    {
+      "id": "r21",
+      "type": "multiple-choice",
+      "question": "Khi Context API update data ở Provider, điều gì xảy ra với các component con?",
+      "options": [
+        "Tất cả component con re-render.",
+        "Tất cả component con TRONG CÂY (dù không subscribe) đều re-render.",
+        "CHỈ những component có sử dụng hook `useContext` của Provider đó mới bị buộc re-render.",
+        "Component không bao giờ re-render."
+      ],
+      "answer": "CHỈ những component có sử dụng hook `useContext` của Provider đó mới bị buộc re-render.",
+      "starred": false
+    },
+    {
+      "id": "r22",
+      "type": "multiple-choice",
+      "question": "Higher-Order Component (HOC) là gì?",
+      "options": [
+        "Một component có độ ưu tiên cao.",
+        "Là một HÀM nhận vào một Component, bọc thêm logic/UI, và trả về một Component mới (vd: withRouter, connect của Redux). Dùng để tái sử dụng logic.",
+        "Là component luôn nằm ở Root.",
+        "Là thẻ <Fragment>."
+      ],
+      "answer": "Là một HÀM nhận vào một Component, bọc thêm logic/UI, và trả về một Component mới (vd: withRouter, connect của Redux). Dùng để tái sử dụng logic.",
+      "starred": false
+    },
+    {
+      "id": "r23",
+      "type": "multiple-choice",
+      "question": "Error Boundary trong React dùng để bắt lỗi ở đâu?",
+      "options": [
+        "Lỗi trong quá trình fetch API.",
+        "Lỗi cú pháp lúc code (compile time).",
+        "Bắt các lỗi JS xảy ra TRONG QUÁ TRÌNH RENDER, ở lifecycle methods hoặc trong constructors của CÂY COMPONENT CON bên dưới nó. (Không bắt lỗi trong Event handlers).",
+        "Lỗi khi người dùng nhập sai form."
+      ],
+      "answer": "Bắt các lỗi JS xảy ra TRONG QUÁ TRÌNH RENDER, ở lifecycle methods hoặc trong constructors của CÂY COMPONENT CON bên dưới nó. (Không bắt lỗi trong Event handlers).",
+      "starred": false
+    },
+    {
+      "id": "r24",
+      "type": "multiple-choice",
+      "question": "Strict Mode trong React (môi trường Dev) gây ra hiện tượng gì dễ gây bối rối cho Junior?",
+      "options": [
+        "Làm app load chậm 10 lần.",
+        "Tự động chạy render, các hàm khởi tạo và effect LẶP LẠI 2 LẦN (Double-invoke) để giúp phát hiện các side-effects ngầm hoặc lỗi memory leak.",
+        "Chặn không cho gọi API.",
+        "Bắt buộc khai báo type strict."
+      ],
+      "answer": "Tự động chạy render, các hàm khởi tạo và effect LẶP LẠI 2 LẦN (Double-invoke) để giúp phát hiện các side-effects ngầm hoặc lỗi memory leak.",
+      "starred": false
+    },
+    {
+      "id": "r25",
+      "type": "multiple-choice",
+      "question": "Khái niệm React Server Components (RSC) (phổ biến từ React 18 / Next 13+) có tính năng gì mang tính cách mạng?",
+      "options": [
+        "Chạy hoàn toàn bằng PHP.",
+        "Các component chỉ được render trên Server, kết quả trả về client là dữ liệu giao diện (không gửi mã nguồn JS của component đó xuống). Giúp bundle size bằng 0, có thể query DB trực tiếp.",
+        "Chuyển toàn bộ client side thành server side.",
+        "Tạo database nội bộ React."
+      ],
+      "answer": "Các component chỉ được render trên Server, kết quả trả về client là dữ liệu giao diện (không gửi mã nguồn JS của component đó xuống). Giúp bundle size bằng 0, có thể query DB trực tiếp.",
+      "starred": false
+    },
+    {
+      "id": "r26",
+      "type": "multiple-choice",
+      "question": "Thư viện React Router (v6): Hook nào thay thế cho useHistory() để chuyển trang bằng code?",
+      "options": [
+        "useNavigation()",
+        "useNavigate()",
+        "useLocation()",
+        "useRoute()"
+      ],
+      "answer": "useNavigate()",
+      "starred": false
+    },
+    {
+      "id": "r27",
+      "type": "multiple-choice",
+      "question": "Trong Redux Toolkit (RTK), hàm `createSlice` sinh ra những gì?",
+      "options": [
+        "Chỉ sinh ra Reducer.",
+        "Sinh ra tự động cả Reducer và các Action Creators tương ứng với tên reducer, giúp giảm thiểu tối đa boilerplate code.",
+        "Sinh ra middleware.",
+        "Sinh ra store."
+      ],
+      "answer": "Sinh ra tự động cả Reducer và các Action Creators tương ứng với tên reducer, giúp giảm thiểu tối đa boilerplate code.",
+      "starred": false
+    },
+    {
+      "id": "r28",
+      "type": "multiple-choice",
+      "question": "Tại sao Redux Toolkit lại cho phép viết code 'như thể' đang thay đổi state trực tiếp (mutate state) bên trong reducer?",
+      "options": [
+        "Vì Redux đã bỏ quy tắc immutability.",
+        "Bởi vì RTK sử dụng thư viện Immer ở dưới nền. Nó biến các thao tác mutate thành các bản sao immutable an toàn một cách tự động.",
+        "Vì JavaScript ES6 hỗ trợ.",
+        "Đây là một bug của RTK."
+      ],
+      "answer": "Bởi vì RTK sử dụng thư viện Immer ở dưới nền. Nó biến các thao tác mutate thành các bản sao immutable an toàn một cách tự động.",
+      "starred": false
+    },
+    {
+      "id": "r29",
+      "type": "multiple-choice",
+      "question": "Zustand nổi lên như một giải pháp thay thế Redux. Ưu điểm nổi bật của nó là gì?",
+      "options": [
+        "Được Facebook chính thức hỗ trợ.",
+        "Cực kỳ nhẹ, API đơn giản dựa trên hooks, không cần bọc app bằng thẻ <Provider>, và ít boilerplate code hơn hẳn Redux.",
+        "Dùng class component thay vì hooks.",
+        "Chạy nhanh hơn Redux 100 lần."
+      ],
+      "answer": "Cực kỳ nhẹ, API đơn giản dựa trên hooks, không cần bọc app bằng thẻ <Provider>, và ít boilerplate code hơn hẳn Redux.",
+      "starred": false
+    },
+    {
+      "id": "r30",
+      "type": "multiple-choice",
+      "question": "React Hook Form ưu việt hơn Formik ở khía cạnh nào?",
+      "options": [
+        "Hỗ trợ TypeScript tốt hơn.",
+        "Hiệu năng (Performance). Nó sử dụng Uncontrolled Components dưới nền, giảm thiểu số lần re-render khi user gõ phím so với việc lưu state như Formik.",
+        "Có nhiều UI components sẵn hơn.",
+        "Viết code dễ hơn."
+      ],
+      "answer": "Hiệu năng (Performance). Nó sử dụng Uncontrolled Components dưới nền, giảm thiểu số lần re-render khi user gõ phím so với việc lưu state như Formik.",
+      "starred": false
+    },
+    {
+      "id": "r31",
+      "type": "multiple-choice",
+      "question": "Trong React Query (TanStack Query), hàm `useQuery` được dùng khi nào?",
+      "options": [
+        "Khi muốn thay đổi dữ liệu trên server.",
+        "Khi muốn LẤY (fetch/GET) dữ liệu từ server. Tự động xử lý loading, error state và caching dữ liệu.",
+        "Khi muốn phân tích dữ liệu cục bộ.",
+        "Khi muốn xóa dữ liệu."
+      ],
+      "answer": "Khi muốn LẤY (fetch/GET) dữ liệu từ server. Tự động xử lý loading, error state và caching dữ liệu.",
+      "starred": false
+    },
+    {
+      "id": "r32",
+      "type": "multiple-choice",
+      "question": "Trong React Query, hàm `useMutation` được dùng khi nào?",
+      "options": [
+        "Lấy dữ liệu (GET).",
+        "Khi muốn TẠO, SỬA, XÓA (POST, PUT, DELETE) dữ liệu trên server, hoặc các hành động có side-effects (như submit form).",
+        "Lưu state nội bộ.",
+        "Phân quyền user."
+      ],
+      "answer": "Khi muốn TẠO, SỬA, XÓA (POST, PUT, DELETE) dữ liệu trên server, hoặc các hành động có side-effects (như submit form).",
+      "starred": false
+    },
+    {
+      "id": "r33",
+      "type": "multiple-choice",
+      "question": "Stale-time trong React Query có ý nghĩa gì?",
+      "options": [
+        "Thời gian cache tồn tại trước khi bị xóa.",
+        "Thời gian mà dữ liệu được coi là 'fresh' (tươi mới). Trong thời gian này, React Query sẽ KHÔNG fetch lại data mới dù có trigger (như focus lại tab).",
+        "Thời gian timeout của API.",
+        "Thời gian chờ render component."
+      ],
+      "answer": "Thời gian mà dữ liệu được coi là 'fresh' (tươi mới). Trong thời gian này, React Query sẽ KHÔNG fetch lại data mới dù có trigger (như focus lại tab).",
+      "starred": false
+    },
+    {
+      "id": "r34",
+      "type": "multiple-choice",
+      "question": "Hook `useReducer` thích hợp sử dụng thay thế `useState` trong tình huống nào?",
+      "options": [
+        "Khi biến state là chuỗi string.",
+        "Khi component có state logic quá phức tạp, bao gồm nhiều sub-values, hoặc khi state tiếp theo phụ thuộc chặt chẽ vào state trước đó (theo mô hình action/reducer).",
+        "Khi cần gọi API.",
+        "Khi cần truyền state xuống nhiều component con."
+      ],
+      "answer": "Khi component có state logic quá phức tạp, bao gồm nhiều sub-values, hoặc khi state tiếp theo phụ thuộc chặt chẽ vào state trước đó (theo mô hình action/reducer).",
+      "starred": false
+    },
+    {
+      "id": "r35",
+      "type": "multiple-choice",
+      "question": "Tính năng `dangerouslySetInnerHTML` trong React dùng để làm gì?",
+      "options": [
+        "Mã hóa dữ liệu.",
+        "Render trực tiếp chuỗi HTML vào component (tương tự innerHTML của DOM). Từ 'dangerously' là cảnh báo nguy cơ bị tấn công XSS nếu dữ liệu không được sanitize.",
+        "Bỏ qua quy tắc Strict Mode.",
+        "Chạy animation CSS."
+      ],
+      "answer": "Render trực tiếp chuỗi HTML vào component (tương tự innerHTML của DOM). Từ 'dangerously' là cảnh báo nguy cơ bị tấn công XSS nếu dữ liệu không được sanitize.",
+      "starred": false
+    },
+    {
+      "id": "r36",
+      "type": "multiple-choice",
+      "question": "Custom Hook trong React có quy tắc thiết kế gì quan trọng nhất?",
+      "options": [
+        "Phải đặt trong thư mục hooks.",
+        "Tên hàm BẮT BUỘC phải bắt đầu bằng chữ `use` (vd: useFetch), và bên trong nó phải gọi ít nhất một React Hook chuẩn (useState, useEffect...) để tái sử dụng logic.",
+        "Không được trả về mảng.",
+        "Phải được bọc bằng useMemo."
+      ],
+      "answer": "Tên hàm BẮT BUỘC phải bắt đầu bằng chữ `use` (vd: useFetch), và bên trong nó phải gọi ít nhất một React Hook chuẩn (useState, useEffect...) để tái sử dụng logic.",
+      "starred": false
+    },
+    {
+      "id": "r37",
+      "type": "multiple-choice",
+      "question": "Một Component render ra `null` thì kết quả trên màn hình là gì?",
+      "options": [
+        "Hiển thị chữ 'null'.",
+        "Không hiển thị gì cả (component ẩn hoàn toàn khỏi DOM). Cách này thường dùng để điều kiện hóa việc render (Conditional Rendering).",
+        "Báo lỗi crash app.",
+        "Hiển thị khoảng trắng 10px."
+      ],
+      "answer": "Không hiển thị gì cả (component ẩn hoàn toàn khỏi DOM). Cách này thường dùng để điều kiện hóa việc render (Conditional Rendering).",
+      "starred": false
+    },
+    {
+      "id": "r38",
+      "type": "multiple-choice",
+      "question": "Toán tử `&&` thường gây lỗi hiển thị gì trong Conditional Rendering nếu ta viết `count && <p>Có item</p>` (với count = 0)?",
+      "options": [
+        "Lỗi cú pháp.",
+        "Nó sẽ hiển thị số '0' ra màn hình (vì 0 là falsy trong JS, nhưng React vẫn render số 0). Cách fix: dùng `count > 0 && ...` hoặc toán tử ba ngôi.",
+        "Không hiển thị gì cả.",
+        "Hiển thị 'undefined'."
+      ],
+      "answer": "Nó sẽ hiển thị số '0' ra màn hình (vì 0 là falsy trong JS, nhưng React vẫn render số 0). Cách fix: dùng `count > 0 && ...` hoặc toán tử ba ngôi.",
+      "starred": false
+    },
+    {
+      "id": "r39",
+      "type": "multiple-choice",
+      "question": "Thư viện Framer Motion thường được sử dụng để làm gì trong React?",
+      "options": [
+        "Quản lý state global.",
+        "Tạo các Animations (hiệu ứng chuyển động) mượt mà, phức tạp một cách khai báo (declarative) dễ dàng thông qua component `<motion.div>`.",
+        "Validate form.",
+        "Gọi API."
+      ],
+      "answer": "Tạo các Animations (hiệu ứng chuyển động) mượt mà, phức tạp một cách khai báo (declarative) dễ dàng thông qua component `<motion.div>`.",
+      "starred": false
+    },
+    {
+      "id": "r40",
+      "type": "multiple-choice",
+      "question": "Trong Styled Components, cơ chế nào cho phép tạo CSS class tự động và không bị trùng lặp (scoped CSS)?",
+      "options": [
+        "Bằng cách thêm ID vào thẻ.",
+        "Khi viết const Button = styled.button`...`, nó tự sinh ra một chuỗi hash ngẫu nhiên (vd: .sc-bdfBwQ) làm class name, đảm bảo style không lọt ra ngoài component.",
+        "Bằng thẻ <style scoped>.",
+        "Bằng cách dùng inline style."
+      ],
+      "answer": "Khi viết const Button = styled.button`...`, nó tự sinh ra một chuỗi hash ngẫu nhiên (vd: .sc-bdfBwQ) làm class name, đảm bảo style không lọt ra ngoài component.",
+      "starred": false
+    },
+    {
+      "id": "r41",
+      "type": "multiple-choice",
+      "question": "Tính năng `children` prop trong React giúp áp dụng pattern thiết kế nào?",
+      "options": [
+        "Component cha tự quản lý state.",
+        "Composition (Hợp thành). Cho phép truyền một cụm Component tùy ý từ ngoài vào trong một Component đóng vai trò như một bộ khung (Layout, Card, Modal).",
+        "Higher Order Component.",
+        "Render Props."
+      ],
+      "answer": "Composition (Hợp thành). Cho phép truyền một cụm Component tùy ý từ ngoài vào trong một Component đóng vai trò như một bộ khung (Layout, Card, Modal).",
+      "starred": false
+    },
+    {
+      "id": "r42",
+      "type": "multiple-choice",
+      "question": "Thẻ `<Fragment>` (hoặc `<>...</>`) trong React giải quyết vấn đề gì?",
+      "options": [
+        "Thêm style cho nhóm thẻ.",
+        "Cho phép một Component trả về (return) NHIỀU phần tử DOM ngang hàng nhau mà không cần bọc chúng trong một thẻ <div> thừa (làm nặng DOM tree).",
+        "Chặn re-render.",
+        "Bắt lỗi UI."
+      ],
+      "answer": "Cho phép một Component trả về (return) NHIỀU phần tử DOM ngang hàng nhau mà không cần bọc chúng trong một thẻ <div> thừa (làm nặng DOM tree).",
+      "starred": false
+    },
+    {
+      "id": "r43",
+      "type": "multiple-choice",
+      "question": "Khi gán 1 biến thường (không phải state) let name = 'A', sau đó cập nhật name = 'B'. Component có re-render không?",
+      "options": [
+        "Có, React tự động detect.",
+        "KHÔNG. Biến thường thay đổi sẽ không bao giờ trigger re-render. Chỉ có hàm setState mới báo cho React biết để cập nhật UI.",
+        "Tùy vào việc biến đó có nằm trong useEffect không.",
+        "Có, nhưng bị delay 1s."
+      ],
+      "answer": "KHÔNG. Biến thường thay đổi sẽ không bao giờ trigger re-render. Chỉ có hàm setState mới báo cho React biết để cập nhật UI.",
+      "starred": false
+    },
+    {
+      "id": "r44",
+      "type": "multiple-choice",
+      "question": "Pattern 'Render Props' là gì?",
+      "options": [
+        "Một công cụ test UI.",
+        "Một kỹ thuật truyền một function vào làm prop (thường tên là `render` hoặc `children`). Component cha sẽ gọi function đó và truyền state nội bộ ra cho component con sử dụng.",
+        "Cách render danh sách.",
+        "Bắt lỗi render."
+      ],
+      "answer": "Một kỹ thuật truyền một function vào làm prop (thường tên là `render` hoặc `children`). Component cha sẽ gọi function đó và truyền state nội bộ ra cho component con sử dụng.",
+      "starred": false
+    },
+    {
+      "id": "r45",
+      "type": "multiple-choice",
+      "question": "Khi dùng hàm `setState(prevState => prevState + 1)` thay vì `setState(state + 1)`, bạn đang phòng tránh lỗi gì?",
+      "options": [
+        "Lỗi vòng lặp vô hạn.",
+        "Lỗi Stale State (State cũ). Khi gọi setState liên tục (batching) hoặc trong setTimeout, dùng callback `prevState` đảm bảo bạn luôn cập nhật dựa trên giá trị MỚI NHẤT của state.",
+        "Lỗi thiếu type.",
+        "Lỗi render chậm."
+      ],
+      "answer": "Lỗi Stale State (State cũ). Khi gọi setState liên tục (batching) hoặc trong setTimeout, dùng callback `prevState` đảm bảo bạn luôn cập nhật dựa trên giá trị MỚI NHẤT của state.",
+      "starred": false
+    },
+    {
+      "id": "r46",
+      "type": "multiple-choice",
+      "question": "Ký hiệu `<Component {...props} />` (Spread attributes) có ý nghĩa gì?",
+      "options": [
+        "Xóa toàn bộ props.",
+        "Truyền tự động tất cả các thuộc tính có trong object `props` xuống component con mà không cần khai báo tường minh từng cái (prop1={props.prop1} prop2={...}).",
+        "Clone component.",
+        "Khởi tạo state mới."
+      ],
+      "answer": "Truyền tự động tất cả các thuộc tính có trong object `props` xuống component con mà không cần khai báo tường minh từng cái (prop1={props.prop1} prop2={...}).",
+      "starred": false
+    },
+    {
+      "id": "r47",
+      "type": "multiple-choice",
+      "question": "Thư viện React Testing Library khuyến khích phong cách viết Unit Test nào?",
+      "options": [
+        "Test cấu trúc DOM chi tiết (thẻ div, class).",
+        "Test theo Hành vi người dùng (Behavior-driven). Tìm các element giống cách user tìm (bằng text, aria-role, placeholder) thay vì test implementation details.",
+        "Chỉ test logic JS thuần.",
+        "Test end-to-end trên trình duyệt thật."
+      ],
+      "answer": "Test theo Hành vi người dùng (Behavior-driven). Tìm các element giống cách user tìm (bằng text, aria-role, placeholder) thay vì test implementation details.",
+      "starred": false
+    },
+    {
+      "id": "r48",
+      "type": "multiple-choice",
+      "question": "Hook `useImperativeHandle` được sinh ra để làm gì?",
+      "options": [
+        "Bắt buộc component render ngay lập tức.",
+        "Dùng kèm với `forwardRef`. Nó cho phép Component con CHỈ ĐỊNH rõ (giới hạn) những function/thuộc tính nào sẽ được expose (mở ra) cho Component cha gọi thông qua ref.",
+        "Gọi API đồng bộ.",
+        "Quản lý form phức tạp."
+      ],
+      "answer": "Dùng kèm với `forwardRef`. Nó cho phép Component con CHỈ ĐỊNH rõ (giới hạn) những function/thuộc tính nào sẽ được expose (mở ra) cho Component cha gọi thông qua ref.",
+      "starred": false
+    },
+    {
+      "id": "r49",
+      "type": "multiple-choice",
+      "question": "Một ứng dụng CRA (Create React App) thuần túy thì quá trình render giao diện (HTML) xảy ra ở đâu?",
+      "options": [
+        "Ở cả Client và Server.",
+        "Hoàn toàn ở Client-side (Client Side Rendering - CSR). Server chỉ gửi file HTML trắng (chỉ có thẻ <div id='root'>) và file bundle JS, trình duyệt tải JS rồi mới vẽ UI.",
+        "Trên Server (SSR).",
+        "Lúc build time (SSG)."
+      ],
+      "answer": "Hoàn toàn ở Client-side (Client Side Rendering - CSR). Server chỉ gửi file HTML trắng (chỉ có thẻ <div id='root'>) và file bundle JS, trình duyệt tải JS rồi mới vẽ UI.",
+      "starred": false
+    },
+    {
+      "id": "r50",
+      "type": "multiple-choice",
+      "question": "Lỗi 'Hydration failed because the initial UI does not match what was rendered on the server' (thường gặp trong Next.js/SSR) xảy ra vì lý do chính nào?",
+      "options": [
+        "Do mạng yếu.",
+        "Do nội dung HTML render ra ở phía Server KHÔNG KHỚP (khác biệt) với nội dung mà React ở Client tính toán ra ở lần render đầu tiên (VD: dùng Date.now() hoặc thẻ HTML lồng sai quy tắc).",
+        "Do thiếu thư viện React.",
+        "Do gọi API quá nhiều."
+      ],
+      "answer": "Do nội dung HTML render ra ở phía Server KHÔNG KHỚP (khác biệt) với nội dung mà React ở Client tính toán ra ở lần render đầu tiên (VD: dùng Date.now() hoặc thẻ HTML lồng sai quy tắc).",
+      "starred": false
+    },
+    {
+      "id": "n51",
+      "type": "multiple-choice",
+      "question": "Lợi ích cốt lõi lớn nhất khi sử dụng Next.js thay vì React (CRA/Vite) thông thường là gì?",
+      "options": [
+        "Hỗ trợ UI components đẹp hơn.",
+        "Hỗ trợ mạnh mẽ Pre-rendering (SSR/SSG), giúp nội dung HTML được tạo sẵn từ server gửi về. Giúp tối ưu tuyệt vời cho SEO và cải thiện chỉ số FCP (First Contentful Paint).",
+        "Code chạy nhanh hơn gấp đôi.",
+        "Bảo mật hoàn toàn trước XSS."
+      ],
+      "answer": "Hỗ trợ mạnh mẽ Pre-rendering (SSR/SSG), giúp nội dung HTML được tạo sẵn từ server gửi về. Giúp tối ưu tuyệt vời cho SEO và cải thiện chỉ số FCP (First Contentful Paint).",
+      "starred": false
+    },
+    {
+      "id": "n52",
+      "type": "multiple-choice",
+      "question": "Trong Next.js 13+ (App Router), các component tạo ra MẶC ĐỊNH là loại Component gì?",
+      "options": [
+        "Client Components.",
+        "Server Components (RSC). Bạn không thể dùng hook (useState, useEffect) hoặc lắng nghe sự kiện (onClick) trong các component mặc định này.",
+        "Static Components.",
+        "Edge Components."
+      ],
+      "answer": "Server Components (RSC). Bạn không thể dùng hook (useState, useEffect) hoặc lắng nghe sự kiện (onClick) trong các component mặc định này.",
+      "starred": false
+    },
+    {
+      "id": "n53",
+      "type": "multiple-choice",
+      "question": "Lệnh chỉ thị `'use client'` ở đầu file trong Next.js App Router có ý nghĩa gì?",
+      "options": [
+        "Bắt buộc người dùng tải file này.",
+        "Báo cho Next.js biết Component này là Client Component. Nó được cho phép sử dụng các React hooks, browser API và đính kèm JS bundle xuống client để Hydrate.",
+        "Chạy file ở trình duyệt IE.",
+        "Tối ưu hóa hình ảnh ở client."
+      ],
+      "answer": "Báo cho Next.js biết Component này là Client Component. Nó được cho phép sử dụng các React hooks, browser API và đính kèm JS bundle xuống client để Hydrate.",
+      "starred": false
+    },
+    {
+      "id": "n54",
+      "type": "multiple-choice",
+      "question": "Trong App Router, để làm hành vi giống hệt `getStaticProps` (SSG - Static Site Generation) của Pages Router, ta gọi fetch API như thế nào?",
+      "options": [
+        "fetch(url, { method: 'STATIC' })",
+        "Chỉ cần gọi fetch(url) mặc định, hoặc fetch(url, { cache: 'force-cache' }). Dữ liệu sẽ được fetch 1 lần lúc build time và cache vĩnh viễn.",
+        "Không thể làm được.",
+        "Dùng axios.get()"
+      ],
+      "answer": "Chỉ cần gọi fetch(url) mặc định, hoặc fetch(url, { cache: 'force-cache' }). Dữ liệu sẽ được fetch 1 lần lúc build time và cache vĩnh viễn.",
+      "starred": false
+    },
+    {
+      "id": "n55",
+      "type": "multiple-choice",
+      "question": "Để làm hành vi giống `getServerSideProps` (SSR - Server Side Rendering) luôn lấy dữ liệu mới mỗi request, ta cấu hình fetch ra sao?",
+      "options": [
+        "fetch(url, { ssr: true })",
+        "fetch(url, { cache: 'no-store' }). Next.js sẽ không cache, luôn gọi API lấy data mới ở mỗi request gửi đến Server.",
+        "Sử dụng useSWR.",
+        "Sử dụng getServerData()"
+      ],
+      "answer": "fetch(url, { cache: 'no-store' }). Next.js sẽ không cache, luôn gọi API lấy data mới ở mỗi request gửi đến Server.",
+      "starred": false
+    },
+    {
+      "id": "n56",
+      "type": "multiple-choice",
+      "question": "Tính năng ISR (Incremental Static Regeneration) trong Next.js có sức mạnh gì?",
+      "options": [
+        "Khởi động server siêu tốc.",
+        "Cho phép cập nhật lại trang tĩnh (SSG) dưới nền theo một chu kỳ thời gian (ví dụ 60s) MÀ KHÔNG CẦN BUILD LẠI TOÀN BỘ site. Cú pháp: fetch(url, { next: { revalidate: 60 } }).",
+        "Dịch đa ngôn ngữ.",
+        "Nén hình ảnh."
+      ],
+      "answer": "Cho phép cập nhật lại trang tĩnh (SSG) dưới nền theo một chu kỳ thời gian (ví dụ 60s) MÀ KHÔNG CẦN BUILD LẠI TOÀN BỘ site. Cú pháp: fetch(url, { next: { revalidate: 60 } }).",
+      "starred": false
+    },
+    {
+      "id": "n57",
+      "type": "multiple-choice",
+      "question": "Trong App Router, sự khác biệt lớn nhất giữa file `layout.tsx` và `template.tsx` là gì?",
+      "options": [
+        "layout dùng cho mobile, template dùng cho PC.",
+        "`layout` giữ nguyên state và KHÔNG re-render khi chuyển trang giữa các route con. `template` tạo lại instance mới (reset state, chạy lại effect) mỗi khi chuyển trang.",
+        "Giống hệt nhau.",
+        "template không nhận children."
+      ],
+      "answer": "`layout` giữ nguyên state và KHÔNG re-render khi chuyển trang giữa các route con. `template` tạo lại instance mới (reset state, chạy lại effect) mỗi khi chuyển trang.",
+      "starred": false
+    },
+    {
+      "id": "n58",
+      "type": "multiple-choice",
+      "question": "Thành phần `<Image>` (next/image) mang lại những lợi ích tối ưu hóa nào?",
+      "options": [
+        "Tự động xóa background ảnh.",
+        "Tự động Lazy loading, chuyển đổi định dạng hiện đại (WebP/AVIF), cung cấp size phù hợp thiết bị (responsive sizes), và chống CLS (Cumulative Layout Shift).",
+        "Chuyển ảnh thành base64 hoàn toàn.",
+        "Lưu ảnh thẳng vào database."
+      ],
+      "answer": "Tự động Lazy loading, chuyển đổi định dạng hiện đại (WebP/AVIF), cung cấp size phù hợp thiết bị (responsive sizes), và chống CLS (Cumulative Layout Shift).",
+      "starred": false
+    },
+    {
+      "id": "n59",
+      "type": "multiple-choice",
+      "question": "Tính năng đặc biệt nào xảy ra mặc định khi dùng component `<Link>` (next/link) để chuyển trang?",
+      "options": [
+        "Tải toàn bộ css của ứng dụng.",
+        "Prefetching: Khi Link xuất hiện trong màn hình (viewport), Next.js tự động tải ngầm trước (prefetch) mã nguồn và data tĩnh của trang đích, giúp việc click chuyển trang nhanh như chớp.",
+        "Chuyển trang bằng window.location.",
+        "Reload lại ứng dụng."
+      ],
+      "answer": "Prefetching: Khi Link xuất hiện trong màn hình (viewport), Next.js tự động tải ngầm trước (prefetch) mã nguồn và data tĩnh của trang đích, giúp việc click chuyển trang nhanh như chớp.",
+      "starred": false
+    },
+    {
+      "id": "n60",
+      "type": "multiple-choice",
+      "question": "Route Handlers (file `route.ts`) trong App Router dùng để làm gì?",
+      "options": [
+        "Định nghĩa layout.",
+        "Dùng để tạo các API Endpoint (REST API) tùy chỉnh chạy trên server. Có thể export các hàm GET, POST, PUT, DELETE để xử lý request.",
+        "Bắt lỗi route.",
+        "Xử lý giao diện 404."
+      ],
+      "answer": "Dùng để tạo các API Endpoint (REST API) tùy chỉnh chạy trên server. Có thể export các hàm GET, POST, PUT, DELETE để xử lý request.",
+      "starred": false
+    },
+    {
+      "id": "n61",
+      "type": "multiple-choice",
+      "question": "Tên thư mục đặt trong dấu ngoặc vuông `[id]` (ví dụ: app/blog/[id]/page.tsx) tạo ra loại route nào?",
+      "options": [
+        "Route lỗi.",
+        "Dynamic Route (Route động). URL như /blog/123 sẽ map vào file này, với params.id = '123'.",
+        "Route tĩnh bảo mật.",
+        "Route bị ẩn (private)."
+      ],
+      "answer": "Dynamic Route (Route động). URL như /blog/123 sẽ map vào file này, với params.id = '123'.",
+      "starred": false
+    },
+    {
+      "id": "n62",
+      "type": "multiple-choice",
+      "question": "Tên thư mục `[...slug]` (Catch-all Segments) khác `[[...slug]]` (Optional Catch-all) ở điểm nào?",
+      "options": [
+        "Không có dấu ngoặc đôi.",
+        "`[...slug]` sẽ bắt mọi route phía sau (như /shop/a/b) NHƯNG KHÔNG BẮT route gốc (/shop). `[[...slug]]` optional sẽ bắt cả route gốc (/shop).",
+        "Dùng cho API.",
+        "Catch-all bắt lỗi, Optional bắt thành công."
+      ],
+      "answer": "`[...slug]` sẽ bắt mọi route phía sau (như /shop/a/b) NHƯNG KHÔNG BẮT route gốc (/shop). `[[...slug]]` optional sẽ bắt cả route gốc (/shop).",
+      "starred": false
+    },
+    {
+      "id": "n63",
+      "type": "multiple-choice",
+      "question": "Tên thư mục đặt trong dấu ngoặc đơn `(folderName)` (ví dụ: `app/(auth)/login`) tạo ra kiến trúc gì?",
+      "options": [
+        "Thư mục bảo mật cần mật khẩu.",
+        "Route Group. Cho phép nhóm các file lại để dễ tổ chức code hoặc áp dụng chung một Layout, mà KHÔNG làm thay đổi URL trên trình duyệt (URL vẫn là /login chứ không phải /auth/login).",
+        "Thư mục chứa CSS.",
+        "Route chuyển hướng tự động."
+      ],
+      "answer": "Route Group. Cho phép nhóm các file lại để dễ tổ chức code hoặc áp dụng chung một Layout, mà KHÔNG làm thay đổi URL trên trình duyệt (URL vẫn là /login chứ không phải /auth/login).",
+      "starred": false
+    },
+    {
+      "id": "n64",
+      "type": "multiple-choice",
+      "question": "File `loading.tsx` trong Next.js App Router sử dụng tính năng nào của React ở dưới nền?",
+      "options": [
+        "React Context.",
+        "React Suspense. Next.js tự động bọc `page.tsx` trong một Suspense boundary, hiển thị nội dung `loading.tsx` ngay lập tức trong khi chờ data của page fetch trên server.",
+        "React Portals.",
+        "useEffect."
+      ],
+      "answer": "React Suspense. Next.js tự động bọc `page.tsx` trong một Suspense boundary, hiển thị nội dung `loading.tsx` ngay lập tức trong khi chờ data của page fetch trên server.",
+      "starred": false
+    },
+    {
+      "id": "n65",
+      "type": "multiple-choice",
+      "question": "Một quy tắc BẮT BUỘC khi định nghĩa file `error.tsx` trong Next.js là gì?",
+      "options": [
+        "Phải export default một mảng.",
+        "File này bắt buộc phải là Client Component (phải có `'use client'` ở trên cùng) để có thể bắt được các lỗi JS xảy ra trong quá trình tương tác ở client.",
+        "Phải gọi API về server.",
+        "Phải đặt tên là ErrorBoundary."
+      ],
+      "answer": "File này bắt buộc phải là Client Component (phải có `'use client'` ở trên cùng) để có thể bắt được các lỗi JS xảy ra trong quá trình tương tác ở client.",
+      "starred": false
+    },
+    {
+      "id": "n66",
+      "type": "multiple-choice",
+      "question": "Hàm `generateMetadata` được export từ page/layout Server Component dùng để làm gì?",
+      "options": [
+        "Tính toán số liệu.",
+        "Tạo Metadata (SEO tags như title, description, open graph) một cách ĐỘNG (Dynamic) dựa trên params hoặc fetch data trước khi gửi HTML về client.",
+        "Tạo dữ liệu user ảo.",
+        "Cấu hình database."
+      ],
+      "answer": "Tạo Metadata (SEO tags như title, description, open graph) một cách ĐỘNG (Dynamic) dựa trên params hoặc fetch data trước khi gửi HTML về client.",
+      "starred": false
+    },
+    {
+      "id": "n67",
+      "type": "multiple-choice",
+      "question": "Tính năng Server Actions (xuất hiện từ Next 13.4+) cho phép thực hiện điều gì đặc biệt?",
+      "options": [
+        "Chơi game trên server.",
+        "Cho phép viết các hàm thực thi trên Server (có chứa `'use server'`), nhưng có thể được GỌI TRỰC TIẾP TỪ CLIENT COMPONENTS (như gắn vào form action hoặc onClick) mà không cần tự tạo API route trung gian.",
+        "Chỉ chạy được ở môi trường Node.js cũ.",
+        "Render đồ họa máy chủ."
+      ],
+      "answer": "Cho phép viết các hàm thực thi trên Server (có chứa `'use server'`), nhưng có thể được GỌI TRỰC TIẾP TỪ CLIENT COMPONENTS (như gắn vào form action hoặc onClick) mà không cần tự tạo API route trung gian.",
+      "starred": false
+    },
+    {
+      "id": "n68",
+      "type": "multiple-choice",
+      "question": "Cơ chế Middleware trong Next.js (`middleware.ts` ở root) thường ứng dụng để làm gì?",
+      "options": [
+        "Viết code CSS.",
+        "Chạy code trước khi một request được hoàn thành. Cực kỳ mạnh mẽ để làm Authentication (Check token/Redirect), i18n Routing (Đa ngôn ngữ), hoặc A/B Testing ở Edge Runtime.",
+        "Kết nối database MongoDB.",
+        "Tạo layout trang."
+      ],
+      "answer": "Chạy code trước khi một request được hoàn thành. Cực kỳ mạnh mẽ để làm Authentication (Check token/Redirect), i18n Routing (Đa ngôn ngữ), hoặc A/B Testing ở Edge Runtime.",
+      "starred": false
+    },
+    {
+      "id": "n69",
+      "type": "multiple-choice",
+      "question": "Middleware của Next.js chạy trên môi trường Edge Runtime. Điểm hạn chế lớn nhất của môi trường này so với Node.js là gì?",
+      "options": [
+        "Không có hạn chế.",
+        "Nó là một môi trường V8 thu gọn cực nhanh, nhưng KHÔNG hỗ trợ các API chuẩn của Node.js (như fs, crypto module C++) và không đọc được node_modules thuần túy Node.",
+        "Chỉ hỗ trợ Javascript, không hỗ trợ Typescript.",
+        "Không gọi được fetch API."
+      ],
+      "answer": "Nó là một môi trường V8 thu gọn cực nhanh, nhưng KHÔNG hỗ trợ các API chuẩn của Node.js (như fs, crypto module C++) và không đọc được node_modules thuần túy Node.",
+      "starred": false
+    },
+    {
+      "id": "n70",
+      "type": "multiple-choice",
+      "question": "Parallel Routes (đặt tên thư mục bắt đầu bằng ký tự `@`, vd: `@modal`) cho phép hiển thị kiến trúc UI nào?",
+      "options": [
+        "Gửi song song 2 API.",
+        "Render ĐỒNG THỜI nhiều pages (component) độc lập trong cùng một Layout. Rất phổ biến để làm kiến trúc Dashboard (có nhiều bảng điều khiển) hoặc xử lý Modals chuyên sâu gắn liền với URL.",
+        "Mở 2 tab trình duyệt.",
+        "Đa luồng CPU."
+      ],
+      "answer": "Render ĐỒNG THỜI nhiều pages (component) độc lập trong cùng một Layout. Rất phổ biến để làm kiến trúc Dashboard (có nhiều bảng điều khiển) hoặc xử lý Modals chuyên sâu gắn liền với URL.",
+      "starred": false
+    },
+    {
+      "id": "n71",
+      "type": "multiple-choice",
+      "question": "Intercepting Routes (dùng ký hiệu `(..)`, `(...)`) thường kết hợp với Parallel Routes để giải bài toán UI/UX kinh điển nào?",
+      "options": [
+        "Đăng nhập bằng Google.",
+        "Tính năng 'Feed Modal' (như Instagram): Click vào ảnh hiện Modal (giữ nguyên layout cũ phía dưới). Nhưng nếu user refresh trang hoặc share link đó, nó sẽ render hẳn thành 1 trang chi tiết riêng (Full page).",
+        "Tạo hiệu ứng dark mode.",
+        "Quản lý giỏ hàng."
+      ],
+      "answer": "Tính năng 'Feed Modal' (như Instagram): Click vào ảnh hiện Modal (giữ nguyên layout cũ phía dưới). Nhưng nếu user refresh trang hoặc share link đó, nó sẽ render hẳn thành 1 trang chi tiết riêng (Full page).",
+      "starred": false
+    },
+    {
+      "id": "n72",
+      "type": "multiple-choice",
+      "question": "Hàm `notFound()` khi được gọi trong Next.js sẽ kích hoạt hành vi gì?",
+      "options": [
+        "Hiển thị console.error.",
+        "Lập tức dừng quá trình render hiện tại và ném ra một lỗi đặc biệt, Next.js bắt lỗi này và tự động render giao diện của file `not-found.tsx` gần nhất.",
+        "Báo lỗi 500.",
+        "Chuyển hướng về trang chủ."
+      ],
+      "answer": "Lập tức dừng quá trình render hiện tại và ném ra một lỗi đặc biệt, Next.js bắt lỗi này và tự động render giao diện của file `not-found.tsx` gần nhất.",
+      "starred": false
+    },
+    {
+      "id": "n73",
+      "type": "multiple-choice",
+      "question": "Tính năng `next/font` (vd: next/font/google) mang lại ưu điểm vượt trội gì về performance?",
+      "options": [
+        "Font chữ đẹp hơn.",
+        "Tự động tải Font chữ từ Google về LƯU TRỮ VÀ SERVE LOCAL ngay trong build folder lúc deploy. Không cần gọi request ra ngoài Google lúc client duyệt web, loại bỏ hoàn toàn Layout Shift.",
+        "Tạo custom font icon.",
+        "Tự động đổi font theo thiết bị."
+      ],
+      "answer": "Tự động tải Font chữ từ Google về LƯU TRỮ VÀ SERVE LOCAL ngay trong build folder lúc deploy. Không cần gọi request ra ngoài Google lúc client duyệt web, loại bỏ hoàn toàn Layout Shift.",
+      "starred": false
+    },
+    {
+      "id": "n74",
+      "type": "multiple-choice",
+      "question": "Để xuất (build) ứng dụng Next.js thành tập hợp các file HTML/CSS/JS thuần tĩnh (Static HTML Export - không cần node.js server để chạy), ta cấu hình thuộc tính nào trong next.config.js?",
+      "options": [
+        "buildMode: 'static'",
+        "output: 'export'",
+        "target: 'serverless'",
+        "export: true"
+      ],
+      "answer": "output: 'export'",
+      "starred": false
+    },
+    {
+      "id": "n75",
+      "type": "multiple-choice",
+      "question": "Môi trường (Environment Variables) trong Next.js: Biến môi trường nào SẼ ĐƯỢC ĐÓNG GÓI và expose (hiển thị) cho phía Client browser đọc được?",
+      "options": [
+        "Mọi biến trong file .env",
+        "Chỉ những biến bắt đầu bằng prefix (tiền tố) `NEXT_PUBLIC_` (Ví dụ: NEXT_PUBLIC_API_URL). Các biến khác chỉ server mới đọc được để đảm bảo bảo mật.",
+        "Biến có tên viết hoa.",
+        "Chỉ những biến trong .env.local"
+      ],
+      "answer": "Chỉ những biến bắt đầu bằng prefix (tiền tố) `NEXT_PUBLIC_` (Ví dụ: NEXT_PUBLIC_API_URL). Các biến khác chỉ server mới đọc được để đảm bảo bảo mật.",
+      "starred": false
+    },
+    {
+      "id": "n76",
+      "type": "multiple-choice",
+      "question": "Hàm `redirect()` (import từ next/navigation) dùng ở Server Component có cơ chế ném lỗi thú vị nào?",
+      "options": [
+        "Ném lỗi Timeout.",
+        "Thực chất nó ném ra một Error (NEXT_REDIRECT exception). Khi bạn dùng try-catch bọc hàm `redirect()`, catch sẽ bắt được nó, nên bạn không nên bọc nó trong try-catch, hoặc phải gọi nó SAU khối try-catch.",
+        "Không ném lỗi gì cả.",
+        "Làm sập ứng dụng nếu route sai."
+      ],
+      "answer": "Thực chất nó ném ra một Error (NEXT_REDIRECT exception). Khi bạn dùng try-catch bọc hàm `redirect()`, catch sẽ bắt được nó, nên bạn không nên bọc nó trong try-catch, hoặc phải gọi nó SAU khối try-catch.",
+      "starred": false
+    },
+    {
+      "id": "n77",
+      "type": "multiple-choice",
+      "question": "Hook `useRouter` trong App Router phải được import từ đâu?",
+      "options": [
+        "next/router",
+        "next/navigation (Bắt buộc trong App Router. Import từ next/router sẽ bị lỗi).",
+        "react-router-dom",
+        "next/app"
+      ],
+      "answer": "next/navigation (Bắt buộc trong App Router. Import từ next/router sẽ bị lỗi).",
+      "starred": false
+    },
+    {
+      "id": "n78",
+      "type": "multiple-choice",
+      "question": "Hook `usePathname` (lấy URL path hiện tại) chỉ có thể được sử dụng trong loại component nào?",
+      "options": [
+        "Mọi loại component.",
+        "Bắt buộc phải là Client Component (có 'use client').",
+        "Bắt buộc phải là Server Component.",
+        "Chỉ dùng được trong Middleware."
+      ],
+      "answer": "Bắt buộc phải là Client Component (có 'use client').",
+      "starred": false
+    },
+    {
+      "id": "n79",
+      "type": "multiple-choice",
+      "question": "Hành vi Caching của hàm `fetch` trong React Server Components (Next 13+) mặc định là gì nếu không truyền option nào?",
+      "options": [
+        "Không cache (no-store).",
+        "Mặc định là cache VĨNH VIỄN ('force-cache'). Để không cache, phải khai báo rõ ràng { cache: 'no-store' } hoặc route đó có sử dụng các hàm dynamic (như cookies(), headers()).",
+        "Cache 1 phút.",
+        "Chỉ cache ảnh."
+      ],
+      "answer": "Mặc định là cache VĨNH VIỄN ('force-cache'). Để không cache, phải khai báo rõ ràng { cache: 'no-store' } hoặc route đó có sử dụng các hàm dynamic (như cookies(), headers()).",
+      "starred": false
+    },
+    {
+      "id": "n80",
+      "type": "multiple-choice",
+      "question": "Làm thế nào để truyền Props từ một Server Component (SC) xuống một Client Component (CC)?",
+      "options": [
+        "Không thể truyền được.",
+        "Có thể truyền bình thường, với ĐIỀU KIỆN props đó phải là dữ liệu có thể Serialize (tuần tự hóa JSON được). Không thể truyền function, lớp (class instance) phức tạp từ SC xuống CC.",
+        "Bắt buộc phải mã hóa base64.",
+        "Dùng Context API."
+      ],
+      "answer": "Có thể truyền bình thường, với ĐIỀU KIỆN props đó phải là dữ liệu có thể Serialize (tuần tự hóa JSON được). Không thể truyền function, lớp (class instance) phức tạp từ SC xuống CC.",
+      "starred": false
+    },
+    {
+      "id": "n81",
+      "type": "multiple-choice",
+      "question": "Tính năng `Suspense` bọc ngoài một Async Server Component giúp đạt được trải nghiệm UX gì?",
+      "options": [
+        "Xóa lỗi trang.",
+        "Streaming (Truyền phát). Server sẽ gửi ngay lập tức phần UI tĩnh xung quanh về trước, hiển thị Loading spinner ở chỗ Suspense, và khi API lấy xong data, nó sẽ gửi phần UI còn lại đắp vào.",
+        "Chuyển trang có animation.",
+        "Gọi API ở client."
+      ],
+      "answer": "Streaming (Truyền phát). Server sẽ gửi ngay lập tức phần UI tĩnh xung quanh về trước, hiển thị Loading spinner ở chỗ Suspense, và khi API lấy xong data, nó sẽ gửi phần UI còn lại đắp vào.",
+      "starred": false
+    },
+    {
+      "id": "n82",
+      "type": "multiple-choice",
+      "question": "Khi muốn tạo một trang SEO động (như trang chi tiết sản phẩm) cần fetch data trước khi sinh thẻ meta, bạn export hàm gì?",
+      "options": [
+        "export const metadata = {}",
+        "export async function generateMetadata({ params }) { ... }",
+        "export function getSEO()",
+        "export const Head = () => <title>...</title>"
+      ],
+      "answer": "export async function generateMetadata({ params }) { ... }",
+      "starred": false
+    },
+    {
+      "id": "n83",
+      "type": "multiple-choice",
+      "question": "Trong Next.js 14, `useFormState` (từ react-dom) kết hợp với Server Actions để làm gì?",
+      "options": [
+        "Validate input ở client.",
+        "Nhận trạng thái trả về từ Server Action (như thông báo lỗi, success message) mà không cần JS ở client phải thực thi hoàn toàn (Progressive Enhancement).",
+        "Tạo multi-step form.",
+        "Reset form data."
+      ],
+      "answer": "Nhận trạng thái trả về từ Server Action (như thông báo lỗi, success message) mà không cần JS ở client phải thực thi hoàn toàn (Progressive Enhancement).",
+      "starred": false
+    },
+    {
+      "id": "n84",
+      "type": "multiple-choice",
+      "question": "Khi bạn deploy ứng dụng Next.js lên Vercel, các Route Handlers (API) mặc định được chạy dưới dạng kiến trúc gì?",
+      "options": [
+        "Docker container.",
+        "Serverless Functions. Chúng chỉ khởi động và tính tiền khi có request đến, sau đó sẽ tắt (Cold start).",
+        "Máy chủ vật lý.",
+        "PM2 Daemon."
+      ],
+      "answer": "Serverless Functions. Chúng chỉ khởi động và tính tiền khi có request đến, sau đó sẽ tắt (Cold start).",
+      "starred": false
+    },
+    {
+      "id": "n85",
+      "type": "multiple-choice",
+      "question": "Hàm `revalidatePath('/blog')` trong Server Action có tác dụng gì?",
+      "options": [
+        "Chuyển trang về /blog.",
+        "Xóa bỏ cache cũ của trang /blog trên Server (On-demand Revalidation). Lần tới khi user truy cập, Next.js sẽ sinh lại trang HTML tĩnh mới với data update nhất.",
+        "Xóa cookie của trang.",
+        "Báo lỗi trang /blog."
+      ],
+      "answer": "Xóa bỏ cache cũ của trang /blog trên Server (On-demand Revalidation). Lần tới khi user truy cập, Next.js sẽ sinh lại trang HTML tĩnh mới với data update nhất.",
+      "starred": false
+    },
+    {
+      "id": "n86",
+      "type": "multiple-choice",
+      "question": "Thư viện `next-auth` (Auth.js) là gì và tại sao rất phổ biến trong Next.js?",
+      "options": [
+        "Thư viện làm animation form login.",
+        "Giải pháp Authentication toàn diện, hỗ trợ sẵn OAuth (Google, GitHub...), Credentials, JWT và Session management cực kỳ an toàn và dễ tích hợp cho Next.js.",
+        "Công cụ mã hóa password.",
+        "Database lưu trữ user."
+      ],
+      "answer": "Giải pháp Authentication toàn diện, hỗ trợ sẵn OAuth (Google, GitHub...), Credentials, JWT và Session management cực kỳ an toàn và dễ tích hợp cho Next.js.",
+      "starred": false
+    },
+    {
+      "id": "n87",
+      "type": "multiple-choice",
+      "question": "Thẻ `<Script>` của Next.js (next/script) cho phép tối ưu bằng thuộc tính `strategy`, trong đó `afterInteractive` nghĩa là gì?",
+      "options": [
+        "Chạy sau khi user click.",
+        "Tải script ngay sau khi trang đã tải xong (Hydrated) và có thể tương tác. Rất phù hợp cho các Tag Manager, Analytics để không làm chặn render trang.",
+        "Tải script trước khi HTML parse.",
+        "Không bao giờ tải script."
+      ],
+      "answer": "Tải script ngay sau khi trang đã tải xong (Hydrated) và có thể tương tác. Rất phù hợp cho các Tag Manager, Analytics để không làm chặn render trang.",
+      "starred": false
+    },
+    {
+      "id": "n88",
+      "type": "multiple-choice",
+      "question": "Trong App Router, nếu bạn có một thư mục `app/api/users/route.ts` VÀ một file `app/api/users/page.tsx`, điều gì sẽ xảy ra?",
+      "options": [
+        "Chạy bình thường.",
+        "Xung đột Route (Conflict). Bạn không thể có một Route Handler (API) và một Page (UI) chia sẻ CÙNG MỘT đoạn URL segment.",
+        "API sẽ ưu tiên chạy.",
+        "Page sẽ ưu tiên chạy."
+      ],
+      "answer": "Xung đột Route (Conflict). Bạn không thể có một Route Handler (API) và một Page (UI) chia sẻ CÙNG MỘT đoạn URL segment.",
+      "starred": false
+    },
+    {
+      "id": "n89",
+      "type": "multiple-choice",
+      "question": "Tính năng `Draft Mode` trong Next.js dùng để phục vụ ai?",
+      "options": [
+        "Developer khi đang viết code.",
+        "Content Editors (Headless CMS). Cho phép họ xem trước (Preview) nội dung nháp chưa xuất bản trực tiếp trên giao diện trang thật mà bỏ qua hệ thống Cache tĩnh.",
+        "Database Administrator.",
+        "Designer."
+      ],
+      "answer": "Content Editors (Headless CMS). Cho phép họ xem trước (Preview) nội dung nháp chưa xuất bản trực tiếp trên giao diện trang thật mà bỏ qua hệ thống Cache tĩnh.",
+      "starred": false
+    },
+    {
+      "id": "n90",
+      "type": "multiple-choice",
+      "question": "Khi sử dụng Context API (VD: ThemeProvider) trong kiến trúc App Router, bạn phải bọc Provider đó ở đâu?",
+      "options": [
+        "Trong `layout.tsx` dạng Server Component.",
+        "Tạo một file riêng khai báo `'use client'`, định nghĩa Provider ở đó, rồi mang Provider đó bọc quanh `children` bên trong file `layout.tsx` (Server Component).",
+        "Trong `next.config.js`.",
+        "Không được dùng Context API nữa."
+      ],
+      "answer": "Tạo một file riêng khai báo `'use client'`, định nghĩa Provider ở đó, rồi mang Provider đó bọc quanh `children` bên trong file `layout.tsx` (Server Component).",
+      "starred": false
+    },
+    {
+      "id": "n91",
+      "type": "multiple-choice",
+      "question": "Thuộc tính `priority` trên component `<Image>` nên được sử dụng cho hình ảnh nào?",
+      "options": [
+        "Hình ảnh dưới footer.",
+        "Ảnh LCP (Largest Contentful Paint) - thường là ảnh Hero to nhất nằm ngay màn hình đầu tiên (above-the-fold) để Next.js tải trước bằng thẻ <link rel='preload'>.",
+        "Tất cả hình ảnh.",
+        "Hình đại diện (avatar) nhỏ."
+      ],
+      "answer": "Ảnh LCP (Largest Contentful Paint) - thường là ảnh Hero to nhất nằm ngay màn hình đầu tiên (above-the-fold) để Next.js tải trước bằng thẻ <link rel='preload'>.",
+      "starred": false
+    },
+    {
+      "id": "n92",
+      "type": "multiple-choice",
+      "question": "Khái niệm `Partial Prerendering` (PPR - Experimental trong Next 14) là sự kết hợp của gì?",
+      "options": [
+        "Kết hợp PHP và React.",
+        "Kết hợp SSG tĩnh siêu nhanh và SSR động. Trả về vỏ tĩnh ngay lập tức, trong khi các phần động (bọc bằng Suspense) được stream song song cùng lúc.",
+        "Kết hợp ảnh JPG và WebP.",
+        "Kết hợp Mobile và Desktop."
+      ],
+      "answer": "Kết hợp SSG tĩnh siêu nhanh và SSR động. Trả về vỏ tĩnh ngay lập tức, trong khi các phần động (bọc bằng Suspense) được stream song song cùng lúc.",
+      "starred": false
+    },
+    {
+      "id": "n93",
+      "type": "multiple-choice",
+      "question": "Hàm `cookies()` import từ `next/headers` chỉ gọi được ở đâu?",
+      "options": [
+        "Trong Client Component.",
+        "Trong Server Components, Server Actions hoặc Route Handlers. Lưu ý: Gọi hàm này sẽ khiến route đó tự động chuyển sang chế độ Dynamic Rendering (không cache).",
+        "Trong useEffect.",
+        "Trong next.config.js."
+      ],
+      "answer": "Trong Server Components, Server Actions hoặc Route Handlers. Lưu ý: Gọi hàm này sẽ khiến route đó tự động chuyển sang chế độ Dynamic Rendering (không cache).",
+      "starred": false
+    },
+    {
+      "id": "n94",
+      "type": "multiple-choice",
+      "question": "Biến môi trường nào được Next.js tự động cung cấp mặc định để kiểm tra xem môi trường hiện tại là dev hay prod?",
+      "options": [
+        "process.env.MODE",
+        "process.env.NODE_ENV (Sẽ có giá trị là 'development', 'production' hoặc 'test').",
+        "process.env.NEXT_ENV",
+        "process.env.IS_DEV"
+      ],
+      "answer": "process.env.NODE_ENV (Sẽ có giá trị là 'development', 'production' hoặc 'test').",
+      "starred": false
+    },
+    {
+      "id": "n95",
+      "type": "multiple-choice",
+      "question": "File `global.css` (CSS toàn cục) trong Next.js App Router bắt buộc phải được import ở đâu?",
+      "options": [
+        "Ở mọi file component.",
+        "Chỉ cần import 1 lần duy nhất tại file Root Layout (`app/layout.tsx`).",
+        "Trong file next.config.js.",
+        "Trong thẻ <head> của HTML."
+      ],
+      "answer": "Chỉ cần import 1 lần duy nhất tại file Root Layout (`app/layout.tsx`).",
+      "starred": false
+    },
+    {
+      "id": "n96",
+      "type": "multiple-choice",
+      "question": "Cấu trúc thư mục CSS Modules trong Next.js yêu cầu đặt tên file như thế nào để được hỗ trợ native?",
+      "options": [
+        "[name].module.css (Ví dụ: button.module.css). Next.js sẽ tự động tạo scope (mã hash) cho các class trong file này để tránh xung đột CSS.",
+        "[name].css",
+        "[name].scoped.css",
+        "style.css"
+      ],
+      "answer": "[name].module.css (Ví dụ: button.module.css). Next.js sẽ tự động tạo scope (mã hash) cho các class trong file này để tránh xung đột CSS.",
+      "starred": false
+    },
+    {
+      "id": "n97",
+      "type": "multiple-choice",
+      "question": "Để cấu hình Next.js cho phép hiển thị `<Image>` từ các domain bên ngoài (VD: ảnh từ S3, Unsplash), ta phải thiết lập thuộc tính nào trong `next.config.js`?",
+      "options": [
+        "allowedDomains",
+        "images.remotePatterns (hoặc images.domains ở bản cũ). Khai báo rõ protocol, hostname để tránh rủi ro bảo mật.",
+        "externalImages",
+        "imageUrls"
+      ],
+      "answer": "images.remotePatterns (hoặc images.domains ở bản cũ). Khai báo rõ protocol, hostname để tránh rủi ro bảo mật.",
+      "starred": false
+    },
+    {
+      "id": "n98",
+      "type": "multiple-choice",
+      "question": "Khi sử dụng hàm `generateStaticParams()` trong App Router (tương đương getStaticPaths cũ), mục đích là gì?",
+      "options": [
+        "Tạo dữ liệu test.",
+        "Chỉ định danh sách các tham số động (VD: danh sách các id bài viết [id]) để Next.js Build SẴN thành các trang HTML tĩnh (SSG) ngay tại lúc Build Time.",
+        "Mã hóa URL.",
+        "Lọc dữ liệu API."
+      ],
+      "answer": "Chỉ định danh sách các tham số động (VD: danh sách các id bài viết [id]) để Next.js Build SẴN thành các trang HTML tĩnh (SSG) ngay tại lúc Build Time.",
+      "starred": false
+    },
+    {
+      "id": "n99",
+      "type": "multiple-choice",
+      "question": "Server Action trong Next.js bảo vệ chống lại tấn công CSRF (Cross-Site Request Forgery) bằng cách nào?",
+      "options": [
+        "Yêu cầu captcha.",
+        "Tự động tích hợp. Khi bạn gọi một Server Action, Next.js ngầm đính kèm một Action ID được mã hóa và các cơ chế Origin/Host check để đảm bảo request gửi từ chính app của bạn.",
+        "Mã hóa payload.",
+        "Chỉ dùng qua HTTPS."
+      ],
+      "answer": "Tự động tích hợp. Khi bạn gọi một Server Action, Next.js ngầm đính kèm một Action ID được mã hóa và các cơ chế Origin/Host check để đảm bảo request gửi từ chính app của bạn.",
+      "starred": false
+    },
+    {
+      "id": "n100",
+      "type": "multiple-choice",
+      "question": "Lệnh `npm run build` trong dự án Next.js sẽ báo lỗi (Fail) ngay lập tức nếu gặp vấn đề gì phổ biến nhất?",
+      "options": [
+        "Lỗi thiếu CSS.",
+        "Lỗi Type checking (TypeScript error) hoặc Lỗi ESLint. Next.js chạy cả 2 tiến trình này nghiêm ngặt trước khi compile để đảm bảo code Production không có bug vặt.",
+        "Lỗi kết nối database.",
+        "Lỗi thiếu comment code."
+      ],
+      "answer": "Lỗi Type checking (TypeScript error) hoặc Lỗi ESLint. Next.js chạy cả 2 tiến trình này nghiêm ngặt trước khi compile để đảm bảo code Production không có bug vặt.",
+      "starred": false
+    }
+  ]
+}
