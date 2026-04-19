@@ -700,7 +700,11 @@ class FlashMaster {
       const d = await r.json();
       this.originalCards = Array.isArray(d.cards) ? d.cards : [];
       this._applyFilters();
-      this.currentIndex = 0;
+      
+      // Load progress
+      const savedIdx = parseInt(localStorage.getItem(`fm_progress_${id}`));
+      this.currentIndex = (savedIdx >= 0 && savedIdx < this.cards.length) ? savedIdx : 0;
+      
       this._render();
     } catch {
       this._showError();
@@ -856,7 +860,15 @@ class FlashMaster {
     const newIdx = this.currentIndex + dir;
     if (newIdx < 0 || newIdx >= this.cards.length) return;
     this.currentIndex = newIdx;
+    this._saveProgress();
     this._render();
+  }
+
+  /* --- Progress tracking ------------------------------ */
+  _saveProgress() {
+    if (this.currentTopicId) {
+      localStorage.setItem(`fm_progress_${this.currentTopicId}`, this.currentIndex);
+    }
   }
 
   /* --- Flip ------------------------------------------- */
