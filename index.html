@@ -49,6 +49,9 @@
         </div>
         <!-- Toolbar buttons -->
         <div class="toolbar">
+          <button class="tool-btn" id="fullscreenBtn" title="Toàn màn hình" aria-label="Toàn màn hình">
+            <span class="tool-icon material-symbols-rounded">fullscreen</span>
+          </button>
           <button class="tool-btn" id="settingsBtn" title="AI Settings" aria-label="AI Settings">
             <span class="tool-icon">⚙</span>
           </button>
@@ -194,6 +197,11 @@
       </div>
     </div>
   </div>
+
+  <!-- Floating Exit Fullscreen (Only visible in focused mode) -->
+  <button class="fullscreen-exit-fab" id="fsExitFab" title="Thoát toàn màn hình" aria-label="Thoát toàn màn hình" hidden>
+    <span class="material-symbols-rounded">close</span>
+  </button>
 
   <!-- Config (local API key — gitignored, NOT committed) -->
   <script src="config.js"></script>

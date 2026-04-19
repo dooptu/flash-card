@@ -17,11 +17,10 @@ class GeminiAI {
   constructor() {
     // Priority: config.js (FM_CONFIG) > localStorage (Settings modal) > default
     const cfg = window.FM_CONFIG || {};
-    this.apiKey   = cfg.GEMINI_API_KEY || localStorage.getItem('fm_gemini_key')   || '';
-    this.model    = cfg.GEMINI_MODEL   || localStorage.getItem('fm_gemini_model') || 'gemini-2.0-flash';
-    this.language = cfg.GEMINI_LANG    || localStorage.getItem('fm_gemini_lang')  || 'vi';
+    this.apiKey = cfg.GEMINI_API_KEY || localStorage.getItem('fm_gemini_key') || '';
+    this.model = cfg.GEMINI_MODEL || localStorage.getItem('fm_gemini_model') || 'gemini-2.0-flash';
+    this.language = cfg.GEMINI_LANG || localStorage.getItem('fm_gemini_lang') || 'vi';
   }
-
   _baseUrl() {
     return `https://generativelanguage.googleapis.com/v1beta/models/${this.model}:streamGenerateContent?alt=sse&key=${this.apiKey}`;
   }
@@ -38,7 +37,7 @@ Hay giai thich chi tiet va de hieu ve cau hoi va cau tra loi duoi day.
 
 **Cau hoi:** ${question}
 
-**Cau tra loi ngan:** ${answer}
+**Cau tra loi ngan:** ${answer} 
 
 Hay cung cap:
 1. **Giai thich co ban** — Tai sao cau tra loi do dung, khai niem cot loi la gi?
@@ -104,9 +103,9 @@ Trinh bay ro rang, co cau truc, dung markdown (heading ##, bullet -, code block 
       throw new Error(msg);
     }
 
-    const reader  = res.body.getReader();
+    const reader = res.body.getReader();
     const decoder = new TextDecoder();
-    let buffer    = '';
+    let buffer = '';
 
     while (true) {
       const { done, value } = await reader.read();
@@ -121,7 +120,7 @@ Trinh bay ro rang, co cau truc, dung markdown (heading ##, bullet -, code block 
         const data = line.slice(6).trim();
         if (data === '[DONE]') return;
         try {
-          const json  = JSON.parse(data);
+          const json = JSON.parse(data);
           const chunk = json?.candidates?.[0]?.content?.parts?.[0]?.text;
           if (chunk) onChunk(chunk);
         } catch { /* skip malformed */ }
@@ -150,13 +149,13 @@ function parseMarkdown(text) {
 
   // Headers
   html = html.replace(/^### (.+)$/gm, '<h3>$1</h3>');
-  html = html.replace(/^## (.+)$/gm,  '<h2>$1</h2>');
-  html = html.replace(/^# (.+)$/gm,   '<h1>$1</h1>');
+  html = html.replace(/^## (.+)$/gm, '<h2>$1</h2>');
+  html = html.replace(/^# (.+)$/gm, '<h1>$1</h1>');
 
   // Bold + Italic
   html = html.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
-  html = html.replace(/\*\*(.+?)\*\*/g,     '<strong>$1</strong>');
-  html = html.replace(/\*(.+?)\*/g,         '<em>$1</em>');
+  html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
 
   // Blockquote
   html = html.replace(/^&gt; (.+)$/gm, '<blockquote>$1</blockquote>');
@@ -202,12 +201,12 @@ class SettingsModal {
     this.ai = ai;
     this.D = {
       backdrop: document.getElementById('settingsModalBackdrop'),
-      close:    document.getElementById('settingsModalClose'),
-      apiKey:   document.getElementById('apiKeyInput'),
-      toggle:   document.getElementById('apiKeyToggle'),
-      model:    document.getElementById('geminiModelSelect'),
+      close: document.getElementById('settingsModalClose'),
+      apiKey: document.getElementById('apiKeyInput'),
+      toggle: document.getElementById('apiKeyToggle'),
+      model: document.getElementById('geminiModelSelect'),
       language: document.getElementById('languageSelect'),
-      saveBtn:  document.getElementById('settingsSaveBtn'),
+      saveBtn: document.getElementById('settingsSaveBtn'),
     };
     this._bind();
     this._load();
@@ -215,8 +214,8 @@ class SettingsModal {
 
   _load() {
     const { D, ai } = this;
-    D.apiKey.value   = ai.apiKey;
-    D.model.value    = ai.model;
+    D.apiKey.value = ai.apiKey;
+    D.model.value = ai.model;
     D.language.value = ai.language;
     if (ai.apiKey) D.apiKey.classList.add('valid');
   }
@@ -225,12 +224,12 @@ class SettingsModal {
     const { D } = this;
 
     document.getElementById('settingsBtn')?.addEventListener('click', () => this.open());
-    D.close.addEventListener('click',    () => this.close());
+    D.close.addEventListener('click', () => this.close());
     D.backdrop.addEventListener('click', e => { if (e.target === D.backdrop) this.close(); });
 
     D.toggle.addEventListener('click', () => {
       const isHidden = D.apiKey.type === 'password';
-      D.apiKey.type     = isHidden ? 'text' : 'password';
+      D.apiKey.type = isHidden ? 'text' : 'password';
       D.toggle.textContent = isHidden ? '\uD83D\uDE48' : '\uD83D\uDC41';
     });
 
@@ -242,16 +241,16 @@ class SettingsModal {
   }
 
   _save() {
-    const key  = this.D.apiKey.value.trim();
-    const model= this.D.model.value;
+    const key = this.D.apiKey.value.trim();
+    const model = this.D.model.value;
     const lang = this.D.language.value;
 
-    localStorage.setItem('fm_gemini_key',   key);
+    localStorage.setItem('fm_gemini_key', key);
     localStorage.setItem('fm_gemini_model', model);
-    localStorage.setItem('fm_gemini_lang',  lang);
+    localStorage.setItem('fm_gemini_lang', lang);
 
-    this.ai.apiKey   = key;
-    this.ai.model    = model;
+    this.ai.apiKey = key;
+    this.ai.model = model;
     this.ai.language = lang;
 
     this.D.apiKey.classList.toggle('valid', key.length > 10);
@@ -259,7 +258,7 @@ class SettingsModal {
     this.close();
   }
 
-  open()  { this._load(); this.D.backdrop.hidden = false; }
+  open() { this._load(); this.D.backdrop.hidden = false; }
   close() { this.D.backdrop.hidden = true; }
 }
 
@@ -268,22 +267,22 @@ class SettingsModal {
 ======================================================= */
 class AIModal {
   constructor(ai) {
-    this.ai         = ai;
+    this.ai = ai;
     this._abortCtrl = null;
-    this._rawText   = '';
-    this._currentQ  = null;
-    this._currentA  = null;
+    this._rawText = '';
+    this._currentQ = null;
+    this._currentA = null;
 
     this.D = {
       backdrop: document.getElementById('aiModalBackdrop'),
-      close:    document.getElementById('aiModalClose'),
-      context:  document.getElementById('aiModalContext'),
-      loading:  document.getElementById('aiLoading'),
-      content:  document.getElementById('aiContent'),
-      error:    document.getElementById('aiError'),
+      close: document.getElementById('aiModalClose'),
+      context: document.getElementById('aiModalContext'),
+      loading: document.getElementById('aiLoading'),
+      content: document.getElementById('aiContent'),
+      error: document.getElementById('aiError'),
       errorMsg: document.getElementById('aiErrorMsg'),
       retryBtn: document.getElementById('aiRetryBtn'),
-      copyBtn:  document.getElementById('aiCopyBtn'),
+      copyBtn: document.getElementById('aiCopyBtn'),
     };
 
     this._bind();
@@ -291,10 +290,10 @@ class AIModal {
 
   _bind() {
     const { D } = this;
-    D.close.addEventListener('click',    () => this.close());
-    D.backdrop.addEventListener('click', e  => { if (e.target === D.backdrop) this.close(); });
+    D.close.addEventListener('click', () => this.close());
+    D.backdrop.addEventListener('click', e => { if (e.target === D.backdrop) this.close(); });
     D.retryBtn.addEventListener('click', () => this._fetch());
-    D.copyBtn.addEventListener('click',  () => this._copy());
+    D.copyBtn.addEventListener('click', () => this._copy());
 
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && !D.backdrop.hidden) this.close();
@@ -304,7 +303,7 @@ class AIModal {
   open(question, answer) {
     this._currentQ = question;
     this._currentA = answer;
-    this._rawText  = '';
+    this._rawText = '';
 
     const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     this.D.context.innerHTML = `<strong>Cau hoi</strong>${esc(question)}`;
@@ -323,7 +322,7 @@ class AIModal {
   _showState(state) {
     this.D.loading.hidden = state !== 'loading';
     this.D.content.hidden = state !== 'content';
-    this.D.error.hidden   = state !== 'error';
+    this.D.error.hidden = state !== 'error';
   }
 
   async _fetch() {
@@ -469,23 +468,23 @@ class AIModal {
 ======================================================= */
 class FlashMaster {
   constructor() {
-    this.topics         = [];
-    this.originalCards  = [];
-    this.cards          = [];
-    this.currentIndex   = 0;
+    this.topics = [];
+    this.originalCards = [];
+    this.cards = [];
+    this.currentIndex = 0;
     this.currentTopicId = null;
-    this.studyMode      = localStorage.getItem('fm_mode') || 'flashcard';
-    this.isShuffle      = false;
-    this.showStarred    = false;
-    this.isFlipped      = false;
+    this.studyMode = localStorage.getItem('fm_mode') || 'flashcard';
+    this.isShuffle = false;
+    this.showStarred = false;
+    this.isFlipped = false;
 
     // Starred: { [topicId]: Set<cardId> }
     this._starred = {};
     this._loadStarred();
 
     // AI services
-    this.gemini        = new GeminiAI();
-    this.aiModal       = new AIModal(this.gemini);
+    this.gemini = new GeminiAI();
+    this.aiModal = new AIModal(this.gemini);
     this.settingsModal = new SettingsModal(this.gemini);
 
     this._init();
@@ -527,7 +526,7 @@ class FlashMaster {
     this._syncModeUI();
 
     const lastId = localStorage.getItem('fm_topic');
-    const topic  = this.topics.find(t => t.id === lastId) || this.topics[0];
+    const topic = this.topics.find(t => t.id === lastId) || this.topics[0];
     if (topic) this._selectTopic(topic.id);
   }
 
@@ -535,31 +534,33 @@ class FlashMaster {
   _dom() {
     const g = id => document.getElementById(id);
     this.D = {
-      sidebar:          g('sidebar'),
-      overlay:          g('overlay'),
-      menuToggle:       g('menuToggle'),
-      closeSidebar:     g('closeSidebar'),
-      topicList:        g('topicList'),
-      topicTitle:       g('currentTopicName'),
-      progressBar:      g('progressBar'),
-      cardCounter:      g('cardCounter'),
-      starBtn:          g('starBtn'),
-      starredOnlyBtn:   g('starredOnlyBtn'),
-      shuffleBtn:       g('shuffleBtn'),
-      prevBtn:          g('prevBtn'),
-      nextBtn:          g('nextBtn'),
-      aiExplainBtn:     g('aiExplainBtn'),
-      modePills:        document.querySelectorAll('.mode-pill'),
+      sidebar: g('sidebar'),
+      overlay: g('overlay'),
+      menuToggle: g('menuToggle'),
+      closeSidebar: g('closeSidebar'),
+      topicList: g('topicList'),
+      topicTitle: g('currentTopicName'),
+      progressBar: g('progressBar'),
+      cardCounter: g('cardCounter'),
+      starBtn: g('starBtn'),
+      starredOnlyBtn: g('starredOnlyBtn'),
+      shuffleBtn: g('shuffleBtn'),
+      fullscreenBtn: g('fullscreenBtn'),
+      prevBtn: g('prevBtn'),
+      nextBtn: g('nextBtn'),
+      aiExplainBtn: g('aiExplainBtn'),
+      modePills: document.querySelectorAll('.mode-pill'),
       // Flashcard scene
-      cardScene:        g('cardScene'),
-      cardWrap:         g('cardWrap'),
-      frontText:        g('frontText'),
-      backText:         g('backText'),
-      tapHint:          g('tapHint'),
+      cardScene: g('cardScene'),
+      cardWrap: g('cardWrap'),
+      frontText: g('frontText'),
+      backText: g('backText'),
+      tapHint: g('tapHint'),
       // Quiz scene
-      quizScene:        g('quizScene'),
+      quizScene: g('quizScene'),
       quizQuestionText: g('quizQuestionText'),
-      quizOptionsGrid:  g('quizOptionsGrid'),
+      quizOptionsGrid: g('quizOptionsGrid'),
+      fsExitFab: g('fsExitFab'),
     };
   }
 
@@ -568,9 +569,9 @@ class FlashMaster {
     const { D } = this;
 
     // Sidebar
-    D.menuToggle.addEventListener('click',   () => this._openSidebar());
+    D.menuToggle.addEventListener('click', () => this._openSidebar());
     D.closeSidebar.addEventListener('click', () => this._closeSidebar());
-    D.overlay.addEventListener('click',      () => this._closeSidebar());
+    D.overlay.addEventListener('click', () => this._closeSidebar());
 
     // Mode pills
     D.modePills.forEach(btn =>
@@ -578,8 +579,12 @@ class FlashMaster {
     );
 
     // Toolbar
-    D.starredOnlyBtn.addEventListener('click', () => this._toggleStarFilter());
-    D.shuffleBtn.addEventListener('click',     () => this._toggleShuffle());
+    D.shuffleBtn.addEventListener('click', () => this._toggleShuffle());
+    D.fullscreenBtn.addEventListener('click', () => this._toggleFullscreen());
+    D.fsExitFab.addEventListener('click', () => this._toggleFullscreen());
+
+    // Sync icon on exit (Esc key)
+    document.addEventListener('fullscreenchange', () => this._syncFullscreenIcon());
 
     // Star button
     D.starBtn.addEventListener('click', () => this._toggleStarCurrent());
@@ -593,8 +598,17 @@ class FlashMaster {
 
     // Keyboard
     document.addEventListener('keydown', e => {
-      if (e.key === 'ArrowLeft')  this._go(-1);
+      if (e.key === 'ArrowLeft') this._go(-1);
       if (e.key === 'ArrowRight') this._go(1);
+      
+      // Up/Down to flip (Targeted for focused fullscreen mode)
+      if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+        if (this.studyMode === 'flashcard') {
+          e.preventDefault();
+          this._flip();
+        }
+      }
+
       if ((e.key === ' ' || e.key === 'Enter') && this.studyMode === 'flashcard') {
         e.preventDefault();
         this._flip();
@@ -603,6 +617,32 @@ class FlashMaster {
 
     // Card wrap — click to flip
     D.cardWrap.addEventListener('click', () => this._flip());
+  }
+
+  /* --- Fullscreen ------------------------------------- */
+  _toggleFullscreen() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(err => {
+        showToast('Lỗi khi vào chế độ toàn màn hình', 'err');
+      });
+    } else {
+      document.exitFullscreen();
+    }
+  }
+
+  _syncFullscreenIcon() {
+    const icon = this.D.fullscreenBtn.querySelector('.tool-icon');
+    const isFS = !!document.fullscreenElement;
+    
+    document.body.classList.toggle('is-fullscreen', isFS);
+
+    if (isFS) {
+      icon.textContent = 'fullscreen_exit';
+      this.D.fullscreenBtn.title = 'Thoát toàn màn hình';
+    } else {
+      icon.textContent = 'fullscreen';
+      this.D.fullscreenBtn.title = 'Toàn màn hình';
+    }
   }
 
   /* --- AI Explain ------------------------------------- */
@@ -699,18 +739,18 @@ class FlashMaster {
       return;
     }
 
-    const card    = cards[this.currentIndex];
-    const total   = cards.length;
+    const card = cards[this.currentIndex];
+    const total = cards.length;
     const current = this.currentIndex + 1;
     const starred = this._isStarred(card.id);
 
     // HUD
     D.cardCounter.textContent = `${current} / ${total}`;
     D.progressBar.style.width = `${(current / total) * 100}%`;
-    D.prevBtn.disabled        = this.currentIndex === 0;
-    D.nextBtn.disabled        = this.currentIndex === total - 1;
+    D.prevBtn.disabled = this.currentIndex === 0;
+    D.nextBtn.disabled = this.currentIndex === total - 1;
     D.starBtn.classList.toggle('starred', starred);
-    D.starBtn.title           = starred ? 'Bo danh dau' : 'Danh dau';
+    D.starBtn.title = starred ? 'Bo danh dau' : 'Danh dau';
 
     if (this.studyMode === 'flashcard') {
       D.cardScene.hidden = false;
@@ -719,11 +759,11 @@ class FlashMaster {
       this.isFlipped = false;
       D.cardWrap.classList.remove('flipped');
       D.cardWrap.style.transform = '';
-      D.cardWrap.style.opacity   = '';
+      D.cardWrap.style.opacity = '';
 
       D.frontText.textContent = card.question;
-      D.backText.textContent  = card.answer;
-      D.tapHint.textContent   = 'Nhan de lat';
+      D.backText.textContent = card.answer;
+      D.tapHint.textContent = 'Nhan de lat';
 
     } else {
       const hasOptions = Array.isArray(card.options) && card.options.length >= 2;
@@ -739,14 +779,14 @@ class FlashMaster {
 
         card.options.forEach(opt => {
           const btn = document.createElement('button');
-          btn.className   = 'quiz-opt-card';
+          btn.className = 'quiz-opt-card';
           btn.textContent = opt;
 
           btn.addEventListener('click', () => {
             grid.querySelectorAll('.quiz-opt-card').forEach(b => {
               b.classList.add('answered');
               if (b.textContent === card.answer) b.classList.add('correct');
-              else if (b === btn)               b.classList.add('wrong');
+              else if (b === btn) b.classList.add('wrong');
             });
             // Show AI explain button after answering
             this._showAIBtn(true);
@@ -761,10 +801,10 @@ class FlashMaster {
         this.isFlipped = false;
         D.cardWrap.classList.remove('flipped');
         D.cardWrap.style.transform = '';
-        D.cardWrap.style.opacity   = '';
+        D.cardWrap.style.opacity = '';
         D.frontText.textContent = card.question;
-        D.backText.textContent  = card.answer;
-        D.tapHint.textContent   = 'Nhan de lat';
+        D.backText.textContent = card.answer;
+        D.tapHint.textContent = 'Nhan de lat';
       }
     }
   }
@@ -776,9 +816,9 @@ class FlashMaster {
     D.cardScene.hidden = false;
     D.quizScene.hidden = true;
     D.cardWrap.classList.remove('flipped');
-    D.frontText.textContent   = 'Dang tai...';
-    D.backText.textContent    = '';
-    D.tapHint.textContent     = '';
+    D.frontText.textContent = 'Dang tai...';
+    D.backText.textContent = '';
+    D.tapHint.textContent = '';
     D.cardCounter.textContent = '\u2014';
     D.progressBar.style.width = '0%';
     D.prevBtn.disabled = true;
@@ -791,11 +831,11 @@ class FlashMaster {
     D.quizScene.hidden = true;
     D.cardWrap.classList.remove('flipped');
     const modeLabel = this.studyMode === 'flashcard' ? 'the ghi nho' : 'cau hoi trac nghiem';
-    D.frontText.textContent   = this.showStarred
+    D.frontText.textContent = this.showStarred
       ? 'Khong co the duoc danh dau \u2605'
       : `Chu de nay chua co ${modeLabel}`;
-    D.backText.textContent    = '';
-    D.tapHint.textContent     = '';
+    D.backText.textContent = '';
+    D.tapHint.textContent = '';
     D.cardCounter.textContent = '0 / 0';
     D.progressBar.style.width = '0%';
     D.prevBtn.disabled = true;
@@ -807,8 +847,8 @@ class FlashMaster {
     D.cardScene.hidden = false;
     D.quizScene.hidden = true;
     D.frontText.textContent = 'Khong tai duoc du lieu :(';
-    D.backText.textContent  = '';
-    D.tapHint.textContent   = 'Kiem tra lai file JSON';
+    D.backText.textContent = '';
+    D.tapHint.textContent = 'Kiem tra lai file JSON';
   }
 
   /* --- Navigation ------------------------------------- */
@@ -832,10 +872,10 @@ class FlashMaster {
   _toggleStarCurrent() {
     if (this.cards.length === 0) return;
     const card = this.cards[this.currentIndex];
-    const set  = this._starSet();
+    const set = this._starSet();
 
     if (set.has(card.id)) set.delete(card.id);
-    else                   set.add(card.id);
+    else set.add(card.id);
 
     this._saveStarred();
 

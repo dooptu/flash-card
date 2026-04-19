@@ -238,6 +238,11 @@ button {
 .tool-btn:hover  { background: var(--surface2); color: var(--text); }
 .tool-btn.active { background: var(--accent-bg); color: var(--accent); border-color: rgba(56,189,248,.4); }
 
+.material-symbols-rounded {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-size: 1.3rem !important;
+}
+
 /* ═══════════════════════════════════════════════════════
    STUDY AREA — main content
 ═══════════════════════════════════════════════════════ */
@@ -1032,4 +1037,105 @@ button {
   }
   .ai-btn-text { display: none; }
   .ai-explain-btn { padding: .42rem .6rem; }
+}
+
+/* =======================================================
+   FOCUSED FULLSCREEN MODE
+   ======================================================= */
+body.is-fullscreen {
+  overflow: hidden;
+  background: #050811; /* Darker bg for focus */
+}
+
+/* Hide everything except study area */
+body.is-fullscreen .sidebar,
+body.is-fullscreen .topbar,
+body.is-fullscreen .nav-controls,
+body.is-fullscreen .card-hud,
+body.is-fullscreen .tap-hint {
+  display: none !important;
+}
+
+body.is-fullscreen .app-shell {
+  margin-left: 0;
+  height: 100vh;
+}
+
+body.is-fullscreen .study-area {
+  padding: 0;
+  max-width: 1000px;
+  width: 90vw;
+  height: 100vh;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+body.is-fullscreen .card-scene {
+  height: 100%;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body.is-fullscreen .card-wrap {
+  width: 100%;
+  max-height: 80vh;
+  height: 600px;
+}
+
+body.is-fullscreen .card-face {
+  padding: 3rem;
+  border-radius: 32px;
+  background: #111a2e;
+}
+
+body.is-fullscreen .face-text {
+  font-size: clamp(1.8rem, 6vw, 3.5rem);
+  font-weight: 700;
+}
+
+body.is-fullscreen .face-label {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Floating Exit Button */
+.fullscreen-exit-fab {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  display: none; /* hidden by default */
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  transition: all var(--dur) var(--ease);
+  backdrop-filter: blur(10px);
+}
+
+.fullscreen-exit-fab:hover {
+  background: var(--surface3);
+  transform: scale(1.1);
+  color: var(--err);
+}
+
+body.is-fullscreen .fullscreen-exit-fab {
+  display: flex;
+}
+
+/* Quiz adjustment in fullscreen */
+body.is-fullscreen .quiz-question-card {
+  max-height: 40vh;
+}
+body.is-fullscreen .quiz-opt-card {
+  font-size: 1.2rem;
+  min-height: 80px;
 }
