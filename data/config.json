@@ -1,8 +1,11 @@
 {
   "topics": [
     { "id": "angular", "name": "Angular Core", "path": "data/angular/data.json" },
+    { "id": "angular-1", "name": "Angular 1", "path": "data/angular-1/data.json" },
     { "id": "react", "name": "React Essentials", "path": "data/react/data.json" },
+    { "id": "react-1", "name": "React 01", "path": "data/react-1/data.json" },
     { "id": "javascript", "name": "JavaScript Pro", "path": "data/javascript/data.json" },
+    { "id": "js-ts", "name": "JS/TS", "path": "data/js-ts/data.json" },
     { "id": "css", "name": "Mastering CSS", "path": "data/css/data.json" }
   ]
 }

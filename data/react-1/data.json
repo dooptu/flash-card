@@ -1,0 +1,1370 @@
+{
+    "topic": "ReactJS Interview - All Levels (105 MCQs)",
+    "cards": [
+        {
+            "id": "q1",
+            "type": "multiple-choice",
+            "question": "Virtual DOM trong React hoạt động như thế nào?",
+            "options": [
+                "Nó là một bản sao nhẹ của DOM thật trên bộ nhớ, React dùng nó để so sánh (diffing) và chỉ cập nhật những phần thay đổi lên DOM thật.",
+                "Nó thay thế hoàn toàn DOM thật để trình duyệt render trực tiếp.",
+                "Nó là một cơ sở dữ liệu lưu trữ trạng thái của ứng dụng.",
+                "Nó là một thư viện bên thứ ba phải cài đặt thêm để React chạy nhanh hơn."
+            ],
+            "answer": "Nó là một bản sao nhẹ của DOM thật trên bộ nhớ, React dùng nó để so sánh (diffing) và chỉ cập nhật những phần thay đổi lên DOM thật.",
+            "starred": false
+        },
+        {
+            "id": "q2",
+            "type": "multiple-choice",
+            "question": "JSX là gì?",
+            "options": [
+                "Một ngôn ngữ lập trình mới do Facebook tạo ra thay thế JavaScript.",
+                "Một cú pháp mở rộng của JavaScript cho phép viết code giống HTML bên trong file JS.",
+                "Một template engine giống như Pug hoặc Handlebars.",
+                "Một công cụ định dạng CSS trong React."
+            ],
+            "answer": "Một cú pháp mở rộng của JavaScript cho phép viết code giống HTML bên trong file JS.",
+            "starred": false
+        },
+        {
+            "id": "q3",
+            "type": "multiple-choice",
+            "question": "Sự khác biệt cốt lõi giữa State và Props là gì?",
+            "options": [
+                "Props có thể thay đổi được, State thì không.",
+                "Props được truyền từ component cha xuống và mang tính read-only (chỉ đọc), State được quản lý cục bộ bên trong component và có thể thay đổi.",
+                "State dùng để truyền dữ liệu giữa các component, Props dùng để lưu trữ nội bộ.",
+                "Không có sự khác biệt, có thể dùng thay thế nhau."
+            ],
+            "answer": "Props được truyền từ component cha xuống và mang tính read-only (chỉ đọc), State được quản lý cục bộ bên trong component và có thể thay đổi.",
+            "starred": false
+        },
+        {
+            "id": "q4",
+            "type": "multiple-choice",
+            "question": "Tại sao không nên mutate (thay đổi trực tiếp) state trong React (VD: state.count = 1)?",
+            "options": [
+                "Vì JavaScript không cho phép thay đổi object.",
+                "Vì React sẽ không nhận biết được sự thay đổi để kích hoạt re-render. Phải dùng setState hoặc hàm set từ useState để tạo immutable data.",
+                "Vì làm như vậy sẽ gây lỗi bảo mật XSS.",
+                "Vì nó sẽ xóa toàn bộ dữ liệu trong database."
+            ],
+            "answer": "Vì React sẽ không nhận biết được sự thay đổi để kích hoạt re-render. Phải dùng setState hoặc hàm set từ useState để tạo immutable data.",
+            "starred": false
+        },
+        {
+            "id": "q5",
+            "type": "multiple-choice",
+            "question": "Thuộc tính `key` trong danh sách (list) của React có tác dụng gì?",
+            "options": [
+                "Làm cho danh sách đẹp hơn về mặt UI.",
+                "Giúp React định danh chính xác từng phần tử trong mảng để tối ưu hóa quá trình reconciliation (thêm, sửa, xóa DOM) một cách nhanh nhất.",
+                "Tạo ID duy nhất lưu vào cơ sở dữ liệu.",
+                "Ngăn chặn người dùng click nhiều lần vào list."
+            ],
+            "answer": "Giúp React định danh chính xác từng phần tử trong mảng để tối ưu hóa quá trình reconciliation (thêm, sửa, xóa DOM) một cách nhanh nhất.",
+            "starred": false
+        },
+        {
+            "id": "q6",
+            "type": "multiple-choice",
+            "question": "Lifecycle method nào trong Class Component tương đương với việc gọi API khi component vừa được render lần đầu tiên?",
+            "options": [
+                "componentWillUnmount",
+                "componentDidUpdate",
+                "componentDidMount",
+                "shouldComponentUpdate"
+            ],
+            "answer": "componentDidMount",
+            "starred": false
+        },
+        {
+            "id": "q7",
+            "type": "multiple-choice",
+            "question": "Hook nào BẮT BUỘC phải dùng để khai báo state trong Functional Component?",
+            "options": [
+                "useEffect",
+                "useContext",
+                "useState",
+                "useReducer"
+            ],
+            "answer": "useState",
+            "starred": false
+        },
+        {
+            "id": "q8",
+            "type": "multiple-choice",
+            "question": "Quy tắc quan trọng nhất khi sử dụng React Hooks là gì?",
+            "options": [
+                "Chỉ được gọi Hooks ở bên trong Class Component.",
+                "Chỉ gọi Hooks ở cấp độ trên cùng (top-level) của hàm, không gọi trong vòng lặp, câu lệnh điều kiện (if/else) hoặc hàm lồng nhau.",
+                "Mỗi component chỉ được dùng tối đa 1 Hook.",
+                "Hooks phải được gọi sau lệnh return."
+            ],
+            "answer": "Chỉ gọi Hooks ở cấp độ trên cùng (top-level) của hàm, không gọi trong vòng lặp, câu lệnh điều kiện (if/else) hoặc hàm lồng nhau.",
+            "starred": false
+        },
+        {
+            "id": "q9",
+            "type": "multiple-choice",
+            "question": "Dependency array `[]` (mảng rỗng) trong useEffect có ý nghĩa gì?",
+            "options": [
+                "useEffect sẽ chạy lại mỗi khi component re-render.",
+                "useEffect chỉ chạy MỘT LẦN duy nhất sau lần render đầu tiên (giống componentDidMount).",
+                "useEffect sẽ không bao giờ chạy.",
+                "useEffect sẽ báo lỗi cú pháp."
+            ],
+            "answer": "useEffect chỉ chạy MỘT LẦN duy nhất sau lần render đầu tiên (giống componentDidMount).",
+            "starred": false
+        },
+        {
+            "id": "q10",
+            "type": "multiple-choice",
+            "question": "Làm thế nào để thực hiện việc clean-up (dọn dẹp, unsubscribe) trong useEffect?",
+            "options": [
+                "Gọi hàm clear() ở đầu useEffect.",
+                "Trả về (return) một hàm từ bên trong callback của useEffect. Hàm này sẽ chạy trước khi component unmount hoặc trước lần chạy useEffect tiếp theo.",
+                "Dùng cú pháp delete useEffect.",
+                "React tự động clean-up mọi thứ, không cần viết code."
+            ],
+            "answer": "Trả về (return) một hàm từ bên trong callback của useEffect. Hàm này sẽ chạy trước khi component unmount hoặc trước lần chạy useEffect tiếp theo.",
+            "starred": false
+        },
+        {
+            "id": "q11",
+            "type": "multiple-choice",
+            "question": "Context API giải quyết vấn đề gì trong kiến trúc React?",
+            "options": [
+                "Tối ưu hóa tốc độ load của trình duyệt.",
+                "Tránh tình trạng Prop Drilling (truyền props qua nhiều tầng component trung gian không cần thiết) bằng cách cung cấp dữ liệu toàn cục.",
+                "Thay thế hoàn toàn React Router.",
+                "Xử lý các request HTTP tự động."
+            ],
+            "answer": "Tránh tình trạng Prop Drilling (truyền props qua nhiều tầng component trung gian không cần thiết) bằng cách cung cấp dữ liệu toàn cục.",
+            "starred": false
+        },
+        {
+            "id": "q12",
+            "type": "multiple-choice",
+            "question": "Sự khác biệt giữa Controlled Component và Uncontrolled Component trong Form là gì?",
+            "options": [
+                "Controlled form dễ viết hơn Uncontrolled form.",
+                "Controlled lưu value trong React State và tự cập nhật qua onChange. Uncontrolled lấy value trực tiếp từ DOM thông qua useRef.",
+                "Uncontrolled an toàn hơn Controlled.",
+                "Controlled chỉ dùng cho thẻ input, Uncontrolled dùng cho thẻ select."
+            ],
+            "answer": "Controlled lưu value trong React State và tự cập nhật qua onChange. Uncontrolled lấy value trực tiếp từ DOM thông qua useRef.",
+            "starred": false
+        },
+        {
+            "id": "q13",
+            "type": "multiple-choice",
+            "question": "useRef dùng để làm gì ngoài việc thao tác trực tiếp với DOM element?",
+            "options": [
+                "Kích hoạt re-render component mỗi khi giá trị thay đổi.",
+                "Lưu trữ các giá trị (mutable values) không bị mất đi qua các lần re-render, và KHÔNG làm component re-render khi giá trị đó thay đổi.",
+                "Chuyển hướng trang.",
+                "Lưu trữ dữ liệu lên localStorage."
+            ],
+            "answer": "Lưu trữ các giá trị (mutable values) không bị mất đi qua các lần re-render, và KHÔNG làm component re-render khi giá trị đó thay đổi.",
+            "starred": false
+        },
+        {
+            "id": "q14",
+            "type": "multiple-choice",
+            "question": "React.Fragment (hay cú pháp `<></>`) mang lại lợi ích gì?",
+            "options": [
+                "Giúp nhóm nhiều phần tử con lại để return mà không sinh ra một node DOM thừa (như thẻ div) làm vỡ layout.",
+                "Tạo ra một thẻ div ẩn.",
+                "Mã hóa dữ liệu bên trong nó.",
+                "Ngăn chặn việc component cha render lại."
+            ],
+            "answer": "Giúp nhóm nhiều phần tử con lại để return mà không sinh ra một node DOM thừa (như thẻ div) làm vỡ layout.",
+            "starred": false
+        },
+        {
+            "id": "q15",
+            "type": "multiple-choice",
+            "question": "React Portals (`ReactDOM.createPortal`) được sử dụng trong kịch bản UI nào phổ biến nhất?",
+            "options": [
+                "Tạo các trang web tĩnh (SSG).",
+                "Render Modal, Tooltip, hoặc Dropdown ra hẳn ngoài cây DOM hiện tại (thường là ghim vào body) để không bị ảnh hưởng bởi CSS overflow: hidden của thẻ cha.",
+                "Gửi dữ liệu từ Client lên Server.",
+                "Tạo các hiệu ứng animation phức tạp."
+            ],
+            "answer": "Render Modal, Tooltip, hoặc Dropdown ra hẳn ngoài cây DOM hiện tại (thường là ghim vào body) để không bị ảnh hưởng bởi CSS overflow: hidden của thẻ cha.",
+            "starred": false
+        },
+        {
+            "id": "q16",
+            "type": "multiple-choice",
+            "question": "Lỗi 'Too many re-renders' thường xảy ra khi nào?",
+            "options": [
+                "Khi project có quá nhiều component.",
+                "Khi gọi hàm setState TRỰC TIẾP bên trong phần body của functional component thay vì đặt trong useEffect hoặc event handler.",
+                "Khi dùng Redux sai cách.",
+                "Khi tốc độ mạng chậm."
+            ],
+            "answer": "Khi gọi hàm setState TRỰC TIẾP bên trong phần body của functional component thay vì đặt trong useEffect hoặc event handler.",
+            "starred": false
+        },
+        {
+            "id": "q17",
+            "type": "multiple-choice",
+            "question": "Higher-Order Component (HOC) trong React là gì?",
+            "options": [
+                "Một component có kích thước file rất lớn.",
+                "Một HÀM nhận vào một component và trả về một component MỚI đã được tiêm thêm logic hoặc props (VD: withRouter, connect).",
+                "Một thư viện quản lý state.",
+                "Một hook tùy chỉnh."
+            ],
+            "answer": "Một HÀM nhận vào một component và trả về một component MỚI đã được tiêm thêm logic hoặc props (VD: withRouter, connect).",
+            "starred": false
+        },
+        {
+            "id": "q18",
+            "type": "multiple-choice",
+            "question": "Khái niệm 'Lifting State Up' có nghĩa là gì?",
+            "options": [
+                "Đẩy state lên Redux store.",
+                "Di chuyển state từ các component con lên component cha CHUNG GẦN NHẤT để nhiều con có thể chia sẻ và đồng bộ dữ liệu đó.",
+                "Lưu state vào LocalStorage.",
+                "Xóa bỏ state hoàn toàn."
+            ],
+            "answer": "Di chuyển state từ các component con lên component cha CHUNG GẦN NHẤT để nhiều con có thể chia sẻ và đồng bộ dữ liệu đó.",
+            "starred": false
+        },
+        {
+            "id": "q19",
+            "type": "multiple-choice",
+            "question": "Làm thế nào để bắt lỗi render (crash) của các component con và hiển thị UI fallback mà không làm trắng toàn bộ trang?",
+            "options": [
+                "Dùng try-catch bọc quanh code JSX.",
+                "Dùng Window.onerror.",
+                "Sử dụng Error Boundaries (component class implement componentDidCatch hoặc static getDerivedStateFromError).",
+                "Dùng useEffect để bắt lỗi."
+            ],
+            "answer": "Sử dụng Error Boundaries (component class implement componentDidCatch hoặc static getDerivedStateFromError).",
+            "starred": false
+        },
+        {
+            "id": "q20",
+            "type": "multiple-choice",
+            "question": "Sự khác biệt giữa `useMemo` và `useCallback` là gì?",
+            "options": [
+                "useMemo dùng cho biến số, useCallback dùng cho chuỗi.",
+                "useMemo trả về một GIÁ TRỊ đã được tính toán (memoized value), useCallback trả về một HÀM (memoized function) chưa được thực thi.",
+                "Không có khác biệt, có thể đổi chỗ cho nhau.",
+                "useMemo chạy bất đồng bộ, useCallback chạy đồng bộ."
+            ],
+            "answer": "useMemo trả về một GIÁ TRỊ đã được tính toán (memoized value), useCallback trả về một HÀM (memoized function) chưa được thực thi.",
+            "starred": false
+        },
+        {
+            "id": "q21",
+            "type": "multiple-choice",
+            "question": "React.memo() dùng để làm gì?",
+            "options": [
+                "Lưu trữ dữ liệu vào bộ nhớ đệm của trình duyệt.",
+                "Là một HOC dùng để bọc Component, giúp NGĂN CHẶN component render lại nếu props truyền vào không bị thay đổi (so sánh shallow).",
+                "Tạo ghi chú trong code.",
+                "Gửi request API ngầm."
+            ],
+            "answer": "Là một HOC dùng để bọc Component, giúp NGĂN CHẶN component render lại nếu props truyền vào không bị thay đổi (so sánh shallow).",
+            "starred": false
+        },
+        {
+            "id": "q22",
+            "type": "multiple-choice",
+            "question": "Tại sao truyền một inline function (vd: `onClick={() => doSomething()}`) làm prop xuống component con bị bọc bởi React.memo lại có thể phá vỡ tính năng memo?",
+            "options": [
+                "Vì inline function sinh ra lỗi cú pháp.",
+                "Vì mỗi lần component cha render, nó tạo ra một tham chiếu function MỚI, khiến React.memo hiểu là prop đã thay đổi và kích hoạt con re-render. Giải pháp: dùng useCallback.",
+                "Vì hàm ẩn danh không thể thực thi.",
+                "Vì React.memo không hỗ trợ function props."
+            ],
+            "answer": "Vì mỗi lần component cha render, nó tạo ra một tham chiếu function MỚI, khiến React.memo hiểu là prop đã thay đổi và kích hoạt con re-render. Giải pháp: dùng useCallback.",
+            "starred": false
+        },
+        {
+            "id": "q23",
+            "type": "multiple-choice",
+            "question": "Sự khác biệt quan trọng nhất giữa `useEffect` và `useLayoutEffect`?",
+            "options": [
+                "useEffect dùng cho API, useLayoutEffect dùng cho Event Listener.",
+                "useEffect chạy BẤT ĐỒNG BỘ sau khi DOM đã paint xong. useLayoutEffect chạy ĐỒNG BỘ ngay sau khi DOM cập nhật nhưng TRƯỚC KHI trình duyệt paint ra màn hình (tránh flicker UI).",
+                "Không có khác biệt.",
+                "useLayoutEffect đã bị deprecated ở React 18."
+            ],
+            "answer": "useEffect chạy BẤT ĐỒNG BỘ sau khi DOM đã paint xong. useLayoutEffect chạy ĐỒNG BỘ ngay sau khi DOM cập nhật nhưng TRƯỚC KHI trình duyệt paint ra màn hình (tránh flicker UI).",
+            "starred": false
+        },
+        {
+            "id": "q24",
+            "type": "multiple-choice",
+            "question": "Trong React, 'Code Splitting' (chia nhỏ code) thường được thực hiện thông qua công cụ nào để tăng tốc FCP (First Contentful Paint)?",
+            "options": [
+                "Dùng Webpack và Babel.",
+                "Dùng React.lazy() kết hợp với <Suspense fallback={...}> để chỉ tải mã nguồn component khi nó thực sự cần hiển thị.",
+                "Dùng useState.",
+                "Dùng thẻ <script src='...' defer>."
+            ],
+            "answer": "Dùng React.lazy() kết hợp với <Suspense fallback={...}> để chỉ tải mã nguồn component khi nó thực sự cần hiển thị.",
+            "starred": false
+        },
+        {
+            "id": "q25",
+            "type": "multiple-choice",
+            "question": "Custom Hook trong React là gì?",
+            "options": [
+                "Là một Hook mặc định của React mà ít người biết.",
+                "Là một hàm JavaScript thông thường có tên bắt đầu bằng chữ 'use' (vd: useFetch), bên trong nó có gọi các React Hooks khác để tái sử dụng logic giữa nhiều components.",
+                "Là một plugin cài thêm trên Chrome.",
+                "Là một class component kế thừa từ React.Hook."
+            ],
+            "answer": "Là một hàm JavaScript thông thường có tên bắt đầu bằng chữ 'use' (vd: useFetch), bên trong nó có gọi các React Hooks khác để tái sử dụng logic giữa nhiều components.",
+            "starred": false
+        },
+        {
+            "id": "q26",
+            "type": "multiple-choice",
+            "question": "Hook `useReducer` thường được ưu tiên hơn `useState` trong trường hợp nào?",
+            "options": [
+                "Khi cần lưu trữ dữ liệu dạng chuỗi đơn giản.",
+                "Khi state là một object/mảng phức tạp, hoặc khi state tiếp theo phụ thuộc nhiều vào state trước đó, và có nhiều action cập nhật state khác nhau.",
+                "Khi cần gọi API.",
+                "Khi làm việc với các form nhỏ."
+            ],
+            "answer": "Khi state là một object/mảng phức tạp, hoặc khi state tiếp theo phụ thuộc nhiều vào state trước đó, và có nhiều action cập nhật state khác nhau.",
+            "starred": false
+        },
+        {
+            "id": "q27",
+            "type": "multiple-choice",
+            "question": "Mô hình quản lý state của Redux tuân theo 3 nguyên tắc cơ bản nào?",
+            "options": [
+                "1. Store phân tán, 2. State thay đổi tự do, 3. Hàm Impure.",
+                "1. Single source of truth (1 Store duy nhất), 2. State is read-only (chỉ thay đổi qua Action), 3. Changes are made with pure functions (Reducer).",
+                "1. Two-way binding, 2. Direct DOM manipulation, 3. Context API.",
+                "1. Props drilling, 2. Component state, 3. LocalStorage."
+            ],
+            "answer": "1. Single source of truth (1 Store duy nhất), 2. State is read-only (chỉ thay đổi qua Action), 3. Changes are made with pure functions (Reducer).",
+            "starred": false
+        },
+        {
+            "id": "q28",
+            "type": "multiple-choice",
+            "question": "Trong Redux, Redux Thunk hoặc Redux Saga đóng vai trò gì?",
+            "options": [
+                "Là UI component library cho Redux.",
+                "Là Middleware cho phép xử lý các tác vụ bất đồng bộ (như gọi API fetch/axios) trước khi dispatch một Action thật vào Reducer.",
+                "Là công cụ để định dạng CSS.",
+                "Là thư viện kiểm thử (testing)."
+            ],
+            "answer": "Là Middleware cho phép xử lý các tác vụ bất đồng bộ (như gọi API fetch/axios) trước khi dispatch một Action thật vào Reducer.",
+            "starred": false
+        },
+        {
+            "id": "q29",
+            "type": "multiple-choice",
+            "question": "Tại sao React Toolkit (RTK) ra đời và được khuyến khích sử dụng thay cho Redux thuần?",
+            "options": [
+                "Vì RTK chạy trên backend.",
+                "Nó giúp giảm thiểu mã boilerplate (code dư thừa), cài đặt sẵn Redux Thunk, Immer.js (cho phép viết code mutate state dễ nhìn) và đơn giản hóa việc cấu hình Store.",
+                "Nó bắt buộc dùng TypeScript.",
+                "Nó thay thế hoàn toàn React."
+            ],
+            "answer": "Nó giúp giảm thiểu mã boilerplate (code dư thừa), cài đặt sẵn Redux Thunk, Immer.js (cho phép viết code mutate state dễ nhìn) và đơn giản hóa việc cấu hình Store.",
+            "starred": false
+        },
+        {
+            "id": "q30",
+            "type": "multiple-choice",
+            "question": "Khái niệm `forwardRef` dùng để giải quyết bài toán gì?",
+            "options": [
+                "Tự động chuyển tiếp trang web.",
+                "Cho phép Component cha truyền một 'ref' xuống Component con để chọc thẳng vào thẻ DOM thật của con (do mặc định function component không nhận ref).",
+                "Gửi dữ liệu qua API.",
+                "Đảo ngược dữ liệu trong mảng."
+            ],
+            "answer": "Cho phép Component cha truyền một 'ref' xuống Component con để chọc thẳng vào thẻ DOM thật của con (do mặc định function component không nhận ref).",
+            "starred": false
+        },
+        {
+            "id": "q31",
+            "type": "multiple-choice",
+            "question": "Hook `useImperativeHandle` thường được dùng chung với công cụ nào và mục đích là gì?",
+            "options": [
+                "Dùng chung với Context để ẩn dữ liệu.",
+                "Dùng chung với forwardRef để TÙY CHỈNH (giới hạn) những thuộc tính/hàm nào của Component con mà Component cha có thể gọi được thông qua ref.",
+                "Dùng với Redux để dispatch action.",
+                "Dùng với useEffect để tăng tốc API."
+            ],
+            "answer": "Dùng chung với forwardRef để TÙY CHỈNH (giới hạn) những thuộc tính/hàm nào của Component con mà Component cha có thể gọi được thông qua ref.",
+            "starred": false
+        },
+        {
+            "id": "q32",
+            "type": "multiple-choice",
+            "question": "React StrictMode ( `<React.StrictMode>` ) trong môi trường Development (dev) có hành vi gì đặc biệt với Functional Component?",
+            "options": [
+                "Tự động format code cho đẹp.",
+                "Nó sẽ TỰ ĐỘNG GỌI render (và một số hook) 2 LẦN liên tiếp để giúp lập trình viên phát hiện sớm các side-effects ẩn hoặc rò rỉ bộ nhớ.",
+                "Nó ngăn chặn mọi lỗi console.log.",
+                "Nó tự động import CSS."
+            ],
+            "answer": "Nó sẽ TỰ ĐỘNG GỌI render (và một số hook) 2 LẦN liên tiếp để giúp lập trình viên phát hiện sớm các side-effects ẩn hoặc rò rỉ bộ nhớ.",
+            "starred": false
+        },
+        {
+            "id": "q33",
+            "type": "multiple-choice",
+            "question": "Sự khác biệt giữa Zustand và Redux là gì (nói chung về mặt sử dụng)?",
+            "options": [
+                "Zustand nặng hơn Redux rất nhiều.",
+                "Zustand nhẹ hơn, không cần bọc app bằng Provider, dùng hooks trực tiếp gọn gàng hơn và không có nhiều boilerplate như Redux thuần.",
+                "Redux dùng cho React, Zustand dùng cho Vue.",
+                "Zustand không hỗ trợ lưu state bất đồng bộ."
+            ],
+            "answer": "Zustand nhẹ hơn, không cần bọc app bằng Provider, dùng hooks trực tiếp gọn gàng hơn và không có nhiều boilerplate như Redux thuần.",
+            "starred": false
+        },
+        {
+            "id": "q34",
+            "type": "multiple-choice",
+            "question": "Thư viện React Query (hoặc SWR) sinh ra nhằm mục đích quản lý loại state nào tốt nhất?",
+            "options": [
+                "UI State (như đóng mở modal, theme color).",
+                "Server State (quản lý data fetch từ API, caching, background updating, retry khi lỗi).",
+                "Local State của component.",
+                "Form State (validate input)."
+            ],
+            "answer": "Server State (quản lý data fetch từ API, caching, background updating, retry khi lỗi).",
+            "starred": false
+        },
+        {
+            "id": "q35",
+            "type": "multiple-choice",
+            "question": "Chức năng `Automatic Batching` được nâng cấp trong React 18 là gì?",
+            "options": [
+                "Tự động gom nhiều file JS thành 1 file bundle.",
+                "Tự động gộp nhiều lời gọi setState (kể cả trong Promises, setTimeout, native events) thành MỘT LẦN re-render duy nhất để tối ưu hiệu năng.",
+                "Tự động gửi nhiều API request cùng lúc.",
+                "Tự động chia trang (pagination)."
+            ],
+            "answer": "Tự động gộp nhiều lời gọi setState (kể cả trong Promises, setTimeout, native events) thành MỘT LẦN re-render duy nhất để tối ưu hiệu năng.",
+            "starred": false
+        },
+        {
+            "id": "q36",
+            "type": "multiple-choice",
+            "question": "Hook `useTransition` (và startTransition) trong React 18 giải quyết bài toán UI nào?",
+            "options": [
+                "Tạo hiệu ứng fade in/fade out mượt mà bằng CSS.",
+                "Đánh dấu một cập nhật state là 'không ưu tiên' (vd: filter list lớn), giúp giao diện không bị đơ (block) và user vẫn có thể gõ input mượt mà (Concurrent rendering).",
+                "Chuyển hướng route giống React Router.",
+                "Chuyển đổi dữ liệu từ string sang số."
+            ],
+            "answer": "Đánh dấu một cập nhật state là 'không ưu tiên' (vd: filter list lớn), giúp giao diện không bị đơ (block) và user vẫn có thể gõ input mượt mà (Concurrent rendering).",
+            "starred": false
+        },
+        {
+            "id": "q37",
+            "type": "multiple-choice",
+            "question": "Hook `useDeferredValue` trong React 18 hoạt động tương tự như kỹ thuật truyền thống nào?",
+            "options": [
+                "Lazy loading.",
+                "Debounce/Throttle. Nó cho phép một giá trị (vd: text tìm kiếm) được cập nhật trễ hơn một nhịp để giữ UI phản hồi nhanh với state ưu tiên cao.",
+                "Redux Thunk.",
+                "Context API."
+            ],
+            "answer": "Debounce/Throttle. Nó cho phép một giá trị (vd: text tìm kiếm) được cập nhật trễ hơn một nhịp để giữ UI phản hồi nhanh với state ưu tiên cao.",
+            "starred": false
+        },
+        {
+            "id": "q38",
+            "type": "multiple-choice",
+            "question": "React Server Components (RSC) được giới thiệu làm gì, và khác gì với SSR truyền thống?",
+            "options": [
+                "Không có khác biệt.",
+                "RSC cho phép Component chạy ĐỘC QUYỀN trên server, gửi HTML/JSON tĩnh về client, KHÔNG gửi mã JS về client, giúp bundle size cực nhỏ và fetch DB trực tiếp.",
+                "RSC dùng để viết API backend bằng React.",
+                "RSC chỉ hoạt động trên thiết bị di động."
+            ],
+            "answer": "RSC cho phép Component chạy ĐỘC QUYỀN trên server, gửi HTML/JSON tĩnh về client, KHÔNG gửi mã JS về client, giúp bundle size cực nhỏ và fetch DB trực tiếp.",
+            "starred": false
+        },
+        {
+            "id": "q39",
+            "type": "multiple-choice",
+            "question": "Chỉ thị `'use client'` trong framework hỗ trợ Server Components (như Next.js 13+ App Router) có ý nghĩa gì?",
+            "options": [
+                "Bắt buộc người dùng phải tải ứng dụng client.",
+                "Đánh dấu file component đó là Client Component (có thể dùng useState, useEffect, onClick) và gửi JS bundle xuống trình duyệt.",
+                "Mã hóa mã nguồn ở phía Client.",
+                "Xác thực Client đăng nhập."
+            ],
+            "answer": "Đánh dấu file component đó là Client Component (có thể dùng useState, useEffect, onClick) và gửi JS bundle xuống trình duyệt.",
+            "starred": false
+        },
+        {
+            "id": "q40",
+            "type": "multiple-choice",
+            "question": "Hook `useId()` trong React 18 cung cấp tính năng gì?",
+            "options": [
+                "Tự động tạo ID tăng dần cho database.",
+                "Tạo ra một chuỗi ID duy nhất, ổn định giữa cả Server và Client (tránh lỗi SSR mismatch), thường dùng để nối thẻ `<label htmlFor>` với `<input id>`.",
+                "Lấy User ID hiện tại.",
+                "Tạo session ID cho cookie."
+            ],
+            "answer": "Tạo ra một chuỗi ID duy nhất, ổn định giữa cả Server và Client (tránh lỗi SSR mismatch), thường dùng để nối thẻ `<label htmlFor>` với `<input id>`.",
+            "starred": false
+        },
+        {
+            "id": "q41",
+            "type": "multiple-choice",
+            "question": "Khái niệm `Reconciliation` trong React mô tả quá trình nào?",
+            "options": [
+                "Quá trình nối các file JS lại với nhau.",
+                "Thuật toán (Heuristic O(n)) mà React sử dụng để so sánh (diffing) Virtual DOM cũ và Virtual DOM mới để tìm ra bộ thay đổi nhỏ nhất cần áp dụng lên DOM thật.",
+                "Quá trình kết nối React với Redux.",
+                "Quá trình gọi API và nhận dữ liệu."
+            ],
+            "answer": "Thuật toán (Heuristic O(n)) mà React sử dụng để so sánh (diffing) Virtual DOM cũ và Virtual DOM mới để tìm ra bộ thay đổi nhỏ nhất cần áp dụng lên DOM thật.",
+            "starred": false
+        },
+        {
+            "id": "q42",
+            "type": "multiple-choice",
+            "question": "Lý do tại sao KHÔNG BAO GIỜ nên dùng `index` của mảng làm `key` khi render list (nếu list đó có thể bị thay đổi thứ tự, thêm/xóa)?",
+            "options": [
+                "Vì index luôn bắt đầu từ 0.",
+                "Vì khi thứ tự mảng đổi, index của các item không đổi, làm React hiểu sai item nào đã bị sửa đổi, dẫn đến render nhầm dữ liệu hoặc lỗi state của component con.",
+                "Vì React sẽ báo lỗi đỏ không cho biên dịch.",
+                "Vì hiệu năng sẽ chậm đi gấp đôi."
+            ],
+            "answer": "Vì khi thứ tự mảng đổi, index của các item không đổi, làm React hiểu sai item nào đã bị sửa đổi, dẫn đến render nhầm dữ liệu hoặc lỗi state của component con.",
+            "starred": false
+        },
+        {
+            "id": "q43",
+            "type": "multiple-choice",
+            "question": "Làm thế nào để tránh việc Context API làm re-render toàn bộ các component con (kể cả những cái không dùng data đó)?",
+            "options": [
+                "Không dùng Context API nữa.",
+                "Tách Context ra làm nhiều Context nhỏ (vd: ThemeContext, AuthContext) hoặc bọc các component con bằng React.memo() để chặn re-render thừa.",
+                "Dùng useState thay thế.",
+                "Gắn ref cho tất cả component."
+            ],
+            "answer": "Tách Context ra làm nhiều Context nhỏ (vd: ThemeContext, AuthContext) hoặc bọc các component con bằng React.memo() để chặn re-render thừa.",
+            "starred": false
+        },
+        {
+            "id": "q44",
+            "type": "multiple-choice",
+            "question": "Cơ chế Event Delegation (ủy quyền sự kiện) được React ứng dụng như thế nào (Synthetic Events)?",
+            "options": [
+                "Gắn sự kiện vào từng thẻ DOM trực tiếp.",
+                "React không gắn event listeners vào từng thẻ DOM thật. Thay vào đó, nó gắn DUY NHẤT một listener chung ở root (chân cây DOM) để bắt và xử lý mọi sự kiện.",
+                "Không dùng event listener nào cả.",
+                "Ủy quyền sự kiện cho Backend xử lý."
+            ],
+            "answer": "React không gắn event listeners vào từng thẻ DOM thật. Thay vào đó, nó gắn DUY NHẤT một listener chung ở root (chân cây DOM) để bắt và xử lý mọi sự kiện.",
+            "starred": false
+        },
+        {
+            "id": "q45",
+            "type": "multiple-choice",
+            "question": "Render Props là một pattern (mẫu thiết kế) để làm gì?",
+            "options": [
+                "Để style component bằng CSS-in-JS.",
+                "Để chia sẻ logic giữa các component bằng cách truyền một hàm trả về React Element thông qua một prop (ví dụ: `<Mouse render={(x,y) => ...} />`).",
+                "Để kết xuất dữ liệu ra file Excel.",
+                "Để tạo animation."
+            ],
+            "answer": "Để chia sẻ logic giữa các component bằng cách truyền một hàm trả về React Element thông qua một prop (ví dụ: `<Mouse render={(x,y) => ...} />`).",
+            "starred": false
+        },
+        {
+            "id": "q46",
+            "type": "multiple-choice",
+            "question": "Sự khác biệt giữa SSR (Server-Side Rendering) và CSR (Client-Side Rendering) là gì?",
+            "options": [
+                "SSR chạy bằng Java, CSR chạy bằng JavaScript.",
+                "SSR tạo mã HTML hoàn chỉnh trên server ngay khi request rồi gửi về (tốt cho SEO/FCP). CSR gửi HTML rỗng và file bundle JS bự để trình duyệt tự vẽ mọi thứ.",
+                "CSR tốt cho SEO hơn SSR.",
+                "SSR chỉ dùng cho web tĩnh."
+            ],
+            "answer": "SSR tạo mã HTML hoàn chỉnh trên server ngay khi request rồi gửi về (tốt cho SEO/FCP). CSR gửi HTML rỗng và file bundle JS bự để trình duyệt tự vẽ mọi thứ.",
+            "starred": false
+        },
+        {
+            "id": "q47",
+            "type": "multiple-choice",
+            "question": "SSG (Static Site Generation) trong Next.js là gì?",
+            "options": [
+                "Tạo trang web mỗi khi user truy cập.",
+                "Build sẵn mã HTML của các trang TẠI THỜI ĐIỂM BUILD (Build time) và lưu lại (CDN). Khi user truy cập, trả về ngay file HTML tĩnh, cực kỳ nhanh.",
+                "Quá trình bảo mật web.",
+                "Xóa dữ liệu tĩnh."
+            ],
+            "answer": "Build sẵn mã HTML của các trang TẠI THỜI ĐIỂM BUILD (Build time) và lưu lại (CDN). Khi user truy cập, trả về ngay file HTML tĩnh, cực kỳ nhanh.",
+            "starred": false
+        },
+        {
+            "id": "q48",
+            "type": "multiple-choice",
+            "question": "Khái niệm 'Hydration' trong React (đặc biệt khi dùng SSR/Next.js) nghĩa là gì?",
+            "options": [
+                "Uống đủ nước khi code.",
+                "Quá trình React ở phía Client đính kèm các event listeners (như onClick) vào file HTML tĩnh vừa được Server gửi về, làm cho trang web trở nên tương tác được.",
+                "Quá trình tải file CSS.",
+                "Thuật toán nén ảnh của React."
+            ],
+            "answer": "Quá trình React ở phía Client đính kèm các event listeners (như onClick) vào file HTML tĩnh vừa được Server gửi về, làm cho trang web trở nên tương tác được.",
+            "starred": false
+        },
+        {
+            "id": "q49",
+            "type": "multiple-choice",
+            "question": "Lỗi 'Hydration Mismatch' xảy ra khi nào?",
+            "options": [
+                "Khi Server sập.",
+                "Khi cây DOM HTML được tạo ra ở Server (trong quá trình SSR) KHÔNG TRÙNG KHỚP với cây DOM mà Client React dự tính render (ví dụ do dùng Math.random() hoặc thời gian hệ thống).",
+                "Khi dùng sai phiên bản React.",
+                "Khi thiếu thư viện."
+            ],
+            "answer": "Khi cây DOM HTML được tạo ra ở Server (trong quá trình SSR) KHÔNG TRÙNG KHỚP với cây DOM mà Client React dự tính render (ví dụ do dùng Math.random() hoặc thời gian hệ thống).",
+            "starred": false
+        },
+        {
+            "id": "q50",
+            "type": "multiple-choice",
+            "question": "Để tối ưu SEO trong ứng dụng React thuần (CSR) mà không dùng Next.js, ta có thể dùng giải pháp nào?",
+            "options": [
+                "Không thể tối ưu SEO cho React thuần.",
+                "Dùng thư viện React Helmet để thay đổi thẻ meta động, kết hợp Prerendering (như thư viện react-snap) hoặc dịch vụ Dynamic Rendering (như prerender.io).",
+                "Chỉ cần viết nhiều thẻ h1.",
+                "Tạo sitemap rỗng."
+            ],
+            "answer": "Dùng thư viện React Helmet để thay đổi thẻ meta động, kết hợp Prerendering (như thư viện react-snap) hoặc dịch vụ Dynamic Rendering (như prerender.io).",
+            "starred": false
+        },
+        {
+            "id": "q51",
+            "type": "multiple-choice",
+            "question": "Nếu truyền biến kiểu tham chiếu (object, array, function) vào `useEffect` dependency, rủi ro tiềm ẩn là gì?",
+            "options": [
+                "Làm crash trình duyệt.",
+                "Nếu object/array đó được tạo mới ở mỗi lần render (địa chỉ bộ nhớ đổi), useEffect sẽ bị kích hoạt chạy lại LẦN NÀO CŨNG CHẠY, tạo ra infinite loop hoặc giảm hiệu năng.",
+                "Không có rủi ro gì.",
+                "Biến tham chiếu sẽ bị biến thành chuỗi."
+            ],
+            "answer": "Nếu object/array đó được tạo mới ở mỗi lần render (địa chỉ bộ nhớ đổi), useEffect sẽ bị kích hoạt chạy lại LẦN NÀO CŨNG CHẠY, tạo ra infinite loop hoặc giảm hiệu năng.",
+            "starred": false
+        },
+        {
+            "id": "q52",
+            "type": "multiple-choice",
+            "question": "Làm thế nào để fix vấn đề tham chiếu Object/Function trong useEffect dependency?",
+            "options": [
+                "Xóa dependency array đi.",
+                "Bọc hàm bằng useCallback, bọc object bằng useMemo, hoặc mang việc khai báo hàm/object đó vào BÊN TRONG useEffect nếu không dùng ở ngoài.",
+                "Chuyển qua dùng Class Component.",
+                "Ép kiểu về any."
+            ],
+            "answer": "Bọc hàm bằng useCallback, bọc object bằng useMemo, hoặc mang việc khai báo hàm/object đó vào BÊN TRONG useEffect nếu không dùng ở ngoài.",
+            "starred": false
+        },
+        {
+            "id": "q53",
+            "type": "multiple-choice",
+            "question": "Cấu trúc thư mục phổ biến (Folder Architecture) cho dự án React quy mô vừa/lớn là gì?",
+            "options": [
+                "Bỏ tất cả file vào 1 thư mục src duy nhất.",
+                "Chia theo tính năng (Feature-based) hoặc chia theo loại (components, hooks, utils, services, pages, assets, store).",
+                "Mỗi component một repo riêng.",
+                "Chỉ dùng 1 file index.js dài vô tận."
+            ],
+            "answer": "Chia theo tính năng (Feature-based) hoặc chia theo loại (components, hooks, utils, services, pages, assets, store).",
+            "starred": false
+        },
+        {
+            "id": "q54",
+            "type": "multiple-choice",
+            "question": "CSS Modules trong React giải quyết triệt để vấn đề gì của CSS truyền thống?",
+            "options": [
+                "Giúp viết CSS nhanh hơn.",
+                "Vấn đề Conflict (xung đột) Class Name toàn cục. Nó tự động băm (hash) tên class (vd: .btn_3a2F) giúp style chỉ áp dụng ở component được import.",
+                "Cho phép viết logic JS trong CSS.",
+                "Giảm dung lượng file ảnh."
+            ],
+            "answer": "Vấn đề Conflict (xung đột) Class Name toàn cục. Nó tự động băm (hash) tên class (vd: .btn_3a2F) giúp style chỉ áp dụng ở component được import.",
+            "starred": false
+        },
+        {
+            "id": "q55",
+            "type": "multiple-choice",
+            "question": "Thư viện Styled-Components sử dụng kỹ thuật JS gì để hoạt động?",
+            "options": [
+                "Promises.",
+                "Tagged Template Literals (cú pháp ngoặc kép ngược `...` kẹp sát tên hàm) để inject CSS trực tiếp vào component dưới dạng inline class ngầm.",
+                "Generators.",
+                "WebSockets."
+            ],
+            "answer": "Tagged Template Literals (cú pháp ngoặc kép ngược `...` kẹp sát tên hàm) để inject CSS trực tiếp vào component dưới dạng inline class ngầm.",
+            "starred": false
+        },
+        {
+            "id": "q56",
+            "type": "multiple-choice",
+            "question": "React Router DOM v6 khác v5 ở những điểm cốt lõi nào?",
+            "options": [
+                "v6 bỏ Router đi.",
+                "v6 thay <Switch> bằng <Routes>, thuộc tính component={} thay bằng element={<Component />}, tự động chọn route khôn ngoan hơn (không quan trọng thứ tự), và bỏ useHistory thay bằng useNavigate.",
+                "v6 không hỗ trợ Hook.",
+                "v6 chỉ dùng được với Class component."
+            ],
+            "answer": "v6 thay <Switch> bằng <Routes>, thuộc tính component={} thay bằng element={<Component />}, tự động chọn route khôn ngoan hơn (không quan trọng thứ tự), và bỏ useHistory thay bằng useNavigate.",
+            "starred": false
+        },
+        {
+            "id": "q57",
+            "type": "multiple-choice",
+            "question": "Thẻ `<Outlet />` trong React Router v6 dùng để làm gì?",
+            "options": [
+                "Đăng xuất khỏi ứng dụng.",
+                "Đóng vai trò là một 'Placeholder' (chỗ trống) bên trong Component Cha (Layout) để render các Child Routes tương ứng vào vị trí đó.",
+                "Gọi API ra ngoài.",
+                "Xóa lịch sử router."
+            ],
+            "answer": "Đóng vai trò là một 'Placeholder' (chỗ trống) bên trong Component Cha (Layout) để render các Child Routes tương ứng vào vị trí đó.",
+            "starred": false
+        },
+        {
+            "id": "q58",
+            "type": "multiple-choice",
+            "question": "Công cụ kiểm thử (Testing) phổ biến nhất được dùng để test UI/Component trong React là bộ đôi nào?",
+            "options": [
+                "Mocha và Chai.",
+                "Jest (Test Runner/Assertion) kết hợp với React Testing Library (RTL - mô phỏng hành vi user trên DOM).",
+                "Selenium và Cypress.",
+                "Puppeteer và Playwright."
+            ],
+            "answer": "Jest (Test Runner/Assertion) kết hợp với React Testing Library (RTL - mô phỏng hành vi user trên DOM).",
+            "starred": false
+        },
+        {
+            "id": "q59",
+            "type": "multiple-choice",
+            "question": "Triết lý chính của React Testing Library (RTL) khác với Enzyme trước đây là gì?",
+            "options": [
+                "RTL test nhanh hơn 100 lần.",
+                "Enzyme test dựa trên cấu trúc Component (State/Props nội bộ). RTL khuyến khích test dựa trên Hành vi của User thật (tìm element qua text, role) thay vì chọc vào logic code.",
+                "RTL chỉ test được CSS.",
+                "RTL không dùng JavaScript."
+            ],
+            "answer": "Enzyme test dựa trên cấu trúc Component (State/Props nội bộ). RTL khuyến khích test dựa trên Hành vi của User thật (tìm element qua text, role) thay vì chọc vào logic code.",
+            "starred": false
+        },
+        {
+            "id": "q60",
+            "type": "multiple-choice",
+            "question": "Làm thế nào để Mock (giả lập) một API call khi viết Unit Test cho React Component bằng Jest?",
+            "options": [
+                "Sử dụng backend thật.",
+                "Sử dụng `jest.mock()` để giả mạo hàm fetch/axios, trả về `Promise.resolve(mockData)` để component tin rằng API đã được gọi thành công.",
+                "Chỉ cần console.log dữ liệu.",
+                "Tắt kết nối internet khi chạy test."
+            ],
+            "answer": "Sử dụng `jest.mock()` để giả mạo hàm fetch/axios, trả về `Promise.resolve(mockData)` để component tin rằng API đã được gọi thành công.",
+            "starred": false
+        },
+        {
+            "id": "q61",
+            "type": "multiple-choice",
+            "question": "Memory Leak phổ biến nhất trong React xảy ra do nguyên nhân nào (và cách fix)?",
+            "options": [
+                "Dùng quá nhiều biến.",
+                "Component bị Unmount nhưng API, setTimeout hoặc EventListener chưa được hủy. Fix: dùng return function trong useEffect để clearTimeout / abort API (AbortController).",
+                "Khai báo hàm trong JSX.",
+                "Sử dụng Redux quá nhiều."
+            ],
+            "answer": "Component bị Unmount nhưng API, setTimeout hoặc EventListener chưa được hủy. Fix: dùng return function trong useEffect để clearTimeout / abort API (AbortController).",
+            "starred": false
+        },
+        {
+            "id": "q62",
+            "type": "multiple-choice",
+            "question": "Cơ chế `Stale Closure` trong React Hooks là vấn đề gì?",
+            "options": [
+                "Đóng ngoặc nhầm.",
+                "Xảy ra khi một hàm bên trong Hook (như setTimeout) 'bắt' (capture) và lưu lại giá trị State cũ của lần render trước đó, dẫn đến việc dùng sai dữ liệu.",
+                "Ứng dụng bị đóng đột ngột.",
+                "State không bao giờ thay đổi."
+            ],
+            "answer": "Xảy ra khi một hàm bên trong Hook (như setTimeout) 'bắt' (capture) và lưu lại giá trị State cũ của lần render trước đó, dẫn đến việc dùng sai dữ liệu.",
+            "starred": false
+        },
+        {
+            "id": "q63",
+            "type": "multiple-choice",
+            "question": "Làm sao để giải quyết lỗi `Stale Closure`?",
+            "options": [
+                "Reload trang.",
+                "Truyền biến đó vào dependency array của useEffect/useCallback để hàm được tạo lại khi biến đổi, hoặc dùng dạng callback của setState: setC(prevC => prevC + 1).",
+                "Xóa bỏ state.",
+                "Dùng Class component thay thế."
+            ],
+            "answer": "Truyền biến đó vào dependency array của useEffect/useCallback để hàm được tạo lại khi biến đổi, hoặc dùng dạng callback của setState: setC(prevC => prevC + 1).",
+            "starred": false
+        },
+        {
+            "id": "q64",
+            "type": "multiple-choice",
+            "question": "Thuộc tính `dangerouslySetInnerHTML` trong React dùng để làm gì và cảnh báo rủi ro nào?",
+            "options": [
+                "Dùng để xóa HTML.",
+                "Dùng để ép React nhúng chuỗi HTML thô trực tiếp vào DOM (giống innerHTML). Rủi ro: Có thể dính lỗ hổng bảo mật XSS nếu chuỗi HTML đến từ người dùng không được sanitize.",
+                "Dùng để viết CSS an toàn.",
+                "Bảo vệ web khỏi hacker."
+            ],
+            "answer": "Dùng để ép React nhúng chuỗi HTML thô trực tiếp vào DOM (giống innerHTML). Rủi ro: Có thể dính lỗ hổng bảo mật XSS nếu chuỗi HTML đến từ người dùng không được sanitize.",
+            "starred": false
+        },
+        {
+            "id": "q65",
+            "type": "multiple-choice",
+            "question": "Trong React Form quản lý bằng thư viện React Hook Form (RHF), ưu điểm vượt trội của nó so với Formik là gì?",
+            "options": [
+                "Code viết dài hơn.",
+                "RHF sử dụng kiến trúc Uncontrolled Components kết hợp Ref, giúp giảm thiểu tối đa số lần re-render toàn form mỗi khi người dùng gõ phím.",
+                "RHF dùng Redux làm core.",
+                "RHF bắt buộc dùng TypeScript."
+            ],
+            "answer": "RHF sử dụng kiến trúc Uncontrolled Components kết hợp Ref, giúp giảm thiểu tối đa số lần re-render toàn form mỗi khi người dùng gõ phím.",
+            "starred": false
+        },
+        {
+            "id": "q66",
+            "type": "multiple-choice",
+            "question": "Tại sao Redux Toolkit lại tạo ra hàm `createSlice`?",
+            "options": [
+                "Để cắt ảnh UI.",
+                "Để gộp chung việc khai báo Action Types, Action Creators và Reducers vào chung một file cấu trúc gọn gàng, giảm boilerplate triệt để.",
+                "Để phân chia router.",
+                "Để tải chậm dữ liệu."
+            ],
+            "answer": "Để gộp chung việc khai báo Action Types, Action Creators và Reducers vào chung một file cấu trúc gọn gàng, giảm boilerplate triệt để.",
+            "starred": false
+        },
+        {
+            "id": "q67",
+            "type": "multiple-choice",
+            "question": "Khái niệm Selector trong Redux (hoặc thư viện Reselect) đóng vai trò gì?",
+            "options": [
+                "Chọn thẻ DOM (như querySelector).",
+                "Là những hàm dùng để trích xuất hoặc tính toán dữ liệu phái sinh từ Redux Store state, hỗ trợ memoize (cache) để tránh tính toán thừa.",
+                "Chọn màu sắc theme.",
+                "Định tuyến trang web."
+            ],
+            "answer": "Là những hàm dùng để trích xuất hoặc tính toán dữ liệu phái sinh từ Redux Store state, hỗ trợ memoize (cache) để tránh tính toán thừa.",
+            "starred": false
+        },
+        {
+            "id": "q68",
+            "type": "multiple-choice",
+            "question": "Toán tử Spread (`...`) thường xuyên được sử dụng trong hàm Reducer thuần để làm gì?",
+            "options": [
+                "Gọi API bên thứ ba.",
+                "Để copy (shallow clone) object hoặc array state cũ, sau đó sửa đổi thuộc tính cần thiết, đảm bảo nguyên tắc Immutable State.",
+                "Để nối chuỗi.",
+                "Để khai báo hàm."
+            ],
+            "answer": "Để copy (shallow clone) object hoặc array state cũ, sau đó sửa đổi thuộc tính cần thiết, đảm bảo nguyên tắc Immutable State.",
+            "starred": false
+        },
+        {
+            "id": "q69",
+            "type": "multiple-choice",
+            "question": "Trong React Query, `queryKey` có vai trò quan trọng như thế nào?",
+            "options": [
+                "Để làm key cho vòng lặp ngFor.",
+                "Là một mảng định danh duy nhất cho mỗi luồng fetch data, React Query dựa vào mảng này để cache dữ liệu, nếu mảng đổi thì nó sẽ tự động fetch lại API mới.",
+                "Để mã hóa mật khẩu.",
+                "Để gọi Redux reducer."
+            ],
+            "answer": "Là một mảng định danh duy nhất cho mỗi luồng fetch data, React Query dựa vào mảng này để cache dữ liệu, nếu mảng đổi thì nó sẽ tự động fetch lại API mới.",
+            "starred": false
+        },
+        {
+            "id": "q70",
+            "type": "multiple-choice",
+            "question": "Tính năng `Optimistic Update` (cập nhật lạc quan) thường được dùng cho UX nào?",
+            "options": [
+                "Gửi API thất bại nhiều lần.",
+                "Khi user bấm Like/Xóa, UI lập tức cập nhật thành công (dù API chưa trả về) để user cảm giác app cực nhanh. Nếu API sau đó báo lỗi thì roll-back (phục hồi) lại trạng thái UI cũ.",
+                "Chặn người dùng click.",
+                "Chỉ hiện loading spinner dài hạn."
+            ],
+            "answer": "Khi user bấm Like/Xóa, UI lập tức cập nhật thành công (dù API chưa trả về) để user cảm giác app cực nhanh. Nếu API sau đó báo lỗi thì roll-back (phục hồi) lại trạng thái UI cũ.",
+            "starred": false
+        },
+        {
+            "id": "q71",
+            "type": "multiple-choice",
+            "question": "Trong Webpack (khi build React), Loader và Plugin khác nhau ntn?",
+            "options": [
+                "Không có khác biệt.",
+                "Loader dùng để biến đổi từng file cụ thể (vd transpile JS bằng babel-loader, compile SCSS). Plugin can thiệp vào toàn bộ quá trình build (vd nén file, inject script vào HTML).",
+                "Loader làm đẹp CSS, Plugin làm đẹp JS.",
+                "Plugin chạy trước Loader."
+            ],
+            "answer": "Loader dùng để biến đổi từng file cụ thể (vd transpile JS bằng babel-loader, compile SCSS). Plugin can thiệp vào toàn bộ quá trình build (vd nén file, inject script vào HTML).",
+            "starred": false
+        },
+        {
+            "id": "q72",
+            "type": "multiple-choice",
+            "question": "Babel đóng vai trò gì trong hệ sinh thái React truyền thống?",
+            "options": [
+                "Quản lý state.",
+                "Là một Trình biên dịch (Transpiler) dịch các cú pháp JSX và ES6/ES7+ mới nhất thành JavaScript chuẩn (ES5) để chạy được trên các trình duyệt cũ.",
+                "Là thư viện router.",
+                "Tạo Virtual DOM."
+            ],
+            "answer": "Là một Trình biên dịch (Transpiler) dịch các cú pháp JSX và ES6/ES7+ mới nhất thành JavaScript chuẩn (ES5) để chạy được trên các trình duyệt cũ.",
+            "starred": false
+        },
+        {
+            "id": "q73",
+            "type": "multiple-choice",
+            "question": "Công cụ Vite khác với Create React App (CRA / Webpack) ở điểm tốc độ khởi động (Cold Start) dựa vào công nghệ gì?",
+            "options": [
+                "Vite không cần mạng internet.",
+                "Vite sử dụng ES Modules bản địa (Native ESM) của trình duyệt để nạp file JS trực tiếp mà không cần bundle toàn bộ app trước khi chạy dev server, giúp dev server lên trong mili-giây.",
+                "Vite nén file thành zip.",
+                "Vite dùng C++ thay cho Node."
+            ],
+            "answer": "Vite sử dụng ES Modules bản địa (Native ESM) của trình duyệt để nạp file JS trực tiếp mà không cần bundle toàn bộ app trước khi chạy dev server, giúp dev server lên trong mili-giây.",
+            "starred": false
+        },
+        {
+            "id": "q74",
+            "type": "multiple-choice",
+            "question": "Tại sao chúng ta phải import React từ 'react' trong mọi file JSX ở phiên bản React 16 trở xuống, nhưng React 17+ lại không cần thiết nữa?",
+            "options": [
+                "Vì React đã bị loại bỏ.",
+                "Vì từ bản 17, React giới thiệu JSX Transform mới tự động inject các hàm render (như _jsx) lúc compile, lập trình viên không cần thủ công import biến React nữa.",
+                "Vì ES6 mặc định tự import mọi thứ.",
+                "Vì trình duyệt đã tích hợp sẵn React."
+            ],
+            "answer": "Vì từ bản 17, React giới thiệu JSX Transform mới tự động inject các hàm render (như _jsx) lúc compile, lập trình viên không cần thủ công import biến React nữa.",
+            "starred": false
+        },
+        {
+            "id": "q75",
+            "type": "multiple-choice",
+            "question": "Khái niệm `Strict DOM` / `Concurrent Mode` trong React 18 ảnh hưởng thế nào đến useEffect?",
+            "options": [
+                "Làm useEffect chạy chậm hơn.",
+                "Nó cho phép React gián đoạn việc render để ưu tiên tác vụ khác. Trong chế độ dev, nó kích hoạt unmount rồi mount lại component để bắt dev phải viết hàm cleanup cho useEffect chuẩn xác.",
+                "Nó cấm dùng useEffect.",
+                "Nó biến useEffect thành đồng bộ."
+            ],
+            "answer": "Nó cho phép React gián đoạn việc render để ưu tiên tác vụ khác. Trong chế độ dev, nó kích hoạt unmount rồi mount lại component để bắt dev phải viết hàm cleanup cho useEffect chuẩn xác.",
+            "starred": false
+        },
+        {
+            "id": "q76",
+            "type": "multiple-choice",
+            "question": "Kiểu dữ liệu `ReactNode` và `ReactElement` trong TypeScript khác nhau ntn?",
+            "options": [
+                "ReactNode dùng cho class, ReactElement dùng cho hook.",
+                "ReactElement là một object có type, props (chỉ đại diện cho 1 thẻ JSX). ReactNode rộng hơn, bao gồm ReactElement, string, number, null, boolean, array, fragment (đại diện cho mọi thứ có thể render).",
+                "ReactNode chạy nhanh hơn.",
+                "Không có sự khác biệt."
+            ],
+            "answer": "ReactElement là một object có type, props (chỉ đại diện cho 1 thẻ JSX). ReactNode rộng hơn, bao gồm ReactElement, string, number, null, boolean, array, fragment (đại diện cho mọi thứ có thể render).",
+            "starred": false
+        },
+        {
+            "id": "q77",
+            "type": "multiple-choice",
+            "question": "Khi pass prop dạng children (`<Card>Hello</Card>`), thì `props.children` thường mang kiểu dữ liệu gì trong TS?",
+            "options": [
+                "string",
+                "React.ReactNode",
+                "object",
+                "void"
+            ],
+            "answer": "React.ReactNode",
+            "starred": false
+        },
+        {
+            "id": "q78",
+            "type": "multiple-choice",
+            "question": "Thư viện quản lý UI state (ví dụ Context) nếu không được thiết kế kỹ (tất cả data nhét vào 1 Context to) sẽ gây ra hậu quả gì?",
+            "options": [
+                "Không gọi được API.",
+                "Performance Bottleneck (nút thắt hiệu năng): Bất kỳ value nhỏ nào đổi cũng sẽ ép MỌI component tiêu thụ Context đó phải re-render lại.",
+                "Lỗi bảo mật.",
+                "Crash trình duyệt lập tức."
+            ],
+            "answer": "Performance Bottleneck (nút thắt hiệu năng): Bất kỳ value nhỏ nào đổi cũng sẽ ép MỌI component tiêu thụ Context đó phải re-render lại.",
+            "starred": false
+        },
+        {
+            "id": "q79",
+            "type": "multiple-choice",
+            "question": "`useSyncExternalStore` được sinh ra trong React 18 với lý do chính là gì?",
+            "options": [
+                "Quản lý Redux nhanh hơn.",
+                "Cung cấp giải pháp chuẩn để các thư viện quản lý State bên ngoài (Zustand, Redux) đồng bộ hóa với React mà không bị lỗi 'Tearing' (rách UI) trong chế độ Concurrent Rendering.",
+                "Đồng bộ với LocalStorage tự động.",
+                "Tạo biến toàn cục (global variables)."
+            ],
+            "answer": "Cung cấp giải pháp chuẩn để các thư viện quản lý State bên ngoài (Zustand, Redux) đồng bộ hóa với React mà không bị lỗi 'Tearing' (rách UI) trong chế độ Concurrent Rendering.",
+            "starred": false
+        },
+        {
+            "id": "q80",
+            "type": "multiple-choice",
+            "question": "Một ứng dụng React thuần (Vite/CRA) khi deploy lên server thật (Nginx/Apache), nếu user F5 (refresh) ở trang '/about' thì bị lỗi 404. Tại sao và cách sửa?",
+            "options": [
+                "Do mạng chậm. Sửa: tắt đi bật lại.",
+                "Do Server đi tìm file '/about/index.html' nhưng app là SPA (chỉ có 1 file index.html). Sửa: Cấu hình Nginx/Apache tự động fallback (chuyển hướng) mọi request lỗi 404 trỏ về 'index.html'.",
+                "Do code React bị lỗi.",
+                "Do chưa gọi API. Sửa: gọi API."
+            ],
+            "answer": "Do Server đi tìm file '/about/index.html' nhưng app là SPA (chỉ có 1 file index.html). Sửa: Cấu hình Nginx/Apache tự động fallback (chuyển hướng) mọi request lỗi 404 trỏ về 'index.html'.",
+            "starred": false
+        },
+        {
+            "id": "q81",
+            "type": "multiple-choice",
+            "question": "Khái niệm `Micro-frontend` khi áp dụng với React có mục đích gì?",
+            "options": [
+                "Tạo app React cực nhỏ (dưới 10KB).",
+                "Chia rẽ một hệ thống Frontend lớn (Monolith) thành nhiều app React nhỏ (Micro-apps) độc lập. Các team có thể phát triển, build và deploy riêng biệt, sau đó ghép lại chung trên 1 giao diện host (thường dùng Module Federation).",
+                "Dùng React cho phần Backend.",
+                "Thay thế React Native."
+            ],
+            "answer": "Chia rẽ một hệ thống Frontend lớn (Monolith) thành nhiều app React nhỏ (Micro-apps) độc lập. Các team có thể phát triển, build và deploy riêng biệt, sau đó ghép lại chung trên 1 giao diện host (thường dùng Module Federation).",
+            "starred": false
+        },
+        {
+            "id": "q82",
+            "type": "multiple-choice",
+            "question": "Trong Micro-frontend với Webpack Module Federation, `exposes` và `remotes` mang ý nghĩa gì?",
+            "options": [
+                "Là biến để cấu hình tên miền.",
+                "`exposes` chỉ định các components/modules mình cho phép app khác lấy dùng. `remotes` chỉ định các app bên ngoài mà mình muốn lấy components của họ về dùng.",
+                "Dùng để lấy dữ liệu từ API.",
+                "Là thư mục chứa hình ảnh."
+            ],
+            "answer": "`exposes` chỉ định các components/modules mình cho phép app khác lấy dùng. `remotes` chỉ định các app bên ngoài mà mình muốn lấy components của họ về dùng.",
+            "starred": false
+        },
+        {
+            "id": "q83",
+            "type": "multiple-choice",
+            "question": "React Fiber Architecture (từ React 16) mang lại cải tiến gì sâu sắc cho Core Engine?",
+            "options": [
+                "Hỗ trợ CSS-in-JS tốt hơn.",
+                "Thay đổi từ cơ chế đệ quy (đồng bộ, block thread) sang vòng lặp (có thể tạm dừng, tiếp tục, hủy bỏ). Nó chia nhỏ công việc render thành các 'chunk' để trình duyệt có khoảng hở xử lý UI mượt hơn.",
+                "Chỉ hỗ trợ cho TypeScript.",
+                "Đổi ngôn ngữ từ JS sang Rust."
+            ],
+            "answer": "Thay đổi từ cơ chế đệ quy (đồng bộ, block thread) sang vòng lặp (có thể tạm dừng, tiếp tục, hủy bỏ). Nó chia nhỏ công việc render thành các 'chunk' để trình duyệt có khoảng hở xử lý UI mượt hơn.",
+            "starred": false
+        },
+        {
+            "id": "q84",
+            "type": "multiple-choice",
+            "question": "Làm thế nào React nhận biết một component là Class Component hay Function Component dưới nền engine?",
+            "options": [
+                "Đọc tên component xem có in hoa không.",
+                "Nó kiểm tra thuộc tính `Component.prototype && Component.prototype.isReactComponent` có tồn tại hay không. Nếu có thì dùng `new` để tạo instance, nếu không thì gọi hàm trực tiếp.",
+                "Hỏi người dùng cấu hình.",
+                "Nhìn vào đuôi file."
+            ],
+            "answer": "Nó kiểm tra thuộc tính `Component.prototype && Component.prototype.isReactComponent` có tồn tại hay không. Nếu có thì dùng `new` để tạo instance, nếu không thì gọi hàm trực tiếp.",
+            "starred": false
+        },
+        {
+            "id": "q85",
+            "type": "multiple-choice",
+            "question": "Intersection Observer API thường được kết hợp với React để làm tính năng gì?",
+            "options": [
+                "Kiểm tra bảo mật.",
+                "Làm tính năng Infinite Scrolling (cuộn vô tận) hoặc Lazy Load Images (tải ảnh khi cuộn tới) một cách cực kỳ mượt mà, thay thế việc lắng nghe sự kiện scroll rườm rà.",
+                "Tính toán số nguyên tố.",
+                "Gửi Email marketing."
+            ],
+            "answer": "Làm tính năng Infinite Scrolling (cuộn vô tận) hoặc Lazy Load Images (tải ảnh khi cuộn tới) một cách cực kỳ mượt mà, thay thế việc lắng nghe sự kiện scroll rườm rà.",
+            "starred": false
+        },
+        {
+            "id": "q86",
+            "type": "multiple-choice",
+            "question": "Cách truyền thống để tối ưu hiệu năng của các danh sách siêu dài (vd: 10,000 items) trong React (ngoài phân trang) là gì?",
+            "options": [
+                "Xóa bớt item.",
+                "Sử dụng Virtual List / Windowing (thông qua thư viện như react-window hoặc react-virtualized) để chỉ render ra DOM đúng số lượng item đang hiển thị trên màn hình.",
+                "Ẩn bằng CSS display: none.",
+                "Chuyển qua backend xử lý HTML."
+            ],
+            "answer": "Sử dụng Virtual List / Windowing (thông qua thư viện như react-window hoặc react-virtualized) để chỉ render ra DOM đúng số lượng item đang hiển thị trên màn hình.",
+            "starred": false
+        },
+        {
+            "id": "q87",
+            "type": "multiple-choice",
+            "question": "Khái niệm `Debounce` thường xuyên dùng cho khung Search input trong React hoạt động theo nguyên lý nào?",
+            "options": [
+                "Chặn gửi API vĩnh viễn.",
+                "Khi user gõ phím liên tục, nó sẽ 'trì hoãn' thực thi hàm gọi API, chờ cho đến khi user DỪNG gõ sau một khoảng thời gian T (vd: 500ms) thì mới gọi thực thi MỘT lần cuối.",
+                "Gọi API ngay lập tức mỗi lần gõ.",
+                "Giới hạn số lần gọi API cố định 1s/1 lần dù gõ liên tục (Throttle)."
+            ],
+            "answer": "Khi user gõ phím liên tục, nó sẽ 'trì hoãn' thực thi hàm gọi API, chờ cho đến khi user DỪNG gõ sau một khoảng thời gian T (vd: 500ms) thì mới gọi thực thi MỘT lần cuối.",
+            "starred": false
+        },
+        {
+            "id": "q88",
+            "type": "multiple-choice",
+            "question": "Toán tử `Optional Chaining` (?.) trong JS có lợi ích cực lớn gì khi hiển thị UI trong React?",
+            "options": [
+                "Làm đẹp CSS.",
+                "Tránh việc React ứng dụng bị crash trắng màn hình với lỗi 'Cannot read properties of undefined' khi cố gắng render sâu vào một object mà dữ liệu (API chưa kịp trả) chưa tồn tại (vd: `user?.profile?.avatar`).",
+                "Kiểm tra if else thay thế switch.",
+                "Giúp render nhanh gấp đôi."
+            ],
+            "answer": "Tránh việc React ứng dụng bị crash trắng màn hình với lỗi 'Cannot read properties of undefined' khi cố gắng render sâu vào một object mà dữ liệu (API chưa kịp trả) chưa tồn tại (vd: `user?.profile?.avatar`).",
+            "starred": false
+        },
+        {
+            "id": "q89",
+            "type": "multiple-choice",
+            "question": "Sự khác biệt giữa `null` và `undefined` khi truyền vào prop của Component là gì?",
+            "options": [
+                "Không có khác biệt.",
+                "Nếu truyền `undefined` (hoặc không truyền), Component sẽ sử dụng Default Prop (nếu có). Nếu truyền `null`, nó vẫn nhận là null chứ không dùng Default Prop.",
+                "Truyền null sẽ gây lỗi đỏ, undefined thì không.",
+                "Trình duyệt tự động ép kiểu thành chuỗi rỗng."
+            ],
+            "answer": "Nếu truyền `undefined` (hoặc không truyền), Component sẽ sử dụng Default Prop (nếu có). Nếu truyền `null`, nó vẫn nhận là null chứ không dùng Default Prop.",
+            "starred": false
+        },
+        {
+            "id": "q90",
+            "type": "multiple-choice",
+            "question": "Tại sao không nên dùng `index` làm key cho component có form inputs (vd: thêm/xóa input động)?",
+            "options": [
+                "Vì nó xấu.",
+                "Khi xóa item ở giữa, các item bên dưới sẽ nhảy lên nhận index cũ. React nghĩ DOM không đổi (vì key giữ nguyên), nó sẽ tái sử dụng thẻ DOM cũ kèm theo VALUE CŨ CỦA NGƯỜI DÙNG ĐÃ NHẬP, làm sai lệch data trầm trọng.",
+                "Vì database sẽ bị mất dữ liệu.",
+                "Vì thư viện form không nhận dạng được."
+            ],
+            "answer": "Khi xóa item ở giữa, các item bên dưới sẽ nhảy lên nhận index cũ. React nghĩ DOM không đổi (vì key giữ nguyên), nó sẽ tái sử dụng thẻ DOM cũ kèm theo VALUE CŨ CỦA NGƯỜI DÙNG ĐÃ NHẬP, làm sai lệch data trầm trọng.",
+            "starred": false
+        },
+        {
+            "id": "q91",
+            "type": "multiple-choice",
+            "question": "Trong Next.js (Pages Router), hàm `getServerSideProps` chạy ở môi trường nào?",
+            "options": [
+                "Chỉ chạy ở Client (Trình duyệt).",
+                "CHỈ CHẠY ở Server mỗi khi có một request (page load) đến. Mã code trong này không bao giờ được gửi xuống Client, an toàn để query Database trực tiếp.",
+                "Chạy ở cả hai (Isomorphic).",
+                "Chạy lúc Build time (SSG)."
+            ],
+            "answer": "CHỈ CHẠY ở Server mỗi khi có một request (page load) đến. Mã code trong này không bao giờ được gửi xuống Client, an toàn để query Database trực tiếp.",
+            "starred": false
+        },
+        {
+            "id": "q92",
+            "type": "multiple-choice",
+            "question": "ISR (Incremental Static Regeneration) của Next.js là công nghệ kết hợp ưu điểm của cái gì?",
+            "options": [
+                "React và Angular.",
+                "Kết hợp ưu điểm tốc độ cao của SSG (Static) và độ mới của SSR. Nó cho phép cập nhật lại trang tĩnh ở chế độ chạy ngầm (background) sau một khoảng thời gian `revalidate` nhất định mà không cần build lại toàn app.",
+                "Kết hợp CSS và JS.",
+                "Tối ưu hóa ảnh tĩnh."
+            ],
+            "answer": "Kết hợp ưu điểm tốc độ cao của SSG (Static) và độ mới của SSR. Nó cho phép cập nhật lại trang tĩnh ở chế độ chạy ngầm (background) sau một khoảng thời gian `revalidate` nhất định mà không cần build lại toàn app.",
+            "starred": false
+        },
+        {
+            "id": "q93",
+            "type": "multiple-choice",
+            "question": "Khi sử dụng Redux Toolkit Query (RTK Query), ưu điểm nổi bật nhất yếu tố cache của nó là gì?",
+            "options": [
+                "Xóa cache sau 1 phút.",
+                "Nó quản lý lifetime của cache dựa trên 'Reference Counting' (đếm số hook đang dùng data). Khi không còn component nào dùng data đó nữa (unmount), nó tự đếm ngược (vd 60s) rồi rọn rác để tiết kiệm RAM.",
+                "Không dùng cache để luôn lấy data mới.",
+                "Cache lưu vĩnh viễn trên server."
+            ],
+            "answer": "Nó quản lý lifetime của cache dựa trên 'Reference Counting' (đếm số hook đang dùng data). Khi không còn component nào dùng data đó nữa (unmount), nó tự đếm ngược (vd 60s) rồi rọn rác để tiết kiệm RAM.",
+            "starred": false
+        },
+        {
+            "id": "q94",
+            "type": "multiple-choice",
+            "question": "Kỹ thuật `Polymorphic Components` (Component đa hình) trong React là gì?",
+            "options": [
+                "Viết Component bằng nhiều ngôn ngữ.",
+                "Một Component có thể render ra MỘT TRONG NHIỀU thẻ HTML (hoặc component) khác nhau (vd thẻ a, nút button) dựa trên prop `as` truyền vào. (Vd: `<Text as='h1'>`). Giúp tái sử dụng hệ thống Design System rất mạnh.",
+                "Lưu nhiều phiên bản của Component.",
+                "Là Component biến mất khi click."
+            ],
+            "answer": "Một Component có thể render ra MỘT TRONG NHIỀU thẻ HTML (hoặc component) khác nhau (vd thẻ a, nút button) dựa trên prop `as` truyền vào. (Vd: `<Text as='h1'>`). Giúp tái sử dụng hệ thống Design System rất mạnh.",
+            "starred": false
+        },
+        {
+            "id": "q95",
+            "type": "multiple-choice",
+            "question": "Tính năng `Suspense` dùng chung với Data Fetching (như React Query/SWR hoặc Relay) mang lại thay đổi gì trong cách viết Component?",
+            "options": [
+                "Hủy kết nối mạng tự động.",
+                "Giúp loại bỏ hoàn toàn các biến local `isLoading`, `isError`. Component tự động 'đình chỉ' việc render và để component cha bọc `<Suspense>` lo việc hiện Spinner UI, code trở nên tuyến tính như gọi hàm đồng bộ.",
+                "Cấm gọi API trong Component.",
+                "Làm chậm quá trình fetch."
+            ],
+            "answer": "Giúp loại bỏ hoàn toàn các biến local `isLoading`, `isError`. Component tự động 'đình chỉ' việc render và để component cha bọc `<Suspense>` lo việc hiện Spinner UI, code trở nên tuyến tính như gọi hàm đồng bộ.",
+            "starred": false
+        },
+        {
+            "id": "q96",
+            "type": "multiple-choice",
+            "question": "Thẻ `<React.StrictMode>` thường nằm ở đâu trong dự án React truyền thống?",
+            "options": [
+                "Bọc bên trong từng component con.",
+                "Bọc ngay bên ngoài `<App />` (root component) ở file entry point (như index.js hoặc main.tsx).",
+                "Nằm ở file index.html.",
+                "Nằm trong package.json."
+            ],
+            "answer": "Bọc ngay bên ngoài `<App />` (root component) ở file entry point (như index.js hoặc main.tsx).",
+            "starred": false
+        },
+        {
+            "id": "q97",
+            "type": "multiple-choice",
+            "question": "Theo kiến trúc mới của Next.js (App Router), mặc định mọi component tạo ra trong thư mục app là loại Component nào?",
+            "options": [
+                "Client Component.",
+                "React Server Component (RSC), không cho phép tương tác trực tiếp với DOM hay dùng Hooks (useState). Muốn dùng phải khai báo 'use client'.",
+                "Class Component.",
+                "High Order Component."
+            ],
+            "answer": "React Server Component (RSC), không cho phép tương tác trực tiếp với DOM hay dùng Hooks (useState). Muốn dùng phải khai báo 'use client'.",
+            "starred": false
+        },
+        {
+            "id": "q98",
+            "type": "multiple-choice",
+            "question": "Tại sao phải tách Client Component ra ở nhánh 'lá' (leaf node) xa nhất trên cây thay vì đặt ở Root App Router (Next.js)?",
+            "options": [
+                "Để tăng tính thẩm mỹ code.",
+                "Bởi vì bất kỳ Component con nào nằm BÊN TRONG Client Component cũng tự động bị biến thành Client Component, gửi JS bundle xuống user, làm mất tác dụng tối ưu của Server Component.",
+                "Để tránh lỗi CSS.",
+                "Để chạy nhanh hơn trên iOS."
+            ],
+            "answer": "Bởi vì bất kỳ Component con nào nằm BÊN TRONG Client Component cũng tự động bị biến thành Client Component, gửi JS bundle xuống user, làm mất tác dụng tối ưu của Server Component.",
+            "starred": false
+        },
+        {
+            "id": "q99",
+            "type": "multiple-choice",
+            "question": "Lỗi 'Cannot update a component (`Parent`) while rendering a different component (`Child`)' xảy ra khi nào?",
+            "options": [
+                "Khi kết nối mạng chập chờn.",
+                "Khi Component Con (Child) vô tình gọi thẳng hàm setState CỦA Component Cha (Parent) NGAY BÊN TRONG thân hàm render của nó (không nằm trong useEffect hay onClick), ép React phải đổi state trong lúc đang diffing.",
+                "Khi dùng sai phiên bản NodeJS.",
+                "Khi quên đóng thẻ JSX."
+            ],
+            "answer": "Khi Component Con (Child) vô tình gọi thẳng hàm setState CỦA Component Cha (Parent) NGAY BÊN TRONG thân hàm render của nó (không nằm trong useEffect hay onClick), ép React phải đổi state trong lúc đang diffing.",
+            "starred": false
+        },
+        {
+            "id": "q100",
+            "type": "multiple-choice",
+            "question": "Tính năng Server Actions (React 18 / Next.js) giới thiệu một cách thức mới để làm gì?",
+            "options": [
+                "Để chạy CSS ngầm.",
+                "Cho phép Client gọi hàm ĐƯỢC THỰC THI TRÊN SERVER (như lưu DB, sửa data) một cách trực tiếp từ sự kiện onClick hoặc Form Submit (qua thẻ action={...}) MÀ KHÔNG CẦN phải tự tạo route API thủ công.",
+                "Tạo game 3D bằng React.",
+                "Xóa cookie trên trình duyệt."
+            ],
+            "answer": "Cho phép Client gọi hàm ĐƯỢC THỰC THI TRÊN SERVER (như lưu DB, sửa data) một cách trực tiếp từ sự kiện onClick hoặc Form Submit (qua thẻ action={...}) MÀ KHÔNG CẦN phải tự tạo route API thủ công.",
+            "starred": false
+        },
+        {
+            "id": "q101",
+            "type": "multiple-choice",
+            "question": "Khi gõ lệnh `npm run build` trong React (CRA/Vite), thì folder 'build' hoặc 'dist' sinh ra chứa những gì?",
+            "options": [
+                "Chứa toàn bộ mã nguồn React và node_modules gốc.",
+                "Chứa file index.html duy nhất, kèm theo các file Javascript/CSS đã được minify (nén siêu nhỏ), tree-shake (vứt code thừa), babel (dịch mã cũ), và tách chunk tối ưu để deploy lên CDN/Hosting tĩnh.",
+                "Chứa server backend.",
+                "Chứa database của ứng dụng."
+            ],
+            "answer": "Chứa file index.html duy nhất, kèm theo các file Javascript/CSS đã được minify (nén siêu nhỏ), tree-shake (vứt code thừa), babel (dịch mã cũ), và tách chunk tối ưu để deploy lên CDN/Hosting tĩnh.",
+            "starred": false
+        },
+        {
+            "id": "q102",
+            "type": "multiple-choice",
+            "question": "Kỹ thuật `Tree Shaking` trong React build process có tác dụng gì?",
+            "options": [
+                "Xóa tất cả các component không có UI.",
+                "Thuật toán (thường của Webpack/Rollup) phân tích các dòng lệnh `import`/`export`, và tự động BỎ ĐI các hàm/module thư viện mà project hoàn toàn KHÔNG SỬ DỤNG tới để giảm dung lượng file bundle cuối cùng.",
+                "Trồng cây thư mục.",
+                "Lắc ứng dụng để tìm lỗi."
+            ],
+            "answer": "Thuật toán (thường của Webpack/Rollup) phân tích các dòng lệnh `import`/`export`, và tự động BỎ ĐI các hàm/module thư viện mà project hoàn toàn KHÔNG SỬ DỤNG tới để giảm dung lượng file bundle cuối cùng.",
+            "starred": false
+        },
+        {
+            "id": "q103",
+            "type": "multiple-choice",
+            "question": "Nút thắt cổ chai (Bottleneck) hiệu năng khi sử dụng hàm map để render danh sách React quá lớn thường nằm ở khâu nào nhất?",
+            "options": [
+                "Ở việc tải CSS.",
+                "Nằm ở khâu DOM reflow/repaint của Trình Duyệt khi bị ép vẽ hàng ngàn thẻ DOM cùng lúc, hơn là thời gian JS chạy vòng lặp tính toán. (Giải quyết: Virtualized List).",
+                "Ở máy chủ server quá tải.",
+                "Ở bộ nhớ RAM rò rỉ."
+            ],
+            "answer": "Nằm ở khâu DOM reflow/repaint của Trình Duyệt khi bị ép vẽ hàng ngàn thẻ DOM cùng lúc, hơn là thời gian JS chạy vòng lặp tính toán. (Giải quyết: Virtualized List).",
+            "starred": false
+        },
+        {
+            "id": "q104",
+            "type": "multiple-choice",
+            "question": "Tính chất 'Declarative' (Khai báo) của React trái ngược với 'Imperative' (Mệnh lệnh) của DOM API thuần (Vanilla JS) nghĩa là gì?",
+            "options": [
+                "React luôn dùng class.",
+                "React: Dev chỉ CẦN KHAI BÁO UI trông sẽ ntn theo từng State, React tự lo cách biến đổi DOM (How). Vanilla: Dev phải tự ra từng 'Mệnh lệnh' (thêm class này, xóa nút kia, tạo element nọ) để thay đổi UI.",
+                "React chạy ngầm, Vanilla JS chạy nổi.",
+                "Không có khác biệt."
+            ],
+            "answer": "React: Dev chỉ CẦN KHAI BÁO UI trông sẽ ntn theo từng State, React tự lo cách biến đổi DOM (How). Vanilla: Dev phải tự ra từng 'Mệnh lệnh' (thêm class này, xóa nút kia, tạo element nọ) để thay đổi UI.",
+            "starred": false
+        },
+        {
+            "id": "q105",
+            "type": "multiple-choice",
+            "question": "Để tối ưu LCP (Largest Contentful Paint) theo chuẩn Google trên ứng dụng React, những chiến lược nào là cốt yếu nhất?",
+            "options": [
+                "Viết code ngắn lại, xóa bớt comment.",
+                "Áp dụng SSR (Next.js), preload file hero image, inline Critical CSS (tránh chặn render), trì hoãn tải (lazy-load) mã JS và hình ảnh nằm dưới nếp gấp màn hình (below the fold).",
+                "Gọi thật nhiều API song song.",
+                "Bỏ đi tất cả hình ảnh."
+            ],
+            "answer": "Áp dụng SSR (Next.js), preload file hero image, inline Critical CSS (tránh chặn render), trì hoãn tải (lazy-load) mã JS và hình ảnh nằm dưới nếp gấp màn hình (below the fold).",
+            "starred": false
+        }
+    ]
+}

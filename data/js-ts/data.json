@@ -1,0 +1,1370 @@
+{
+    "topic": "JavaScript & TypeScript Interview - All Levels (105 MCQs)",
+    "cards": [
+        {
+            "id": "q1",
+            "type": "multiple-choice",
+            "question": "Sự khác biệt chính về Scope giữa var, let và const là gì?",
+            "options": [
+                "var có block scope, let và const có function scope.",
+                "var có function/global scope, còn let và const có block scope.",
+                "Cả ba đều có block scope nhưng const không cho gán lại giá trị.",
+                "let có global scope, var và const có block scope."
+            ],
+            "answer": "var có function/global scope, còn let và const có block scope.",
+            "starred": false
+        },
+        {
+            "id": "q2",
+            "type": "multiple-choice",
+            "question": "Hiện tượng Hoisting trong JavaScript hoạt động như thế nào với biến var và let/const?",
+            "options": [
+                "var không bị hoisted, let/const bị hoisted lên đầu scope.",
+                "Cả ba đều được đem lên đầu scope, var khởi tạo với undefined, let/const nằm trong Temporal Dead Zone (TDZ) và báo lỗi nếu truy cập trước khi khai báo.",
+                "Chỉ có function declaration mới bị hoisted, biến thì không.",
+                "var và let khởi tạo với undefined, const báo lỗi biên dịch."
+            ],
+            "answer": "Cả ba đều được đem lên đầu scope, var khởi tạo với undefined, let/const nằm trong Temporal Dead Zone (TDZ) và báo lỗi nếu truy cập trước khi khai báo.",
+            "starred": false
+        },
+        {
+            "id": "q3",
+            "type": "multiple-choice",
+            "question": "Khái niệm Closure trong JavaScript nghĩa là gì?",
+            "options": [
+                "Một hàm tự động đóng lại sau khi chạy để giải phóng bộ nhớ.",
+                "Một hàm có khả năng ghi nhớ và truy cập vào scope của hàm cha chứa nó, ngay cả khi hàm cha đã thực thi xong.",
+                "Một phương thức đóng kết nối cơ sở dữ liệu ngầm.",
+                "Cơ chế đóng gói (encapsulation) của Class trong ES6."
+            ],
+            "answer": "Một hàm có khả năng ghi nhớ và truy cập vào scope của hàm cha chứa nó, ngay cả khi hàm cha đã thực thi xong.",
+            "starred": false
+        },
+        {
+            "id": "q4",
+            "type": "multiple-choice",
+            "question": "Giá trị của từ khóa `this` trong một Regular Function được xác định khi nào?",
+            "options": [
+                "Xác định lúc định nghĩa hàm (Lexical Scoping).",
+                "Xác định lúc hàm được gọi (Runtime Binding), phụ thuộc vào cách thức hàm đó được gọi.",
+                "Luôn luôn trỏ về object window hoặc global.",
+                "Luôn luôn trỏ về instance của class chứa hàm đó."
+            ],
+            "answer": "Xác định lúc hàm được gọi (Runtime Binding), phụ thuộc vào cách thức hàm đó được gọi.",
+            "starred": false
+        },
+        {
+            "id": "q5",
+            "type": "multiple-choice",
+            "question": "Arrow Function khác gì với Regular Function về từ khóa `this`?",
+            "options": [
+                "Arrow function không có `this` riêng, nó kế thừa `this` từ scope cha gần nhất tại thời điểm định nghĩa (Lexical this).",
+                "Arrow function định nghĩa `this` lúc runtime giống regular function.",
+                "Arrow function bắt buộc phải bind `this` bằng tay.",
+                "Arrow function luôn trỏ `this` về giá trị null."
+            ],
+            "answer": "Arrow function không có `this` riêng, nó kế thừa `this` từ scope cha gần nhất tại thời điểm định nghĩa (Lexical this).",
+            "starred": false
+        },
+        {
+            "id": "q6",
+            "type": "multiple-choice",
+            "question": "Sự khác biệt giữa ba phương thức call(), apply() và bind() là gì?",
+            "options": [
+                "call và apply thực thi hàm ngay lập tức; call nhận tham số rời rạc, apply nhận mảng tham số. bind trả về một hàm mới với `this` được ràng buộc sẵn.",
+                "bind và apply thực thi hàm ngay, call trả về hàm mới.",
+                "Cả ba đều nhận mảng tham số giống nhau nhưng xử lý tốc độ khác nhau.",
+                "bind dùng cho object, call dùng cho array, apply dùng cho string."
+            ],
+            "answer": "call và apply thực thi hàm ngay lập tức; call nhận tham số rời rạc, apply nhận mảng tham số. bind trả về một hàm mới với `this` được ràng buộc sẵn.",
+            "starred": false
+        },
+        {
+            "id": "q7",
+            "type": "multiple-choice",
+            "question": "Cơ chế Event Loop xử lý thứ tự ưu tiên giữa Microtask (Promise, queueMicrotask) và Macrotask (setTimeout, setInterval) như thế nào?",
+            "options": [
+                "Chạy xong 1 Macrotask -> giải phóng TOÀN BỘ Microtask queue -> chạy Macrotask tiếp theo.",
+                "Chạy hết Macrotask rồi mới chạy Microtask.",
+                "Chạy xen kẽ 1 Macrotask rồi đến 1 Microtask.",
+                "Microtask chỉ chạy khi trình duyệt rảnh (idle)."
+            ],
+            "answer": "Chạy xong 1 Macrotask -> giải phóng TOÀN BỘ Microtask queue -> chạy Macrotask tiếp theo.",
+            "starred": false
+        },
+        {
+            "id": "q8",
+            "type": "multiple-choice",
+            "question": "Sự khác biệt cốt lõi giữa so sánh bằng toán tử `==` và `===` là gì?",
+            "options": [
+                "Toán tử `==` so sánh cả giá trị và kiểu dữ liệu; `===` tự động ép kiểu.",
+                "Toán tử `==` tự động ép kiểu (coercion) về cùng loại trước khi so sánh giá trị; `===` kiểm tra nghiêm ngặt cả giá trị và kiểu dữ liệu mà không ép kiểu.",
+                "Cả hai giống hệt nhau về mặt luận lý.",
+                "Toán tử `===` chỉ dùng được cho Object và Array."
+            ],
+            "answer": "Toán tử `==` tự động ép kiểu (coercion) về cùng loại trước khi so sánh giá trị; `===` kiểm tra nghiêm ngặt cả giá trị và kiểu dữ liệu mà không ép kiểu.",
+            "starred": false
+        },
+        {
+            "id": "q9",
+            "type": "multiple-choice",
+            "question": "Kết quả của biểu thức `[] + {}` và `{} + []` lần lượt là gì trong môi trường JavaScript console chuẩn?",
+            "options": [
+                "\"[object Object]\" và 0",
+                "\"[object Object]\" và \"[object Object]\"",
+                "undefined và NaN",
+                "TypeError lỗi biên dịch"
+            ],
+            "answer": "\"[object Object]\" và \"[object Object]\"",
+            "starred": false
+        },
+        {
+            "id": "q10",
+            "type": "multiple-choice",
+            "question": "Nguyên lý kế thừa Prototypal Inheritance trong JavaScript hoạt động ra sao?",
+            "options": [
+                "Sao chép hoàn toàn tất cả thuộc tính của class cha vào object con lúc khởi tạo.",
+                "Mỗi object có một liên kết ngầm (`__proto__`) trỏ tới một prototype object. Khi tìm thuộc tính không có ở đối tượng hiện tại, JS sẽ tra cứu ngược lên chuỗi Prototype Chain.",
+                "Sử dụng từ khóa super() để biên dịch mã sang mã máy C++.",
+                "Bắt buộc đối tượng phải định nghĩa từ interface có sẵn."
+            ],
+            "answer": "Mỗi object có một liên kết ngầm (`__proto__`) trỏ tới một prototype object. Khi tìm thuộc tính không có ở đối tượng hiện tại, JS sẽ tra cứu ngược lên chuỗi Prototype Chain.",
+            "starred": false
+        },
+        {
+            "id": "q11",
+            "type": "multiple-choice",
+            "question": "Sự khác biệt giữa việc tạo bản sao bằng Spread operator (`{...obj}`) và hàm `structuredClone(obj)` mới là gì?",
+            "options": [
+                "Spread operator tạo bản sao sâu (deep clone), structuredClone tạo bản sao nông (shallow clone).",
+                "Spread operator tạo bản sao nông (chỉ copy tầng đầu, giữ nguyên tham chiếu tầng sâu); structuredClone tạo bản sao sâu hoàn chỉnh, xử lý được cả các cấu trúc lồng nhau phức tạp.",
+                "Cả hai đều tạo bản sao sâu nhưng tốc độ như nhau.",
+                "structuredClone chỉ clone được mảng dữ liệu số."
+            ],
+            "answer": "Spread operator tạo bản sao nông (chỉ copy tầng đầu, giữ nguyên tham chiếu tầng sâu); structuredClone tạo bản sao sâu hoàn chỉnh, xử lý được cả các cấu trúc lồng nhau phức tạp.",
+            "starred": false
+        },
+        {
+            "id": "q12",
+            "type": "multiple-choice",
+            "question": "Kỹ thuật Currying trong JavaScript dùng để làm gì?",
+            "options": [
+                "Chuyển đổi một hàm nhận nhiều tham số thành một chuỗi các hàm liên tiếp, mỗi hàm chỉ nhận một tham số duy nhất.",
+                "Tăng tốc độ lặp của mảng vòng lặp for.",
+                "Mã hóa tham số truyền lên đường dẫn URL.",
+                "Xóa bỏ các dependencies thừa trong ứng dụng."
+            ],
+            "answer": "Chuyển đổi một hàm nhận nhiều tham số thành một chuỗi các hàm liên tiếp, mỗi hàm chỉ nhận một tham số duy nhất.",
+            "starred": false
+        },
+        {
+            "id": "q13",
+            "type": "multiple-choice",
+            "question": "Để kết hợp xử lý mảng và tích tụ dữ liệu thành một giá trị duy nhất (vd: tính tổng, gom nhóm), toán từ mảng nào tối ưu nhất?",
+            "options": [
+                "map()",
+                "filter()",
+                "reduce()",
+                "forEach()"
+            ],
+            "answer": "reduce()",
+            "starred": false
+        },
+        {
+            "id": "q14",
+            "type": "multiple-choice",
+            "question": "Toán tử Nullish Coalescing (`??`) khác biệt với toán tử OR (`||`) ở khía cạnh nào?",
+            "options": [
+                "Toán tử `??` kiểm tra giá trị falsy, `||` kiểm tra giá trị truthy.",
+                "Toán tử `??` chỉ trả về vế phải khi vế trái là `null` hoặc `undefined`; còn `||` trả về vế phải cho bất kỳ giá trị falsy nào (như 0, '', false).",
+                "Cả hai giống hệt nhau.",
+                "Toán tử `??` chạy chậm hơn `||`."
+            ],
+            "answer": "Toán tử `??` chỉ trả về vế phải khi vế trái là `null` hoặc `undefined`; còn `||` trả về vế phải cho bất kỳ giá trị falsy nào (như 0, '', false).",
+            "starred": false
+        },
+        {
+            "id": "q15",
+            "type": "multiple-choice",
+            "question": "Cơ chế Garbage Collection trong công cụ V8 (Chrome/Node.js) xác định dữ liệu rác dựa trên thuật toán cốt lõi nào?",
+            "options": [
+                "Reference Counting (Đếm số lượng tham chiếu).",
+                "Mark-and-Sweep (Đánh dấu những đối tượng không thể tiếp cận được từ Root node).",
+                "FIFO (First In First Out).",
+                "Bộ nhớ tự động xóa sau 5 phút."
+            ],
+            "answer": "Mark-and-Sweep (Đánh dấu những đối tượng không thể tiếp cận được từ Root node).",
+            "starred": false
+        },
+        {
+            "id": "q16",
+            "type": "multiple-choice",
+            "question": "Sự khác biệt về mục đích sử dụng giữa Map và Plain Object (`{}`) thông thường là gì?",
+            "options": [
+                "Map chỉ nhận key dạng chuỗi, Object nhận mọi kiểu dữ liệu làm key.",
+                "Map cho phép sử dụng bất kỳ kiểu dữ liệu nào (kể cả object/function) làm key, duy trì đúng thứ tự chèn, và tối ưu hiệu năng hơn khi thêm/xóa phần tử liên tục.",
+                "Object chạy nhanh hơn Map trong mọi kịch bản dữ liệu bự.",
+                "Map tự động chuyển thành định dạng JSON khi gửi HTTP request."
+            ],
+            "answer": "Map cho phép sử dụng bất kỳ kiểu dữ liệu nào (kể cả object/function) làm key, duy trì đúng thứ tự chèn, và tối ưu hiệu năng hơn khi thêm/xóa phần tử liên tục.",
+            "starred": false
+        },
+        {
+            "id": "q17",
+            "type": "multiple-choice",
+            "question": "WeakMap khác gì với Map thông thường về mặt quản lý bộ nhớ?",
+            "options": [
+                "WeakMap có dung lượng lưu trữ ít hơn Map.",
+                "Key của WeakMap bắt buộc phải là Object và các tham chiếu này mang tính chất 'yếu' (weak), không ngăn cản Garbage Collector giải phóng bộ nhớ khi Object đó không còn nơi nào khác dùng.",
+                "WeakMap tự động mã hóa dữ liệu đầu vào.",
+                "WeakMap cho phép loop qua các phần tử bằng forEach."
+            ],
+            "answer": "Key của WeakMap bắt buộc phải là Object và các tham chiếu này mang tính chất 'yếu' (weak), không ngăn cản Garbage Collector giải phóng bộ nhớ khi Object đó không còn nơi nào khác dùng.",
+            "starred": false
+        },
+        {
+            "id": "q18",
+            "type": "multiple-choice",
+            "question": "Generator Function (hàm có dấu `*` và từ khóa `yield`) trả về loại đối tượng nào?",
+            "options": [
+                "Trả về một Promise.",
+                "Trả về một Generator Object tuân thủ giao diện Iterable và Iterator, cho phép tạm dừng và tiếp tục thực thi hàm nhiều lần bằng phương thức .next().",
+                "Trả về một mảng dữ liệu tĩnh.",
+                "Trả về một giá trị số nguyên."
+            ],
+            "answer": "Trả về một Generator Object tuân thủ giao diện Iterable và Iterator, cho phép tạm dừng và tiếp tục thực thi hàm nhiều lần bằng phương thức .next().",
+            "starred": false
+        },
+        {
+            "id": "q19",
+            "type": "multiple-choice",
+            "question": "Trong cơ chế xử lý sự kiện của DOM, sự khác biệt giữa Event Bubbling và Event Capturing là gì?",
+            "options": [
+                "Bubbling đi từ root xuống element đích; Capturing đi ngược lại.",
+                "Bubbling lan truyền sự kiện từ element đích ngược lên các thẻ cha (từ trong ra ngoài); Capturing lan truyền từ root xuống tận element đích (từ ngoài vào trong).",
+                "Cả hai đều xử lý sự kiện cùng một lúc ở mọi tầng DOM.",
+                "Bubbling chỉ dùng cho thẻ input, Capturing dùng cho thẻ div."
+            ],
+            "answer": "Bubbling lan truyền sự kiện từ element đích ngược lên các thẻ cha (từ trong ra ngoài); Capturing lan truyền từ root xuống tận element đích (từ ngoài vào trong).",
+            "starred": false
+        },
+        {
+            "id": "q20",
+            "type": "multiple-choice",
+            "question": "Phương thức `event.stopPropagation()` và `event.preventDefault()` khác nhau như thế nào?",
+            "options": [
+                "stopPropagation ngăn chặn hành vi mặc định của thẻ HTML, preventDefault chặn sự kiện nổi bọt.",
+                "stopPropagation chặn sự kiện tiếp tục lan truyền (nổi bọt) lên các tầng cha; preventDefault chặn hành vi mặc định vốn có của trình duyệt cho element đó (như submit form, click link a).",
+                "Cả hai phương thức hoàn toàn có thể thay thế nhau.",
+                "stopPropagation dùng để xóa element khỏi cây DOM."
+            ],
+            "answer": "stopPropagation chặn sự kiện tiếp tục lan truyền (nổi bọt) lên các tầng cha; preventDefault chặn hành vi mặc định vốn có của trình duyệt cho element đó (nhux submit form, click link a).",
+            "starred": false
+        },
+        {
+            "id": "q21",
+            "type": "multiple-choice",
+            "question": "Cơ chế bất đồng bộ Async/Await thực chất hoạt động dựa trên nền tảng cốt lõi nào của JavaScript?",
+            "options": [
+                "Chạy đa luồng (Multi-threading) thực sự trên CPU.",
+                "Nó là cú pháp ngọt (Syntactic Sugar) xây dựng dựa trên sự kết hợp giữa Promises và Generator Functions.",
+                "Nó giao hoàn toàn công việc cho Web Workers.",
+                "Nó biến toàn bộ code JavaScript thành đồng bộ hóa."
+            ],
+            "answer": "Nó là cú pháp ngọt (Syntactic Sugar) xây dựng dựa trên sự kết hợp giữa Promises và Generator Functions.",
+            "starred": false
+        },
+        {
+            "id": "q22",
+            "type": "multiple-choice",
+            "question": "Nếu một Promise không có block `.catch()` hoặc khối `try/catch` bọc lại khi lỗi xảy ra, trình duyệt sẽ kích hoạt sự kiện global nào?",
+            "options": [
+                "window.onerror",
+                "window.onunhandledrejection",
+                "window.onpromiseerror",
+                "Không kích hoạt gì, lỗi tự động biến mất ngầm."
+            ],
+            "answer": "window.onunhandledrejection",
+            "starred": false
+        },
+        {
+            "id": "q23",
+            "type": "multiple-choice",
+            "question": "Đối tượng Proxy trong ES6 dùng để làm mục đích gì?",
+            "options": [
+                "Để kết nối ứng dụng với một VPN server.",
+                "Để định nghĩa các hành vi tùy biến (bọc/intercept) cho các thao tác cơ bản trên một đối tượng khác (như get, set, has, deleteProperty), rất hợp để làm reactivity hệ thống.",
+                "Để mã hóa JSON data.",
+                "Để tối ưu hóa tốc độ lặp qua Object."
+            ],
+            "answer": "Để định nghĩa các hành vi tùy biến (bọc/intercept) cho các thao tác cơ bản trên một đối tượng khác (như get, set, has, deleteProperty), rất hợp để làm reactivity hệ thống.",
+            "starred": false
+        },
+        {
+            "id": "q24",
+            "type": "multiple-choice",
+            "question": "Đối tượng Reflect trong JavaScript đi kèm Proxy nhằm vai trò gì?",
+            "options": [
+                "Để tạo hiệu ứng phản chiếu đồ họa.",
+                "Cung cấp các phương thức tĩnh có tên trùng với các bẫy (traps) của Proxy, giúp thực thi hành vi mặc định nguyên bản lên đối tượng đích một cách chuẩn xác.",
+                "Thay thế cho thư viện Axios để call API.",
+                "Dùng để clone sâu một object."
+            ],
+            "answer": "Cung cấp các phương thức tĩnh có tên trùng với các bẫy (traps) của Proxy, giúp thực thi hành vi mặc định nguyên bản lên đối tượng đích một cách chuẩn xác.",
+            "starred": false
+        },
+        {
+            "id": "q25",
+            "type": "multiple-choice",
+            "question": "Sự khác biệt cốt lõi về mặt vận hành giữa ES Modules (ESM) và CommonJS (CJS) là gì?",
+            "options": [
+                "CJS tải bất đồng bộ tại runtime, ESM tải đồng bộ.",
+                "ESM được phân tích tĩnh (Static Analysis) tại thời điểm compile và hỗ trợ Tree-shaking tốt, nạp bất đồng bộ; CJS được nạp động và đồng bộ tại runtime qua hàm require().",
+                "ESM chỉ dùng được ở Frontend, CJS chỉ dùng ở Backend NodeJS.",
+                "Không có khác biệt gì ngoài cú pháp import vs require."
+            ],
+            "answer": "ESM được phân tích tĩnh (Static Analysis) tại thời điểm compile và hỗ trợ Tree-shaking tốt, nạp bất đồng bộ; CJS được nạp động và đồng bộ tại runtime qua hàm require().",
+            "starred": false
+        },
+        {
+            "id": "q26",
+            "type": "multiple-choice",
+            "question": "Tính năng 'use strict' (Strict Mode) mang lại lợi ích gì cho mã nguồn JavaScript?",
+            "options": [
+                "Làm tăng tốc độ xử lý toán học.",
+                "Bắt lỗi nghiêm ngặt các cú pháp cẩu thả (như gán biến không khai báo, trùng tên tham số), ngăn chặn rò rỉ biến toàn cục và cấm dùng một số từ khóa dự phòng.",
+                "Tự động format code theo chuẩn ESLint.",
+                "Bảo mật mã nguồn chống dịch ngược."
+            ],
+            "answer": "Bắt lỗi nghiêm ngặt các cú pháp cẩu thả (như gán biến không khai báo, trùng tên tham số), ngăn chặn rò rỉ biến toàn cục và cấm dùng một số từ khóa dự phòng.",
+            "starred": false
+        },
+        {
+            "id": "q27",
+            "type": "multiple-choice",
+            "question": "Tại sao kết quả của biểu thức biểu số thực `0.1 + 0.2 === 0.3` lại trả về `false` trong JavaScript?",
+            "options": [
+                "Vì JavaScript bị lỗi engine toán học.",
+                "Vì JavaScript sử dụng chuẩn dấu phẩy động 64-bit (IEEE 754), việc biểu diễn các số thập phân nhị phân gây ra sai số làm tròn nhỏ (kết quả thực tế là 0.30000000000000004).",
+                "Vì 0.1 và 0.2 là các chuỗi (string) ngầm định.",
+                "Do thiếu từ khóa BigInt."
+            ],
+            "answer": "Vì JavaScript sử dụng chuẩn dấu phẩy động 64-bit (IEEE 754), việc biểu diễn các số thập phân nhị phân gây ra sai số làm tròn nhỏ (kết quả thực tế là 0.30000000000000004).",
+            "starred": false
+        },
+        {
+            "id": "q28",
+            "type": "multiple-choice",
+            "question": "Kiểu dữ liệu BigInt trong JavaScript dùng để giải quyết bài toán nào?",
+            "options": [
+                "Lưu trữ chuỗi văn bản cực lớn.",
+                "Biểu diễn và tính toán chính xác các số nguyên có giá trị vượt quá giới hạn an toàn an toàn của Number (lớn hơn Number.MAX_SAFE_INTEGER).",
+                "Tạo các mảng có kích thước động khổng lồ.",
+                "Tăng dung lượng lưu trữ của localStorage."
+            ],
+            "answer": "Biểu diễn và tính toán chính xác các số nguyên có giá trị vượt quá giới hạn an toàn an toàn của Number (lớn hơn Number.MAX_SAFE_INTEGER).",
+            "starred": false
+        },
+        {
+            "id": "q29",
+            "type": "multiple-choice",
+            "question": "Hàm Symbol() trong ES6 tạo ra loại dữ liệu đặc trưng nào?",
+            "options": [
+                "Một object chứa các metadata của ứng dụng.",
+                "Một kiểu dữ liệu nguyên thủy (primitive) duy nhất và bất biến, thường được dùng làm định danh (key) ẩn duy nhất cho thuộc tính Object để tránh bị trùng lặp.",
+                "Một hàm callback chạy ngầm.",
+                "Một chuỗi bảo mật ngẫu nhiên."
+            ],
+            "answer": "Một kiểu dữ liệu nguyên thủy (primitive) duy nhất và bất biến, thường được dùng làm định danh (key) ẩn duy nhất cho thuộc tính Object để tránh bị trùng lặp.",
+            "starred": false
+        },
+        {
+            "id": "q30",
+            "type": "multiple-choice",
+            "question": "Để theo dõi thời gian thực thi của một đoạn code JS bự nhằm benchmark tối ưu hiệu năng, ta dùng bộ đôi hàm nào chuẩn nhất?",
+            "options": [
+                "Date.now() và Date.now()",
+                "console.time('label') và console.timeEnd('label')",
+                "performance.now() kết hợp tính hiệu số để đạt độ chính xác cao mức micro-giây.",
+                "Cả B và C đều ứng dụng rất tốt."
+            ],
+            "answer": "Cả B và C đều ứng dụng rất tốt.",
+            "starred": false
+        },
+        {
+            "id": "q31",
+            "type": "multiple-choice",
+            "question": "Trong JavaScript, Object.freeze() khác với Object.seal() ở điểm nào?",
+            "options": [
+                "freeze cấm đổi giá trị của thuộc tính hiện tại; seal vẫn cho phép sửa đổi giá trị thuộc tính cũ nhưng cấm thêm/xóa thuộc tính.",
+                "seal cấm đổi hoàn toàn, freeze cho sửa một phần.",
+                "Cả hai giống hệt nhau.",
+                "freeze dùng cho mảng, seal dùng cho object đối tượng."
+            ],
+            "answer": "freeze cấm đổi giá trị của thuộc tính hiện tại; seal vẫn cho phép sửa đổi giá trị thuộc tính cũ nhưng cấm thêm/xóa thuộc tính.",
+            "starred": false
+        },
+        {
+            "id": "q32",
+            "type": "multiple-choice",
+            "question": "Hàm Currying nâng cao: Nếu một hàm curry nhận tham số vô hạn, làm thế nào để nó tính ra kết quả cuối cùng (khi ép kiểu)?",
+            "options": [
+                "Sử dụng đệ quy liên tục và override phương thức toString hoặc valueOf để trả về giá trị tích lũy khi hàm được evaluate.",
+                "Bắt buộc phải truyền mảng rỗng ở cuối.",
+                "Không thể viết được hàm curry vô hạn tham số.",
+                "Dùng vòng lặp while true."
+            ],
+            "answer": "Sử dụng đệ quy liên tục và override phương thức toString hoặc valueOf để trả về giá trị tích lũy khi hàm được evaluate.",
+            "starred": false
+        },
+        {
+            "id": "q33",
+            "type": "multiple-choice",
+            "question": "Kỹ thuật Throttling khác biệt với Debouncing ở điểm cốt lõi nào?",
+            "options": [
+                "Debounce chạy liên tục, Throttle chạy một lần.",
+                "Debounce chờ hết khoảng lặng T mới chạy; Throttle ép buộc hàm chỉ được thực thi tối đa 1 lần trong mỗi khoảng thời gian đều đặn T (bất kể user kích hoạt liên tục bao nhiêu lần).",
+                "Throttle dùng cho input, Debounce dùng cho scroll.",
+                "Không có khác biệt, là hai tên gọi của một thuật toán."
+            ],
+            "answer": "Debounce chờ hết khoảng lặng T mới chạy; Throttle ép buộc hàm chỉ được thực thi tối đa 1 lần trong mỗi khoảng thời gian đều đặn T (bất kể user kích hoạt liên tục bao nhiêu lần).",
+            "starred": false
+        },
+        {
+            "id": "q34",
+            "type": "multiple-choice",
+            "question": "Phương thức Promise.allSettled() khác Promise.all() ở khía cạnh quan trọng nào?",
+            "options": [
+                "Promise.allSettled chết ngay nếu có 1 promise bị reject.",
+                "Promise.allSettled luôn chờ TẤT CẢ các hứa hoàn thành (dù thành công hay thất bại) và trả về mảng chi tiết trạng thái; Promise.all sẽ lỗi ngay lập tức (short-circuit) nếu có 1 cái lỗi.",
+                "Promise.all chạy nhanh hơn 2 lần.",
+                "Promise.allSettled trả về một giá trị duy nhất thay vì mảng."
+            ],
+            "answer": "Promise.allSettled luôn chờ TẤT CẢ các hứa hoàn thành (dù thành công hay thất bại) và trả về mảng chi tiết trạng thái; Promise.all sẽ lỗi ngay lập tức (short-circuit) nếu có 1 cái lỗi.",
+            "starred": false
+        },
+        {
+            "id": "q35",
+            "type": "multiple-choice",
+            "question": "Toán tử Promise.race() hoạt động theo nguyên tắc nào?",
+            "options": [
+                "Chờ tất cả hoàn thành đồng thời.",
+                "Trả về kết quả của Promise nào hoàn thành SỚM NHẤT (dù nó thành công (resolve) hay thất bại (reject)).",
+                "Chỉ lấy kết quả của hứa thành công đầu tiên, bỏ qua lỗi.",
+                "Chạy tuần tự từng cái theo thứ tự mảng."
+            ],
+            "answer": "Trả về kết quả của Promise nào hoàn thành SỚM NHẤT (dù nó thành công (resolve) hay thất bại (reject)).",
+            "starred": false
+        },
+        {
+            "id": "q36",
+            "type": "multiple-choice",
+            "question": "Phương thức Promise.any() (ES2021) khác Promise.race() ở điểm nào?",
+            "options": [
+                "Promise.any chờ đợi promise đầu tiên THÀNH CÔNG (fulfilled). Nó chỉ reject khi TẤT CẢ promises trong mảng đều thất bại.",
+                "Promise.any chạy chậm hơn.",
+                "Promise.any sẽ short-circuit nếu gặp lỗi đầu tiên.",
+                "Không có khác biệt."
+            ],
+            "answer": "Promise.any chờ đợi promise đầu tiên THÀNH CÔNG (fulfilled). Nó chỉ reject khi TẤT CẢ promises trong mảng đều thất bại.",
+            "starred": false
+        },
+        {
+            "id": "q37",
+            "type": "multiple-choice",
+            "question": "Cơ chế Tối ưu hóa Hàm đuôi (Tail Call Optimization - TCO) trong JS giúp giải quyết vấn đề gì?",
+            "options": [
+                "Tăng tốc độ xử lý string.",
+                "Ngăn chặn tràn ngăn xếp bộ nhớ (Stack Overflow) khi thực hiện các hàm đệ quy sâu bằng cách tái sử dụng stack frame nếu lệnh cuối cùng là gọi hàm trả về.",
+                "Tự động giải phóng các biến toàn cục.",
+                "Nén dung lượng file bundle."
+            ],
+            "answer": "Ngăn chặn tràn ngăn xếp bộ nhớ (Stack Overflow) khi thực hiện các hàm đệ quy sâu bằng cách tái sử dụng stack frame nếu lệnh cuối cùng là gọi hàm trả về.",
+            "starred": false
+        },
+        {
+            "id": "q38",
+            "type": "multiple-choice",
+            "question": "Tại sao việc lạm dụng toán tử delete (vd: `delete obj.prop`) trên Object lại bị coi là phản mẫu (anti-pattern) về mặt hiệu năng trong V8 engine?",
+            "options": [
+                "Vì nó làm hỏng cấu hình RAM.",
+                "Vì nó phá vỡ cấu trúc Hidden Class (Shape) tối ưu nội bộ của V8, ép object chuyển sang cấu hình từ điển (dictionary mode) chậm chạp.",
+                "Vì delete không thể xóa thực sự thuộc tính.",
+                "Vì toán tử này chỉ dùng được cho mảng."
+            ],
+            "answer": "Vì nó phá vỡ cấu trúc Hidden Class (Shape) tối ưu nội bộ của V8, ép object chuyển sang cấu hình từ điển (dictionary mode) chậm chạp.",
+            "starred": false
+        },
+        {
+            "id": "q39",
+            "type": "multiple-choice",
+            "question": "Phương thức nào dùng để kiểm tra một thuộc tính có tồn tại trực tiếp trên bản thân đối tượng đó hay không (không phải kế thừa từ prototype)?",
+            "options": [
+                "obj.hasOwnProperty('prop') hoặc Object.hasOwn(obj, 'prop') nâng cao.",
+                "Expression 'prop' in obj",
+                "obj.prop !== undefined",
+                "Object.keys(obj).includes('prop') luôn đúng trong mọi trường hợp."
+            ],
+            "answer": "obj.hasOwnProperty('prop') hoặc Object.hasOwn(obj, 'prop') nâng cao.",
+            "starred": false
+        },
+        {
+            "id": "q40",
+            "type": "multiple-choice",
+            "question": "Hành vi gán dữ liệu sâu: Khác biệt giữa Object.defineProperty() và gán bằng dấu `=` thông thường?",
+            "options": [
+                "Không có khác biệt.",
+                "Object.defineProperty() cho phép cấu hình chi tiết các descriptor (writable, enumerable, configurable) của thuộc tính, mặc định các cờ này là false.",
+                "Gán bằng dấu `=` chạy chậm hơn 10 lần.",
+                "Object.defineProperty() bắt buộc phải viết trong Class."
+            ],
+            "answer": "Object.defineProperty() cho phép cấu hình chi tiết các descriptor (writable, enumerable, configurable) của thuộc tính, mặc định các cờ này là false.",
+            "starred": false
+        },
+        {
+            "id": "q41",
+            "type": "multiple-choice",
+            "question": "Làm thế nào để hủy một Promise đang chạy lơ lửng giữa chừng trong JS (như hủy request API quá hạn)?",
+            "options": [
+                "Gọi hàm promise.stop()",
+                "Sử dụng đối tượng cơ bản `AbortController` và truyền `abortSignal` của nó vào logic xử lý Promise/Fetch.",
+                "Gán biến chứa promise bằng null.",
+                "Promise tự động hủy không cần can thiệp."
+            ],
+            "answer": "Sử dụng đối tượng cơ bản `AbortController` và truyền `abortSignal` của nó vào logic xử lý Promise/Fetch.",
+            "starred": false
+        },
+        {
+            "id": "q42",
+            "type": "multiple-choice",
+            "question": "Vòng lặp `for...in` và `for...of` khác biệt cơ bản như thế nào?",
+            "options": [
+                "for...in lặp qua các GIÁ TRỊ (values), for...of lặp qua các KHÓA (keys).",
+                "for...in lặp qua các thuộc tính có thể liệt kê (enumerable keys) của một Object; for...of lặp qua các giá trị của một đối tượng có khả năng duyệt (Iterable object như Array, Map, String).",
+                "Cả hai hoàn toàn giống nhau.",
+                "for...of chỉ chạy được trên Node.js."
+            ],
+            "answer": "for...in lặp qua các thuộc tính có thể liệt kê (enumerable keys) của một Object; for...of lặp qua các giá trị của một đối tượng có khả năng duyệt (Iterable object như Array, Map, String).",
+            "starred": false
+        },
+        {
+            "id": "q43",
+            "type": "multiple-choice",
+            "question": "Hàm `Array.prototype.sort()` trong JavaScript sử dụng thuật toán sắp xếp mặc định nào dưới nền engine V8 hiện tại?",
+            "options": [
+                "Bubble Sort",
+                "Quick Sort",
+                "Timsort (kết hợp Merge Sort và Insertion Sort) để đảm bảo thuật toán sắp xếp ổn định (Stable Sort).",
+                "Radix Sort"
+            ],
+            "answer": "Timsort (kết hợp Merge Sort và Insertion Sort) để đảm bảo thuật toán sắp xếp ổn định (Stable Sort).",
+            "starred": false
+        },
+        {
+            "id": "q44",
+            "type": "multiple-choice",
+            "question": "Hành vi vô hạn: Chạy vòng lặp `while(true)` đồng bộ bự và đệ quy Promise vô hạn bất đồng bộ khác nhau ntn về ảnh hưởng UI?",
+            "options": [
+                "Cả hai đều làm treo cứng trình duyệt lập tức.",
+                "while(true) chiếm block hoàn toàn Main Thread làm UI đơ cứng; Đệ quy Promise đẩy các tác vụ vào Microtask queue liên tục, tuy có thể không làm đơ cứng DOM ngay nhưng sẽ hút cạn tài nguyên CPU và RAM làm treo tab sau đó.",
+                "Vòng lặp while(true) an toàn hơn Promise.",
+                "Không có khác biệt nào về mặt tài nguyên hệ thống."
+            ],
+            "answer": "while(true) chiếm block hoàn toàn Main Thread làm UI đơ cứng; Đệ quy Promise đẩy các tác vụ vào Microtask queue liên tục, tuy có thể không làm đơ cứng DOM ngay nhưng sẽ hút cạn tài nguyên CPU và RAM làm treo tab sau đó.",
+            "starred": false
+        },
+        {
+            "id": "q45",
+            "type": "multiple-choice",
+            "question": "Hàm `Intl` (Internationalization API) trong JavaScript cung cấp giải pháp gì?",
+            "options": [
+                "Dịch thuật văn bản tự động sang tiếng Anh.",
+                "Định dạng chuẩn hóa số, tiền tệ, ngày tháng thời gian theo các ngôn ngữ vùng miền (locale) khác nhau cực kỳ chính xác chuyên nghiệp.",
+                "Tạo các đoạn mã hash bảo mật quốc tế.",
+                "Định tuyến địa lý IP người dùng."
+            ],
+            "answer": "Định dạng chuẩn hóa số, tiền tệ, ngày tháng thời gian theo các ngôn ngữ vùng miền (locale) khác nhau cực kỳ chính xác chuyên nghiệp.",
+            "starred": false
+        },
+        {
+            "id": "q46",
+            "type": "multiple-choice",
+            "question": "Sự khác biệt quan trọng nhất giữa `TypeScript` và `JavaScript` là gì?",
+            "options": [
+                "TypeScript chạy trực tiếp trên trình duyệt nhanh hơn JavaScript.",
+                "TypeScript là một siêu ngôn ngữ (superset) của JavaScript, bổ sung hệ thống kiểu dữ liệu tĩnh (Static Typing) hỗ trợ check lỗi lúc Compile-time, cuối cùng compile ra JavaScript thuần.",
+                "TypeScript không hỗ trợ lập trình hướng đối tượng OOP.",
+                "TypeScript loại bỏ hoàn toàn các hàm async/await của JS."
+            ],
+            "answer": "TypeScript là một siêu ngôn ngữ (superset) của JavaScript, bổ sung hệ thống kiểu dữ liệu tĩnh (Static Typing) hỗ trợ check lỗi lúc Compile-time, cuối cùng compile ra JavaScript thuần.",
+            "starred": false
+        },
+        {
+            "id": "q47",
+            "type": "multiple-choice",
+            "question": "Trong TypeScript, sự khác biệt cốt lõi giữa `Interface` và `Type Alias` là gì?",
+            "options": [
+                "Type Alias có thể mở rộng qua gộp (declaration merging), Interface thì không.",
+                "Interface có khả năng gộp thuộc tính tự động khi trùng tên (Declaration Merging) và tối ưu hiệu năng compiler tốt hơn; Type Alias linh hoạt hơn cho các kiểu phức tạp như Union, Intersection, Tuple.",
+                "Interface chỉ dùng cho Class, Type chỉ dùng cho Function.",
+                "Cả hai giống hệt nhau ở mọi khía cạnh cấu hình nâng cao."
+            ],
+            "answer": "Interface có khả năng gộp thuộc tính tự động khi trùng tên (Declaration Merging) và tối ưu hiệu năng compiler tốt hơn; Type Alias linh hoạt hơn cho các kiểu phức tạp như Union, Intersection, Tuple.",
+            "starred": false
+        },
+        {
+            "id": "q48",
+            "type": "multiple-choice",
+            "question": "Kiểu dữ liệu `unknown` khác gì với kiểu `any` trong TypeScript?",
+            "options": [
+                "unknown mất an toàn hơn any.",
+                "any tắt bỏ hoàn toàn việc check kiểu của biến; unknown là kiểu dữ liệu an toàn, bắt buộc lập trình viên phải thực hiện Type Checking hoặc Type Assertion trước khi thao tác trên biến.",
+                "Cả hai đều cho phép gọi hàm trực tiếp không cần check.",
+                "unknown chỉ nhận giá trị chuỗi văn bản."
+            ],
+            "answer": "any tắt bỏ hoàn toàn việc check kiểu của biến; unknown là kiểu dữ liệu an toàn, bắt buộc lập trình viên phải thực hiện Type Checking hoặc Type Assertion trước khi thao tác trên biến.",
+            "starred": false
+        },
+        {
+            "id": "q49",
+            "type": "multiple-choice",
+            "question": "Kiểu dữ liệu `never` đại diện cho kịch bản nào trong TypeScript?",
+            "options": [
+                "Đại diện cho một biến có giá trị ban đầu là null.",
+                "Đại diện cho một tập hợp rỗng, một giá trị không bao giờ xảy ra (vd: hàm luôn ném ra lỗi (throw error) hoặc có vòng lặp vô hạn không có điểm kết thúc).",
+                "Tương đương với void trong JavaScript.",
+                "Dùng để bỏ qua việc biên dịch file."
+            ],
+            "answer": "Đại diện cho một tập hợp rỗng, một giá trị không bao giờ xảy ra (vd: hàm luôn ném ra lỗi (throw error) hoặc có vòng lặp vô hạn không có điểm kết thúc).",
+            "starred": false
+        },
+        {
+            "id": "q50",
+            "type": "multiple-choice",
+            "question": "Khái niệm 'Generics' trong TypeScript mang lại giải pháp gì?",
+            "options": [
+                "Tự động sinh code JavaScript.",
+                "Cho phép tạo ra các components, classes, functions có khả năng tái sử dụng linh hoạt trên nhiều kiểu dữ liệu khác nhau mà vẫn giữ nguyên tính an toàn chặt chẽ (Type Safety).",
+                "Mã hóa cấu trúc dữ liệu.",
+                "Ép tất cả các kiểu dữ liệu về dạng any."
+            ],
+            "answer": "Cho phép tạo ra các components, classes, functions có khả năng tái sử dụng linh hoạt trên nhiều kiểu dữ liệu khác nhau mà vẫn giữ nguyên tính an toàn chặt chẽ (Type Safety).",
+            "starred": false
+        },
+        {
+            "id": "q51",
+            "type": "multiple-choice",
+            "question": "Sự khác biệt giữa Union type (`A | B`) và Intersection type (`A & B`) là gì?",
+            "options": [
+                "Union bắt buộc thỏa mãn cả hai cấu trúc; Intersection chỉ cần 1.",
+                "Union (`|`) cho phép biến nhận giá trị của kiểu A HOẶC kiểu B; Intersection (`&`) gộp nhiều kiểu lại thành một kiểu mới bắt buộc chứa ĐẦY ĐỦ các thuộc tính của tất cả các kiểu thành phần.",
+                "Cả hai đều dùng để khai báo mảng.",
+                "Union dùng trong class, Intersection dùng trong interface."
+            ],
+            "answer": "Union (`|`) cho phép biến nhận giá trị của kiểu A HOẶC kiểu B; Intersection (`&`) gộp nhiều kiểu lại thành một kiểu mới bắt buộc chứa ĐẦY ĐỦ các thuộc tính của tất cả các kiểu thành phần.",
+            "starred": false
+        },
+        {
+            "id": "q52",
+            "type": "multiple-choice",
+            "question": "Utility Type `Partial<T>` trong TypeScript biến đổi kiểu dữ liệu như thế nào?",
+            "options": [
+                "Biến đổi tất cả các thuộc tính của kiểu T thành trạng thái Chỉ Đọc (Readonly).",
+                "Biến đổi tất cả các thuộc tính của kiểu T trở thành thuộc tính tùy chọn (Optional - có dấu `?`).",
+                "Loại bỏ các thuộc tính bị null khỏi kiểu T.",
+                "Trích xuất một phần thuộc tính cụ thể."
+            ],
+            "answer": "Biến đổi tất cả các thuộc tính của kiểu T trở thành thuộc tính tùy chọn (Optional - có dấu `?`).",
+            "starred": false
+        },
+        {
+            "id": "q53",
+            "type": "multiple-choice",
+            "question": "Sự khác biệt giữa hai Utility Types: `Pick<T, K>` và `Omit<T, K>` là gì?",
+            "options": [
+                "Pick dùng để xóa thuộc tính, Omit dùng để chọn thuộc tính.",
+                "Pick trích xuất một tập hợp các thuộc tính K từ kiểu T để tạo kiểu mới; Omit loại bỏ các thuộc tính K khỏi kiểu T và giữ lại phần còn lại.",
+                "Cả hai tiện ích đều cho kết quả giống hệt nhau.",
+                "Pick chỉ dùng cho các phương thức, Omit dùng cho các biến."
+            ],
+            "answer": "Pick trích xuất một tập hợp các thuộc tính K từ kiểu T để tạo kiểu mới; Omit loại bỏ các thuộc tính K khỏi kiểu T và giữ lại phần còn lại.",
+            "starred": false
+        },
+        {
+            "id": "q54",
+            "type": "multiple-choice",
+            "question": "Type Predicate (sử dụng từ khóa `is`, vd: `x is User`) trong một hàm dùng để làm gì?",
+            "options": [
+                "Để kiểm tra xem biến có bằng null không.",
+                "Để định nghĩa một Custom Type Guard, giúp TypeScript thu hẹp kiểu dữ liệu (Type Narrowing) của biến một cách chính xác bên trong khối lệnh if/else sau khi hàm check trả về true.",
+                "Ép kiểu dữ liệu cưỡng bức tại runtime.",
+                "Tương đương toán tử typeof."
+            ],
+            "answer": "Để định nghĩa một Custom Type Guard, giúp TypeScript thu hẹp kiểu dữ liệu (Type Narrowing) của biến một cách chính xác bên trong khối lệnh if/else sau khi hàm check trả về true.",
+            "starred": false
+        },
+        {
+            "id": "q55",
+            "type": "multiple-choice",
+            "question": "Sự khác biệt quan trọng giữa `enum` thông thường và `const enum` trong TypeScript khi compile ra JavaScript là gì?",
+            "options": [
+                "const enum phình to file mã nguồn hơn enum.",
+                "enum thông thường sinh ra một Object thật tại runtime; const enum bị compiler loại bỏ hoàn toàn và inline trực tiếp giá trị số/chuỗi vào nơi sử dụng, giúp giảm dung lượng code.",
+                "const enum không hỗ trợ lưu giá trị dạng chuỗi (string).",
+                "Không có khác biệt nào về mặt sinh mã JS."
+            ],
+            "answer": "enum thông thường sinh ra một Object thật tại runtime; const enum bị compiler loại bỏ hoàn toàn và inline trực tiếp giá trị số/chuỗi vào nơi sử dụng, giúp giảm dung lượng code.",
+            "starred": false
+        },
+        {
+            "id": "q56",
+            "type": "multiple-choice",
+            "question": "Từ khóa `keyof` trong TypeScript thực hiện nhiệm vụ gì?",
+            "options": [
+                "Lấy ra toàn bộ danh sách các giá trị của một đối tượng.",
+                "Tạo ra một Union Type chứa toàn bộ các tên thuộc tính (keys) dưới dạng literal string của một Object type.",
+                "Kiểm tra xem một key có tồn tại trong Object tại runtime không.",
+                "Xóa bỏ các khóa private trong class."
+            ],
+            "answer": "Tạo ra một Union Type chứa toàn bộ các tên thuộc tính (keys) dưới dạng literal string của một Object type.",
+            "starred": false
+        },
+        {
+            "id": "q57",
+            "type": "multiple-choice",
+            "question": "Toán tử `typeof` trong ngữ cảnh của hệ thống kiểu TypeScript (không phải runtime JS) dùng để làm gì?",
+            "options": [
+                "In ra chuỗi tên kiểu dữ liệu trên màn hình console.",
+                "Trích xuất cấu trúc kiểu dữ liệu (Type) của một biến hoặc đối tượng JavaScript có sẵn để tái sử dụng làm kiểu dữ liệu trong TS.",
+                "Ép kiểu dữ liệu về dạng any.",
+                "Kiểm tra xem biến có phải hàm không."
+            ],
+            "answer": "Trích xuất cấu trúc kiểu dữ liệu (Type) của một biến hoặc đối tượng JavaScript có sẵn để tái sử dụng làm kiểu dữ liệu trong TS.",
+            "starred": false
+        },
+        {
+            "id": "q58",
+            "type": "multiple-choice",
+            "question": "Kỹ thuật 'Mapped Types' trong TypeScript dùng nhằm mục đích gì?",
+            "options": [
+                "Để lặp qua mảng dữ liệu giống hàm .map().",
+                "Tạo ra một kiểu dữ liệu mới bằng cách lặp qua các keys của một kiểu dữ liệu cũ và biến đổi thuộc tính của chúng một cách đồng bộ (vd: biến tất cả thành readonly).",
+                "Tạo bản đồ tọa độ địa lý.",
+                "Kết nối interface với class."
+            ],
+            "answer": "Tạo ra một kiểu dữ liệu mới bằng cách lặp qua các keys của một kiểu dữ liệu cũ và biến đổi thuộc tính của chúng một cách đồng bộ (vd: biến tất cả thành readonly).",
+            "starred": false
+        },
+        {
+            "id": "q59",
+            "type": "multiple-choice",
+            "question": "Cú pháp 'Conditional Types' (`T extends U ? X : Y`) trong TS hoạt động ra sao?",
+            "options": [
+                "Nó là câu lệnh rẽ nhánh if/else chạy tại runtime.",
+                "Cho phép lựa chọn hoặc tính toán ra một kiểu dữ liệu đích dựa trên mối quan hệ logic (kế thừa/kiểm tra) giữa hai kiểu dữ liệu khác tại thời điểm compile.",
+                "Bắt buộc kiểu T phải bằng kiểu U.",
+                "Dùng để ném ra lỗi biên dịch."
+            ],
+            "answer": "Cho phép lựa chọn hoặc tính toán ra một kiểu dữ liệu đích dựa trên mối quan hệ logic (kế thừa/kiểm tra) giữa hai kiểu dữ liệu khác tại thời điểm compile.",
+            "starred": false
+        },
+        {
+            "id": "q60",
+            "type": "multiple-choice",
+            "question": "Từ khóa `infer` trong cấu trúc Conditional Types dùng để làm gì?",
+            "options": [
+                "Ép buộc compiler bỏ qua kiểm tra lỗi.",
+                "Cho phép khai báo và tự động trích xuất (suy luận) ra một kiểu dữ liệu ẩn chưa biết từ bên trong một cấu trúc Generics phức tạp (vd: trích xuất kiểu trả về của một hàm).",
+                "Tăng tốc độ compile mã nguồn.",
+                "Xác định biến đó là private."
+            ],
+            "answer": "Cho phép khai báo và tự động trích xuất (suy luận) ra một kiểu dữ liệu ẩn chưa biết từ bên trong một cấu trúc Generics phức tạp (vd: trích xuất kiểu trả về của một hàm).",
+            "starred": false
+        },
+        {
+            "id": "q61",
+            "type": "multiple-choice",
+            "question": "Tính chất 'Discriminated Unions' (hoặc Tagged Unions) trong TS được thiết lập dựa trên yếu tố nào?",
+            "options": [
+                "Sử dụng các class kế thừa lẫn nhau.",
+                "Mỗi kiểu cấu trúc thành phần trong Union đều sở hữu chung một thuộc tính literal (như `type: 'circle'`, `type: 'square'`) làm nhãn (literal tag) giúp thu hẹp kiểu dữ liệu cực kỳ an toàn.",
+                "Sử dụng toán tử instanceof.",
+                "Mã hóa các đối tượng thành dạng chuỗi."
+            ],
+            "answer": "Mỗi kiểu cấu trúc thành phần trong Union đều sở hữu chung một thuộc tính literal (như `type: 'circle'`, `type: 'square'`) làm nhãn (literal tag) giúp thu hẹp kiểu dữ liệu cực kỳ an toàn.",
+            "starred": false
+        },
+        {
+            "id": "q62",
+            "type": "multiple-choice",
+            "question": "Tính năng 'Template Literal Types' (từ TS 4.1) mang lại khả năng gì nổi bật?",
+            "options": [
+                "Cho phép viết HTML trực tiếp trong file mã nguồn TS.",
+                "Cho phép kết hợp, biến đổi các chuỗi chữ (literal types) thông qua cú pháp chuỗi mẫu (`${}`) để sinh ra các tổ hợp kiểu chuỗi mới vô cùng mạnh mẽ.",
+                "Tự động format string.",
+                "Tạo các class css động."
+            ],
+            "answer": "Cho phép kết hợp, biến đổi các chuỗi chữ (literal types) thông qua cú pháp chuỗi mẫu (`${}`) để sinh ra các tổ hợp kiểu chuỗi mới vô cùng mạnh mẽ.",
+            "starred": false
+        },
+        {
+            "id": "q63",
+            "type": "multiple-choice",
+            "question": "Sự khác biệt giữa toán tử `as` (Type Assertion) và ép kiểu ép kiểu thông thường trong các ngôn ngữ khác là gì?",
+            "options": [
+                "Toán tử `as` thay đổi hoàn toàn giá trị biến tại runtime.",
+                "Toán tử `as` chỉ mang tính chất hướng dẫn, thông báo cho Compiler tin tưởng mắt nhìn của lập trình viên tại thời điểm compile, hoàn toàn KHÔNG sinh mã biến đổi hay ảnh hưởng runtime.",
+                "Toán tử `as` chạy chậm hơn nhiều.",
+                "Chỉ dùng được toán tử `as` với kiểu dữ liệu số."
+            ],
+            "answer": "Toán tử `as` chỉ mang tính chất hướng dẫn, thông báo cho Compiler tin tưởng mắt nhìn của lập trình viên tại thời điểm compile, hoàn toàn KHÔNG sinh mã biến đổi hay ảnh hưởng runtime.",
+            "starred": false
+        },
+        {
+            "id": "q64",
+            "type": "multiple-choice",
+            "question": "Cấu hình `strict: true` trong file tsconfig.json bật lên tập hợp các cờ kiểm tra nào quan trọng nhất?",
+            "options": [
+                "Giảm bớt dung lượng file build JS.",
+                "Bật toàn bộ các cờ kiểm tra nghiêm ngặt bao gồm noImplicitAny, strictNullChecks, strictFunctionTypes, và strictBindCallApply.",
+                "Cấm viết comment trong mã nguồn.",
+                "Bắt buộc phải biên dịch ứng dụng sang ES5."
+            ],
+            "answer": "Bật toàn bộ các cờ kiểm tra nghiêm ngặt bao gồm noImplicitAny, strictNullChecks, strictFunctionTypes, và strictBindCallApply.",
+            "starred": false
+        },
+        {
+            "id": "q65",
+            "type": "multiple-choice",
+            "question": "Toán tử không-null (Non-null Assertion Operator - dấu `!`, ví dụ: `obj!.prop`) dùng để báo điều gì với TS?",
+            "options": [
+                "Báo thuộc tính đó bị lỗi.",
+                "Báo với compiler chắc chắn rằng giá trị của đối tượng đó KHÔNG phải là `null` hoặc `undefined` tại thời điểm chạy, giúp bỏ qua cảnh báo lỗi strictNullChecks.",
+                "Phủ định giá trị logic của thuộc tính.",
+                "Tạo thuộc tính ẩn."
+            ],
+            "answer": "Báo với compiler chắc chắn rằng giá trị của đối tượng đó KHÔNG phải là `null` hoặc `undefined` tại thời điểm chạy, giúp bỏ qua cảnh báo lỗi strictNullChecks.",
+            "starred": false
+        },
+        {
+            "id": "q66",
+            "type": "multiple-choice",
+            "question": "Tính chất 'Structural Typing' (Duck Typing) của TypeScript quy định việc so sánh hai kiểu dữ liệu dựa trên yếu tố nào?",
+            "options": [
+                "Dựa vào tên gọi chính xác của Interface hoặc Class.",
+                "Dựa hoàn toàn vào Cấu trúc/Hình dạng (shape) của dữ liệu (các thuộc tính và kiểu của chúng). Nếu hai đối tượng có cấu trúc tương thích, chúng được coi là cùng kiểu bất kể tên gọi.",
+                "Dựa vào thứ tự khai báo các file.",
+                "Dựa vào dung lượng bộ nhớ RAM chiếm dụng."
+            ],
+            "answer": "Dựa hoàn toàn vào Cấu trúc/Hình dạng (shape) của dữ liệu (các thuộc tính và kiểu của chúng). Nếu hai đối tượng có cấu trúc tương thích, chúng được coi là cùng kiểu bất kể tên gọi.",
+            "starred": false
+        },
+        {
+            "id": "q67",
+            "type": "multiple-choice",
+            "question": "Sự khác biệt giữa `Abstract Class` và `Interface` trong TypeScript là gì?",
+            "options": [
+                "Abstract Class có thể chứa code xử lý thực tế và các phương thức hoàn chỉnh, còn Interface hoàn toàn không sinh mã JS tại runtime và chỉ chứa định nghĩa cấu trúc.",
+                "Interface biên dịch thành Class ẩn trong JavaScript.",
+                "Abstract class không thể kế thừa được.",
+                "Interface cho phép tạo instance bằng từ khóa new."
+            ],
+            "answer": "Abstract Class có thể chứa code xử lý thực tế và các phương thức hoàn chỉnh, còn Interface hoàn toàn không sinh mã JS tại runtime và chỉ chứa định nghĩa cấu trúc.",
+            "starred": false
+        },
+        {
+            "id": "q68",
+            "type": "multiple-choice",
+            "question": "Cơ chế 'Ambient Modules' (file định dạng `.d.ts`) trong TypeScript dùng nhằm mục đích gì?",
+            "options": [
+                "Để viết mã nguồn backend chạy ngầm.",
+                "Cung cấp các khai báo kiểu dữ liệu (Type declarations) cho các thư viện viết bằng JavaScript thuần bên ngoài, giúp lập trình viên có gợi ý code (IntelliSense) mà không sinh mã thực.",
+                "Nén file code gọn lại.",
+                "Lưu trữ dữ liệu cấu hình môi trường bảo mật."
+            ],
+            "answer": "Cung cấp các khai báo kiểu dữ liệu (Type declarations) cho các thư viện viết bằng JavaScript thuần bên ngoài, giúp lập trình viên có gợi ý code (IntelliSense) mà không sinh mã thực.",
+            "starred": false
+        },
+        {
+            "id": "q69",
+            "type": "multiple-choice",
+            "question": "Cấu hình `target` trong tsconfig.json quy định điều gì?",
+            "options": [
+                "Tên thư mục chứa file build cuối cùng.",
+                "Phiên bản chuẩn ECMAScript JavaScript đích mà mã nguồn TypeScript sẽ được biên dịch ra (vd: ES5, ES6, ES2022).",
+                "Hệ điều hành ứng dụng sẽ chạy.",
+                "Thư viện kiểm thử tự động."
+            ],
+            "answer": "Phiên bản chuẩn ECMAScript JavaScript đích mà mã nguồn TypeScript sẽ được biên dịch ra (vd: ES5, ES6, ES2022).",
+            "starred": false
+        },
+        {
+            "id": "q70",
+            "type": "multiple-choice",
+            "question": "Decorator trong TypeScript (như Class hay Method Decorators) hoạt động dựa trên mô thức thiết kế (Design Pattern) nào?",
+            "options": [
+                "Singleton Pattern",
+                "Decorator Pattern / Wrapper Function, cho phép can thiệp, chỉnh sửa hoặc bổ sung hành vi cho class, phương thức hoặc thuộc tính tại thời điểm runtime khởi tạo.",
+                "Observer Pattern",
+                "Factory Pattern"
+            ],
+            "answer": "Decorator Pattern / Wrapper Function, cho phép can thiệp, chỉnh sửa hoặc bổ sung hành vi cho class, phương thức hoặc thuộc tính tại thời điểm runtime khởi tạo.",
+            "starred": false
+        },
+        {
+            "id": "q71",
+            "type": "multiple-choice",
+            "question": "Sự khác biệt giữa gán mảng `const arr: number[]` và `const arr: readonly number[]` trong TS?",
+            "options": [
+                "readonly number[] cấm hoàn toàn các thao tác làm thay đổi mảng như .push(), .pop(), .splice() và báo lỗi ngay lúc viết code.",
+                "const arr đã đủ để cấm push phần tử mới vào mảng.",
+                "readonly chỉ cho phép lặp mảng tối đa 1 lần.",
+                "Không có khác biệt, const và readonly bảo vệ mảng giống nhau."
+            ],
+            "answer": "readonly number[] cấm hoàn toàn các thao tác làm thay đổi mảng như .push(), .pop(), .splice() và báo lỗi ngay lúc viết code.",
+            "starred": false
+        },
+        {
+            "id": "q72",
+            "type": "multiple-choice",
+            "question": "Để lấy kiểu dữ liệu của phần tử bên trong một mảng có sẵn qua indexed access type, ta dùng cú pháp nào?",
+            "options": [
+                "type ElementType = MyArray.element;",
+                "type ElementType = MyArray[number];",
+                "type ElementType = typeof MyArray[0];",
+                "type ElementType = keyof MyArray;"
+            ],
+            "answer": "type ElementType = MyArray[number];",
+            "starred": false
+        },
+        {
+            "id": "q73",
+            "type": "multiple-choice",
+            "question": "Utility Type `ReturnType<T>` hoạt động dựa trên cơ chế nâng cao nào của TS?",
+            "options": [
+                "Mapped Types",
+                "Conditional Types kết hợp từ khóa `infer` để tự động suy luận ra kiểu trả về từ signature của hàm T.",
+                "Intersection Types",
+                "Enum binding"
+            ],
+            "answer": "Conditional Types kết hợp từ khóa `infer` để tự động suy luận ra kiểu trả về từ signature của hàm T.",
+            "starred": false
+        },
+        {
+            "id": "q74",
+            "type": "multiple-choice",
+            "question": "Khái niệm 'Nominal Typing' khác Structural Typing ntn (và TS hỗ trợ nominal bằng mẹo gì)?",
+            "options": [
+                "Nominal typing phân biệt kiểu bằng tên class/interface. TS không hỗ trợ gốc nên dev dùng mẹo 'Branded Types' (thêm một thuộc tính __brand ẩn độc nhất) để ép phân biệt.",
+                "Nominal typing chạy nhanh hơn structural typing.",
+                "TS hỗ trợnominal mặc định qua từ khóa type.",
+                "Nominal typing chỉ áp dụng cho kiểu số."
+            ],
+            "answer": "Nominal typing phân biệt kiểu bằng tên class/interface. TS không hỗ trợ gốc nên dev dùng mẹo 'Branded Types' (thêm một thuộc tính __brand ẩn độc nhất) để ép phân biệt.",
+            "starred": false
+        },
+        {
+            "id": "q75",
+            "type": "multiple-choice",
+            "question": "Tính năng 'Satisfies Operator' (toán tử `satisfies` từ TS 4.9) khác gì với Type Assertion (`as`) hoặc gán kiểu trực tiếp?",
+            "options": [
+                "satisfies ép kiểu an toàn hơn any.",
+                "satisfies kiểm tra xem một đối tượng có thỏa mãn một kiểu dữ liệu hay không, nhưng GIỮ NGUYÊN kiểu dữ liệu suy luận chi tiết nhất (narrowest type) của đối tượng đó thay vì ép về kiểu chung rộng hơn.",
+                "satisfies dùng để viết code bất đồng bộ.",
+                "satisfies biên dịch trực tiếp ra mã validator tại runtime."
+            ],
+            "answer": "satisfies kiểm tra xem một đối tượng có thỏa mãn một kiểu dữ liệu hay không, nhưng GIỮ NGUYÊN kiểu dữ liệu suy luận chi tiết nhất (narrowest type) của đối tượng đó thay vì ép về kiểu chung rộng hơn.",
+            "starred": false
+        },
+        {
+            "id": "q76",
+            "type": "multiple-choice",
+            "question": "Trong JS, sự khác biệt giữa shallow copy và deep copy ảnh hưởng thế nào đến bộ nhớ?",
+            "options": [
+                "Shallow copy tạo object mới nhưng giữ nguyên tham chiếu đến các sub-object bên trong, thay đổi ở con sẽ làm đổi cả gốc. Deep copy nhân bản hoàn toàn cấu trúc độc lập trên vùng nhớ mới.",
+                "Shallow copy tốn RAM hơn deep copy.",
+                "Deep copy chỉ copy được tối đa 2 tầng dữ liệu.",
+                "Trình duyệt tự động chuyển shallow copy thành deep copy khi thiếu bộ nhớ."
+            ],
+            "answer": "Shallow copy tạo object mới nhưng giữ nguyên tham chiếu đến các sub-object bên trong, thay đổi ở con sẽ làm đổi cả gốc. Deep copy nhân bản hoàn toàn cấu trúc độc lập trên vùng nhớ mới.",
+            "starred": false
+        },
+        {
+            "id": "q77",
+            "type": "multiple-choice",
+            "question": "Hàm `Object.create(null)` tạo ra một đối tượng có tính chất gì đặc biệt?",
+            "options": [
+                "Tạo ra một object bị lỗi không dùng được.",
+                "Tạo ra một đối tượng hoàn toàn trống rỗng, không kế thừa bất kỳ thuộc tính hay phương thức nào từ Object.prototype (không có cả __proto__, hasOwnProperty, toString).",
+                "Tạo ra một bản sao của đối tượng null.",
+                "Tự động đóng băng đối tượng đó."
+            ],
+            "answer": "Tạo ra một đối tượng hoàn toàn trống rỗng, không kế thừa bất kỳ thuộc tính hay phương thức nào từ Object.prototype (không có cả __proto__, hasOwnProperty, toString).",
+            "starred": false
+        },
+        {
+            "id": "q78",
+            "type": "multiple-choice",
+            "question": "Toán tử `in` (ví dụ: `'name' in user`) kiểm tra thuộc tính dựa trên phạm vi nào?",
+            "options": [
+                "Chỉ kiểm tra các thuộc tính private.",
+                "Kiểm tra thuộc tính có tồn tại trên chính đối tượng đó HOẶC nằm trong chuỗi kế thừa Prototype Chain của đối tượng.",
+                "Chỉ kiểm tra các thuộc tính tự thân (own properties).",
+                "Chỉ dùng được cho mảng danh sách số."
+            ],
+            "answer": "Kiểm tra thuộc tính có tồn tại trên chính đối tượng đó HOẶC nằm trong chuỗi kế thừa Prototype Chain của đối tượng.",
+            "starred": false
+        },
+        {
+            "id": "q79",
+            "type": "multiple-choice",
+            "question": "Mục đích thực sự của từ khóa `yield*` trong Generator Function là gì?",
+            "options": [
+                "Nhân giá trị yield lên nhiều lần.",
+                "Ủy quyền thực thi (delegate) cho một Generator Function khác hoặc một đối tượng Iterable khác tuần tự.",
+                "Báo lỗi cho hàm next().",
+                "Kết thúc hàm máy phát ngay lập tức."
+            ],
+            "answer": "Ủy quyền thực thi (delegate) cho một Generator Function khác hoặc một đối tượng Iterable khác tuần tự.",
+            "starred": false
+        },
+        {
+            "id": "q80",
+            "type": "multiple-choice",
+            "question": "Trong JavaScript, `NaN` mang kiểu dữ liệu (typeof) là gì và làm sao để check chính xác nó?",
+            "options": [
+                "Kiểu 'string', check bằng dấu == NaN.",
+                "Kiểu 'number', check chính xác nhất bằng hàm `Number.isNaN(val)` (vì bản thân `NaN === NaN` trả về false).",
+                "Kiểu 'undefined', check bằng typeof.",
+                "Kiểu 'nan', check bằng hàm isNaN() thuần túy của global."
+            ],
+            "answer": "Kiểu 'number', check chính xác nhất bằng hàm `Number.isNaN(val)` (vì bản thân `NaN === NaN` trả về false).",
+            "starred": false
+        },
+        {
+            "id": "q81",
+            "type": "multiple-choice",
+            "question": "Mô hình Concurrency Model của JavaScript dựa trên yếu tố cốt lõi nào?",
+            "options": [
+                "Chạy đa luồng song song trên nền hệ điều hành.",
+                "Single-threaded (đơn luồng) kết hợp cơ chế Non-blocking I/O điều khiển bởi Event Loop.",
+                "Đa xử lý qua nhiều CPU Core độc lập.",
+                "Tải bất đồng bộ hoàn toàn qua giao thức WebRTC."
+            ],
+            "answer": "Single-threaded (đơn luồng) kết hợp cơ chế Non-blocking I/O điều khiển bởi Event Loop.",
+            "starred": false
+        },
+        {
+            "id": "q82",
+            "type": "multiple-choice",
+            "question": "Tại sao một microtask queue có thể gây ra hiện tượng 'Starvation' (đói tài nguyên) cho macrotask queue?",
+            "options": [
+                "Vì microtask chạy chậm hơn.",
+                "Vì Event Loop liên tục giải phóng toàn bộ microtask queue. Nếu một microtask liên tục sinh ra thêm microtask mới, nó sẽ block hoàn toàn không cho macrotask (như setTimeout hay render UI) chạy.",
+                "Do lỗi trình duyệt phân chia sai bộ nhớ.",
+                "Macrotask queue có dung lượng giới hạn hơn."
+            ],
+            "answer": "Vì Event Loop liên tục giải phóng toàn bộ microtask queue. Nếu một microtask liên tục sinh ra thêm microtask mới, nó sẽ block hoàn toàn không cho macrotask (như setTimeout hay render UI) chạy.",
+            "starred": false
+        },
+        {
+            "id": "q83",
+            "type": "multiple-choice",
+            "question": "Hàm `requestAnimationFrame()` tốt hơn `setTimeout()` khi làm hiệu ứng chuyển động (animation) ở điểm nào?",
+            "options": [
+                "requestAnimationFrame chạy ở luồng khác.",
+                "Nó tự động đồng bộ hóa lời gọi hàm khớp hoàn toàn với tần số quét (refresh rate) của màn hình máy tính và tự tạm dừng khi tab bị ẩn dưới nền, giúp chuyển động mượt, tiết kiệm pin.",
+                "Nó code ngắn hơn.",
+                "Nó chạy nhanh gấp 10 lần setTimeout."
+            ],
+            "answer": "Nó tự động đồng bộ hóa lời gọi hàm khớp hoàn toàn với tần số quét (refresh rate) của màn hình máy tính và tự tạm dừng khi tab bị ẩn dưới nền, giúp chuyển động mượt, tiết kiệm pin.",
+            "starred": false
+        },
+        {
+            "id": "q84",
+            "type": "multiple-choice",
+            "question": "Kỹ thuật 'Event Delegation' (Ủy quyền sự kiện) mang lại lợi ích gì cho hiệu năng bộ nhớ?",
+            "options": [
+                "Làm đẹp cấu trúc HTML.",
+                "Thay vì gắn hàng ngàn event listener vào từng thẻ con, ta chỉ gắn 1 listener duy nhất vào thẻ cha chung, tận dụng cơ chế Event Bubbling để bắt sự kiện từ con phát ra, giảm tải bộ nhớ RAM.",
+                "Ngăn chặn sự kiện nổi bọt.",
+                "Tăng tốc độ tải trang lên gấp đôi."
+            ],
+            "answer": "Thay vì gắn hàng ngàn event listener vào từng thẻ con, ta chỉ gắn 1 listener duy nhất vào thẻ cha chung, tận dụng cơ chế Event Bubbling để bắt sự kiện từ con phát ra, giảm tải bộ nhớ RAM.",
+            "starred": false
+        },
+        {
+            "id": "q85",
+            "type": "multiple-choice",
+            "question": "Cơ chế 'Memory Leak' do dùng Closure sai cách (ví dụ bài toán Meteor leak) xảy ra ntn?",
+            "options": [
+                "Do trình duyệt không hỗ trợ closure.",
+                "Khi nhiều hàm closure trong cùng một parent scope chia sẻ chung một từ điển scope bí mật. Nếu một hàm giữ tham chiếu đến một biến khổng lồ, các hàm khác cũng vô tình giữ vùng nhớ đó không cho giải phóng.",
+                "Do khai báo biến bằng const quá nhiều.",
+                "Do hàm chạy quá thời gian quy định."
+            ],
+            "answer": "Khi nhiều hàm closure trong cùng một parent scope chia sẻ chung một từ điển scope bí mật. Nếu một hàm giữ tham chiếu đến một biến khổng lồ, các hàm khác cũng vô tình giữ vùng nhớ đó không cho giải phóng.",
+            "starred": false
+        },
+        {
+            "id": "q86",
+            "type": "multiple-choice",
+            "question": "Mục đích cốt lõi của việc sử dụng đối tượng `WeakSet` là gì?",
+            "options": [
+                "Để tạo một mảng có thể sắp xếp nhanh.",
+                "Lưu trữ một tập hợp các Object độc nhất dạng tham chiếu 'yếu', tự động giải phóng bộ nhớ đối tượng khi không còn biến nào tham chiếu tới, không hỗ trợ lặp lặp (non-enumerable).",
+                "Mã hóa dữ liệu nhạy cảm ở client.",
+                "Thay thế cho mảng số nguyên thông thường."
+            ],
+            "answer": "Lưu trữ một tập hợp các Object độc nhất dạng tham chiếu 'yếu', tự động giải phóng bộ nhớ đối tượng khi không còn biến nào tham chiếu tới, không hỗ trợ lặp lặp (non-enumerable).",
+            "starred": false
+        },
+        {
+            "id": "q87",
+            "type": "multiple-choice",
+            "question": "Hàm `Object.defineProperty` có cờ `enumerable: false` sẽ tác động gì đến đối tượng?",
+            "options": [
+                "Biến thuộc tính thành private không đọc được.",
+                "Thuộc tính đó sẽ bị ẩn đi, không xuất hiện khi sử dụng vòng lặp `for...in` hoặc hàm `Object.keys()` nhưng vẫn truy cập trực tiếp được.",
+                "Cấm sửa đổi giá trị thuộc tính.",
+                "Xóa bỏ thuộc tính khỏi đối tượng."
+            ],
+            "answer": "Thuộc tính đó sẽ bị ẩn đi, không xuất hiện khi sử dụng vòng lặp `for...in` hoặc hàm `Object.keys()` nhưng vẫn truy cập trực tiếp được.",
+            "starred": false
+        },
+        {
+            "id": "q88",
+            "type": "multiple-choice",
+            "question": "Toán tử `void 0` thường được dùng trong JavaScript viết mã tối ưu nhằm mục đích gì?",
+            "options": [
+                "Xóa sạch bộ nhớ của biến.",
+                "Trả về giá trị `undefined` một cách an toàn và ngắn gọn, tránh rủi ro biến toàn cục `undefined` bị ghi đè thay đổi ở các môi trường JS cũ.",
+                "Khai báo một hàm rỗng.",
+                "Chuyển kiểu dữ liệu sang boolean."
+            ],
+            "answer": "Trả về giá trị `undefined` một cách an toàn và ngắn gọn, tránh rủi ro biến toàn cục `undefined` bị ghi đè thay đổi ở các môi trường JS cũ.",
+            "starred": false
+        },
+        {
+            "id": "q89",
+            "type": "multiple-choice",
+            "question": "Trong JavaScript Engine, tính năng 'Inline Caching' (IC) giúp tăng tốc độ code bằng cách nào?",
+            "options": [
+                "Tải trước toàn bộ mã nguồn về RAM.",
+                "Ghi nhớ vị trí offset của các thuộc tính trên Hidden Class của Object qua các lần gọi hàm trước đó, giúp bỏ qua bước tra cứu cấu trúc từ điển ở những lần gọi tiếp theo.",
+                "Cache kết quả của các request HTTP API.",
+                "Nén các hàm đệ quy sâu thành vòng lặp."
+            ],
+            "answer": "Ghi nhớ vị trí offset của các thuộc tính trên Hidden Class của Object qua các lần gọi hàm trước đó, giúp bỏ qua bước tra cứu cấu trúc từ điển ở những lần gọi tiếp theo.",
+            "starred": false
+        },
+        {
+            "id": "q90",
+            "type": "multiple-choice",
+            "question": "Để truyền dữ liệu dung lượng lớn (như mảng pixel ảnh, tệp tin 50GB chunk) giữa Main Thread và Web Worker một cách tối ưu không bị tốn chi phí clone bộ nhớ, ta dùng cơ chế nào?",
+            "options": [
+                "Gửi qua JSON.stringify()",
+                "Sử dụng `Transferable Objects` (như ArrayBuffer) để chuyển giao quyền sở hữu vùng nhớ trực tiếp sang Worker, luồng cũ sẽ mất quyền truy cập giúp chi phí copy bằng 0.",
+                "Lưu vào LocalStorage rồi đọc lại.",
+                "Sử dụng biến global toàn cục chung."
+            ],
+            "answer": "Sử dụng `Transferable Objects` (như ArrayBuffer) để chuyển giao quyền sở hữu vùng nhớ trực tiếp sang Worker, luồng cũ sẽ mất quyền truy cập giúp chi phí copy bằng 0.",
+            "starred": false
+        },
+        {
+            "id": "q91",
+            "type": "multiple-choice",
+            "question": "Trong hệ thống kiểu của TypeScript, 'Index Signatures' (`[key: string]: any`) dùng để làm gì?",
+            "options": [
+                "Đánh chỉ mục cho database.",
+                "Cho phép định nghĩa một Object type có thể chứa số lượng thuộc tính linh hoạt với tên key chưa biết trước, miễn là key và value thỏa mãn kiểu quy định.",
+                "Bắt buộc tất cả các key phải là số tăng dần.",
+                "Dùng để xóa bỏ kiểm tra kiểu dữ liệu."
+            ],
+            "answer": "Cho phép định nghĩa một Object type có thể chứa số lượng thuộc tính linh hoạt với tên key chưa biết trước, miễn là key và value thỏa mãn kiểu quy định.",
+            "starred": false
+        },
+        {
+            "id": "q92",
+            "type": "multiple-choice",
+            "question": "Khái niệm 'Type Narrowing' trong TypeScript nghĩa là gì?",
+            "options": [
+                "Làm cho code viết ngắn gọn lại.",
+                "Quá trình TypeScript phân tích logic dòng chảy của code (như typeof, instanceof, if/else) để thu hẹp một kiểu dữ liệu rộng (như union) thành một kiểu cụ thể, chính xác hơn.",
+                "Ép tất cả kiểu về any.",
+                "Loại bỏ bớt thuộc tính khỏi interface."
+            ],
+            "answer": "Quá trình TypeScript phân tích logic dòng chảy của code (như typeof, instanceof, if/else) để thu hẹp một kiểu dữ liệu rộng (như union) thành một kiểu cụ thể, chính xác hơn.",
+            "starred": false
+        },
+        {
+            "id": "q93",
+            "type": "multiple-choice",
+            "question": "Utility Type `Omit<T, K>` được xây dựng kết hợp từ những tính năng nâng cao nào của TS?",
+            "options": [
+                "Sử dụng Class và Interface.",
+                "Sử dụng Mapped Types kết hợp toán tử loại trừ `Exclude<keyof T, K>` và Indexed Access Types.",
+                "Sử dụng hàm filter và toán tử spread.",
+                "Dùng từ khóa infer."
+            ],
+            "answer": "Sử dụng Mapped Types kết hợp toán tử loại trừ `Exclude<keyof T, K>` và Indexed Access Types.",
+            "starred": false
+        },
+        {
+            "id": "q94",
+            "type": "multiple-choice",
+            "question": "Sự khác biệt giữa toán tử nhân bản kiểu dữ liệu `Parameters<T>` và `ConstructorParameters<T>` là gì?",
+            "options": [
+                "Parameters lấy tham số của hàm thông thường; ConstructorParameters lấy mảng các tham số đầu vào của một hàm khởi tạo (Class constructor).",
+                "Parameters dùng cho JS, ConstructorParameters dùng cho TS.",
+                "Cả hai giống hệt nhau.",
+                "ConstructorParameters trả về một chuỗi string."
+            ],
+            "answer": "Parameters lấy tham số của hàm thông thường; ConstructorParameters lấy mảng các tham số đầu vào của một hàm khởi tạo (Class constructor).",
+            "starred": false
+        },
+        {
+            "id": "q95",
+            "type": "multiple-choice",
+            "question": "Cờ cấu hình `noImplicitAny: true` trong tsconfig.json có tác dụng gì?",
+            "options": [
+                "Tự động thêm kiểu any cho mọi biến.",
+                "Bắt buộc mọi biến, tham số hàm nếu không được khai báo kiểu cụ thể và TS không tự suy luận được thì sẽ báo lỗi đỏ, không cho phép ngầm định hiểu là `any`.",
+                "Tăng tốc độ chạy của file JS cuối.",
+                "Bỏ qua mọi kiểm tra kiểu của hàm."
+            ],
+            "answer": "Bắt buộc mọi biến, tham số hàm nếu không được khai báo kiểu cụ thể và TS không tự suy luận được thì sẽ báo lỗi đỏ, không cho phép ngầm định hiểu là `any`.",
+            "starred": false
+        },
+        {
+            "id": "q96",
+            "type": "multiple-choice",
+            "question": "Để tạo một kiểu dữ liệu mà mọi thuộc tính của Object gốc đều biến thành trạng thái BẮT BUỘC (loại bỏ dấu `?`), ta viết Mapped Type kết hợp ký tự gì?",
+            "options": [
+                "Sử dụng từ khóa explicit",
+                "Sử dụng dấu gạch ngang kèm dấu cộng `-?` trong biểu thức vòng lặp key (ví dụ: `[P in keyof T]-?: T[P]`).",
+                "Thêm từ khóa require",
+                "Sử dụng toán tử gộp &"
+            ],
+            "answer": "Sử dụng dấu gạch ngang kèm dấu cộng `-?` trong biểu thức vòng lặp key (ví dụ: `[P in keyof T]-?: T[P]`).",
+            "starred": false
+        },
+        {
+            "id": "q97",
+            "type": "multiple-choice",
+            "question": "Khái niệm 'Covariance' và 'Contravariance' trong strictFunctionTypes của TS quy định điều gì khi so sánh kiểu hàm?",
+            "options": [
+                "Kiểu trả về của hàm mang tính Covariant (đồng biến - chấp nhận kiểu con), kiểu tham số đầu vào mang tính Contravariant (nghịch biến - chấp nhận kiểu cha) để đảm bảo an toàn tuyệt đối.",
+                "Cả hai đều bắt buộc phải bằng nhau tuyệt đối.",
+                "Tham số mang tính đồng biến, trả về mang tính nghịch biến.",
+                "Không áp dụng kiểm tra khi dùng arrow function."
+            ],
+            "answer": "Kiểu trả về của hàm mang tính Covariant (đồng biến - chấp nhận kiểu con), kiểu tham số đầu vào mang tính Contravariant (nghịch biến - chấp nhận kiểu cha) để đảm bảo an toàn tuyệt đối.",
+            "starred": false
+        },
+        {
+            "id": "q98",
+            "type": "multiple-choice",
+            "question": "Sự khác biệt giữa việc dùng moduleResolution: 'node' và 'nodenext' (hoặc 'node16') trong tsconfig.json là gì?",
+            "options": [
+                "nodenext hỗ trợ đầy đủ các quy tắc tìm kiếm file module phức tạp của ESM hiện đại trong Node.js, bao gồm nhận diện đuôi mở rộng file (.js/.ts) và đọc file package.json exports fields.",
+                "node chạy nhanh hơn nodenext 2 lần.",
+                "nodenext chỉ dùng cho frontend React.",
+                "node bắt buộc compile ra file định dạng single bundle."
+            ],
+            "answer": "nodenext hỗ trợ đầy đủ các quy tắc tìm kiếm file module phức tạp của ESM hiện đại trong Node.js, bao gồm nhận diện đuôi mở rộng file (.js/.ts) và đọc file package.json exports fields.",
+            "starred": false
+        },
+        {
+            "id": "q99",
+            "type": "multiple-choice",
+            "question": "Khi viết một thư viện npm bằng TS, tại sao cấu hình `declaration: true` và `sourceMap: true` lại cực kỳ cần thiết?",
+            "options": [
+                "Để tăng độ bảo mật chống xem trộm code.",
+                "declaration sinh file `.d.ts` bọc kiểu dữ liệu cho người dùng dùng thư viện; sourceMap ánh xạ file JS lỗi runtime ngược về dòng code TS gốc để dễ debug.",
+                "Để nén file thư viện nhỏ lại.",
+                "Để code có thể chạy trực tiếp trên HTML không cần transpile."
+            ],
+            "answer": "declaration sinh file `.d.ts` bọc kiểu dữ liệu cho người dùng dùng thư viện; sourceMap ánh xạ file JS lỗi runtime ngược về dòng code TS gốc để dễ debug.",
+            "starred": false
+        },
+        {
+            "id": "q100",
+            "type": "multiple-choice",
+            "question": "Kỹ thuật 'Exhaustiveness Checking' sử dụng kiểu `never` trong switch-case mang lại lợi ích gì cho Senior Dev?",
+            "options": [
+                "Tự động tạo code code thừa.",
+                "Ép buộc compiler báo lỗi compile ngay lập tức nếu dev thêm một kiểu dữ liệu mới vào Discriminated Union mà quên chưa handle trường hợp đó trong switch-case.",
+                "Tăng hiệu năng của vòng lặp switch case lên gấp đôi.",
+                "Xóa bỏ hoàn toàn giá trị default."
+            ],
+            "answer": "Ép buộc compiler báo lỗi compile ngay lập tức nếu dev thêm một kiểu dữ liệu mới vào Discriminated Union mà quên chưa handle trường hợp đó trong switch-case.",
+            "starred": false
+        },
+        {
+            "id": "q101",
+            "type": "multiple-choice",
+            "question": "Hàm `Object.is()` khác toán tử `===` ở hai kịch bản giá trị đặc biệt nào?",
+            "options": [
+                "Object.is() coi `NaN` bằng `NaN` (trả về true) và phân biệt giữa `-0` và `+0` (trả về false); toán tử `===` cho kết quả ngược lại.",
+                "Object.is() so sánh nông cấu trúc object.",
+                "Object.is() tự động ép kiểu chuỗi thành số.",
+                "Không có khác biệt gì về mặt logic so sánh giá trị."
+            ],
+            "answer": "Object.is() coi `NaN` bằng `NaN` (trả về true) và phân biệt giữa `-0` và `+0` (trả về false); toán tử `===` cho kết quả ngược lại.",
+            "starred": false
+        },
+        {
+            "id": "q102",
+            "type": "multiple-choice",
+            "question": "Sự rò rỉ bộ nhớ (Memory Leak) khi sử dụng `setInterval` trong JavaScript thường xảy ra do đâu?",
+            "options": [
+                "Do không khai báo thời gian delay.",
+                "Do quên không gọi hàm `clearInterval()` khi tác vụ đã hoàn thành hoặc component chứa nó đã bị hủy, khiến hàm callback liên tục giữ tham chiếu đến các biến trong scope.",
+                "Do truyền quá nhiều tham số vào hàm callback.",
+                "Do sử dụng arrow function bên trong hàm interval."
+            ],
+            "answer": "Do quên không gọi hàm `clearInterval()` khi tác vụ đã hoàn thành hoặc component chứa nó đã bị hủy, khiến hàm callback liên tục giữ tham chiếu đến các biến trong scope.",
+            "starred": false
+        },
+        {
+            "id": "q103",
+            "type": "multiple-choice",
+            "question": "Phương thức `Promise.all()` sẽ phản hồi như thế nào nếu một trong các Promise truyền vào bị thất bại (rejected) chậm hơn các cái khác?",
+            "options": [
+                "Nó vẫn đợi các promise thành công trả về kết quả rồi mới báo lỗi.",
+                "Nó sẽ lập tức chuyển sang trạng thái thất bại (reject) ngay khi Promise lỗi đó kích hoạt (cơ chế short-circuit), không màng đến các hứa còn lại.",
+                "Bỏ qua lỗi và chỉ trả về mảng các promise thành công.",
+                "Tự động chạy lại (retry) promise lỗi đó 3 lần."
+            ],
+            "answer": "Nó sẽ lập tức chuyển sang trạng thái thất bại (reject) ngay khi Promise lỗi đó kích hoạt (cơ chế short-circuit), không màng đến các hứa còn lại.",
+            "starred": false
+        },
+        {
+            "id": "q104",
+            "type": "multiple-choice",
+            "question": "Trong TypeScript, từ khóa `override` (từ bản v4.3) có vai trò thiết yếu gì khi viết Class kế thừa?",
+            "options": [
+                "Để ghi đè giá trị của một biến hằng số const.",
+                "Đánh dấu rõ ràng phương thức này dùng để ghi đè phương thức của class cha. Nếu class cha xóa hoặc đổi tên phương thức đó, compiler sẽ báo lỗi lập tức để tránh bug ngầm.",
+                "Bắt buộc class con phải chạy phương thức này trước.",
+                "Biến phương thức thành trạng thái tĩnh static."
+            ],
+            "answer": "Đánh dấu rõ ràng phương thức này dùng để ghi đè phương thức của class cha. Nếu class cha xóa hoặc đổi tên phương thức đó, compiler sẽ báo lỗi lập tức để tránh bug ngầm.",
+            "starred": false
+        },
+        {
+            "id": "q105",
+            "type": "multiple-choice",
+            "question": "Để tối ưu hóa hiệu năng JavaScript (Core Web Vitals - INP - Interaction to Next Paint), dev nên làm gì với các long-task đồng bộ kéo dài trên 50ms?",
+            "options": [
+                "Chuyển hết code sang định dạng CSS.",
+                "Sử dụng kỹ thuật chia nhỏ tác vụ (Task Chunking) thông qua `setTimeout(..., 0)` hoặc hàm `scheduler.yield()` mới để nhường micro-nhịp cho Main Thread xử lý sự kiện UI.",
+                "Sử dụng vòng lặp for thay thế cho vòng lặp while.",
+                "Tăng dung lượng lưu trữ bộ nhớ cache của trình duyệt lên tối đa."
+            ],
+            "answer": "Sử dụng kỹ thuật chia nhỏ tác vụ (Task Chunking) thông qua `setTimeout(..., 0)` hoặc hàm `scheduler.yield()` mới để nhường micro-nhịp cho Main Thread xử lý sự kiện UI.",
+            "starred": false
+        }
+    ]
+}
